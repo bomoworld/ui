@@ -1,0 +1,317 @@
+<section class="px-4 lg:px-8 pb-8">
+  <!-- =====================================================
+       SECTION HEADER
+  ====================================================== -->
+  <div
+    class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-6"
+  >
+    <div>
+      <h2 class="text-2xl font-black text-slate-900">Property Portfolio</h2>
+
+      <p class="text-slate-500">
+        Manage properties, occupancy, room inventory and property performance
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-3">
+      <button
+        class="h-11 px-5 rounded-xl bg-white hover:bg-slate-50 font-medium transition"
+      >
+        Export Report
+      </button>
+
+      <button
+        onclick="openModal('add-property')"
+        class="h-11 px-5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold transition flex items-center gap-2"
+      >
+        <i class="fa-solid fa-plus"></i>
+        Add Property
+      </button>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       PROPERTY SUMMARY
+  ====================================================== -->
+  <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
+    <div class="bg-white rounded-[30px] shadow-sm p-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-sm text-slate-500">Total Properties</p>
+
+          <h3 class="text-4xl font-black mt-3">18</h3>
+        </div>
+
+        <div
+          class="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center"
+        >
+          <i class="fa-solid fa-hotel text-xl"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-[30px] shadow-sm p-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-sm text-slate-500">Available Rooms</p>
+
+          <h3 class="text-4xl font-black mt-3">347</h3>
+        </div>
+
+        <div
+          class="w-14 h-14 rounded-2xl bg-green-50 text-green-600 flex items-center justify-center"
+        >
+          <i class="fa-solid fa-bed text-xl"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-[30px] shadow-sm p-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-sm text-slate-500">Occupied Rooms</p>
+
+          <h3 class="text-4xl font-black mt-3">1,154</h3>
+        </div>
+
+        <div
+          class="w-14 h-14 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center"
+        >
+          <i class="fa-solid fa-door-closed text-xl"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-[30px] shadow-sm p-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-sm text-slate-500">Average Occupancy</p>
+
+          <h3 class="text-4xl font-black mt-3">87%</h3>
+        </div>
+
+        <div
+          class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center"
+        >
+          <i class="fa-solid fa-chart-column text-xl"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       PROPERTY CARDS
+  ====================================================== -->
+  <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+    <!-- PROPERTY -->
+    <div class="bg-white rounded-[30px] shadow-sm overflow-hidden group">
+      <div class="relative h-[240px] overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1600&auto=format&fit=crop"
+          alt=""
+          class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+        />
+
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+        ></div>
+
+        <div class="absolute top-4 left-4">
+          <span
+            class="inline-flex px-3 py-1 rounded-full bg-green-500 text-white text-xs font-semibold"
+          >
+            Active
+          </span>
+        </div>
+
+        <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+          <h3 class="text-xl font-black">BOMO Makati Suites</h3>
+
+          <p class="text-white/80 text-sm mt-1">Makati City, Philippines</p>
+        </div>
+      </div>
+
+      <div class="p-6">
+        <div class="grid grid-cols-3 gap-4 mb-6">
+          <div>
+            <p class="text-xs text-slate-500">Rooms</p>
+
+            <p class="font-bold text-lg">240</p>
+          </div>
+
+          <div>
+            <p class="text-xs text-slate-500">Occupancy</p>
+
+            <p class="font-bold text-lg text-green-600">96%</p>
+          </div>
+
+          <div>
+            <p class="text-xs text-slate-500">Rating</p>
+
+            <p class="font-bold text-lg">4.9</p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-xs text-slate-500">Monthly Revenue</p>
+            <p class="font-black text-2xl">₱1.2M</p>
+          </div>
+
+          <a
+            class="inline-flex items-center justify-center h-11 px-5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold"
+          >
+            Manage
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROPERTY -->
+    <div class="bg-white rounded-[30px] shadow-sm overflow-hidden group">
+      <div class="relative h-[240px] overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1600&auto=format&fit=crop"
+          alt=""
+          class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+        />
+
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+        ></div>
+
+        <div class="absolute top-4 left-4">
+          <span
+            class="inline-flex px-3 py-1 rounded-full bg-green-500 text-white text-xs font-semibold"
+          >
+            Active
+          </span>
+        </div>
+
+        <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+          <h3 class="text-xl font-black">BOMO BGC Residences</h3>
+
+          <p class="text-white/80 text-sm mt-1">Taguig City, Philippines</p>
+        </div>
+      </div>
+
+      <div class="p-6">
+        <div class="grid grid-cols-3 gap-4 mb-6">
+          <div>
+            <p class="text-xs text-slate-500">Rooms</p>
+
+            <p class="font-bold text-lg">185</p>
+          </div>
+
+          <div>
+            <p class="text-xs text-slate-500">Occupancy</p>
+
+            <p class="font-bold text-lg text-green-600">94%</p>
+          </div>
+
+          <div>
+            <p class="text-xs text-slate-500">Rating</p>
+
+            <p class="font-bold text-lg">4.8</p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-xs text-slate-500">Monthly Revenue</p>
+
+            <p class="font-black text-2xl">₱980K</p>
+          </div>
+
+          <a
+            class="inline-flex items-center justify-center h-11 px-5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold"
+          >
+            Manage
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROPERTY -->
+    <div class="bg-white rounded-[30px] shadow-sm overflow-hidden group">
+      <div class="relative h-[240px] overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop"
+          alt=""
+          class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+        />
+
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+        ></div>
+
+        <div class="absolute top-4 left-4">
+          <span
+            class="inline-flex px-3 py-1 rounded-full bg-yellow-500 text-white text-xs font-semibold"
+          >
+            Maintenance
+          </span>
+        </div>
+
+        <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+          <h3 class="text-xl font-black">Cebu Bay Hotel</h3>
+
+          <p class="text-white/80 text-sm mt-1">Cebu City, Philippines</p>
+        </div>
+      </div>
+
+      <div class="p-6">
+        <div class="grid grid-cols-3 gap-4 mb-6">
+          <div>
+            <p class="text-xs text-slate-500">Rooms</p>
+
+            <p class="font-bold text-lg">140</p>
+          </div>
+
+          <div>
+            <p class="text-xs text-slate-500">Occupancy</p>
+
+            <p class="font-bold text-lg text-yellow-600">82%</p>
+          </div>
+
+          <div>
+            <p class="text-xs text-slate-500">Rating</p>
+
+            <p class="font-bold text-lg">4.7</p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-xs text-slate-500">Monthly Revenue</p>
+
+            <p class="font-black text-2xl">₱820K</p>
+          </div>
+
+          <a
+            class="inline-flex items-center justify-center h-11 px-5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold"
+          >
+            Manage
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       PROPERTY ANALYTICS
+  ====================================================== -->
+  <div class="mt-8 bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div class="p-6 border-b border-slate-100">
+      <h3 class="text-xl font-bold">Property Performance Analytics</h3>
+
+      <p class="text-sm text-slate-500 mt-1">
+        Revenue, occupancy and guest activity by property
+      </p>
+    </div>
+
+    <div class="h-[450px] flex items-center justify-center text-slate-400">
+      ApexCharts Property Analytics
+    </div>
+  </div>
+</section>

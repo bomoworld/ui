@@ -1,0 +1,225 @@
+<div
+  id="contactPartnerModal"
+  class="fixed inset-0 z-[9999] hidden items-center justify-center bg-slate-950/60 backdrop-blur-md p-4"
+>
+  <div
+    class="relative w-full max-w-3xl overflow-hidden rounded-[32px] shadow-[0_30px_80px_rgba(15,23,42,.18)]"
+  >
+    <!-- Header -->
+
+    <div
+      class="flex items-center justify-between border-b border-slate-200 px-8 py-6"
+    >
+      <div>
+        <p class="text-sm font-medium text-blue-600">
+          Contact Property Partner
+        </p>
+
+        <h2 class="mt-1 text-2xl font-bold text-slate-900">Send an Inquiry</h2>
+      </div>
+
+      <button
+        id="closeContactPartner"
+        class="flex h-11 w-11 items-center justify-center rounded-xl hover:bg-slate-100 transition"
+      >
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+    </div>
+
+    <!-- Body -->
+
+    <div class="max-h-[70vh] overflow-y-auto p-8 space-y-7">
+      <!-- Partner -->
+
+      <div
+        class="flex items-center gap-5 rounded-3xl border border-slate-200 bg-slate-50 p-5"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=400"
+          class="h-24 w-24 rounded-2xl object-cover"
+        />
+
+        <div class="flex-1">
+          <div
+            class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700"
+          >
+            <i class="fa-solid fa-circle-check"></i>
+            Verified Partner
+          </div>
+
+          <h3 class="mt-3 text-xl font-bold">BOMO Beach Resort</h3>
+
+          <p class="mt-1 text-sm text-slate-500">
+            Boracay • Deluxe Ocean View Room
+          </p>
+        </div>
+      </div>
+
+      <!-- Logged In -->
+
+      <div class="rounded-2xl border border-blue-100 bg-blue-50 p-5">
+        <div class="flex items-center gap-4">
+          <div
+            class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white"
+          >
+            <i class="fa-solid fa-user"></i>
+          </div>
+
+          <div class="flex-1">
+            <div class="font-semibold">Juan Dela Cruz</div>
+
+            <div class="text-sm text-slate-500">juan@email.com</div>
+          </div>
+
+          <span
+            class="rounded-full px-3 py-1 text-xs font-medium text-blue-700"
+          >
+            Logged in
+          </span>
+        </div>
+      </div>
+
+      <!-- Inquiry Type -->
+
+      <div>
+        <label class="mb-3 block text-sm font-semibold">
+          What can we help you with?
+        </label>
+
+        <div class="flex flex-wrap gap-3">
+          <button
+            class="rounded-full bg-blue-600 px-5 py-2 text-sm font-medium text-white"
+          >
+            Availability
+          </button>
+
+          <button
+            class="rounded-full border border-slate-200 px-5 py-2 text-sm hover:bg-slate-50"
+          >
+            Rates
+          </button>
+
+          <button
+            class="rounded-full border border-slate-200 px-5 py-2 text-sm hover:bg-slate-50"
+          >
+            Booking
+          </button>
+
+          <button
+            class="rounded-full border border-slate-200 px-5 py-2 text-sm hover:bg-slate-50"
+          >
+            Airport Transfer
+          </button>
+
+          <button
+            class="rounded-full border border-slate-200 px-5 py-2 text-sm hover:bg-slate-50"
+          >
+            Special Request
+          </button>
+        </div>
+      </div>
+
+      <!-- Accommodation -->
+
+      <div class="grid gap-5 md:grid-cols-2">
+        <div>
+          <label class="mb-2 block text-sm font-medium"> Property </label>
+
+          <select class="h-12 w-full rounded-xl border border-slate-200 px-4">
+            <option>BOMO Beach Resort</option>
+            <option>BOMO Ocean Villas</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="mb-2 block text-sm font-medium"> Accommodation </label>
+
+          <select class="h-12 w-full rounded-xl border border-slate-200 px-4">
+            <option>Deluxe Ocean View</option>
+            <option>Executive Suite</option>
+            <option>Private Villa</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Mobile -->
+
+      <div>
+        <label class="mb-2 block text-sm font-medium">
+          Mobile Number (Optional)
+        </label>
+
+        <input
+          type="text"
+          placeholder="+63"
+          class="h-12 w-full rounded-xl border border-slate-200 px-4"
+        />
+      </div>
+
+      <!-- Message -->
+
+      <div>
+        <label class="mb-2 block text-sm font-medium"> Message </label>
+
+        <textarea
+          rows="6"
+          placeholder="Tell the property partner how they can help you..."
+          class="w-full rounded-2xl border border-slate-200 p-4 resize-none"
+        ></textarea>
+      </div>
+
+      <!-- Attachment -->
+
+      <div>
+        <label class="mb-3 block text-sm font-medium">
+          Attachment (Optional)
+        </label>
+
+        <label
+          class="flex cursor-pointer items-center justify-center rounded-2xl border-2 border-dashed border-slate-300 py-8 hover:bg-slate-50"
+        >
+          <div class="text-center">
+            <i class="fa-solid fa-cloud-arrow-up text-2xl text-slate-400"></i>
+
+            <p class="mt-3 text-sm font-medium">Upload photos or documents</p>
+
+            <p class="mt-1 text-xs text-slate-500">
+              PNG, JPG or PDF (Max 10MB)
+            </p>
+          </div>
+
+          <input type="file" class="hidden" />
+        </label>
+      </div>
+
+      <!-- Response -->
+
+      <div
+        class="flex items-center gap-3 rounded-2xl bg-emerald-50 px-5 py-4 text-sm text-emerald-700"
+      >
+        <i class="fa-solid fa-clock"></i>
+
+        Property partners usually respond within
+        <strong>2 hours</strong>.
+      </div>
+    </div>
+
+    <!-- Footer -->
+
+    <div
+      class="flex items-center justify-between border-t border-slate-200 px-8 py-6"
+    >
+      <button
+        id="cancelContactPartner"
+        class="rounded-xl border border-slate-200 px-6 py-3 font-medium hover:bg-slate-50"
+      >
+        Cancel
+      </button>
+
+      <button class="bomo-btn-primary">
+        <i class="fa-regular fa-paper-plane mr-2"></i>
+        Send Inquiry
+      </button>
+    </div>
+  </div>
+</div>

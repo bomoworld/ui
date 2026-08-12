@@ -1,0 +1,385 @@
+<section class="space-y-6">
+  <!-- HEADER -->
+  <div
+    class="sticky top-0 z-30 rounded-[32px] border border-slate-200 bg-white/90 backdrop-blur-xl px-8 py-5 shadow-sm"
+  >
+    <div
+      class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5"
+    >
+      <div>
+        <div class="flex items-center gap-3">
+          <span
+            class="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold"
+          >
+            Draft
+          </span>
+
+          <span class="text-sm text-slate-500"> Last saved 2 minutes ago </span>
+        </div>
+
+        <h1 class="mt-2 text-3xl font-bold text-slate-900">Content Editor</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORKSPACE -->
+  <div class="grid xl:grid-cols-12 gap-6">
+    <!-- CONTENT CANVAS -->
+    <div class="xl:col-span-8 space-y-6">
+      <!-- PAGE INFO -->
+      <div class="rounded-[32px] bg-white shadow-sm overflow-hidden">
+        <!-- Editor Toolbar -->
+        <div
+          class="sticky top-0 z-20 bg-white border-b border-slate-100 px-6 py-4"
+        >
+          <div class="flex flex-wrap gap-2">
+            <button class="h-10 px-4 rounded-xl hover:bg-slate-100">
+              <i class="fa-solid fa-heading"></i>
+            </button>
+
+            <button class="h-10 px-4 rounded-xl hover:bg-slate-100">
+              <i class="fa-solid fa-bold"></i>
+            </button>
+
+            <button class="h-10 px-4 rounded-xl hover:bg-slate-100">
+              <i class="fa-solid fa-italic"></i>
+            </button>
+
+            <button class="h-10 px-4 rounded-xl hover:bg-slate-100">
+              <i class="fa-solid fa-list"></i>
+            </button>
+
+            <button class="h-10 px-4 rounded-xl hover:bg-slate-100">
+              <i class="fa-solid fa-list-check"></i>
+            </button>
+
+            <button class="h-10 px-4 rounded-xl hover:bg-slate-100">
+              <i class="fa-solid fa-link"></i>
+            </button>
+
+            <button class="h-10 px-4 rounded-xl hover:bg-slate-100">
+              <i class="fa-solid fa-image"></i>
+            </button>
+
+            <button class="h-10 px-4 rounded-xl hover:bg-slate-100">
+              <i class="fa-solid fa-video"></i>
+            </button>
+
+            <button class="h-10 px-4 rounded-xl hover:bg-slate-100">
+              <i class="fa-solid fa-table"></i>
+            </button>
+
+            <button class="h-10 px-4 rounded-xl hover:bg-slate-100">
+              <i class="fa-solid fa-quote-left"></i>
+            </button>
+
+            <div class="ml-auto flex gap-2">
+              <button class="h-10 px-4 rounded-xl border border-slate-200">
+                Desktop
+              </button>
+
+              <button class="h-10 px-4 rounded-xl border border-slate-200">
+                Mobile
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notion Style Editor -->
+        <div class="p-10">
+          <input
+            type="text"
+            placeholder="Untitled Page"
+            class="w-full text-5xl font-bold border-0 outline-none placeholder:text-slate-300"
+          />
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <span
+              class="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm"
+            >
+              Article
+            </span>
+
+            <span
+              class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-sm"
+            >
+              Travel
+            </span>
+
+            <span
+              class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-sm"
+            >
+              Philippines
+            </span>
+          </div>
+
+          <!-- Cover -->
+          <div
+            class="mt-8 h-80 rounded-[28px] border-2 border-dashed border-slate-300 flex items-center justify-center"
+          >
+            <div class="text-center">
+              <i class="fa-regular fa-image text-6xl text-slate-300"></i>
+
+              <div class="mt-4 font-medium">Upload Cover Image</div>
+            </div>
+          </div>
+
+          <!-- Editable Content -->
+          <div
+            contenteditable="true"
+            class="mt-10 min-h-[800px] outline-none prose prose-slate max-w-none text-lg"
+          >
+            <h2>Start writing...</h2>
+
+            <p>
+              This content area behaves more like Notion or Medium than a
+              traditional textarea.
+            </p>
+
+            <p>
+              Add headings, paragraphs, images, videos, tables, FAQs and
+              reusable blocks.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTENT BLOCKS -->
+      <div class="rounded-[32px] bg-white p-6 shadow-sm">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-semibold text-lg">Page Sections</h3>
+
+            <p class="text-sm text-slate-500">
+              Build pages using reusable BOMO components
+            </p>
+          </div>
+
+          <button class="h-11 px-5 rounded-xl bg-slate-900 text-white">
+            Add Section
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SETTINGS -->
+
+    <div class="xl:col-span-4 space-y-5">
+      <!-- CONTENT SETTINGS -->
+
+      <div
+        class="rounded-[28px] bg-white p-6 border border-slate-100 shadow-sm"
+      >
+        <h3 class="font-semibold text-slate-900">Content Settings</h3>
+
+        <div class="space-y-4 mt-5">
+          <div>
+            <label class="text-sm text-slate-500"> Content Type </label>
+
+            <select
+              class="mt-2 w-full h-12 rounded-2xl border border-slate-100 px-4"
+            >
+              <option>Article</option>
+              <option>Page</option>
+              <option>FAQ</option>
+              <option>Policy</option>
+              <option>Help Center</option>
+              <option>Press Release</option>
+              <option>Destination Guide</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="text-sm text-slate-500"> URL Slug </label>
+
+            <input
+              type="text"
+              value="/about-bomo"
+              class="mt-2 w-full h-12 rounded-2xl border border-slate-100 px-4"
+            />
+          </div>
+
+          <div>
+            <label class="text-sm text-slate-500"> Author </label>
+
+            <select
+              class="mt-2 w-full h-12 rounded-2xl border border-slate-100 px-4"
+            >
+              <option>System Admin</option>
+              <option>Marketing Team</option>
+              <option>Operations Team</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEO -->
+
+      <div
+        class="rounded-[28px] bg-white p-6 border border-slate-100 shadow-sm"
+      >
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold">SEO Optimization</h3>
+
+          <span
+            class="text-xs px-2 py-1 rounded-full bg-emerald-100 text-emerald-700"
+          >
+            87/100
+          </span>
+        </div>
+
+        <div class="space-y-4 mt-5">
+          <input
+            type="text"
+            placeholder="SEO Title"
+            class="w-full h-12 rounded-2xl border border-slate-100 px-4"
+          />
+
+          <textarea
+            rows="3"
+            placeholder="Meta Description"
+            class="w-full rounded-2xl border border-slate-100 p-4"
+          ></textarea>
+
+          <input
+            type="text"
+            placeholder="Focus Keyword"
+            class="w-full h-12 rounded-2xl border border-slate-100 px-4"
+          />
+
+          <input
+            type="text"
+            placeholder="Secondary Keywords"
+            class="w-full h-12 rounded-2xl border border-slate-100 px-4"
+          />
+
+          <input
+            type="text"
+            placeholder="Canonical URL"
+            class="w-full h-12 rounded-2xl border border-slate-100 px-4"
+          />
+        </div>
+      </div>
+
+      <!-- ORGANIZATION -->
+
+      <div
+        class="rounded-[28px] bg-white p-6 border border-slate-100 shadow-sm"
+      >
+        <h3 class="font-semibold">Organization</h3>
+
+        <div class="space-y-4 mt-5">
+          <select class="w-full h-12 rounded-2xl border border-slate-100 px-4">
+            <option>Category</option>
+            <option>Company</option>
+            <option>Travel</option>
+            <option>Legal</option>
+            <option>Support</option>
+          </select>
+
+          <input
+            type="text"
+            placeholder="Tags"
+            class="w-full h-12 rounded-2xl border border-slate-100 px-4"
+          />
+
+          <select class="w-full h-12 rounded-2xl border border-slate-100 px-4">
+            <option>Language</option>
+            <option>English</option>
+            <option>Filipino</option>
+            <option>Japanese</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- SOCIAL SHARING -->
+
+      <div
+        class="rounded-[28px] bg-white p-6 border border-slate-100 shadow-sm"
+      >
+        <h3 class="font-semibold">Social Sharing</h3>
+
+        <div class="space-y-4 mt-5">
+          <input
+            type="text"
+            placeholder="Open Graph Title"
+            class="w-full h-12 rounded-2xl border border-slate-100 px-4"
+          />
+
+          <textarea
+            rows="3"
+            placeholder="Open Graph Description"
+            class="w-full rounded-2xl border border-slate-100 p-4"
+          ></textarea>
+
+          <div
+            class="h-32 rounded-2xl border-2 border-dashed border-slate-200 flex items-center justify-center"
+          >
+            Social Preview Image
+          </div>
+        </div>
+      </div>
+
+      <!-- ANALYTICS -->
+
+      <div
+        class="rounded-[28px] bg-white p-6 border border-slate-100 shadow-sm"
+      >
+        <h3 class="font-semibold">Analytics & Tracking</h3>
+
+        <div class="space-y-4 mt-5">
+          <input
+            type="text"
+            placeholder="Campaign Name"
+            class="w-full h-12 rounded-2xl border border-slate-100 px-4"
+          />
+
+          <input
+            type="text"
+            placeholder="UTM Source"
+            class="w-full h-12 rounded-2xl border border-slate-100 px-4"
+          />
+
+          <input
+            type="text"
+            placeholder="UTM Medium"
+            class="w-full h-12 rounded-2xl border border-slate-100 px-4"
+          />
+        </div>
+      </div>
+
+      <!-- PUBLISH -->
+
+      <div
+        class="rounded-[28px] bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 text-white"
+      >
+        <h3 class="font-semibold text-lg">Publishing</h3>
+
+        <div class="space-y-4 mt-5">
+          <select
+            class="w-full h-12 rounded-2xl bg-white/10 border border-white/10 px-4"
+          >
+            <option>Draft</option>
+            <option>Published</option>
+            <option>Scheduled</option>
+          </select>
+
+          <input
+            type="datetime-local"
+            class="w-full h-12 rounded-2xl bg-white/10 border border-white/10 px-4"
+          />
+
+          <button class="w-full h-12 rounded-2xl bg-emerald-500 font-semibold">
+            Publish Content
+          </button>
+
+          <button
+            class="w-full h-12 rounded-2xl bg-white/10 border border-white/10"
+          >
+            Save Draft
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

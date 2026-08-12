@@ -1,0 +1,141 @@
+<section id="bookingsPage" class="space-y-7 pb-4">
+  <section
+    class="relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 px-6 py-8 text-white shadow-2xl shadow-slate-950/10 sm:px-8 lg:px-10 lg:py-10">
+    <div
+      class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_86%_15%,rgba(6,182,212,.3),transparent_32%),radial-gradient(circle_at_14%_105%,rgba(59,130,246,.24),transparent_34%)]">
+    </div>
+    <div class="pointer-events-none absolute -right-24 top-3 h-72 w-72 rounded-full border border-white/10"></div>
+    <div class="relative flex flex-col gap-7 xl:flex-row xl:items-end xl:justify-between">
+      <div class="max-w-3xl">
+        <div
+          class="inline-flex items-center gap-2 rounded-full border border-cyan-200/15 bg-white/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-100">
+          <i class="fa-solid fa-calendar-check"></i> System administration
+        </div>
+        <h1 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">Booking operations</h1>
+        <p class="mt-4 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">Manage reservations, payment exceptions,
+          cancellations, incidents, and guest escalations from one operational control queue.</p>
+      </div>
+      <div class="flex flex-wrap gap-3"><button type="button" class="booking-button booking-button-light"
+          data-booking-action="assign"><i class="fa-solid fa-user-plus"></i> Assign operator</button><button
+          type="button" class="booking-button booking-button-dark" data-booking-action="filter"
+          data-booking-filter="urgent"><i class="fa-solid fa-triangle-exclamation"></i> Urgent cases</button></div>
+    </div>
+  </section>
+
+  <section aria-label="Booking workload" class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="flex items-start justify-between"><span
+          class="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-50 text-cyan-600"><i
+            class="fa-solid fa-list-check"></i></span><span class="text-xs font-semibold text-slate-400">Open
+          queue</span></div>
+      <p class="mt-5 text-sm font-medium text-slate-500">Active exceptions</p>
+      <p data-booking-summary="open" class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">8</p>
+      <p class="mt-2 text-xs text-slate-400">Reservations that require an operator</p>
+    </div>
+    <div class="rounded-2xl border border-rose-200 bg-rose-50/50 p-5 shadow-sm">
+      <div class="flex items-start justify-between"><span
+          class="flex h-10 w-10 items-center justify-center rounded-xl bg-rose-100 text-rose-600"><i
+            class="fa-solid fa-credit-card"></i></span><span
+          class="rounded-full bg-rose-100 px-2 py-1 text-xs font-semibold text-rose-600">Action now</span></div>
+      <p class="mt-5 text-sm font-medium text-slate-500">Payment exceptions</p>
+      <p data-booking-summary="payment" class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">2</p>
+      <p class="mt-2 text-xs text-slate-400">Failed, disputed, or refund payment flows</p>
+    </div>
+    <div class="rounded-2xl border border-amber-200 bg-amber-50/50 p-5 shadow-sm">
+      <div class="flex items-start justify-between"><span
+          class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-100 text-amber-600"><i
+            class="fa-solid fa-right-to-bracket"></i></span><span
+          class="text-xs font-semibold text-amber-700">Today</span></div>
+      <p class="mt-5 text-sm font-medium text-slate-500">Check-ins requiring review</p>
+      <p data-booking-summary="arrival" class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">2</p>
+      <p class="mt-2 text-xs text-slate-400">Guest or property arrival coordination</p>
+    </div>
+    <div class="rounded-2xl border border-emerald-200 bg-emerald-50/50 p-5 shadow-sm">
+      <div class="flex items-start justify-between"><span
+          class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600"><i
+            class="fa-solid fa-circle-check"></i></span><span
+          class="text-xs font-semibold text-emerald-700">Cleared</span></div>
+      <p class="mt-5 text-sm font-medium text-slate-500">Confirmed by operations</p>
+      <p data-booking-summary="confirmed" class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">1</p>
+      <p class="mt-2 text-xs text-slate-400">Records resolved during this session</p>
+    </div>
+  </section>
+
+  <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+    <div class="border-b border-slate-100 px-5 py-5 sm:px-6">
+      <div class="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
+        <div>
+          <div class="flex flex-wrap items-center gap-2">
+            <h2 class="text-lg font-semibold text-slate-950">Operations queue</h2><span data-booking-visible-count
+              class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600">8 records</span>
+          </div>
+          <p class="mt-1 text-sm text-slate-500">Filter operational work, then open a reservation to record the service
+            decision and owner.</p>
+        </div>
+        <div id="bookingNotice" class="hidden rounded-lg px-3 py-2 text-sm font-medium" role="status"
+          aria-live="polite"></div>
+      </div>
+      <div class="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_11rem_11rem_11rem]"><label
+          class="relative block"><span class="sr-only">Search booking records</span><i
+            class="fa-solid fa-magnifying-glass pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm text-slate-400"></i><input
+            type="search" data-booking-search class="bomo-input h-11 w-full pl-10"
+            placeholder="Search reservation, guest, property, or reference…" autocomplete="off" /></label><label><span
+            class="sr-only">Filter by booking state</span><select data-booking-status class="bomo-input h-11 w-full">
+            <option value="all">All booking states</option>
+            <option value="pending">Pending review</option>
+            <option value="confirmed">Confirmed</option>
+            <option value="cancellation">Cancellation review</option>
+            <option value="refund">Refund review</option>
+            <option value="disputed">Disputed</option>
+            <option value="incident">Incident</option>
+          </select></label><label><span class="sr-only">Filter by payment state</span><select data-booking-payment
+            class="bomo-input h-11 w-full">
+            <option value="all">All payment states</option>
+            <option value="Paid">Paid</option>
+            <option value="Failed">Failed</option>
+            <option value="Refund requested">Refund requested</option>
+            <option value="Disputed">Disputed</option>
+          </select></label><label><span class="sr-only">Filter by stay state</span><select data-booking-stay
+            class="bomo-input h-11 w-full">
+            <option value="all">All stay states</option>
+            <option value="Today">Arriving today</option>
+            <option value="Upcoming">Upcoming</option>
+            <option value="In stay">In stay</option>
+            <option value="Completed">Completed</option>
+          </select></label></div>
+      <div class="mt-4 flex flex-wrap items-center gap-2" aria-label="Quick queue filters"><button type="button"
+          class="booking-filter-button is-active" data-booking-action="filter"
+          data-booking-filter="all">All</button><button type="button" class="booking-filter-button"
+          data-booking-action="filter" data-booking-filter="assigned">Assigned to me</button><button type="button"
+          class="booking-filter-button" data-booking-action="filter" data-booking-filter="payment">Payment
+          review</button><button type="button" class="booking-filter-button" data-booking-action="filter"
+          data-booking-filter="cancellation">Cancellations</button><button type="button" class="booking-filter-button"
+          data-booking-action="filter" data-booking-filter="dispute">Disputes</button><button type="button"
+          class="booking-filter-button" data-booking-action="filter" data-booking-filter="urgent">Urgent
+          cases</button><button type="button" class="ml-auto text-sm font-semibold text-slate-500 hover:text-slate-900"
+          data-booking-action="clear">Clear filters</button></div>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="min-w-[940px] w-full text-left text-sm">
+        <thead
+          class="border-b border-slate-100 bg-slate-50 text-xs font-semibold uppercase tracking-wide text-slate-500">
+          <tr>
+            <th class="px-5 py-3.5 sm:px-6">Reservation</th>
+            <th class="px-5 py-3.5">Operation</th>
+            <th class="px-5 py-3.5">Payment</th>
+            <th class="px-5 py-3.5">Owner</th>
+            <th class="px-5 py-3.5">Priority</th>
+            <th class="px-5 py-3.5 text-right">Action</th>
+          </tr>
+        </thead>
+        <tbody data-booking-list class="divide-y divide-slate-100"></tbody>
+      </table>
+    </div>
+    <div
+      class="flex flex-col gap-3 border-t border-slate-100 bg-slate-50 px-5 py-4 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <p class="text-slate-500"><span data-booking-footer-count class="font-semibold text-slate-700">8</span> records
+        shown in this session.</p><button type="button" class="booking-button booking-button-secondary"
+        data-booking-action="assign"><i class="fa-solid fa-user-plus"></i> Assign operator</button>
+    </div>
+  </section>
+</section>

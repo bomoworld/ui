@@ -1,0 +1,87 @@
+<section data-guest-page="dashboard">
+  <div class="panel dashboard-welcome">
+    <div>
+      <span class="eyebrow">YOUR TRAVEL HUB</span>
+      <h2>Welcome back, Rick</h2>
+      <p>Manage your next stay and keep video reviews moving toward approval.</p>
+    </div>
+    <a class="primary" href="?pgid=upload" data-page="upload">
+      <i class="fa-solid fa-cloud-arrow-up"></i>
+      Upload a video review
+    </a>
+  </div>
+
+  <div class="grid two-equal dashboard-focus-grid">
+    <article class="panel">
+      <div class="panel-head">
+        <div>
+          <span class="eyebrow">UPCOMING</span>
+          <h2>Your next stay</h2>
+        </div>
+        <span class="status published">Confirmed</span>
+      </div>
+
+      <div class="next-stay">
+        <img
+          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800"
+          alt="BOMO Beach Resort"
+        />
+        <div>
+          <h3>BOMO Beach Resort</h3>
+          <p><i class="fa-regular fa-calendar"></i> July 15–18, 2026</p>
+          <p><i class="fa-solid fa-receipt"></i> BMO-2026-10001</p>
+        </div>
+      </div>
+
+      <div class="actions dashboard-actions">
+        <a class="secondary" href="?pgid=bookings" data-page="bookings">All trips</a>
+        <a
+          class="primary"
+          href="?pgid=booking-details&amp;booking_id=BMO-2026-10001"
+          data-page="booking-details"
+        >
+          View trip
+        </a>
+      </div>
+    </article>
+
+    <article class="panel">
+      <div class="panel-head">
+        <div>
+          <span class="eyebrow">VIDEO REVIEWS</span>
+          <h2>Approval status</h2>
+        </div>
+        <a href="?pgid=videos" data-page="videos">View all</a>
+      </div>
+
+      <div class="dashboard-status-list">
+        <div class="setting-row">
+          <div>
+            <strong>Pending system approval</strong>
+            <p>Private until BOMO approves the submission.</p>
+          </div>
+          <b data-dashboard-summary="pending">1</b>
+        </div>
+        <div class="setting-row">
+          <div>
+            <strong>Approved and public</strong>
+            <p>Visible to travelers and eligible for rewards.</p>
+          </div>
+          <b data-dashboard-summary="approved">8</b>
+        </div>
+        <div class="setting-row">
+          <div>
+            <strong>Review credits available</strong>
+            <p>Use one credit for each new video submission.</p>
+          </div>
+          <b data-dashboard-summary="credits">3</b>
+        </div>
+      </div>
+
+      <div class="actions dashboard-actions">
+        <a class="secondary" href="?pgid=reviews" data-page="reviews">Review history</a>
+        <a class="primary" href="?pgid=upload" data-page="upload">Submit a video</a>
+      </div>
+    </article>
+  </div>
+</section>

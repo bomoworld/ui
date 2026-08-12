@@ -1,0 +1,292 @@
+<div class="space-y-6">
+  <!-- ACCOUNT SECURITY -->
+  <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div class="p-6 border-b border-slate-100">
+      <h3 class="text-xl font-bold">Account Security</h3>
+
+      <p class="text-sm text-slate-500 mt-1">
+        Protect your account and control access to your property management
+        system.
+      </p>
+    </div>
+
+    <div class="p-6 grid md:grid-cols-2 gap-6">
+      <div>
+        <label class="block text-sm font-medium mb-2"> Login Email </label>
+
+        <input
+          type="email"
+          value="admin@property.com"
+          class="w-full h-12 px-4 rounded-xl border border-slate-200"
+        />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-2"> Username </label>
+
+        <input
+          type="text"
+          value="propertyadmin"
+          class="w-full h-12 px-4 rounded-xl border border-slate-200"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- CHANGE PASSWORD -->
+  <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div class="p-6 border-b border-slate-100">
+      <h3 class="text-xl font-bold">Change Password</h3>
+
+      <p class="text-sm text-slate-500 mt-1">
+        Update your password regularly to keep your account secure.
+      </p>
+    </div>
+
+    <div class="p-6">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div>
+          <label class="block text-sm font-medium mb-2">
+            Current Password
+          </label>
+
+          <input
+            type="password"
+            class="w-full h-12 px-4 rounded-xl border border-slate-200"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-2"> New Password </label>
+
+          <input
+            type="password"
+            class="w-full h-12 px-4 rounded-xl border border-slate-200"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-2">
+            Confirm Password
+          </label>
+
+          <input
+            type="password"
+            class="w-full h-12 px-4 rounded-xl border border-slate-200"
+          />
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <button
+          class="h-11 px-5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold"
+        >
+          Update Password
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TWO FACTOR AUTHENTICATION -->
+  <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div
+      class="p-6 border-b border-slate-100 flex items-center justify-between"
+    >
+      <div>
+        <h3 class="text-xl font-bold">Two-Factor Authentication (2FA)</h3>
+
+        <p class="text-sm text-slate-500 mt-1">
+          Add an extra layer of protection to your account.
+        </p>
+      </div>
+
+      <span
+        class="px-4 py-2 rounded-full bg-red-100 text-red-700 text-sm font-semibold"
+      >
+        Disabled
+      </span>
+    </div>
+
+    <div class="p-6">
+      <div class="flex flex-wrap gap-3">
+        <button
+          class="h-11 px-5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold"
+        >
+          Enable Authenticator App
+        </button>
+
+        <button class="h-11 px-5 rounded-xl hover:bg-slate-50">
+          Enable SMS Verification
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGIN SECURITY -->
+  <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div class="p-6 border-b border-slate-100">
+      <h3 class="text-xl font-bold">Login Security</h3>
+
+      <p class="text-sm text-slate-500 mt-1">
+        Configure authentication and login restrictions.
+      </p>
+    </div>
+
+    <div class="p-6 space-y-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <h4 class="font-semibold">Require 2FA for Staff Accounts</h4>
+
+          <p class="text-sm text-slate-500">
+            Force all users to enable two-factor authentication.
+          </p>
+        </div>
+
+        <input type="checkbox" class="w-5 h-5" />
+      </div>
+
+      <div class="flex items-center justify-between">
+        <div>
+          <h4 class="font-semibold">Email Login Alerts</h4>
+
+          <p class="text-sm text-slate-500">
+            Receive notifications when a user logs in.
+          </p>
+        </div>
+
+        <input type="checkbox" checked class="w-5 h-5" />
+      </div>
+
+      <div class="flex items-center justify-between">
+        <div>
+          <h4 class="font-semibold">Block Multiple Failed Login Attempts</h4>
+
+          <p class="text-sm text-slate-500">
+            Automatically lock suspicious login attempts.
+          </p>
+        </div>
+
+        <input type="checkbox" checked class="w-5 h-5" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-2"> Session Timeout </label>
+
+        <select
+          class="w-full md:w-80 h-12 px-4 rounded-xl border border-slate-200"
+        >
+          <option>15 Minutes</option>
+          <option>30 Minutes</option>
+          <option selected>1 Hour</option>
+          <option>4 Hours</option>
+          <option>Never</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVE SESSIONS -->
+  <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div
+      class="p-6 border-b border-slate-100 flex items-center justify-between"
+    >
+      <div>
+        <h3 class="text-xl font-bold">Active Sessions</h3>
+
+        <p class="text-sm text-slate-500 mt-1">
+          Devices currently logged into your account.
+        </p>
+      </div>
+
+      <button
+        class="h-11 px-5 rounded-xl bg-red-500 hover:bg-red-600 text-white font-semibold"
+      >
+        Logout All Devices
+      </button>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="w-full">
+        <thead>
+          <tr class="border-b border-slate-100 bg-slate-50">
+            <th class="text-left p-5 font-semibold">Device</th>
+            <th class="text-left p-5 font-semibold">Location</th>
+            <th class="text-left p-5 font-semibold">Last Activity</th>
+            <th class="text-left p-5 font-semibold">Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="border-b border-slate-100">
+            <td class="p-5">Windows 11 • Chrome</td>
+            <td class="p-5">Pasig City, Philippines</td>
+            <td class="p-5">Active Now</td>
+            <td class="p-5">
+              <span
+                class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-sm"
+              >
+                Current Session
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="p-5">iPhone • Safari</td>
+            <td class="p-5">Manila, Philippines</td>
+            <td class="p-5">2 Hours Ago</td>
+            <td class="p-5">
+              <button
+                class="px-4 h-9 rounded-xl border border-red-200 text-red-600 hover:bg-red-50"
+              >
+                Logout
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECURITY LOG -->
+  <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div class="p-6 border-b border-slate-100">
+      <h3 class="text-xl font-bold">Security Activity</h3>
+
+      <p class="text-sm text-slate-500 mt-1">Recent account security events.</p>
+    </div>
+
+    <div class="p-6">
+      <div class="space-y-4">
+        <div class="flex items-start gap-4 rounded-2xl p-4">
+          <div
+            class="w-10 h-10 rounded-xl bg-green-100 text-green-600 flex items-center justify-center"
+          >
+            <i class="fa-solid fa-right-to-bracket"></i>
+          </div>
+
+          <div>
+            <div class="font-medium">Successful Login</div>
+
+            <div class="text-sm text-slate-500">
+              Windows 11 • Chrome • Today 09:42 AM
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 rounded-2xl p-4">
+          <div
+            class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center"
+          >
+            <i class="fa-solid fa-key"></i>
+          </div>
+
+          <div>
+            <div class="font-medium">Password Updated</div>
+
+            <div class="text-sm text-slate-500">May 28, 2026 • 03:15 PM</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

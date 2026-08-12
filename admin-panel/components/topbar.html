@@ -1,0 +1,57 @@
+<header class="sticky top-0 z-40 h-20 bg-white/90 backdrop-blur-xl border-b border-slate-200">
+  <div class="h-full px-6 lg:px-8 flex items-center gap-6">
+    <button id="mobile-menu-button"
+      class="lg:hidden w-11 h-11 rounded-xl border border-slate-200 flex items-center justify-center">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="min-w-0">
+      <h1 id="adminPageTitle" class="text-xl font-semibold truncate">
+        Dashboard
+      </h1>
+    </div>
+
+    <div class="hidden xl:flex flex-1 max-w-lg ml-6">
+      <div class="w-full h-11 rounded-xl border border-slate-200 bg-slate-50 flex items-center px-4">
+        <i class="fa-solid fa-magnifying-glass text-slate-400"></i>
+
+        <input id="global-search" type="text" placeholder="Search..."
+          class="flex-1 px-3 bg-transparent outline-none text-sm" />
+      </div>
+    </div>
+
+    <div class="ml-auto relative">
+      <button id="adminUserButton"
+        class="w-11 h-11 rounded-xl border border-slate-200 overflow-hidden hover:bg-slate-50">
+        <img src="https://i.pravatar.cc/100?img=12" class="w-full h-full object-cover" />
+      </button>
+
+      <div id="adminUserPanel"
+        class="hidden absolute right-0 top-14 w-64 bg-white rounded-2xl border border-slate-200 shadow-xl overflow-hidden">
+        <div class="p-5 border-b">
+          <div class="font-semibold">
+            Administrator
+          </div>
+
+          <div class="text-sm text-slate-500">
+            admin@bomo.world
+          </div>
+        </div>
+
+        <div class="p-2">
+          <a href="#" data-admin-global-action="account" class="dropdown-item">
+            <i class="fa-solid fa-user"></i>
+            Account
+          </a>
+
+          <hr class="my-2" />
+
+          <a href="#" data-admin-global-action="sign-out" class="dropdown-item text-red-600">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Sign Out
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

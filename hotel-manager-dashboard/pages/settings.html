@@ -1,0 +1,86 @@
+<section class="p-4 lg:p-8 space-y-8">
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+  <div
+    class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4"
+  >
+    <div>
+      <h2 class="text-3xl font-black text-slate-900">Settings</h2>
+
+      <p class="text-slate-500 mt-2">
+        Configure properties, users, notifications, integrations and system
+        preferences
+      </p>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       SETTINGS GRID
+  ====================================================== -->
+  <div class="grid xl:grid-cols-4 gap-6">
+    <!-- LEFT MENU -->
+    <div class="p-4">
+      <button
+        class="settings-tab text-leftw-full flex gap-3 px-4 py-3 rounded-2xl bg-orange-500 text-white font-medium"
+        data-tab="profile"
+      >
+        <i class="fa-solid fa-user"></i>
+        Profile
+      </button>
+
+      <button
+        class="settings-tab text-leftw-full flex gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 mt-2"
+        data-tab="verification"
+      >
+        <i class="fa-solid fa-check-circle"></i>
+        Verification
+      </button>
+
+      <button
+        class="settings-tab text-leftw-full flex gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 mt-2"
+        data-tab="bank-accounts"
+      >
+        <i class="fa-solid fa-building-columns"></i>
+        Bank Accounts
+      </button>
+
+      <button
+        class="settings-tab text-leftw-full flex gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 mt-2"
+        data-tab="user-roles"
+      >
+        <i class="fa-solid fa-users"></i>User & Access Control
+      </button>
+
+      <button
+        class="settings-tab text-leftw-full flex gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 mt-2"
+        data-tab="notifications"
+      >
+        <i class="fa-solid fa-bell"></i>
+        Notifications
+      </button>
+
+      <button
+        class="settings-tab text-leftw-full flex gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 mt-2"
+        data-tab="integrations"
+      >
+        <i class="fa-solid fa-plug"></i>
+        Channel Integrations
+      </button>
+
+      <button
+        class="settings-tab text-leftw-full flex gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 mt-2"
+        data-tab="security"
+      >
+        <i class="fa-solid fa-shield-halved"></i>
+        Security & Login
+      </button>
+    </div>
+    <!-- CONTENT -->
+    <div class="xl:col-span-3 space-y-6">
+      <div id="settingsContent" class="rounded-[30px] min-h-[600px]">
+        <div class="p-8 text-center text-slate-500">Loading...</div>
+      </div>
+    </div>
+  </div>
+</section>

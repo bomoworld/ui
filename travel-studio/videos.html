@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Video Reviews | BOMO Travel Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-bomo-deep: #0b2a6f;
+        --color-bomo-blue: #2563eb;
+        --color-bomo-orange: #f58220;
+        --color-bomo-soft: #f8fafc;
+        --color-bomo-dark: #0f172a;
+        --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+      }
+    </style>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/custom.css" />
+  </head>
+  <body
+    class="min-h-screen bg-slate-50 text-slate-950 antialiased dark:bg-slate-950 dark:text-white"
+    data-page="videos"
+  >
+    <div class="app min-h-screen">
+      <aside class="sidebar">
+        <div class="studio-title">Travel Studio</div>
+        <nav>
+          <a data-page="overview" href="index.html">Overview</a>
+          <a data-page="videos" href="videos.html"
+            >Video Reviews <span class="badge">24</span></a
+          >
+          <a data-page="upload" href="upload.html">Upload Video</a>
+          <a data-page="analytics" href="analytics.html">Analytics</a>
+          <a data-page="earnings" href="earnings.html">Earnings</a>
+          <a data-page="credits" href="credits.html"
+            >Review Credits <span class="badge orange">2</span></a
+          >
+          <a data-page="public-profile" href="public-profile.html"
+            >Public Profile</a
+          >
+        </nav>
+        <div class="sidebar-bottom">
+          <a data-page="help" href="help-center.html">Help Center</a>
+          <a data-page="contact" href="contact-support.html">Contact Support</a>
+          <a data-page="settings" href="settings.html">Settings</a>
+        </div>
+      </aside>
+      <main class="main min-w-0">
+        <header class="topbar backdrop-blur-xl">
+          <div>
+            <div class="eyebrow">BOMO Travel Studio</div>
+            <h1 id="pageTitle"></h1>
+          </div>
+          <div class="top-actions">
+            <button
+              class="theme-toggle"
+              id="themeToggle"
+              title="Toggle dark mode"
+            >
+              ◐
+            </button>
+            <button class="icon-btn" data-modal-open="notificationsModal">
+              🔔<span class="notify">3</span>
+            </button>
+            <div class="profile dropdown-wrap">
+              <button class="profile-btn" id="profileMenuBtn">
+                <div class="avatar">JD</div>
+                <div><b>Juan Dela Cruz</b><small>Creator</small></div>
+                <span>⌄</span>
+              </button>
+              <div class="dropdown" id="profileMenu">
+                <a href="profile-settings.html">Profile Settings</a>
+                <a href="public-profile.html">View Public Profile</a>
+                <a href="settings.html">Settings</a>
+                <button>Log Out</button>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="content mx-auto w-full">
+          <section class="panel transition-shadow hover:shadow-md">
+            <div class="panel-head">
+              <div>
+                <h2>Video Library</h2>
+                <p>
+                  Preview submissions, track system approval, and manage published reviews.
+                </p>
+              </div>
+              <button
+                type="button"
+                class="primary transition hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
+                data-go-upload
+              >
+                + Upload Video
+              </button>
+            </div>
+            <div class="moderation-note">
+              <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+              <div><strong>System approval workflow</strong><br />New video reviews stay private while BOMO checks authenticity, safety, and content guidelines. Only approved videos become public and earn rewards.</div>
+            </div>
+            <div class="tabs" data-video-tabs>
+              <button type="button" class="active" data-video-filter="all">All <span data-video-count="all">24</span></button
+              ><button type="button" data-video-filter="approved">Approved <span data-video-count="approved">21</span></button
+              ><button type="button" data-video-filter="pending">Pending approval <span data-video-count="pending">3</span></button
+              ><button type="button" data-video-filter="draft">Drafts <span data-video-count="draft">0</span></button
+              ><button type="button" data-video-filter="attention">Needs attention <span data-video-count="attention">0</span></button>
+            </div>
+            <div class="toolbar">
+              <input
+                id="videoSearch"
+                type="search"
+                placeholder="Search video reviews..."
+              /><select data-video-status-filter aria-label="Filter by approval status">
+                <option value="all">All status</option>
+                <option value="approved">Approved</option>
+                <option value="pending">Pending system approval</option>
+                <option value="draft">Draft</option>
+                <option value="attention">Needs attention</option></select
+              ><select data-video-sort aria-label="Sort video reviews">
+                <option value="newest">Newest first</option>
+                <option value="views">Most viewed</option>
+                <option value="earnings">Highest earnings</option></select
+              ><button
+                type="button"
+                class="secondary transition hover:bg-slate-50 dark:hover:bg-slate-800"
+                data-go-upload
+              >
+                New submission
+              </button>
+            </div>
+            <div id="videoList">
+              <div
+                class="video-card searchable"
+                data-title="el nido resorts, lagen island"
+              >
+                <div class="thumb t1">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">06:45</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >El Nido Resorts, Lagen Island</a
+                    >
+                  </h3>
+                  <div class="stars">★★★★★</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>12,540</b></div>
+                <div class="metric"><small>Earnings</small><b>₱1,254</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div class="video-card searchable" data-title="seda lio, el nido">
+                <div class="thumb t2">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">04:32</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >Seda Lio, El Nido</a
+                    >
+                  </h3>
+                  <div class="stars">★★★★☆</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>8,420</b></div>
+                <div class="metric"><small>Earnings</small><b>₱842</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div class="video-card searchable" data-title="the lind boracay">
+                <div class="thumb t3">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">05:10</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >The Lind Boracay</a
+                    >
+                  </h3>
+                  <div class="stars">★★★★★</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>21,030</b></div>
+                <div class="metric"><small>Earnings</small><b>₱2,103</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div class="video-card searchable" data-title="quest hotel cebu">
+                <div class="thumb t4">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">03:58</span>
+                </div>
+                <div class="video-info">
+                  <span class="status review">Under Review</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >Quest Hotel Cebu</a
+                    >
+                  </h3>
+                  <div class="stars">★★★☆☆</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>—</b></div>
+                <div class="metric"><small>Earnings</small><b>—</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div
+                class="video-card searchable"
+                data-title="crimson resort & spa boracay"
+              >
+                <div class="thumb t5">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">07:12</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >Crimson Resort & Spa Boracay</a
+                    >
+                  </h3>
+                  <div class="stars">★★★★☆</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>6,904</b></div>
+                <div class="metric"><small>Earnings</small><b>₱690</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div
+                class="video-card searchable"
+                data-title="shangri-la mactan cebu"
+              >
+                <div class="thumb t6">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">05:48</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >Shangri-La Mactan Cebu</a
+                    >
+                  </h3>
+                  <div class="stars">★★★★★</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>15,201</b></div>
+                <div class="metric"><small>Earnings</small><b>₱1,520</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div
+                class="video-card searchable"
+                data-title="henann palm beach resort"
+              >
+                <div class="thumb t1">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">04:18</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >Henann Palm Beach Resort</a
+                    >
+                  </h3>
+                  <div class="stars">★★★★☆</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>4,882</b></div>
+                <div class="metric"><small>Earnings</small><b>₱488</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div
+                class="video-card searchable"
+                data-title="discovery shores boracay"
+              >
+                <div class="thumb t2">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">06:01</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >Discovery Shores Boracay</a
+                    >
+                  </h3>
+                  <div class="stars">★★★★★</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>9,721</b></div>
+                <div class="metric"><small>Earnings</small><b>₱972</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div
+                class="video-card searchable"
+                data-title="amorita resort bohol"
+              >
+                <div class="thumb t3">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">05:22</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >Amorita Resort Bohol</a
+                    >
+                  </h3>
+                  <div class="stars">★★★★★</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>7,308</b></div>
+                <div class="metric"><small>Earnings</small><b>₱731</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div class="video-card searchable" data-title="the manila hotel">
+                <div class="thumb t4">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">03:49</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >The Manila Hotel</a
+                    >
+                  </h3>
+                  <div class="stars">★★★★☆</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>3,411</b></div>
+                <div class="metric"><small>Earnings</small><b>₱341</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div class="video-card searchable" data-title="okada manila">
+                <div class="thumb t5">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">08:14</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal">Okada Manila</a>
+                  </h3>
+                  <div class="stars">★★★★★</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>18,950</b></div>
+                <div class="metric"><small>Earnings</small><b>₱1,895</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div
+                class="video-card searchable"
+                data-title="dusit thani manila"
+              >
+                <div class="thumb t6">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">04:40</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >Dusit Thani Manila</a
+                    >
+                  </h3>
+                  <div class="stars">★★★★☆</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>5,205</b></div>
+                <div class="metric"><small>Earnings</small><b>₱521</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div class="video-card searchable" data-title="amanpulo palawan">
+                <div class="thumb t1">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">09:08</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >Amanpulo Palawan</a
+                    >
+                  </h3>
+                  <div class="stars">★★★★★</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>32,402</b></div>
+                <div class="metric"><small>Earnings</small><b>₱3,240</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div
+                class="video-card searchable"
+                data-title="nay palad hideaway"
+              >
+                <div class="thumb t2">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">07:31</span>
+                </div>
+                <div class="video-info">
+                  <span class="status review">Under Review</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >Nay Palad Hideaway</a
+                    >
+                  </h3>
+                  <div class="stars">★★★★★</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>—</b></div>
+                <div class="metric"><small>Earnings</small><b>—</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div class="video-card searchable" data-title="bluewater panglao">
+                <div class="thumb t3">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">04:57</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >Bluewater Panglao</a
+                    >
+                  </h3>
+                  <div class="stars">★★★★☆</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>4,110</b></div>
+                <div class="metric"><small>Earnings</small><b>₱411</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div class="video-card searchable" data-title="bohol beach club">
+                <div class="thumb t4">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">05:39</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >Bohol Beach Club</a
+                    >
+                  </h3>
+                  <div class="stars">★★★★★</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>8,012</b></div>
+                <div class="metric"><small>Earnings</small><b>₱801</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div
+                class="video-card searchable"
+                data-title="sofitel philippine plaza"
+              >
+                <div class="thumb t5">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">06:22</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >Sofitel Philippine Plaza</a
+                    >
+                  </h3>
+                  <div class="stars">★★★★☆</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>11,300</b></div>
+                <div class="metric"><small>Earnings</small><b>₱1,130</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div class="video-card searchable" data-title="conrad manila">
+                <div class="thumb t6">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">05:44</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal">Conrad Manila</a>
+                  </h3>
+                  <div class="stars">★★★★★</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>14,702</b></div>
+                <div class="metric"><small>Earnings</small><b>₱1,470</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div class="video-card searchable" data-title="fairmont makati">
+                <div class="thumb t1">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">04:28</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal">Fairmont Makati</a>
+                  </h3>
+                  <div class="stars">★★★★★</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>9,405</b></div>
+                <div class="metric"><small>Earnings</small><b>₱941</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div
+                class="video-card searchable"
+                data-title="the peninsula manila"
+              >
+                <div class="thumb t2">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">06:33</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >The Peninsula Manila</a
+                    >
+                  </h3>
+                  <div class="stars">★★★★★</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>13,820</b></div>
+                <div class="metric"><small>Earnings</small><b>₱1,382</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div
+                class="video-card searchable"
+                data-title="plantation bay cebu"
+              >
+                <div class="thumb t3">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">05:17</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >Plantation Bay Cebu</a
+                    >
+                  </h3>
+                  <div class="stars">★★★★☆</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>7,104</b></div>
+                <div class="metric"><small>Earnings</small><b>₱710</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div
+                class="video-card searchable"
+                data-title="miniloc island resort"
+              >
+                <div class="thumb t4">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">07:05</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >Miniloc Island Resort</a
+                    >
+                  </h3>
+                  <div class="stars">★★★★★</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>16,090</b></div>
+                <div class="metric"><small>Earnings</small><b>₱1,609</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div class="video-card searchable" data-title="two seasons coron">
+                <div class="thumb t5">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">04:51</span>
+                </div>
+                <div class="video-info">
+                  <span class="status review">Under Review</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >Two Seasons Coron</a
+                    >
+                  </h3>
+                  <div class="stars">★★★★☆</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>—</b></div>
+                <div class="metric"><small>Earnings</small><b>—</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+              <div
+                class="video-card searchable"
+                data-title="club paradise palawan"
+              >
+                <div class="thumb t6">
+                  <span class="play" data-modal-open="videoModal">▶</span
+                  ><span class="duration">06:18</span>
+                </div>
+                <div class="video-info">
+                  <span class="status published">Published</span>
+                  <h3>
+                    <a href="#" data-modal-open="videoModal"
+                      >Club Paradise Palawan</a
+                    >
+                  </h3>
+                  <div class="stars">★★★★★</div>
+                  <p>
+                    Verified stay video review shared with the BOMO travel
+                    community.
+                  </p>
+                  <small>2026 · Verified completed stay</small>
+                </div>
+                <div class="metric"><small>Views</small><b>10,223</b></div>
+                <div class="metric"><small>Earnings</small><b>₱1,022</b></div>
+                <button class="more" data-modal-open="videoModal">•••</button>
+              </div>
+            </div>
+            <div class="pagination">
+              <button id="prevPage">‹ Previous</button>
+              <div id="pageNumbers"></div>
+              <button id="nextPage">Next ›</button><span id="pageInfo"></span>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="assets/app.js"></script>
+    <div class="modal-backdrop" id="videoModal">
+      <div class="modal modal-lg">
+        <div class="modal-head">
+          <div>
+            <span class="eyebrow">VIDEO DETAILS</span>
+            <h2>El Nido Resorts, Lagen Island</h2>
+          </div>
+          <button class="modal-close" data-modal-close="videoModal">×</button>
+        </div>
+        <div class="modal-body">
+          <div class="video-preview">▶</div>
+          <div class="detail-grid">
+            <div><small>Status</small><b>Published</b></div>
+            <div><small>Views</small><b>12,540</b></div>
+            <div><small>Earnings</small><b>₱1,254</b></div>
+            <div><small>Rating</small><b>5.0 ★</b></div>
+          </div>
+        </div>
+        <div class="modal-foot">
+          <button class="danger">Delete</button><span class="spacer"></span
+          ><button
+            class="secondary transition hover:bg-slate-50 dark:hover:bg-slate-800"
+          >
+            Edit Details</button
+          ><button
+            class="primary transition hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
+          >
+            View Public Video
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-backdrop" id="notificationsModal">
+      <div class="modal">
+        <div class="modal-head">
+          <h2>Notifications</h2>
+          <button class="modal-close" data-modal-close="notificationsModal">
+            ×
+          </button>
+        </div>
+        <div class="notification-list">
+          <div>
+            <b>Your video was published</b>
+            <p>El Nido Resorts is now visible publicly.</p>
+          </div>
+          <div>
+            <b>New earnings added</b>
+            <p>₱324 was added from video performance.</p>
+          </div>
+          <div>
+            <b>Review Credit expiring</b>
+            <p>One credit expires on August 12, 2026.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="successModal">
+      <div class="modal">
+        <div class="modal-head">
+          <h2>Message Sent</h2>
+          <button class="modal-close" data-modal-close="successModal">×</button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Your support request has been submitted. A confirmation will be sent
+            to your email.
+          </p>
+        </div>
+        <div class="modal-foot">
+          <button
+            class="primary transition hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
+            data-modal-close="successModal"
+          >
+            Done
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-backdrop" id="savedModal">
+      <div class="modal">
+        <div class="modal-head">
+          <h2>Profile Updated</h2>
+          <button class="modal-close" data-modal-close="savedModal">×</button>
+        </div>
+        <div class="modal-body">
+          <p>Your profile changes have been saved.</p>
+        </div>
+        <div class="modal-foot">
+          <button
+            class="primary transition hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
+            data-modal-close="savedModal"
+          >
+            Done
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

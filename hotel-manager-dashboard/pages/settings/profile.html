@@ -1,0 +1,342 @@
+<div class="space-y-6">
+  <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div class="p-6 border-b border-slate-100">
+      <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
+        <div>
+          <h3 class="text-xl font-bold">Partner Account</h3>
+          <p class="text-sm text-slate-500 mt-1">
+            Manage your BOMO partner profile and verification information.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2" aria-label="Partner account status">
+          <a
+            href="./hotel-manager-dashboard.html?page=settings#verification"
+            class="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold hover:bg-emerald-100"
+            title="View verification details"
+          >
+            <i class="fa-solid fa-circle-check"></i>
+            Verified partner
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-6">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-2">
+            Partner Type
+          </p>
+          <div
+            id="partnerType"
+            data-partner-type="owner"
+            class="min-h-12 flex items-center gap-3 px-4 rounded-xl bg-slate-50 text-slate-800 font-semibold"
+          >
+            <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center">
+              <i class="fa-solid fa-user"></i>
+            </span>
+            Individual Partner
+          </div>
+        </div>
+
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-2">
+            VAT Registration
+          </p>
+          <div
+            id="vatStatus"
+            data-vat-status="non_vat"
+            class="min-h-12 flex items-center gap-3 px-4 rounded-xl bg-slate-50 text-slate-800 font-semibold"
+          >
+            <span class="w-8 h-8 rounded-lg bg-slate-200 text-slate-600 flex items-center justify-center">
+              <i class="fa-solid fa-receipt"></i>
+            </span>
+            Non-VAT registered
+          </div>
+        </div>
+
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-2">
+            Partner ID
+          </p>
+          <div class="min-h-12 flex items-center gap-3 px-4 rounded-xl bg-slate-50 text-slate-800 font-semibold">
+            <span class="w-8 h-8 rounded-lg bg-slate-200 text-slate-600 flex items-center justify-center">
+              <i class="fa-solid fa-id-card"></i>
+            </span>
+            BOMO-PRT-000001
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+      <div class="p-6 border-b border-slate-100">
+        <h3 class="text-xl font-bold">Verification Information</h3>
+      </div>
+
+      <div class="p-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium mb-2">
+              Full Legal Name
+            </label>
+            <input
+              type="text"
+              class="w-full h-12 px-4 rounded-xl border border-slate-200"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-2">
+              Email Address
+            </label>
+            <input
+              type="email"
+              class="w-full h-12 px-4 rounded-xl border border-slate-200"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-2">
+              Mobile Number
+            </label>
+            <input
+              type="text"
+              class="w-full h-12 px-4 rounded-xl border border-slate-200"
+            />
+          </div>
+
+          <div id="tinField">
+            <label class="block text-sm font-medium mb-2"> TIN </label>
+            <input
+              type="text"
+              class="w-full h-12 px-4 rounded-xl border border-slate-200"
+            />
+          </div>
+
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium mb-2"> Address </label>
+
+            <textarea
+              rows="4"
+              class="w-full p-4 rounded-xl border border-slate-200"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="businessSection"
+      class="bg-white rounded-[30px] shadow-sm overflow-hidden hidden"
+    >
+      <div class="p-6 border-b border-slate-100">
+        <h3 class="text-xl font-bold">Business Information</h3>
+      </div>
+
+      <div class="p-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium mb-2">
+              Registered Business Name
+            </label>
+            <input
+              type="text"
+              class="w-full h-12 px-4 rounded-xl border border-slate-200"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-2"> Trade Name </label>
+            <input
+              type="text"
+              class="w-full h-12 px-4 rounded-xl border border-slate-200"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-2">
+              SEC / DTI Registration
+            </label>
+            <input
+              type="text"
+              class="w-full h-12 px-4 rounded-xl border border-slate-200"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-2">
+              BIR Registration
+            </label>
+            <input
+              type="text"
+              class="w-full h-12 px-4 rounded-xl border border-slate-200"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-2">
+              Business Permit
+            </label>
+            <input
+              type="text"
+              class="w-full h-12 px-4 rounded-xl border border-slate-200"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="representativeSection"
+      class="bg-white rounded-[30px] shadow-sm overflow-hidden hidden"
+    >
+      <div class="p-6 border-b border-slate-100">
+        <h3 class="text-xl font-bold">Authorized Representative</h3>
+      </div>
+
+      <div class="p-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium mb-2">
+              Representative Name
+            </label>
+
+            <input
+              type="text"
+              class="w-full h-12 px-4 rounded-xl border border-slate-200"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-2">
+              Position / Designation
+            </label>
+
+            <input
+              type="text"
+              class="w-full h-12 px-4 rounded-xl border border-slate-200"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+
+    <!-- PRIMARY CONTACT -->
+    <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+      <div class="p-6 border-b border-slate-100">
+        <h3 class="text-xl font-bold">Primary Contact Person</h3>
+
+        <p class="text-sm text-slate-500 mt-1">
+          Main contact for bookings, support, and account matters.
+        </p>
+      </div>
+
+      <div class="p-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium mb-2"> First Name </label>
+
+            <input
+              type="text"
+              class="w-full h-12 px-4 rounded-xl border border-slate-200"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-2"> Last Name </label>
+
+            <input
+              type="text"
+              class="w-full h-12 px-4 rounded-xl border border-slate-200"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-2">
+              Position / Designation
+            </label>
+
+            <input
+              type="text"
+              placeholder="General Manager"
+              class="w-full h-12 px-4 rounded-xl border border-slate-200"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-2">
+              Mobile Number
+            </label>
+
+            <input
+              type="text"
+              placeholder="+63 917 123 4567"
+              class="w-full h-12 px-4 rounded-xl border border-slate-200"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRANDING -->
+    <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+      <div class="p-6 border-b border-slate-100">
+        <h3 class="text-xl font-bold">Branding</h3>
+
+        <p class="text-sm text-slate-500 mt-1">
+          Upload your logo and cover image.
+        </p>
+      </div>
+
+      <div class="p-6">
+        <div class="grid md:grid-cols-2 gap-6 pb-10">
+          <div>
+            <label class="block text-sm font-medium mb-3"> Company Logo </label>
+
+            <label
+              class="block border-2 border-dashed border-slate-300 rounded-2xl p-10 text-center cursor-pointer hover:bg-slate-50"
+            >
+              <input type="file" class="hidden" />
+
+              <div
+                class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-slate-100 flex items-center justify-center"
+              >
+                <i
+                  class="fa-solid fa-cloud-arrow-up text-2xl text-slate-500"
+                ></i>
+              </div>
+
+              <p class="font-medium text-slate-700">Upload Logo</p>
+
+              <p class="text-sm text-slate-500 mt-1">PNG, JPG, WEBP</p>
+            </label>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-3"> Cover Image </label>
+
+            <label
+              class="block border-2 border-dashed border-slate-300 rounded-2xl p-10 text-center cursor-pointer hover:bg-slate-50"
+            >
+              <input type="file" class="hidden" />
+
+              <div
+                class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-slate-100 flex items-center justify-center"
+              >
+                <i class="fa-solid fa-image text-2xl text-slate-500"></i>
+              </div>
+
+              <p class="font-medium text-slate-700">Upload Cover Image</p>
+
+              <p class="text-sm text-slate-500 mt-1">Recommended 1600 × 600</p>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

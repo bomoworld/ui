@@ -1,0 +1,215 @@
+/* ==========================================
+   BOMO Booking Simulator - Compact Mode
+========================================== */
+
+html {
+  font-size: 14px;
+}
+
+body {
+  background: #f8fafc;
+}
+
+/* Layout */
+
+.space-y-6 > * + * {
+  margin-top: 1rem !important;
+}
+
+.gap-6 {
+  gap: 1rem !important;
+}
+
+.gap-4 {
+  gap: 0.75rem !important;
+}
+
+.gap-3 {
+  gap: 0.5rem !important;
+}
+
+/* Cards */
+
+.rounded-xl {
+  border-radius: 10px;
+}
+
+.shadow-sm {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* Card Header */
+
+.border-b {
+}
+
+.px-6.py-4 {
+  padding: 0.75rem 1rem !important;
+}
+
+.p-6 {
+  padding: 1rem !important;
+}
+
+/* Headings */
+
+h1 {
+  font-size: 1.35rem !important;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1rem !important;
+  line-height: 1.2;
+}
+
+/* Forms */
+
+label {
+  margin-bottom: 0.25rem !important;
+  font-size: 0.78rem;
+}
+
+input,
+select,
+textarea {
+  height: 34px;
+
+  min-height: 34px;
+
+  padding: 0.25rem 0.6rem !important;
+
+  font-size: 0.82rem;
+}
+
+input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+}
+
+/* Tables */
+
+table {
+  font-size: 0.82rem;
+}
+
+table th {
+  padding: 0.45rem 0.55rem !important;
+
+  font-size: 0.74rem;
+
+  white-space: nowrap;
+}
+
+table td {
+  padding: 0.35rem 0.45rem !important;
+
+  vertical-align: middle;
+}
+
+tbody tr:hover {
+  background: #fafafa;
+}
+
+/* Buttons */
+
+button {
+  min-height: 34px;
+
+  padding: 0.35rem 0.75rem !important;
+
+  font-size: 0.82rem;
+}
+
+/* Statistic Cards */
+
+#roomTypes,
+#totalRooms,
+#roomNights,
+#totalGuests {
+  font-size: 1.7rem !important;
+}
+
+#avgRoomRate,
+#avgNightRate {
+  font-size: 1.1rem !important;
+}
+
+.rounded-lg {
+  border-radius: 8px;
+}
+
+/* Summary Tables */
+
+#subtotal,
+#overrideAmount,
+#effectiveBooking,
+#promotionAmount,
+#promoCodeAmount,
+#creditAmount,
+#netBooking,
+#vatAmount,
+#platformAmount,
+#paymentGatewayAmount {
+  font-weight: 600;
+}
+
+tbody td.py-3 {
+  padding-top: 0.45rem !important;
+
+  padding-bottom: 0.45rem !important;
+}
+
+/* Pricing Engine */
+
+#activeOverrides,
+#activePromotions,
+#activePromoCodes,
+#creditsUsed,
+#vatMode,
+#feePercent,
+#paymentGatewayPercent {
+  font-size: 0.9rem;
+}
+
+/* Amount Payable */
+
+#grandTotal {
+  font-size: 2.6rem !important;
+
+  line-height: 1;
+}
+
+.text-5xl {
+  font-size: 2.6rem !important;
+}
+
+.tracking-widest {
+  letter-spacing: 0.08em;
+}
+
+.border-t {
+  margin-top: 0.75rem !important;
+
+  padding-top: 0.75rem !important;
+}
+
+/* Sticky Panel */
+
+.sticky {
+  top: 0.75rem !important;
+}
+
+/* Multi Select */
+
+select[multiple] {
+  min-height: 70px;
+
+  height: 70px;
+}
+
+/* Compact Statistics */
+
+.bg-slate-50.p-4 {
+  padding: 0.75rem !important;
+}

@@ -1,0 +1,54 @@
+Part,Information Center Page,Title,Section
+Part 1,index.html,Information Center,home
+Part 1,about.html,About BOMO,general
+Part 1,help-center.html,Help Center,general
+Part 1,contact-support.html,Contact Support,general
+Part 1,trust.html,Trust on BOMO,general
+Part 1,security.html,Security & Account Safety,general
+Part 1,legal.html,Legal & Policies,general
+Part 1,terms.html,Terms of Service,general
+Part 1,privacy.html,Privacy Policy,general
+Part 1,cookie-policy.html,Cookie Policy,general
+Part 1,accessibility.html,Accessibility,general
+Part 1,cancellation-policy.html,Cancellations & Refunds,general
+Part 1,report-concern.html,Report a Concern,general
+Part 1,property-partner-program.html,Property Partner Program,general
+Part 1,blog.html,BOMO Stories & Updates,general
+Part 2,travellers/index.html,Traveler Tutorials,traveler
+Part 2,travellers/getting-started.html,Getting Started as a Traveler,traveler
+Part 2,travellers/search-properties.html,How to Search for Properties,traveler
+Part 2,travellers/view-property.html,How to Review Property Details,traveler
+Part 2,travellers/book-a-stay.html,How to Book a Stay,traveler
+Part 2,travellers/manage-booking.html,How to Manage a Booking,traveler
+Part 2,travellers/cancel-booking.html,How to Cancel a Booking,traveler
+Part 2,travellers/messages.html,How to Use Messages,traveler
+Part 2,travellers/wishlist.html,How to Use Wishlist,traveler
+Part 2,travellers/video-reviews.html,How Video Reviews Work,traveler
+Part 2,travellers/upload-video-review.html,How to Upload a Video Review,traveler
+Part 2,travellers/rewards.html,How Rewards Work,traveler
+Part 2,travellers/profile-account.html,Manage Your Profile & Account,traveler
+Part 2,travellers/login-account-access.html,Login & Account Access,traveler
+Part 3,partners/index.html,Property Partner Tutorials,partner
+Part 3,partners/getting-started.html,Getting Started as a Property Partner,partner
+Part 3,partners/dashboard-overview.html,Partner Dashboard Overview,partner
+Part 3,partners/add-property.html,How to Add a Property,partner
+Part 3,partners/manage-properties.html,How to Manage Properties,partner
+Part 3,partners/add-room.html,How to Add Rooms,partner
+Part 3,partners/manage-rooms.html,How to Manage Rooms,partner
+Part 3,partners/room-rate-plans.html,How to Create Room Rate Plans,partner
+Part 3,partners/calendar.html,How to Use the Calendar,partner
+Part 3,partners/bookings.html,How to Manage Bookings,partner
+Part 3,partners/guests.html,How to Manage Guest Information,partner
+Part 3,partners/check-in-out.html,How to Manage Check-in & Check-out,partner
+Part 3,partners/revenue.html,How to Review Revenue,partner
+Part 3,partners/bank-details.html,How to Add Bank Details,partner
+Part 3,partners/payouts.html,How to Review Payouts,partner
+Part 3,partners/reports.html,How to Use Reports,partner
+Part 3,partners/promotions.html,How to Manage Promotions,partner
+Part 3,partners/reviews.html,How to Manage Reviews,partner
+Part 3,partners/messages.html,How to Use Partner Messages,partner
+Part 3,partners/users-access.html,Users & Access Control,partner
+Part 3,partners/settings.html,Partner Settings Guide,partner
+Part 3,partners/verification.html,How to Complete Verification,partner
+Part 3,partners/channel-integrations.html,Channel Integrations,partner
+Part 3,partners/security-login.html,Security & Login Settings,partner

@@ -1,0 +1,373 @@
+<div id="destination-hero-module"></div>
+
+<div id="destination-collections-module"></div>
+
+<section class="destinations-explore">
+  <div class="destinations-explore__inner">
+    <div class="destinations-explore__layout">
+      <div class="destinations-explore__main">
+        <!-- <div id="featured-destination-stories-module"></div>
+
+        <div id="popular-destinations-module"></div>
+
+        <div id="destination-highlights-module"></div>
+
+        <div id="things-to-do-module"></div>
+
+        <div id="traveler-stories-module"></div> -->
+
+        <div id="destination-events-module"></div>
+      </div>
+
+      <aside class="destinations-explore__aside">
+        <div id="featured-properties-sidebar-module"></div>
+        <!-- 
+        <div id="special-deals-module"></div>
+
+        <div id="travel-guide-sidebar-module"></div>
+
+        <div id="trending-destinations-sidebar-module"></div> -->
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div id="discover-next-module"></div>
+
+<!-- EVENT MODAL -->
+<div
+  id="eventModal"
+  class="fixed inset-0 z-[99999] hidden bg-black/80 backdrop-blur-md"
+>
+  <div class="destination-modal__viewport h-screen flex items-center justify-center p-4">
+    <div
+      class="destination-modal__panel relative bg-white w-full max-w-7xl h-[92vh] rounded-[32px] overflow-hidden shadow-2xl"
+    >
+      <button
+        id="closeEventModal"
+        class="absolute top-5 right-5 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center"
+      >
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+
+      <div class="destination-modal__layout grid lg:grid-cols-[1.6fr_0.9fr] h-full">
+        <!-- LEFT -->
+        <div class="destination-modal__media relative bg-slate-100">
+          <img id="eventModalImage" class="w-full h-full object-cover" />
+
+          <div
+            class="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+          >
+            <div
+              id="eventModalTag"
+              class="inline-flex px-4 py-2 rounded-full bg-white/20 backdrop-blur text-white text-xs font-semibold"
+            ></div>
+
+            <h2
+              id="eventModalTitle"
+              class="text-white text-5xl font-black mt-4"
+            ></h2>
+
+            <div class="flex flex-wrap gap-3 mt-4">
+              <span
+                id="eventModalDate"
+                class="px-4 py-2 rounded-xl bg-white/15 text-white text-sm"
+              ></span>
+
+              <span
+                id="eventModalLocation"
+                class="px-4 py-2 rounded-xl bg-white/15 text-white text-sm"
+              ></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="destination-modal__details flex flex-col bg-white">
+          <div class="flex items-center gap-3 p-5 border-b border-slate-200">
+            <div
+              class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-400 flex items-center justify-center text-white"
+            >
+              <i class="fa-solid fa-calendar-star"></i>
+            </div>
+
+            <div>
+              <div class="font-bold">BOMO Events & Experiences</div>
+
+              <div class="text-xs text-slate-500">
+                Festivals • Holidays • Seasonal Events
+              </div>
+            </div>
+          </div>
+
+          <div class="flex-1 overflow-y-auto p-6">
+            <p
+              id="eventModalDescription"
+              class="text-slate-600 leading-relaxed"
+            ></p>
+
+            <!-- HIGHLIGHTS -->
+            <div class="mt-8">
+              <div class="flex items-center gap-2 mb-4">
+                <i class="fa-solid fa-fireworks text-orange-500"></i>
+
+                <h3 class="font-bold">Event Highlights</h3>
+              </div>
+
+              <div
+                id="eventModalHighlights"
+                class="grid grid-cols-2 gap-3"
+              ></div>
+            </div>
+
+            <!-- HOTELS -->
+            <div class="mt-8">
+              <div class="flex items-center gap-2 mb-4">
+                <i class="fa-solid fa-hotel text-blue-600"></i>
+
+                <h3 class="font-bold">Recommended Places to Stay</h3>
+              </div>
+
+              <div id="eventModalHotels" class="space-y-3"></div>
+            </div>
+
+            <!-- TIP -->
+            <div
+              class="mt-8 p-5 rounded-2xl bg-orange-50 border border-orange-100"
+            >
+              <div class="font-semibold text-orange-700">Event Travel Tip</div>
+
+              <p class="text-sm text-orange-600 mt-2">
+                Properties and flights can sell out weeks before major festivals.
+                Reserve early and arrive a day before the celebration begins.
+              </p>
+            </div>
+
+            <!-- STATS -->
+            <div class="grid grid-cols-2 gap-3 mt-6">
+              <div class="rounded-2xl border border-slate-200 p-4">
+                <div class="text-xs text-slate-500">Event Date</div>
+
+                <div id="eventModalDateStat" class="font-semibold mt-1"></div>
+              </div>
+
+              <div class="rounded-2xl border border-slate-200 p-4">
+                <div class="text-xs text-slate-500">Location</div>
+
+                <div
+                  id="eventModalLocationStat"
+                  class="font-semibold mt-1 text-orange-600"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FOOTER -->
+          <div class="border-t border-slate-200 p-5 bg-white">
+            <div class="grid grid-cols-3 gap-3">
+              <button
+                id="prevEvent"
+                class="rounded-2xl border border-slate-300 px-4 py-3 hover:bg-slate-50"
+              >
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+
+              <button
+                id="randomEventModal"
+                class="rounded-2xl bg-orange-500 text-white px-4 py-3 hover:bg-orange-600"
+              >
+                <i class="fa-solid fa-shuffle"></i>
+              </button>
+
+              <button
+                id="nextEvent"
+                class="rounded-2xl border border-slate-300 px-4 py-3 hover:bg-slate-50"
+              >
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 mt-3">
+              <a
+                id="eventGuideLink"
+                href="#"
+                class="flex items-center justify-center px-4 py-2 h-11 rounded-[10px] bg-slate-900 text-white text-xs font-semibold hover:bg-slate-800"
+              >
+                View Event Guide
+              </a>
+
+              <a
+                id="eventStaysLink"
+                href="hotel-listings.html"
+                class="flex items-center justify-center rounded-2xl border border-slate-300 px-5 py-3 hover:bg-slate-50"
+              >
+                Find Nearby Properties
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div
+  id="destinationModal"
+  class="fixed inset-0 z-[99999] hidden bg-black/80 backdrop-blur-md"
+>
+  <div class="destination-modal__viewport h-screen flex items-center justify-center p-4">
+    <div
+      class="destination-modal__panel relative bg-white w-full max-w-7xl h-[92vh] rounded-[32px] overflow-hidden shadow-2xl"
+    >
+      <button
+        id="closeDestinationModal"
+        class="absolute top-5 right-5 z-50 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center"
+      >
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+
+      <div class="destination-modal__layout grid lg:grid-cols-[1.6fr_0.9fr] h-full">
+        <!-- LEFT -->
+        <div class="destination-modal__media relative bg-slate-100">
+          <img id="destinationModalImage" class="w-full h-full object-cover" />
+
+          <div
+            class="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+          >
+            <div
+              id="destinationModalTag"
+              class="inline-flex px-4 py-2 rounded-full bg-white/20 backdrop-blur text-white text-xs font-semibold"
+            ></div>
+
+            <h2
+              id="destinationModalTitle"
+              class="text-white text-5xl font-black mt-4"
+            ></h2>
+
+            <div class="flex gap-3 mt-4">
+              <span
+                id="destinationModalSeason"
+                class="px-3 py-2 rounded-xl bg-white/15 text-white text-sm"
+              ></span>
+
+              <span
+                id="destinationModalBudget"
+                class="px-3 py-2 rounded-xl bg-white/15 text-white text-sm"
+              ></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="destination-modal__details flex flex-col bg-white">
+          <!-- HEADER -->
+          <div class="flex items-center gap-3 p-5 border-b border-slate-200">
+            <div
+              class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-orange-300 flex items-center justify-center text-white"
+            >
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+
+            <div>
+              <div class="font-bold">BOMO Destinations</div>
+
+              <div class="text-xs text-slate-500">Travel Inspiration</div>
+            </div>
+          </div>
+
+          <!-- CONTENT -->
+          <div class="flex-1 overflow-y-auto p-6">
+            <p
+              id="destinationModalDescription"
+              class="text-slate-600 leading-relaxed"
+            ></p>
+
+            <!-- Attractions -->
+            <div class="mt-8">
+              <div class="flex items-center gap-2 mb-4">
+                <i class="fa-solid fa-compass text-orange-500"></i>
+
+                <h3 class="font-bold">Must Visit Attractions</h3>
+              </div>
+
+              <div
+                id="destinationModalSpots"
+                class="grid grid-cols-2 gap-3"
+              ></div>
+            </div>
+
+            <!-- Rooms -->
+            <div class="mt-8">
+              <div class="flex items-center gap-2 mb-4">
+                <i class="fa-solid fa-bed text-blue-600"></i>
+
+                <h3 class="font-bold">Suggested Stays</h3>
+              </div>
+
+              <div id="destinationModalRooms" class="space-y-3"></div>
+            </div>
+
+            <!-- Extra Travel Info -->
+            <div
+              class="mt-8 p-5 rounded-2xl bg-orange-50 border border-orange-100"
+            >
+              <div class="font-semibold text-orange-700">Travel Tip</div>
+
+              <p class="text-sm text-orange-600 mt-2">
+                Book accommodations at least 30 days in advance during peak
+                season to secure the best rates and room availability.
+              </p>
+            </div>
+          </div>
+
+          <!-- FOOTER -->
+          <div class="border-t border-slate-200 p-5 bg-white">
+            <div class="grid grid-cols-3 gap-3">
+              <button
+                id="prevDestination"
+                class="rounded-2xl border border-slate-300 px-4 py-3 hover:bg-slate-50"
+              >
+                <i class="fa-solid fa-chevron-left mr-2"></i>
+              </button>
+
+              <button
+                id="randomDestination"
+                class="rounded-2xl bg-orange-500 text-white px-4 py-3 hover:bg-orange-600"
+              >
+                <i class="fa-solid fa-shuffle mr-2"></i>
+              </button>
+
+              <button
+                id="nextDestination"
+                class="rounded-2xl border border-slate-300 px-4 py-3 hover:bg-slate-50"
+              >
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 mt-3">
+              <a
+                id="destinationExploreLink"
+                href="#"
+                class="flex items-center justify-center px-4 py-2 h-11 rounded-[10px] bg-slate-900 text-white border border-slate-800 text-xs font-semibold hover:bg-slate-800"
+              >
+                Explore Destination
+              </a>
+
+              <a
+                id="destinationRoomsLink"
+                href="hotel-listings.html"
+                class="flex items-center justify-center rounded-2xl border border-slate-300 px-5 py-3 hover:bg-slate-50"
+              >
+                Find Available Rooms
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

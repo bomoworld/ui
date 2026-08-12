@@ -1,0 +1,260 @@
+<div
+  id="modal-bank-details"
+  class="fixed inset-0 z-[9999] flex items-center justify-center p-4 lg:p-6"
+>
+  <div
+    class="absolute inset-0 bg-slate-950/70 backdrop-blur-sm"
+    onclick="closeModal('bank-details')"
+  ></div>
+
+  <div
+    class="relative w-full max-w-6xl max-h-[95vh] bg-slate-50 rounded-[36px] shadow-2xl overflow-hidden"
+  >
+    <!-- HEADER -->
+    <div
+      class="bg-white border-b border-slate-200 px-8 lg:px-10 py-6 flex items-center justify-between"
+    >
+      <div>
+        <h1 class="text-3xl font-bold text-slate-900">Bank Accounts</h1>
+
+        <p class="text-slate-500 mt-1">
+          Configure billing and payout bank accounts.
+        </p>
+      </div>
+
+      <button
+        onclick="closeModal('bank-details')"
+        class="w-12 h-12 rounded-2xl hover:bg-slate-100"
+      >
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+    </div>
+
+    <!-- BODY -->
+    <div class="overflow-y-auto max-h-[calc(90vh-160px)] p-6 lg:p-8">
+      <div class="space-y-8">
+        <!-- BILLING ACCOUNT -->
+        <div class="bg-white rounded-[32px] overflow-hidden">
+          <div class="p-8 border-b border-slate-100">
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <div
+                  class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 text-amber-600 text-sm font-semibold mb-4"
+                >
+                  <i class="fa-solid fa-file-invoice-dollar"></i>
+                  Billing Accounts
+                </div>
+
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">
+                  Payment Source
+                </h2>
+
+                <p class="text-slate-500">
+                  Used for BOMO subscription fees and charges.
+                </p>
+              </div>
+
+              <button
+                type="button"
+                class="inline-flex items-center gap-2 px-5 h-12 rounded-2xl bg-indigo-600 text-white font-semibold"
+              >
+                <i class="fa-solid fa-plus"></i>
+                Add Account
+              </button>
+            </div>
+          </div>
+
+          <div class="p-8">
+            <div class="rounded-[28px] p-6">
+              <div class="flex items-center justify-between mb-6">
+                <div>
+                  <h3 class="font-bold text-slate-900">Billing Account #1</h3>
+
+                  <p class="text-sm text-slate-500">Default Billing Account</p>
+                </div>
+
+                <span
+                  class="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-semibold"
+                >
+                  Default
+                </span>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-semibold mb-2">
+                    Bank Name
+                  </label>
+
+                  <input
+                    type="text"
+                    placeholder="BDO"
+                    class="w-full h-14 px-5 border border-slate-300 rounded-2xl"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-semibold mb-2">
+                    Account Name
+                  </label>
+
+                  <input
+                    type="text"
+                    placeholder="Juan Dela Cruz"
+                    class="w-full h-14 px-5 border border-slate-300 rounded-2xl"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-semibold mb-2">
+                    Account Number
+                  </label>
+
+                  <input
+                    type="text"
+                    placeholder="1234567890"
+                    class="w-full h-14 px-5 border border-slate-300 rounded-2xl"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-semibold mb-2">
+                    Account Type
+                  </label>
+
+                  <select
+                    class="w-full h-14 px-5 border border-slate-300 rounded-2xl"
+                  >
+                    <option>Savings</option>
+                    <option>Checking</option>
+                    <option>Business</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAYOUT ACCOUNT -->
+        <div class="bg-white rounded-[32px] overflow-hidden">
+          <div class="p-8 border-b border-slate-100">
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <div
+                  class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 text-green-600 text-sm font-semibold mb-4"
+                >
+                  <i class="fa-solid fa-building-columns"></i>
+                  Payout Accounts
+                </div>
+
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">
+                  Booking Earnings
+                </h2>
+
+                <p class="text-slate-500">
+                  Receive booking payouts and settlements.
+                </p>
+              </div>
+
+              <button
+                type="button"
+                class="inline-flex items-center gap-2 px-5 h-12 rounded-2xl bg-indigo-600 text-white font-semibold"
+              >
+                <i class="fa-solid fa-plus"></i>
+                Add Account
+              </button>
+            </div>
+          </div>
+
+          <div class="p-8">
+            <div class="rounded-[28px] p-6">
+              <div class="flex items-center justify-between mb-6">
+                <div>
+                  <h3 class="font-bold text-slate-900">Payout Account #1</h3>
+
+                  <p class="text-sm text-slate-500">Default Payout Account</p>
+                </div>
+
+                <span
+                  class="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-semibold"
+                >
+                  Default
+                </span>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-semibold mb-2">
+                    Bank Name
+                  </label>
+
+                  <input
+                    type="text"
+                    placeholder="BPI"
+                    class="w-full h-14 px-5 border border-slate-300 rounded-2xl"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-semibold mb-2">
+                    Account Name
+                  </label>
+
+                  <input
+                    type="text"
+                    placeholder="Juan Dela Cruz"
+                    class="w-full h-14 px-5 border border-slate-300 rounded-2xl"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-semibold mb-2">
+                    Account Number
+                  </label>
+
+                  <input
+                    type="text"
+                    placeholder="1234567890"
+                    class="w-full h-14 px-5 border border-slate-300 rounded-2xl"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-semibold mb-2">
+                    Account Type
+                  </label>
+
+                  <select
+                    class="w-full h-14 px-5 border border-slate-300 rounded-2xl"
+                  >
+                    <option>Savings</option>
+                    <option>Checking</option>
+                    <option>Business</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div
+      class="bg-white border-t border-slate-200 px-8 lg:px-10 py-5 flex justify-end gap-3"
+    >
+      <button
+        onclick="closeModal('bank-details')"
+        class="px-6 h-12 rounded-2xl border border-slate-300"
+      >
+        Cancel
+      </button>
+
+      <button
+        class="px-8 h-12 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold"
+      >
+        Save Accounts
+      </button>
+    </div>
+  </div>
+</div>

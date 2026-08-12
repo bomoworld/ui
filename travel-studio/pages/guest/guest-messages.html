@@ -1,0 +1,339 @@
+<section class="messages-page" data-guest-page="messages">
+  <header class="messages-page-head">
+    <div>
+      <span class="eyebrow">TRAVEL INBOX</span>
+      <h1>Messages</h1>
+      <p>
+        Keep booking questions, arrival details, and property updates in one
+        place.
+      </p>
+    </div>
+
+    <div class="messages-summary" aria-label="Inbox summary">
+      <span>
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+        <b data-message-unread-total>3</b> unread
+      </span>
+      <span>
+        <i class="fa-regular fa-comments" aria-hidden="true"></i>
+        <b data-message-total>5</b> conversations
+      </span>
+    </div>
+  </header>
+
+  <section class="messages-inbox" aria-labelledby="messagesInboxTitle">
+    <div class="messages-toolbar">
+      <label class="messages-search">
+        <span class="sr-only">Search conversations</span>
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input
+          type="search"
+          data-message-search
+          placeholder="Search property, booking, or message"
+          autocomplete="off"
+        />
+        <button
+          type="button"
+          data-message-clear-search
+          aria-label="Clear conversation search"
+          title="Clear search"
+          hidden
+        >
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </label>
+
+      <div class="messages-filters" role="group" aria-label="Filter conversations">
+        <button
+          type="button"
+          class="active"
+          data-message-filter="all"
+          aria-pressed="true"
+        >
+          All
+        </button>
+        <button
+          type="button"
+          data-message-filter="unread"
+          aria-pressed="false"
+        >
+          Unread
+        </button>
+        <button
+          type="button"
+          data-message-filter="bookings"
+          aria-pressed="false"
+        >
+          Bookings
+        </button>
+        <button
+          type="button"
+          data-message-filter="inquiries"
+          aria-pressed="false"
+        >
+          Inquiries
+        </button>
+      </div>
+    </div>
+
+    <div class="messages-list-head">
+      <div>
+        <h2 id="messagesInboxTitle">Conversations</h2>
+        <p data-message-results aria-live="polite">5 conversations</p>
+      </div>
+      <span class="messages-secure-note">
+        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+        Booking-linked messages
+      </span>
+    </div>
+
+    <div class="conversation-list" data-message-list-root>
+      <a
+        href="?pgid=message-thread&thread_id=1"
+        data-page="message-thread"
+        data-message-thread
+        data-message-thread-id="1"
+        data-message-type="booking"
+        data-message-unread="2"
+        class="conversation-row unread"
+        aria-label="Open conversation with BOMO Beach Resort, 2 unread messages"
+      >
+        <span class="conversation-avatar">
+          <img
+            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400"
+            alt="BOMO Beach Resort"
+          />
+          <span class="online-dot" title="Property is online"></span>
+        </span>
+
+        <span class="conversation-main">
+          <span class="conversation-title-row">
+            <span class="conversation-title">
+              <strong>BOMO Beach Resort</strong>
+              <i
+                class="fa-solid fa-circle-check"
+                aria-label="Verified property"
+                title="Verified property"
+              ></i>
+            </span>
+            <time datetime="2026-07-30T10:45:00+08:00">10:45 AM</time>
+          </span>
+
+          <span class="conversation-context">
+            <span class="conversation-status confirmed">Confirmed stay</span>
+            <span>Booking #BMO-2026-10001</span>
+          </span>
+
+          <span class="conversation-preview">
+            Your room is ready for check-in. Please proceed to reception upon
+            arrival.
+          </span>
+        </span>
+
+        <span class="conversation-trailing">
+          <span class="conversation-unread-count" aria-hidden="true">2</span>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </span>
+      </a>
+
+      <a
+        href="?pgid=message-thread&thread_id=2"
+        data-page="message-thread"
+        data-message-thread
+        data-message-thread-id="2"
+        data-message-type="booking"
+        data-message-unread="1"
+        class="conversation-row unread"
+        aria-label="Open conversation with Palm Grove Hotel, 1 unread message"
+      >
+        <span class="conversation-avatar">
+          <img
+            src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400"
+            alt="Palm Grove Hotel"
+          />
+        </span>
+
+        <span class="conversation-main">
+          <span class="conversation-title-row">
+            <span class="conversation-title">
+              <strong>Palm Grove Hotel</strong>
+              <i
+                class="fa-solid fa-circle-check"
+                aria-label="Verified property"
+                title="Verified property"
+              ></i>
+            </span>
+            <time datetime="2026-07-30T09:10:00+08:00">9:10 AM</time>
+          </span>
+
+          <span class="conversation-context">
+            <span class="conversation-status upcoming">Upcoming stay</span>
+            <span>Booking #BMO-2026-10112</span>
+          </span>
+
+          <span class="conversation-preview">
+            We can arrange your airport transfer. Please confirm your arrival
+            time.
+          </span>
+        </span>
+
+        <span class="conversation-trailing">
+          <span class="conversation-unread-count" aria-hidden="true">1</span>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </span>
+      </a>
+
+      <a
+        href="?pgid=message-thread&thread_id=3"
+        data-page="message-thread"
+        data-message-thread
+        data-message-thread-id="3"
+        data-message-type="completed"
+        data-message-unread="0"
+        class="conversation-row"
+        aria-label="Open conversation with Skyline Suites"
+      >
+        <span class="conversation-avatar">
+          <img
+            src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400"
+            alt="Skyline Suites"
+          />
+        </span>
+
+        <span class="conversation-main">
+          <span class="conversation-title-row">
+            <span class="conversation-title">
+              <strong>Skyline Suites</strong>
+              <i
+                class="fa-solid fa-circle-check"
+                aria-label="Verified property"
+                title="Verified property"
+              ></i>
+            </span>
+            <time datetime="2026-07-29">Yesterday</time>
+          </span>
+
+          <span class="conversation-context">
+            <span class="conversation-status completed">Completed stay</span>
+            <span>Booking #BMO-2026-09901</span>
+          </span>
+
+          <span class="conversation-preview">
+            Thank you for staying with us. Your review credit is now available.
+          </span>
+        </span>
+
+        <span class="conversation-trailing">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </span>
+      </a>
+
+      <a
+        href="?pgid=message-thread&thread_id=4"
+        data-page="message-thread"
+        data-message-thread
+        data-message-thread-id="4"
+        data-message-type="inquiry"
+        data-message-unread="0"
+        class="conversation-row"
+        aria-label="Open conversation with Ocean View Villas"
+      >
+        <span class="conversation-avatar">
+          <img
+            src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400"
+            alt="Ocean View Villas"
+          />
+        </span>
+
+        <span class="conversation-main">
+          <span class="conversation-title-row">
+            <span class="conversation-title">
+              <strong>Ocean View Villas</strong>
+              <i
+                class="fa-solid fa-circle-check"
+                aria-label="Verified property"
+                title="Verified property"
+              ></i>
+            </span>
+            <time datetime="2026-06-10">Jun 10</time>
+          </span>
+
+          <span class="conversation-context">
+            <span class="conversation-status inquiry">Booking inquiry</span>
+            <span>Boracay, Philippines</span>
+          </span>
+
+          <span class="conversation-preview">
+            Our available villa rates start at ₱6,500 per night for your dates.
+          </span>
+        </span>
+
+        <span class="conversation-trailing">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </span>
+      </a>
+
+      <a
+        href="?pgid=message-thread&thread_id=5"
+        data-page="message-thread"
+        data-message-thread
+        data-message-thread-id="5"
+        data-message-type="inquiry"
+        data-message-unread="0"
+        class="conversation-row"
+        aria-label="Open conversation with Mountain Escape Resort"
+      >
+        <span class="conversation-avatar">
+          <img
+            src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=400"
+            alt="Mountain Escape Resort"
+          />
+        </span>
+
+        <span class="conversation-main">
+          <span class="conversation-title-row">
+            <span class="conversation-title">
+              <strong>Mountain Escape Resort</strong>
+              <i
+                class="fa-solid fa-circle-check"
+                aria-label="Verified property"
+                title="Verified property"
+              ></i>
+            </span>
+            <time datetime="2026-06-08">Jun 08</time>
+          </span>
+
+          <span class="conversation-context">
+            <span class="conversation-status inquiry">Booking inquiry</span>
+            <span>Tagaytay, Philippines</span>
+          </span>
+
+          <span class="conversation-preview">
+            We received your request and will confirm weekend availability
+            shortly.
+          </span>
+        </span>
+
+        <span class="conversation-trailing">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </span>
+      </a>
+
+      <div class="messages-empty" data-message-empty hidden>
+        <span>
+          <i class="fa-regular fa-message" aria-hidden="true"></i>
+        </span>
+        <h3>No conversations found</h3>
+        <p>Try a different search or reset the inbox filters.</p>
+        <button type="button" class="secondary" data-message-reset-filters>
+          Reset filters
+        </button>
+      </div>
+    </div>
+
+    <footer class="messages-inbox-foot">
+      <i class="fa-solid fa-lock" aria-hidden="true"></i>
+      Keep payment and booking conversations inside BOMO for your protection.
+    </footer>
+  </section>
+</section>

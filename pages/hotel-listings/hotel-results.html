@@ -1,0 +1,292 @@
+<section class="pt-6 pb-16 lg:pb-24">
+  <div class="max-w-[1500px] mx-auto px-4 lg:px-6">
+    <!-- RESULTS HEADER -->
+
+    <!-- ACTIVE FILTERS / view/sort buttons-->
+    <div class="flex items-center justify-between gap-4 mb-6 overflow-hidden">
+      <!-- LEFT: ACTIVE FILTERS -->
+      <div
+        class="flex items-center gap-2 overflow-x-auto whitespace-nowrap flex-1 min-w-0"
+      >
+        <span
+          class="shrink-0 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium"
+        >
+          Pasig
+          <i class="fa-solid fa-xmark text-xs"></i>
+        </span>
+
+        <span
+          class="shrink-0 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium"
+        >
+          Pool
+          <i class="fa-solid fa-xmark text-xs"></i>
+        </span>
+
+        <span
+          class="shrink-0 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-green-100 text-green-700 text-sm font-medium"
+        >
+          WiFi
+          <i class="fa-solid fa-xmark text-xs"></i>
+        </span>
+
+        <span
+          class="shrink-0 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-medium"
+        >
+          Under ₱5,000
+          <i class="fa-solid fa-xmark text-xs"></i>
+        </span>
+
+        <button
+          class="shrink-0 text-sm text-orange-500 font-medium hover:text-orange-600"
+        >
+          Clear All
+        </button>
+      </div>
+
+      <!-- RIGHT: ACTIONS -->
+      <div class="flex items-center gap-2 shrink-0">
+        <a
+          id="mapViewBtn"
+          class="shrink-0 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white text-sm font-medium cursor-pointer"
+        >
+          <i class="fa-solid fa-map-location-dot"></i>
+          <span>Map</span>
+        </a>
+
+        <a
+          id="hotelListViewBtn"
+          class="shrink-0 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white text-sm font-medium cursor-pointer"
+        >
+          <i class="fa-solid fa-list"></i>
+        </a>
+
+        <a
+          id="hotelGridViewBtn"
+          class="shrink-0 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white text-sm font-medium cursor-pointer"
+        >
+          <i class="fa-solid fa-grip-vertical"></i>
+        </a>
+
+        <select class="bomo-input min-w-[180px]">
+          <option>Best Match</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+          <option>Highest Rated</option>
+          <option>Most Popular</option>
+          <option>Newest</option>
+          <option>Most Reviewed</option>
+          <option>Recommended</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 xl:grid-cols-[350px_1fr] gap-6">
+      <!-- SIDEBAR FILTERS -->
+      <aside class="hidden xl:block">
+        <div class="sticky top-[170px] space-y-6">
+          <!-- MAP -->
+          <div class="hotel-card overflow-hidden" id="mapFilter">
+            <div class="h-[280px] bg-slate-100 dark:bg-slate-800 relative">
+              <img
+                src="assets/images/map.jpg"
+                alt="BOMO"
+                class="w-full object-contain"
+              />
+
+              <button
+                class="absolute left-4 right-4 bottom-4 bg-white/15 backdrop-blur-md border border-white/10"
+              >
+                <i class="fa-solid fa-map-location-dot mr-2"></i>
+                Open Full Map
+              </button>
+            </div>
+          </div>
+
+          <!-- FILTERS -->
+          <div class="hotel-card">
+            <div class="flex items-center justify-between mb-5">
+              <h3>Filters</h3>
+
+              <button class="text-sm text-orange-500">Reset</button>
+            </div>
+
+            <!-- PRICE -->
+            <div class="mb-6">
+              <h4 class="font-semibold mb-3">Price Range</h4>
+
+              <input type="range" class="w-full" />
+
+              <div class="flex justify-between mt-2 text-sm">
+                <span>₱0</span>
+                <span>₱20,000+</span>
+              </div>
+            </div>
+
+            <!-- PROPERTY TYPE -->
+            <div class="mb-6">
+              <h4 class="font-semibold mb-3">Property Type</h4>
+
+              <div class="space-y-2">
+                <label class="flex gap-2">
+                  <input type="checkbox" checked />
+                  Hotel
+                </label>
+
+                <label class="flex gap-2">
+                  <input type="checkbox" />
+                  Resort
+                </label>
+
+                <label class="flex gap-2">
+                  <input type="checkbox" />
+                  Villa
+                </label>
+
+                <label class="flex gap-2">
+                  <input type="checkbox" />
+                  Apartment
+                </label>
+              </div>
+            </div>
+
+            <!-- STAR RATING -->
+            <div class="mb-6">
+              <h4 class="font-semibold mb-3">Star Rating</h4>
+
+              <div class="space-y-2">
+                <label class="flex gap-2">
+                  <input type="checkbox" />
+                  ★★★★★
+                </label>
+
+                <label class="flex gap-2">
+                  <input type="checkbox" />
+                  ★★★★☆
+                </label>
+
+                <label class="flex gap-2">
+                  <input type="checkbox" />
+                  ★★★☆☆
+                </label>
+              </div>
+            </div>
+
+            <!-- GUEST SCORE -->
+            <div class="mb-6">
+              <h4 class="font-semibold mb-3">Guest Rating</h4>
+
+              <div class="space-y-2">
+                <label class="flex gap-2">
+                  <input type="checkbox" />
+                  Excellent 9+
+                </label>
+
+                <label class="flex gap-2">
+                  <input type="checkbox" />
+                  Very Good 8+
+                </label>
+
+                <label class="flex gap-2">
+                  <input type="checkbox" />
+                  Good 7+
+                </label>
+              </div>
+            </div>
+
+            <!-- AMENITIES -->
+            <div class="mb-6">
+              <h4 class="font-semibold mb-3">Amenities</h4>
+
+              <div class="space-y-2">
+                <label class="flex gap-2">
+                  <input type="checkbox" />
+                  Pool
+                </label>
+
+                <label class="flex gap-2">
+                  <input type="checkbox" />
+                  Gym
+                </label>
+
+                <label class="flex gap-2">
+                  <input type="checkbox" />
+                  Spa
+                </label>
+
+                <label class="flex gap-2">
+                  <input type="checkbox" />
+                  Breakfast
+                </label>
+
+                <label class="flex gap-2">
+                  <input type="checkbox" />
+                  Free WiFi
+                </label>
+
+                <label class="flex gap-2">
+                  <input type="checkbox" />
+                  Parking
+                </label>
+              </div>
+            </div>
+
+            <!-- BUTTON -->
+            <button
+              class="bg-white/15 backdrop-blur-md border border-white/10 w-full"
+            >
+              Apply Filters
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <div>
+        <!-- HOTEL GRID -->
+        <div class="mb-5 flex items-center justify-between">
+          <div class="text-sm text-slate-500">
+            Showing <strong>1-9</strong> of <strong>24</strong> properties
+          </div>
+
+          <div class="text-sm text-slate-500">Updated just now</div>
+        </div>
+
+        <div id="hotel-results-content"></div>
+      </div>
+    </div>
+
+    <!-- PAGINATION -->
+    <div class="flex justify-center mt-12">
+      <div class="flex items-center gap-2">
+        <button
+          class="feature-card !p-0 w-11 h-11 flex items-center justify-center"
+        >
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button
+          class="bg-white/15 backdrop-blur-md border border-white/10 w-11 h-11"
+        >
+          1
+        </button>
+
+        <button
+          class="feature-card !p-0 w-11 h-11 flex items-center justify-center"
+        >
+          2
+        </button>
+
+        <button
+          class="feature-card !p-0 w-11 h-11 flex items-center justify-center"
+        >
+          3
+        </button>
+
+        <button
+          class="feature-card !p-0 w-11 h-11 flex items-center justify-center"
+        >
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

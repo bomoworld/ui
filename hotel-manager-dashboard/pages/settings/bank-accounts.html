@@ -1,0 +1,273 @@
+<div class="space-y-6">
+  <!-- PAYOUT SETTINGS -->
+  <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div class="p-6 border-b border-slate-100">
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="text-xl font-bold">Payout Settings</h3>
+
+          <p class="text-sm text-slate-500 mt-1">
+            Configure where BOMO sends your booking earnings.
+          </p>
+        </div>
+
+        <button
+          class="inline-flex items-center gap-2 px-5 h-11 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold"
+        >
+          <i class="fa-solid fa-plus"></i>
+          Add Payout Account
+        </button>
+      </div>
+    </div>
+
+    <div class="p-6">
+      <div class="space-y-4">
+        <div class="border border-green-200 bg-green-50 rounded-2xl p-5">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div
+                class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center"
+              >
+                <i
+                  class="fa-solid fa-building-columns text-green-600 text-xl"
+                ></i>
+              </div>
+
+              <div>
+                <h4 class="font-semibold text-slate-900">BDO Unibank</h4>
+
+                <p class="text-sm text-slate-500">**** **** **** 4589</p>
+
+                <p class="text-xs text-green-600 font-medium mt-1">
+                  Default Payout Account
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-2">
+              <button class="px-4 h-10 rounded-xl hover:bg-slate-50">
+                Edit
+              </button>
+
+              <button
+                class="px-4 h-10 rounded-xl border border-red-200 text-red-600 hover:bg-red-50"
+              >
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl p-5">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div
+                class="w-14 h-14 rounded-2xl bg-slate-100 flex items-center justify-center"
+              >
+                <i
+                  class="fa-solid fa-building-columns text-slate-600 text-xl"
+                ></i>
+              </div>
+
+              <div>
+                <h4 class="font-semibold text-slate-900">Metrobank</h4>
+
+                <p class="text-sm text-slate-500">**** **** **** 7821</p>
+              </div>
+            </div>
+
+            <div class="flex gap-2">
+              <button class="px-4 h-10 rounded-xl hover:bg-slate-50">
+                Make Default
+              </button>
+
+              <button class="px-4 h-10 rounded-xl hover:bg-slate-50">
+                Edit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BILLING ACCOUNTS -->
+  <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div class="p-6 border-b border-slate-100">
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="text-xl font-bold">Billing Accounts</h3>
+
+          <p class="text-sm text-slate-500 mt-1">
+            Accounts used for subscription payments and billing.
+          </p>
+        </div>
+
+        <button
+          class="inline-flex items-center gap-2 px-5 h-11 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold"
+        >
+          <i class="fa-solid fa-plus"></i>
+          Add Billing Account
+        </button>
+      </div>
+    </div>
+
+    <div class="p-6">
+      <div class="space-y-4">
+        <div class="border border-blue-200 bg-blue-50 rounded-2xl p-5">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div
+                class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center"
+              >
+                <i class="fa-solid fa-credit-card text-blue-600 text-xl"></i>
+              </div>
+
+              <div>
+                <h4 class="font-semibold text-slate-900">
+                  BPI Business Account
+                </h4>
+
+                <p class="text-sm text-slate-500">**** **** **** 3342</p>
+
+                <p class="text-xs text-blue-600 font-medium mt-1">
+                  Default Billing Account
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-2">
+              <button class="px-4 h-10 rounded-xl hover:bg-slate-50">
+                Edit
+              </button>
+
+              <button
+                class="px-4 h-10 rounded-xl border border-red-200 text-red-600 hover:bg-red-50"
+              >
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAYOUT SCHEDULE -->
+  <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div class="p-6 border-b border-slate-100">
+      <h3 class="text-xl font-bold">Payout Schedule</h3>
+
+      <p class="text-sm text-slate-500 mt-1">
+        Choose how often earnings are transferred.
+      </p>
+    </div>
+
+    <div class="p-6">
+      <div class="grid md:grid-cols-3 gap-4">
+        <label
+          class="border border-orange-300 bg-orange-50 rounded-2xl p-5 cursor-pointer"
+        >
+          <div class="flex items-center gap-3">
+            <input type="radio" name="payout_schedule" checked />
+
+            <div>
+              <h4 class="font-semibold">Weekly</h4>
+
+              <p class="text-sm text-slate-500">Every Monday</p>
+            </div>
+          </div>
+        </label>
+
+        <label class="rounded-2xl p-5 cursor-pointer">
+          <div class="flex items-center gap-3">
+            <input type="radio" name="payout_schedule" />
+
+            <div>
+              <h4 class="font-semibold">Bi-Weekly</h4>
+
+              <p class="text-sm text-slate-500">Every 2 weeks</p>
+            </div>
+          </div>
+        </label>
+
+        <label class="rounded-2xl p-5 cursor-pointer">
+          <div class="flex items-center gap-3">
+            <input type="radio" name="payout_schedule" />
+
+            <div>
+              <h4 class="font-semibold">Monthly</h4>
+
+              <p class="text-sm text-slate-500">End of month</p>
+            </div>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECENT PAYOUTS -->
+  <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div class="p-6 border-b border-slate-100">
+      <h3 class="text-xl font-bold">Recent Payouts</h3>
+
+      <p class="text-sm text-slate-500 mt-1">
+        Recent transfers sent to your payout account.
+      </p>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="w-full">
+        <thead>
+          <tr class="border-b border-slate-100">
+            <th class="text-left p-5 font-semibold">Date</th>
+            <th class="text-left p-5 font-semibold">Reference</th>
+            <th class="text-left p-5 font-semibold">Amount</th>
+            <th class="text-left p-5 font-semibold">Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="border-b border-slate-100">
+            <td class="p-5">May 28, 2026</td>
+            <td class="p-5">PO-20260528-001</td>
+            <td class="p-5 font-semibold">₱48,500.00</td>
+            <td class="p-5">
+              <span
+                class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-sm"
+              >
+                Completed
+              </span>
+            </td>
+          </tr>
+
+          <tr class="border-b border-slate-100">
+            <td class="p-5">May 21, 2026</td>
+            <td class="p-5">PO-20260521-001</td>
+            <td class="p-5 font-semibold">₱36,200.00</td>
+            <td class="p-5">
+              <span
+                class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-sm"
+              >
+                Completed
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="p-5">May 14, 2026</td>
+            <td class="p-5">PO-20260514-001</td>
+            <td class="p-5 font-semibold">₱52,800.00</td>
+            <td class="p-5">
+              <span
+                class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-sm"
+              >
+                Completed
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

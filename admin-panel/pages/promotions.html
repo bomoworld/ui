@@ -1,0 +1,47 @@
+<section id="promotionsPage" class="space-y-7 pb-4">
+  <section class="relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-slate-950 via-slate-900 to-pink-950 px-6 py-8 text-white shadow-2xl shadow-slate-950/10 sm:px-8 lg:px-10 lg:py-10">
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_86%_15%,rgba(236,72,153,.3),transparent_32%),radial-gradient(circle_at_14%_105%,rgba(249,115,22,.2),transparent_34%)]"></div>
+    <div class="pointer-events-none absolute -right-24 top-3 h-72 w-72 rounded-full border border-white/10"></div>
+    <div class="relative flex flex-col gap-7 xl:flex-row xl:items-end xl:justify-between">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 rounded-full border border-pink-200/15 bg-white/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-pink-100"><i class="fa-solid fa-tags"></i> Growth operations</div>
+        <h1 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">Promotions & discount management</h1>
+        <p class="mt-4 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">Create, validate, schedule, and monitor platform campaigns, property offers, promo codes, and referral incentives.</p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <button type="button" class="property-button property-button-light" data-promotion-action="create"><i class="fa-solid fa-plus"></i> Create promotion</button>
+        <button type="button" class="property-button property-button-dark" data-promotion-action="filter" data-promotion-filter="expiring"><i class="fa-regular fa-clock"></i> Expiring soon</button>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Promotion workload" class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><div class="flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-pink-50 text-pink-600"><i class="fa-solid fa-bolt"></i></span><span class="text-xs font-semibold text-slate-400">Live</span></div><p class="mt-5 text-sm font-medium text-slate-500">Active promotions</p><p data-promotion-summary="active" class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">0</p><p class="mt-2 text-xs text-slate-400">Currently available to guests</p></div>
+    <div class="rounded-2xl border border-blue-200 bg-blue-50/50 p-5 shadow-sm"><div class="flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-100 text-blue-600"><i class="fa-regular fa-calendar"></i></span><span class="text-xs font-semibold text-blue-700">Upcoming</span></div><p class="mt-5 text-sm font-medium text-slate-500">Scheduled campaigns</p><p data-promotion-summary="scheduled" class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">0</p><p class="mt-2 text-xs text-slate-400">Ready for automatic launch</p></div>
+    <div class="rounded-2xl border border-amber-200 bg-amber-50/50 p-5 shadow-sm"><div class="flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-100 text-amber-600"><i class="fa-regular fa-pen-to-square"></i></span><span class="text-xs font-semibold text-amber-700">Work queue</span></div><p class="mt-5 text-sm font-medium text-slate-500">Drafts to complete</p><p data-promotion-summary="draft" class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">0</p><p class="mt-2 text-xs text-slate-400">Missing rules or approval</p></div>
+    <div class="rounded-2xl border border-rose-200 bg-rose-50/50 p-5 shadow-sm"><div class="flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-rose-100 text-rose-600"><i class="fa-solid fa-hourglass-end"></i></span><span class="rounded-full bg-rose-100 px-2 py-1 text-xs font-semibold text-rose-600">7 days</span></div><p class="mt-5 text-sm font-medium text-slate-500">Expiring soon</p><p data-promotion-summary="expiring" class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">0</p><p class="mt-2 text-xs text-slate-400">Review extension or closeout</p></div>
+  </section>
+
+  <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+    <div class="border-b border-slate-100 px-5 py-5 sm:px-6">
+      <div class="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between"><div><div class="flex flex-wrap items-center gap-2"><h2 class="text-lg font-semibold text-slate-950">Campaign queue</h2><span data-promotion-visible-count class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600">0 records</span></div><p class="mt-1 text-sm text-slate-500">Manage eligibility, offer value, budget, schedule, and publishing status.</p></div><div id="promotionNotice" class="hidden rounded-lg px-3 py-2 text-sm font-medium" role="status" aria-live="polite"></div></div>
+      <div class="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_11rem_11rem_11rem]">
+        <label class="relative block"><span class="sr-only">Search promotions</span><i class="fa-solid fa-magnifying-glass pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm text-slate-400"></i><input type="search" data-promotion-search class="bomo-input h-11 w-full pl-10" placeholder="Search campaign, code, audience, or owner…" autocomplete="off"></label>
+        <label><span class="sr-only">Filter by status</span><select data-promotion-status class="bomo-input h-11 w-full"><option value="all">All campaign states</option><option value="active">Active</option><option value="scheduled">Scheduled</option><option value="draft">Draft</option><option value="paused">Paused</option><option value="expired">Expired</option></select></label>
+        <label><span class="sr-only">Filter by type</span><select data-promotion-type class="bomo-input h-11 w-full"><option value="all">All promotion types</option><option value="Platform">Platform</option><option value="Promo code">Promo code</option><option value="Property">Property</option><option value="Flash sale">Flash sale</option><option value="Referral">Referral</option></select></label>
+        <label><span class="sr-only">Filter by owner</span><select data-promotion-owner class="bomo-input h-11 w-full"><option value="all">All owners</option><option value="You">Owned by me</option><option value="Growth Team">Growth Team</option><option value="Partner Team">Partner Team</option><option value="Unassigned">Unassigned</option></select></label>
+      </div>
+      <div class="mt-4 flex flex-wrap items-center gap-2">
+        <button type="button" class="property-filter-button is-active" data-promotion-action="filter" data-promotion-filter="all">All</button>
+        <button type="button" class="property-filter-button" data-promotion-action="filter" data-promotion-filter="mine">Owned by me</button>
+        <button type="button" class="property-filter-button" data-promotion-action="filter" data-promotion-filter="platform">Platform</button>
+        <button type="button" class="property-filter-button" data-promotion-action="filter" data-promotion-filter="codes">Promo codes</button>
+        <button type="button" class="property-filter-button" data-promotion-action="filter" data-promotion-filter="draft">Drafts</button>
+        <button type="button" class="property-filter-button" data-promotion-action="filter" data-promotion-filter="expiring">Expiring</button>
+        <button type="button" class="ml-auto text-sm font-semibold text-slate-500 hover:text-slate-900" data-promotion-action="clear-filters">Clear filters</button>
+      </div>
+    </div>
+    <div class="overflow-x-auto"><table class="min-w-[940px] w-full text-left text-sm"><thead class="border-b border-slate-100 bg-slate-50 text-xs font-semibold uppercase tracking-wide text-slate-500"><tr><th class="px-5 py-3.5 sm:px-6">Campaign</th><th class="px-5 py-3.5">Offer & state</th><th class="px-5 py-3.5">Audience</th><th class="px-5 py-3.5">Performance</th><th class="px-5 py-3.5">Schedule</th><th class="px-5 py-3.5 text-right">Action</th></tr></thead><tbody data-promotion-list class="divide-y divide-slate-100"></tbody></table></div>
+    <div class="flex flex-col gap-3 border-t border-slate-100 bg-slate-50 px-5 py-4 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-6"><p class="text-slate-500"><span data-promotion-footer-count class="font-semibold text-slate-700">0</span> campaigns shown in this session.</p><button type="button" class="property-button property-button-secondary" data-promotion-action="create"><i class="fa-solid fa-plus"></i> Create promotion</button></div>
+  </section>
+</section>

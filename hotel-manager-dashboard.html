@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>BOMO | Partner Dashboard</title>
+
+    <meta
+      name="description"
+      content="Discover resorts, villas, apartments, vacation homes, and unique stays through verified guest video reviews. Book with confidence, share your experience after checkout, and earn BOMO Rewards."
+    />
+
+    <meta
+      name="keywords"
+      content="BOMO, property booking, travel booking, resort booking, villa booking, apartment booking, vacation home, unique stays, verified guest reviews, video reviews, travel reviews, travel rewards, book review earn, stay reviews, travel platform, accommodation booking, Philippines travel"
+    />
+
+    <meta name="author" content="BOMO" />
+    <meta name="application-name" content="BOMO" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#0B2A6F" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://bomo.world/" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="./assets/favicon-Cl4fF5E7.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon-16x16-C0VmmhzU.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32-DvCft5Zs.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="/assets/favicon/favicon-48x48.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/apple-touch-icon-DB-zNtSp.png"
+    />
+    <link rel="manifest" href="./assets/site-BwHFeIBa.webmanifest" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="BOMO" />
+    <meta property="og:title" content="BOMO | Book, Review, Earn" />
+    <meta
+      property="og:description"
+      content="Discover trusted properties through verified guest video reviews. Book with confidence, review your stay after checkout, and earn BOMO Rewards."
+    />
+    <meta property="og:url" content="https://bomo.world/" />
+    <meta
+      property="og:image"
+      content="https://bomo.world/assets/images/og-image.jpg"
+    />
+    <meta property="og:image:alt" content="BOMO | Book, Review, Earn" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BOMO | Book, Review, Earn" />
+    <meta
+      name="twitter:description"
+      content="Book trusted properties through verified guest experiences. Share your stay, help future travellers, and earn BOMO Rewards."
+    />
+    <meta
+      name="twitter:image"
+      content="https://bomo.world/assets/images/og-image.jpg"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gveret+Levin&family=Vujahday+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+
+
+    <script type="module" crossorigin src="./assets/hotelManager-CPwgtnRW.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-C2xYpwEn.js">
+    <link rel="modulepreload" crossorigin href="./assets/main-Bwwzfsjp.js">
+    <link rel="stylesheet" crossorigin href="./assets/main-CMwhG3m0.css">
+  </head>
+
+  <body class="bg-slate-100 font-[Inter]">
+    <div
+      id="sidebarOverlay"
+      class="fixed inset-0 z-40 hidden bg-black/50 lg:hidden"
+    ></div>
+
+    <div id="sidebar-module"></div>
+
+    <div id="mainWrapper" class="lg:ml-72 min-h-screen flex flex-col">
+      <div id="topbar-module"></div>
+
+      <main id="dashboardContent" class="flex-1 p-6 overflow-x-hidden pt-20">
+        <div class="flex items-center justify-center h-[70vh]">
+          <div class="text-center text-slate-500">
+            <i class="fa-solid fa-spinner fa-spin text-3xl text-orange-500"></i>
+
+            <p class="mt-3">Loading dashboard...</p>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div id="modalContainer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+      async function openModal(modalName) {
+        try {
+          const response = await fetch(
+            `pages/modals/${modalName}.html?v=${Date.now()}`,
+          );
+
+          if (!response.ok) {
+            console.error(`Modal not found: ${modalName}`);
+            return;
+          }
+
+          const html = await response.text();
+
+          const existingModal = document.getElementById(`modal-${modalName}`);
+
+          if (existingModal) {
+            existingModal.remove();
+          }
+
+          document
+            .getElementById("modalContainer")
+            .insertAdjacentHTML("beforeend", html);
+
+          const modal = document.getElementById(`modal-${modalName}`);
+
+          if (!modal) {
+            console.error(`Modal wrapper #modal-${modalName} not found`);
+            return;
+          }
+
+          modal.classList.remove("hidden");
+
+          document.body.classList.add("overflow-hidden");
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      function closeModal(modalName) {
+        const modal = document.getElementById(`modal-${modalName}`);
+
+        if (modal) {
+          modal.remove();
+        }
+
+        document.body.classList.remove("overflow-hidden");
+
+        history.replaceState(
+          {},
+          document.title,
+          window.location.pathname + window.location.search,
+        );
+      }
+
+      const propertyAddonChargeLabels = {
+        per_booking: "Per booking",
+        per_night: "Per night",
+        per_guest: "Per guest",
+        per_guest_per_night: "Per guest, per night",
+      };
+
+      function updatePropertyAddonsEmptyState() {
+        const tableBody = document.getElementById(
+          "property-addons-table-body",
+        );
+        const emptyState = document.getElementById(
+          "property-addons-empty-state",
+        );
+
+        if (!tableBody || !emptyState) return;
+
+        emptyState.classList.toggle("hidden", tableBody.children.length > 0);
+      }
+
+      function openPropertyAddonModal(rowId = "") {
+        const modal = document.getElementById("property-addon-input-modal");
+        const form = document.getElementById("property-addon-form");
+        const title = document.getElementById("property-addon-modal-title");
+        const submitButton = document.getElementById(
+          "property-addon-submit-button",
+        );
+
+        if (!modal || !form || !title || !submitButton) return;
+
+        form.reset();
+        form.dataset.editingRow = rowId;
+        title.textContent = rowId ? "Edit Add-on" : "Add Add-on";
+        submitButton.textContent = rowId ? "Save Changes" : "Add Add-on";
+
+        if (rowId) {
+          const row = document.getElementById(rowId);
+
+          if (!row) return;
+
+          form.elements.addon_name.value = row.dataset.name || "";
+          form.elements.addon_description.value = row.dataset.description || "";
+          form.elements.addon_price.value = row.dataset.price || "";
+          form.elements.addon_charge_type.value =
+            row.dataset.chargeType || "per_booking";
+        }
+
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+
+        requestAnimationFrame(() => form.elements.addon_name.focus());
+      }
+
+      function closePropertyAddonModal() {
+        const modal = document.getElementById("property-addon-input-modal");
+
+        if (!modal) return;
+
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+
+      function appendPropertyAddonCell(row, text, className = "") {
+        const cell = document.createElement("td");
+        cell.className = `px-5 py-4 ${className}`.trim();
+        cell.textContent = text;
+        row.appendChild(cell);
+        return cell;
+      }
+
+      function appendPropertyAddonHiddenInput(row, name, value) {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = name;
+        input.value = value;
+        row.firstElementChild.appendChild(input);
+      }
+
+      function renderPropertyAddonRow(row, addon) {
+        row.replaceChildren();
+        row.dataset.name = addon.name;
+        row.dataset.description = addon.description;
+        row.dataset.price = addon.price;
+        row.dataset.chargeType = addon.chargeType;
+        row.className = "bg-white text-slate-700";
+
+        appendPropertyAddonCell(row, addon.name, "font-semibold text-slate-900");
+        appendPropertyAddonCell(
+          row,
+          addon.description || "No description",
+          addon.description ? "" : "italic text-slate-400",
+        );
+        appendPropertyAddonCell(
+          row,
+          new Intl.NumberFormat("en-PH", {
+            style: "currency",
+            currency: "PHP",
+          }).format(Number(addon.price)),
+          "whitespace-nowrap font-medium",
+        );
+        appendPropertyAddonCell(
+          row,
+          propertyAddonChargeLabels[addon.chargeType] || addon.chargeType,
+          "whitespace-nowrap",
+        );
+
+        const actions = document.createElement("td");
+        actions.className = "whitespace-nowrap px-5 py-4 text-right";
+
+        const editButton = document.createElement("button");
+        editButton.type = "button";
+        editButton.className =
+          "mr-1 inline-flex h-9 w-9 items-center justify-center rounded-xl text-indigo-600 transition hover:bg-indigo-50";
+        editButton.setAttribute("aria-label", `Edit ${addon.name}`);
+        editButton.innerHTML = '<i class="fa-solid fa-pen"></i>';
+        editButton.addEventListener("click", () =>
+          openPropertyAddonModal(row.id),
+        );
+
+        const deleteButton = document.createElement("button");
+        deleteButton.type = "button";
+        deleteButton.className =
+          "inline-flex h-9 w-9 items-center justify-center rounded-xl text-rose-600 transition hover:bg-rose-50";
+        deleteButton.setAttribute("aria-label", `Delete ${addon.name}`);
+        deleteButton.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
+        deleteButton.addEventListener("click", () => {
+          row.remove();
+          updatePropertyAddonsEmptyState();
+        });
+
+        actions.append(editButton, deleteButton);
+        row.appendChild(actions);
+
+        const inputKey = row.id.replace("property-addon-row-", "");
+        appendPropertyAddonHiddenInput(
+          row,
+          `property_addons[${inputKey}][name]`,
+          addon.name,
+        );
+        appendPropertyAddonHiddenInput(
+          row,
+          `property_addons[${inputKey}][description]`,
+          addon.description,
+        );
+        appendPropertyAddonHiddenInput(
+          row,
+          `property_addons[${inputKey}][price]`,
+          addon.price,
+        );
+        appendPropertyAddonHiddenInput(
+          row,
+          `property_addons[${inputKey}][charge_type]`,
+          addon.chargeType,
+        );
+      }
+
+      function savePropertyAddon(event) {
+        event.preventDefault();
+
+        const form = event.currentTarget;
+        const tableBody = document.getElementById(
+          "property-addons-table-body",
+        );
+
+        if (!tableBody || !form.reportValidity()) return;
+
+        const addon = {
+          name: form.elements.addon_name.value.trim(),
+          description: form.elements.addon_description.value.trim(),
+          price: Number(form.elements.addon_price.value).toFixed(2),
+          chargeType: form.elements.addon_charge_type.value,
+        };
+
+        let row = form.dataset.editingRow
+          ? document.getElementById(form.dataset.editingRow)
+          : null;
+
+        if (!row) {
+          row = document.createElement("tr");
+          const rowKey =
+            typeof crypto.randomUUID === "function"
+              ? crypto.randomUUID()
+              : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+          row.id = `property-addon-row-${rowKey}`;
+          tableBody.appendChild(row);
+        }
+
+        renderPropertyAddonRow(row, addon);
+        updatePropertyAddonsEmptyState();
+        closePropertyAddonModal();
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const hash = window.location.hash.replace("#", "");
+
+        if (hash) {
+          openModal(hash);
+        }
+      });
+    </script>
+  </body>
+</html>

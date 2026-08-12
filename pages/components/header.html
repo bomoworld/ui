@@ -1,0 +1,239 @@
+<header id="navbar" class="site-header">
+  <div class="site-header__shell">
+    <div class="site-header__row">
+      <a href="index.html" class="site-header__brand" aria-label="BOMO home">
+        <img
+          src="assets/images/logo.png"
+          alt="BOMO"
+          class="site-header__logo dark:hidden"
+        />
+        <img
+          src="assets/images/logo_dark_v.png"
+          alt="BOMO"
+          class="site-header__logo hidden dark:block"
+        />
+      </a>
+
+      <nav class="site-header__nav" aria-label="Primary navigation">
+        <a href="index.html" class="site-header__nav-link" data-nav-page="home">
+          Home
+        </a>
+        <a
+          href="hotel-listings.html"
+          class="site-header__nav-link"
+          data-nav-page="stays"
+        >
+          Stays
+        </a>
+        <a
+          href="destinations.html"
+          class="site-header__nav-link"
+          data-nav-page="destinations"
+        >
+          Destinations
+        </a>
+        <a
+          href="video-reviews.html"
+          class="site-header__nav-link"
+          data-nav-page="reviews"
+        >
+          Reviews
+        </a>
+      </nav>
+
+      <form
+        class="site-header__search"
+        data-site-search
+        role="search"
+        aria-label="Search stays"
+      >
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <label class="sr-only" for="headerSearchInput">Search destinations or stays</label>
+        <input
+          id="headerSearchInput"
+          name="location"
+          type="search"
+          autocomplete="off"
+          placeholder="Where are you going?"
+        />
+        <button type="submit" aria-label="Search">
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </button>
+      </form>
+
+      <div class="site-header__actions">
+        <a
+          href="partner-login.html"
+          class="site-header__partner"
+          title="List your property"
+        >
+          <i class="fa-solid fa-building-circle-check" aria-hidden="true"></i>
+          <span>List your property</span>
+        </a>
+
+        <a
+          href="travel-studio/index.html?pgid=wishlist"
+          class="site-header__icon-button"
+          aria-label="Saved stays"
+          title="Saved stays"
+        >
+          <i class="fa-regular fa-heart" aria-hidden="true"></i>
+        </a>
+
+        <a
+          href="travel-studio/index.html?pgid=bookings"
+          class="site-header__icon-button"
+          aria-label="Your trips"
+          title="Your trips"
+        >
+          <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
+        </a>
+
+        <div class="site-header__account" data-account-menu>
+          <button
+            type="button"
+            class="site-header__account-trigger"
+            aria-expanded="false"
+            aria-controls="accountMenu"
+          >
+            <span class="site-header__avatar" aria-hidden="true">
+              <i class="fa-solid fa-user"></i>
+            </span>
+            <span class="site-header__account-copy">
+              <small>Welcome</small>
+              <strong>My account</strong>
+            </span>
+            <i
+              class="fa-solid fa-chevron-down site-header__chevron"
+              aria-hidden="true"
+            ></i>
+          </button>
+
+          <div id="accountMenu" class="site-header__menu" hidden>
+            <div class="site-header__menu-heading">
+              <span class="site-header__avatar site-header__avatar--large">
+                <i class="fa-solid fa-user" aria-hidden="true"></i>
+              </span>
+              <div>
+                <strong>Your BOMO</strong>
+                <small>Plan, book, review and earn</small>
+              </div>
+            </div>
+
+            <a href="auth.html?page=login" class="site-header__menu-item">
+              <span class="site-header__menu-icon">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+              </span>
+              <span>
+                <strong>Sign in or register</strong>
+                <small>Access your trips and rewards</small>
+              </span>
+            </a>
+
+            <div class="site-header__menu-grid">
+              <a href="travel-studio/index.html?pgid=bookings">
+                <i class="fa-solid fa-suitcase-rolling"></i>
+                <span>Trips</span>
+              </a>
+              <a href="travel-studio/index.html?pgid=wishlist">
+                <i class="fa-solid fa-heart"></i>
+                <span>Saved</span>
+              </a>
+              <a href="travel-studio/index.html?pgid=messages">
+                <i class="fa-solid fa-message"></i>
+                <span>Messages</span>
+              </a>
+            </div>
+
+            <div class="site-header__menu-separator"></div>
+
+            <a href="partner-login.html" class="site-header__menu-item">
+              <span class="site-header__menu-icon">
+                <i class="fa-solid fa-hotel"></i>
+              </span>
+              <span>
+                <strong>Partner Studio</strong>
+                <small>Manage your properties</small>
+              </span>
+            </a>
+
+            <button
+              id="themeToggle"
+              type="button"
+              class="site-header__menu-item site-header__theme"
+            >
+              <span class="site-header__menu-icon">
+                <i class="fa-solid fa-moon"></i>
+              </span>
+              <span>
+                <strong>Dark mode</strong>
+                <small>Switch appearance</small>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-header__mobile-actions">
+        <button
+          type="button"
+          class="site-header__icon-button"
+          data-mobile-search-trigger
+          aria-label="Open search"
+        >
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        </button>
+        <a
+          href="auth.html?page=login"
+          class="site-header__avatar"
+          aria-label="Sign in"
+        >
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <form
+      class="site-header__mobile-search"
+      data-site-search
+      data-mobile-search
+      role="search"
+      aria-label="Search stays"
+      hidden
+    >
+      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      <label class="sr-only" for="mobileHeaderSearch">Search destinations or stays</label>
+      <input
+        id="mobileHeaderSearch"
+        name="location"
+        type="search"
+        autocomplete="off"
+        placeholder="Search a city, island or property"
+      />
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <nav class="mobile-dock" aria-label="Mobile navigation">
+    <a href="index.html" data-nav-page="home">
+      <span><i class="fa-solid fa-house" aria-hidden="true"></i></span>
+      <small>Home</small>
+    </a>
+    <a href="hotel-listings.html" data-nav-page="stays">
+      <span><i class="fa-solid fa-compass" aria-hidden="true"></i></span>
+      <small>Explore</small>
+    </a>
+    <a href="travel-studio/index.html?pgid=bookings" data-nav-page="trips">
+      <span><i class="fa-solid fa-suitcase-rolling" aria-hidden="true"></i></span>
+      <small>Trips</small>
+    </a>
+    <a href="travel-studio/index.html?pgid=wishlist" data-nav-page="saved">
+      <span><i class="fa-solid fa-heart" aria-hidden="true"></i></span>
+      <small>Saved</small>
+    </a>
+    <a href="travel-studio/index.html" data-nav-page="account">
+      <span><i class="fa-solid fa-user" aria-hidden="true"></i></span>
+      <small>Account</small>
+    </a>
+  </nav>
+</header>

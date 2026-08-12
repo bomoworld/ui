@@ -1,0 +1,180 @@
+<section id="rooms" class="rounded-[32px] bg-white p-6 lg:p-8">
+  <div class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      <h2 class="text-2xl font-bold">Available Rooms</h2>
+      <p class="mt-1 text-sm text-slate-500">
+        4 room types available · Add multiple room types to one booking
+      </p>
+    </div>
+
+    <button type="button" data-open-trip
+      class="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-blue-200 bg-blue-50 px-4 text-sm font-semibold text-blue-900 transition hover:border-blue-300 hover:bg-blue-100">
+      <i class="fa-solid fa-suitcase-rolling"></i>
+      View Booking
+      <span data-trip-count
+        class="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-blue-900 px-1.5 text-xs text-white">0</span>
+    </button>
+  </div>
+
+  <div class="space-y-4">
+    <article data-trip-room data-room-id="deluxe-ocean-view" data-room-name="Deluxe Ocean View Room"
+      data-room-price="4850"
+      data-room-image="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200"
+      data-room-details="42 sqm · King Bed · Ocean View · Sleeps 2"
+      class="rounded-[28px] border border-transparent bg-slate-50 p-4 transition data-[trip-added=true]:border-blue-200 data-[trip-added=true]:bg-blue-50/40">
+      <div class="flex flex-col gap-4 lg:flex-row">
+        <div class="h-40 w-full shrink-0 overflow-hidden rounded-2xl lg:w-56">
+          <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200"
+            alt="Deluxe Ocean View Room" class="h-full w-full object-cover" />
+        </div>
+        <div class="flex flex-1 flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <div class="mb-3 flex flex-wrap gap-2">
+              <span class="rounded-full bg-white px-2.5 py-1 text-xs font-medium">42 sqm</span>
+              <span class="rounded-full bg-white px-2.5 py-1 text-xs font-medium">King Bed</span>
+              <span class="rounded-full bg-white px-2.5 py-1 text-xs font-medium">Ocean View</span>
+            </div>
+            <h3 class="text-lg font-semibold">Deluxe Ocean View Room</h3>
+            <p class="mt-1 text-sm text-slate-500">Sleeps 2 guests • Free WiFi • Breakfast Included</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="text-xs font-medium text-emerald-600">✓ Free Cancellation</span>
+              <span class="text-xs font-medium text-blue-600">✓ Instant Confirmation</span>
+            </div>
+          </div>
+          <div class="shrink-0 lg:text-right">
+            <div class="text-3xl font-bold">₱4,850</div>
+            <div class="text-sm text-slate-500">per night</div>
+            <div class="mt-3 flex flex-wrap gap-2 lg:justify-end">
+              <button type="button" data-add-to-trip
+                class="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-200 bg-white px-4 py-2.5 text-sm font-semibold text-blue-900 transition hover:border-blue-400 hover:bg-blue-50">
+                <i class="fa-solid fa-plus"></i><span data-add-label>Add to Booking</span>
+              </button>
+              <button type="button" data-open-booking
+                class="rounded-xl bg-blue-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-blue-800">Select
+                Room</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article data-trip-room data-room-id="superior-garden" data-room-name="Superior Garden Room"
+      data-room-price="3950"
+      data-room-image="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200"
+      data-room-details="35 sqm · Queen Bed · Garden View · Sleeps 2"
+      class="rounded-[28px] border border-transparent bg-slate-50 p-4 transition data-[trip-added=true]:border-blue-200 data-[trip-added=true]:bg-blue-50/40">
+      <div class="flex flex-col gap-4 lg:flex-row">
+        <div class="h-40 w-full shrink-0 overflow-hidden rounded-2xl lg:w-56">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200"
+            alt="Superior Garden Room" class="h-full w-full object-cover" />
+        </div>
+        <div class="flex flex-1 flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <div class="mb-3 flex flex-wrap gap-2">
+              <span class="rounded-full bg-white px-2.5 py-1 text-xs font-medium">35 sqm</span>
+              <span class="rounded-full bg-white px-2.5 py-1 text-xs font-medium">Queen Bed</span>
+              <span class="rounded-full bg-white px-2.5 py-1 text-xs font-medium">Garden View</span>
+            </div>
+            <h3 class="text-lg font-semibold">Superior Garden Room</h3>
+            <p class="mt-1 text-sm text-slate-500">Sleeps 2 guests • Free WiFi • Balcony</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="text-xs font-medium text-blue-600">✓ Instant Confirmation</span>
+            </div>
+          </div>
+          <div class="shrink-0 lg:text-right">
+            <div class="text-3xl font-bold">₱3,950</div>
+            <div class="text-sm text-slate-500">per night</div>
+            <div class="mt-3 flex flex-wrap gap-2 lg:justify-end">
+              <button type="button" data-add-to-trip
+                class="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-200 bg-white px-4 py-2.5 text-sm font-semibold text-blue-900 transition hover:border-blue-400 hover:bg-blue-50">
+                <i class="fa-solid fa-plus"></i><span data-add-label>Add to Booking</span>
+              </button>
+              <button type="button" data-open-booking
+                class="rounded-xl bg-blue-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-blue-800">Select
+                Room</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article data-trip-room data-room-id="premier-beachfront" data-room-name="Premier Beachfront Room"
+      data-room-price="6450"
+      data-room-image="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200"
+      data-room-details="48 sqm · King Bed · Beachfront · Sleeps 2"
+      class="rounded-[28px] border border-transparent bg-slate-50 p-4 transition data-[trip-added=true]:border-blue-200 data-[trip-added=true]:bg-blue-50/40">
+      <div class="flex flex-col gap-4 lg:flex-row">
+        <div class="h-40 w-full shrink-0 overflow-hidden rounded-2xl lg:w-56">
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200"
+            alt="Premier Beachfront Room" class="h-full w-full object-cover" />
+        </div>
+        <div class="flex flex-1 flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <div class="mb-3 flex flex-wrap gap-2">
+              <span class="rounded-full bg-white px-2.5 py-1 text-xs font-medium">48 sqm</span>
+              <span class="rounded-full bg-white px-2.5 py-1 text-xs font-medium">King Bed</span>
+              <span class="rounded-full bg-white px-2.5 py-1 text-xs font-medium">Beachfront</span>
+            </div>
+            <h3 class="text-lg font-semibold">Premier Beachfront Room</h3>
+            <p class="mt-1 text-sm text-slate-500">Sleeps 2 guests • Breakfast Included</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="text-xs font-medium text-emerald-600">✓ Free Cancellation</span>
+            </div>
+          </div>
+          <div class="shrink-0 lg:text-right">
+            <div class="text-3xl font-bold">₱6,450</div>
+            <div class="text-sm text-slate-500">per night</div>
+            <div class="mt-3 flex flex-wrap gap-2 lg:justify-end">
+              <button type="button" data-add-to-trip
+                class="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-200 bg-white px-4 py-2.5 text-sm font-semibold text-blue-900 transition hover:border-blue-400 hover:bg-blue-50">
+                <i class="fa-solid fa-plus"></i><span data-add-label>Add to Booking</span>
+              </button>
+              <button type="button" data-open-booking
+                class="rounded-xl bg-blue-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-blue-800">Select
+                Room</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article data-trip-room data-room-id="family-suite" data-room-name="Family Suite" data-room-price="7250"
+      data-room-image="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1200"
+      data-room-details="56 sqm · 2 Queen Beds · Family Room · Sleeps 4"
+      class="rounded-[28px] border border-transparent bg-slate-50 p-4 transition data-[trip-added=true]:border-blue-200 data-[trip-added=true]:bg-blue-50/40">
+      <div class="flex flex-col gap-4 lg:flex-row">
+        <div class="h-40 w-full shrink-0 overflow-hidden rounded-2xl lg:w-56">
+          <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1200" alt="Family Suite"
+            class="h-full w-full object-cover" />
+        </div>
+        <div class="flex flex-1 flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <div class="mb-3 flex flex-wrap gap-2">
+              <span class="rounded-full bg-white px-2.5 py-1 text-xs font-medium">56 sqm</span>
+              <span class="rounded-full bg-white px-2.5 py-1 text-xs font-medium">2 Queen Beds</span>
+              <span class="rounded-full bg-white px-2.5 py-1 text-xs font-medium">Family Room</span>
+            </div>
+            <h3 class="text-lg font-semibold">Family Suite</h3>
+            <p class="mt-1 text-sm text-slate-500">Sleeps 4 guests • Kids Friendly</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="text-xs font-medium text-emerald-600">✓ Free Cancellation</span>
+            </div>
+          </div>
+          <div class="shrink-0 lg:text-right">
+            <div class="text-3xl font-bold">₱7,250</div>
+            <div class="text-sm text-slate-500">per night</div>
+            <div class="mt-3 flex flex-wrap gap-2 lg:justify-end">
+              <button type="button" data-add-to-trip
+                class="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-200 bg-white px-4 py-2.5 text-sm font-semibold text-blue-900 transition hover:border-blue-400 hover:bg-blue-50">
+                <i class="fa-solid fa-plus"></i><span data-add-label>Add to Booking</span>
+              </button>
+              <button type="button" data-open-booking
+                class="rounded-xl bg-blue-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-blue-800">Select
+                Room</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<div id="auth-page-container"></div>
+
+<script>
+  (async () => {
+    const params = new URLSearchParams(window.location.search);
+
+    const page = params.get("page") || "login";
+
+    const allowedPages = [
+      "login",
+      "register",
+      "forgot-password",
+      "hotel-partner-register",
+    ];
+
+    const file = allowedPages.includes(page) ? page : "login";
+
+    const response = await fetch(`auth/pages/${file}.html`);
+
+    document.querySelector("#auth-page-container").innerHTML =
+      await response.text();
+  })();
+</script>

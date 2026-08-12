@@ -1,0 +1,329 @@
+<div class="space-y-6">
+  <!-- PARTNER TYPE -->
+  <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div class="p-6 border-b border-slate-100">
+      <h3 class="text-xl font-bold">Partner Type</h3>
+
+      <p class="text-sm text-slate-500 mt-1">
+        Your account type was selected during registration and cannot be changed
+        after onboarding.
+      </p>
+    </div>
+
+    <div class="p-6">
+      <div
+        class="flex items-start gap-4 p-6 rounded-3xl border border-orange-200 bg-orange-50"
+      >
+        <div
+          class="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center shrink-0"
+        >
+          <i class="fa-solid fa-house-user text-xl"></i>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-lg text-slate-900">
+            Individual Property Owner
+          </h4>
+
+          <p class="text-sm text-slate-600 mt-2">
+            You personally own the property and are
+            listing it under your own name.
+            
+            <ul class="hidden">
+              <li>Individual Property Owner. You personally own the property and are
+            listing it under your own name. </li>
+              <li>Business Property Partner. You are
+            registering and managing properties on behalf of a registered
+            business, company, resort, or accommodation operator.</li>
+              <li> Authorized Representative. You are authorized to
+            manage, operate, or list properties on behalf of an individual
+            property owner or registered business.</li> 
+            </ul>
+             
+          </p>
+        </div>
+      </div>
+    </div> 
+  </div>
+
+  <!-- STATUS -->
+  <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div class="p-6 border-b border-slate-100">
+      <h3 class="text-xl font-bold">Verification Status</h3>
+
+      <p class="text-sm text-slate-500 mt-1">
+        Complete verification to receive payouts and improve guest trust.
+      </p>
+    </div>
+
+    <div class="p-6">
+      <div class="grid md:grid-cols-4 gap-4">
+        <div class="rounded-2xl bg-slate-50 p-5">
+          <div class="text-2xl font-bold">4</div>
+          <div class="text-sm text-slate-500">Documents Uploaded</div>
+        </div>
+
+        <div class="rounded-2xl bg-slate-50 p-5">
+          <div class="text-2xl font-bold">7</div>
+          <div class="text-sm text-slate-500">Documents Required</div>
+        </div>
+
+        <div class="rounded-2xl bg-slate-50 p-5">
+          <div class="text-2xl font-bold">57%</div>
+          <div class="text-sm text-slate-500">Completion</div>
+        </div>
+
+        <div class="rounded-2xl bg-slate-50 p-5">
+          <div class="text-2xl font-bold text-amber-600">Pending</div>
+          <div class="text-sm text-slate-500">Verification Status</div>
+        </div>
+      </div>
+
+      <div class="rounded-2xl bg-slate-50 p-5 my-4">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span>SEC / DTI Registration</span>
+            <span class="text-green-600 font-medium"> Uploaded </span>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <span>Business Permit</span>
+            <span class="text-red-500 font-medium"> Missing </span>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <span>BIR Registration</span>
+            <span class="text-amber-500 font-medium"> Under Review </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- INDIVIDUAL PROPERTY OWNER -->
+<div id="individualOwnerSection" class="space-y-6">
+  <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div class="p-6 border-b border-slate-100">
+      <div
+        class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4"
+      >
+        <div>
+          <h3 class="text-xl font-bold">
+            Individual Property Owner Verification
+          </h3>
+
+          <p class="text-sm text-slate-500 mt-1">
+            Upload the required documents to verify your identity and property
+            ownership.
+          </p>
+        </div>
+
+        <label 
+          class="py-3 px-5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-medium"
+        > <input type="file" class="hidden" />
+          <i class="fa-solid fa-cloud-arrow-up mr-2"></i>  Upload Document
+        </label>
+      </div>
+    </div>
+
+    <div class="p-6 space-y-4">
+      <!-- GOVERNMENT ID -->
+      <div
+        class="rounded-3xl border border-slate-200 p-5 hover:border-orange-300 transition"
+      >
+        <div class="flex items-start justify-between gap-4">
+          <div class="flex gap-4">
+            <div
+              class="w-14 h-14 rounded-2xl bg-green-100 text-green-600 flex items-center justify-center shrink-0"
+            >
+              <i class="fa-solid fa-id-card text-xl"></i>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap items-center gap-2 mb-2">
+                <h4 class="font-semibold text-slate-900">
+                  Government Issued ID
+                </h4>
+
+                <span
+                  class="px-2.5 py-1 rounded-full bg-red-50 text-red-600 text-xs font-medium"
+                >
+                  Required
+                </span>
+              </div>
+
+              <p class="text-sm text-slate-500">
+                Passport, Drivers License, UMID, PhilID, PRC ID, or other valid
+                government-issued identification.
+              </p>
+
+              <div class="mt-3">
+                <span
+                  class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 text-green-600 text-xs font-medium"
+                >
+                  <i class="fa-solid fa-circle-check"></i>
+                  Uploaded
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <button
+            onclick="openModal('upload-document')"
+            class="h-11 px-5 rounded-xl border border-slate-300 hover:bg-slate-50 font-medium"
+          >
+            View
+          </button>
+        </div>
+      </div>
+
+      <!-- SELFIE HOLDING ID -->
+      <div
+        class="rounded-3xl border border-slate-200 p-5 hover:border-orange-300 transition"
+      >
+        <div class="flex items-start justify-between gap-4">
+          <div class="flex gap-4">
+            <div
+              class="w-14 h-14 rounded-2xl bg-slate-100 text-slate-500 flex items-center justify-center shrink-0"
+            >
+              <i class="fa-solid fa-camera text-xl"></i>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap items-center gap-2 mb-2">
+                <h4 class="font-semibold text-slate-900">
+                  Selfie Holding ID
+                </h4>
+
+                <span
+                  class="px-2.5 py-1 rounded-full bg-red-50 text-red-600 text-xs font-medium"
+                >
+                  Required
+                </span>
+              </div>
+
+              <p class="text-sm text-slate-500">
+                A clear selfie showing your face while holding your government
+                issued ID.
+              </p>
+
+              <div class="mt-3">
+                <span
+                  class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-medium"
+                >
+                  <i class="fa-solid fa-cloud-arrow-up"></i>
+                  Not Uploaded
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <label 
+            class="px-5 py-3  rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-medium"
+          > <input type="file" class="hidden" />
+            <i class="fa fa-upload"></i> Upload
+          </label>
+        </div>
+      </div>
+
+      <!-- OWNERSHIP DOCUMENT -->
+      <div
+        class="rounded-3xl border border-slate-200 p-5 hover:border-orange-300 transition"
+      >
+        <div class="flex items-start justify-between gap-4">
+          <div class="flex gap-4">
+            <div
+              class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0"
+            >
+              <i class="fa-solid fa-file-contract text-xl"></i>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap items-center gap-2 mb-2">
+                <h4 class="font-semibold text-slate-900">
+                  Proof of Property Ownership or Authority to List
+                </h4>
+
+                <span
+                  class="px-2.5 py-1 rounded-full bg-red-50 text-red-600 text-xs font-medium"
+                >
+                  Required
+                </span>
+              </div>
+
+              <p class="text-sm text-slate-500">
+                Title, tax declaration, deed of sale, lease agreement, or
+                authorization document.
+              </p>
+
+              <div class="mt-3">
+                <span
+                  class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-amber-600 text-xs font-medium"
+                >
+                  <i class="fa-solid fa-clock"></i>
+                  Under Review
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <label class="px-5 py-3 rounded-xl border border-slate-300 hover:bg-slate-50 font-medium"> 
+            <input type="file" class="hidden" />
+            <i class="fa fa-upload"></i> Re-upload
+          </label>
+        </div>
+      </div>
+
+      <!-- TOURISM ACCREDITATION -->
+      <div
+        class="rounded-3xl border border-slate-200 p-5 hover:border-orange-300 transition"
+      >
+        <div class="flex items-start justify-between gap-4">
+          <div class="flex gap-4">
+            <div
+              class="w-14 h-14 rounded-2xl bg-slate-100 text-slate-500 flex items-center justify-center shrink-0"
+            >
+              <i class="fa-solid fa-award text-xl"></i>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap items-center gap-2 mb-2">
+                <h4 class="font-semibold text-slate-900">
+                  Tourism Accreditation
+                </h4>
+
+                <span
+                  class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-medium"
+                >
+                  Optional
+                </span>
+              </div>
+
+              <p class="text-sm text-slate-500">
+                Tourism accreditation certificate if your property is registered
+                with tourism authorities.
+              </p>
+
+              <div class="mt-3">
+                <span
+                  class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-medium"
+                >
+                  <i class="fa-solid fa-cloud-arrow-up"></i>
+                  Not Uploaded
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <label class="px-5 py-3 rounded-xl border border-slate-300 hover:bg-slate-50 font-medium"
+          >
+            <input type="file" class="hidden" />
+            <i class="fa fa-upload"></i> Upload
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+ 

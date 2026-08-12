@@ -1,0 +1,479 @@
+<div class="max-w-[1600px] mx-auto">
+  <div class="mb-10">
+    <div
+      class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 text-indigo-600 text-sm font-semibold mb-4"
+    >
+      <i class="fa-solid fa-building"></i>
+      Property Listings
+    </div>
+
+    <div class="flex items-start justify-between gap-8">
+      <div>
+        <h2 class="text-4xl font-bold text-slate-900 mb-3">
+          Add Your Property
+        </h2>
+
+        <p class="text-lg text-slate-500 max-w-3xl">
+          Import existing listings from your preferred OTA or create your
+          property manually.
+        </p>
+      </div>
+
+      <div
+        class="hidden xl:flex items-center gap-3 px-5 py-3 rounded-2xl bg-green-50 border border-green-100"
+      >
+        <i class="fa-solid fa-bolt text-green-600"></i>
+
+        <span class="text-sm font-medium text-green-700">
+          Import listings in minutes
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid xl:grid-cols-12 gap-6">
+    <!-- LEFT -->
+    <div class="xl:col-span-9">
+      <div class="grid lg:grid-cols-2 gap-6">
+        <!-- IMPORT -->
+        <label class="relative cursor-pointer">
+          <input
+            type="radio"
+            name="listing_method"
+            value="import"
+            class="peer hidden"
+          />
+
+          <div
+            class="bg-white rounded-[28px] p-8 hover:border-indigo-300 hover:shadow-2xl transition-all duration-300 peer-checked:border-indigo-600 peer-checked:ring-4 peer-checked:ring-indigo-100"
+          >
+            <div class="flex items-center justify-between mb-8">
+              <div
+                class="w-20 h-20 rounded-3xl bg-indigo-100 text-indigo-600 flex items-center justify-center"
+              >
+                <i class="fa-solid fa-cloud-arrow-down text-3xl"></i>
+              </div>
+
+              <div
+                class="w-10 h-10 rounded-full bg-indigo-600 text-white hidden peer-checked:flex items-center justify-center"
+              >
+                <i class="fa-solid fa-check"></i>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+              Import Existing Listings
+            </h3>
+
+            <p class="text-slate-500 mb-8">
+              Connect your OTA account and import properties, rooms, photos and
+              rates.
+            </p>
+
+            <div class="grid grid-cols-3 gap-3 mb-8">
+              <div
+                class="h-20 rounded-2xl flex flex-col items-center justify-center bg-slate-50"
+              >
+                <i class="fa-brands fa-airbnb text-2xl text-rose-500"></i>
+                <span class="text-xs mt-2">Airbnb</span>
+              </div>
+
+              <div
+                class="h-20 rounded-2xl flex flex-col items-center justify-center bg-slate-50"
+              >
+                <i class="fa-solid fa-bed text-2xl text-blue-600"></i>
+                <span class="text-xs mt-2">Booking.com</span>
+              </div>
+
+              <div
+                class="h-20 rounded-2xl flex flex-col items-center justify-center bg-slate-50"
+              >
+                <i class="fa-solid fa-building text-2xl text-sky-500"></i>
+                <span class="text-xs mt-2">Agoda</span>
+              </div>
+            </div>
+
+            <div class="space-y-3 text-sm">
+              <div>
+                <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                Import rooms and rates
+              </div>
+
+              <div>
+                <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                Import photos and amenities
+              </div>
+
+              <div>
+                <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                Faster property setup
+              </div>
+            </div>
+          </div>
+        </label>
+
+        <!-- MANUAL -->
+        <label class="relative cursor-pointer">
+          <input
+            type="radio"
+            name="listing_method"
+            value="manual"
+            class="peer hidden"
+          />
+
+          <div
+            class="bg-white rounded-[28px] p-8 hover:border-indigo-300 hover:shadow-2xl transition-all duration-300 peer-checked:border-indigo-600 peer-checked:ring-4 peer-checked:ring-indigo-100"
+          >
+            <div class="flex items-center justify-between mb-8">
+              <div
+                class="w-20 h-20 rounded-3xl bg-emerald-100 text-emerald-600 flex items-center justify-center"
+              >
+                <i class="fa-solid fa-pen-to-square text-3xl"></i>
+              </div>
+
+              <div
+                class="w-10 h-10 rounded-full bg-indigo-600 text-white hidden peer-checked:flex items-center justify-center"
+              >
+                <i class="fa-solid fa-check"></i>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+              Manual Property Setup
+            </h3>
+
+            <p class="text-slate-500 mb-8">
+              Create listings from scratch and enter property information
+              manually.
+            </p>
+
+            <div class="rounded-3xl bg-slate-50 p-6 mb-8">
+              <i
+                class="fa-solid fa-file-circle-plus text-4xl text-indigo-600 mb-4"
+              ></i>
+
+              <div class="font-semibold mb-2">Continue to Property Form</div>
+
+              <div class="text-sm text-slate-500">
+                Add property details, rooms, rates, amenities and photos.
+              </div>
+            </div>
+
+            <div class="space-y-3 text-sm">
+              <div>
+                <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                Full customization
+              </div>
+
+              <div>
+                <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                Flexible room setup
+              </div>
+
+              <div>
+                <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                Add your own pricing
+              </div>
+            </div>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="xl:col-span-3">
+      <div class="sticky top-6 rounded-[28px] bg-slate-50 p-6">
+        <h3 class="text-xl font-bold text-slate-900 mb-6">
+          Supported Platforms
+        </h3>
+
+        <div class="space-y-5">
+          <div class="flex gap-4">
+            <i class="fa-brands fa-airbnb text-rose-500 mt-1"></i>
+            <div>
+              <div class="font-semibold">Airbnb</div>
+              <div class="text-sm text-slate-500">
+                Import homes, villas and vacation rentals.
+              </div>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <i class="fa-solid fa-bed text-blue-600 mt-1"></i>
+            <div>
+              <div class="font-semibold">Booking.com</div>
+              <div class="text-sm text-slate-500">
+                Import properties, resorts and apartments.
+              </div>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <i class="fa-solid fa-building text-sky-500 mt-1"></i>
+            <div>
+              <div class="font-semibold">Agoda</div>
+              <div class="text-sm text-slate-500">
+                Synchronize existing listings and rooms.
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="flex gap-4">
+            <i class="fa-solid fa-clock text-indigo-600 mt-1"></i>
+            <div>
+              <div class="font-semibold">Save Setup Time</div>
+
+              <div class="text-sm text-slate-500">
+                Import existing data instead of creating listings manually.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<!-- only show if import listings -->
+
+<div class="">
+  <!-- HEADER -->
+  <div
+    class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-10"
+  >
+    <div>
+      <div
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 text-indigo-600 text-sm font-semibold mb-4"
+      >
+        <i class="fa-solid fa-cloud-arrow-down text-xs"></i>
+        Imported Listings
+      </div>
+
+      <h2 class="text-4xl font-bold text-slate-900 mb-3">
+        Select Listings to Import
+      </h2>
+
+      <p class="text-lg text-slate-500">
+        We found 12 listings from your connected account.
+      </p>
+    </div>
+
+    <div class="rounded-2xl border border-indigo-100 bg-indigo-50 px-5 py-4">
+      <div class="text-sm text-slate-500">Selected Listings</div>
+
+      <div class="text-2xl font-bold text-indigo-600">0</div>
+    </div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="bg-white rounded-[28px] p-5 mb-8">
+    <div class="flex flex-col lg:flex-row gap-4">
+      <div class="flex-1">
+        <input
+          type="text"
+          placeholder="Search listing..."
+          class="w-full h-12 px-4 border border-slate-300 rounded-xl"
+        />
+      </div>
+
+      <select class="h-12 px-4 border border-slate-300 rounded-xl">
+        <option>All Platforms</option>
+        <option>Airbnb</option>
+        <option>Booking.com</option>
+        <option>Agoda</option>
+      </select>
+
+      <button class="h-12 px-5 rounded-xl border border-slate-300">
+        Select All
+      </button>
+    </div>
+  </div>
+
+  <!-- LISTINGS -->
+  <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+    <label class="cursor-pointer">
+      <input type="checkbox" class="peer hidden" />
+
+      <div
+        class="bg-white rounded-[24px] overflow-hidden transition-all duration-300 hover:border-indigo-300 hover:shadow-lg peer-checked:border-indigo-600 peer-checked:ring-4 peer-checked:ring-indigo-100"
+      >
+        <div class="relative">
+          <img
+            src="https://placehold.co/600x400"
+            class="w-full h-40 object-cover"
+          />
+
+          <div
+            class="absolute top-3 left-3 px-2 py-1 rounded-lg bg-white/90 text-xs font-medium"
+          >
+            Booking.com
+          </div>
+
+          <div
+            class="absolute top-3 right-3 w-8 h-8 rounded-full bg-indigo-600 text-white hidden peer-checked:flex items-center justify-center"
+          >
+            <i class="fa-solid fa-check text-xs"></i>
+          </div>
+        </div>
+
+        <div class="p-5">
+          <h3 class="font-semibold text-slate-900 mb-1 line-clamp-1">
+            Boracay Beach Resort
+          </h3>
+
+          <p class="text-sm text-slate-500 mb-4 line-clamp-1">
+            Station 2, Boracay Island
+          </p>
+        </div>
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="checkbox" class="peer hidden" />
+
+      <div
+        class="bg-white rounded-[24px] overflow-hidden transition-all duration-300 hover:border-indigo-300 hover:shadow-lg peer-checked:border-indigo-600 peer-checked:ring-4 peer-checked:ring-indigo-100"
+      >
+        <div class="relative">
+          <img
+            src="https://placehold.co/600x400"
+            class="w-full h-40 object-cover"
+          />
+
+          <div
+            class="absolute top-3 left-3 px-2 py-1 rounded-lg bg-white/90 text-xs font-medium"
+          >
+            Booking.com
+          </div>
+
+          <div
+            class="absolute top-3 right-3 w-8 h-8 rounded-full bg-indigo-600 text-white hidden peer-checked:flex items-center justify-center"
+          >
+            <i class="fa-solid fa-check text-xs"></i>
+          </div>
+        </div>
+
+        <div class="p-5">
+          <h3 class="font-semibold text-slate-900 mb-1 line-clamp-1">
+            Boracay Beach Resort
+          </h3>
+
+          <p class="text-sm text-slate-500 mb-4 line-clamp-1">
+            Station 2, Boracay Island
+          </p>
+        </div>
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="checkbox" class="peer hidden" />
+
+      <div
+        class="bg-white rounded-[24px] overflow-hidden transition-all duration-300 hover:border-indigo-300 hover:shadow-lg peer-checked:border-indigo-600 peer-checked:ring-4 peer-checked:ring-indigo-100"
+      >
+        <div class="relative">
+          <img
+            src="https://placehold.co/600x400"
+            class="w-full h-40 object-cover"
+          />
+
+          <div
+            class="absolute top-3 left-3 px-2 py-1 rounded-lg bg-white/90 text-xs font-medium"
+          >
+            Booking.com
+          </div>
+
+          <div
+            class="absolute top-3 right-3 w-8 h-8 rounded-full bg-indigo-600 text-white hidden peer-checked:flex items-center justify-center"
+          >
+            <i class="fa-solid fa-check text-xs"></i>
+          </div>
+        </div>
+
+        <div class="p-5">
+          <h3 class="font-semibold text-slate-900 mb-1 line-clamp-1">
+            Boracay Beach Resort
+          </h3>
+
+          <p class="text-sm text-slate-500 mb-4 line-clamp-1">
+            Station 2, Boracay Island
+          </p>
+        </div>
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="checkbox" class="peer hidden" />
+
+      <div
+        class="bg-white rounded-[24px] overflow-hidden transition-all duration-300 hover:border-indigo-300 hover:shadow-lg peer-checked:border-indigo-600 peer-checked:ring-4 peer-checked:ring-indigo-100"
+      >
+        <div class="relative">
+          <img
+            src="https://placehold.co/600x400"
+            class="w-full h-40 object-cover"
+          />
+
+          <div
+            class="absolute top-3 left-3 px-2 py-1 rounded-lg bg-white/90 text-xs font-medium"
+          >
+            Booking.com
+          </div>
+
+          <div
+            class="absolute top-3 right-3 w-8 h-8 rounded-full bg-indigo-600 text-white hidden peer-checked:flex items-center justify-center"
+          >
+            <i class="fa-solid fa-check text-xs"></i>
+          </div>
+        </div>
+
+        <div class="p-5">
+          <h3 class="font-semibold text-slate-900 mb-1 line-clamp-1">
+            Boracay Beach Resort
+          </h3>
+
+          <p class="text-sm text-slate-500 mb-4 line-clamp-1">
+            Station 2, Boracay Island
+          </p>
+        </div>
+      </div>
+    </label>
+  </div>
+
+  <!-- PAGINATION -->
+  <div class="flex items-center justify-center gap-2 mt-10">
+    <button class="w-11 h-11 rounded-xl border border-slate-300">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <button class="w-11 h-11 rounded-xl bg-indigo-600 text-white">1</button>
+
+    <button class="w-11 h-11 rounded-xl border border-slate-300">2</button>
+
+    <button class="w-11 h-11 rounded-xl border border-slate-300">3</button>
+
+    <button class="w-11 h-11 rounded-xl border border-slate-300">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <!-- STICKY ACTION BAR -->
+  <div class="sticky bottom-6 mt-10 bg-white rounded-3xl p-5 shadow-xl">
+    <div class="flex items-center justify-between">
+      <div>
+        <div class="font-semibold">0 Listings Selected</div>
+
+        <div class="text-sm text-slate-500">
+          Import selected listings into BOMO.
+        </div>
+      </div>
+
+      <button
+        class="h-14 px-8 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold"
+      >
+        Import Selected Listings
+      </button>
+    </div>
+  </div>
+</div>

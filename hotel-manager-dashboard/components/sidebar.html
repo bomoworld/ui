@@ -1,0 +1,271 @@
+<aside
+  id="dashboardSidebar"
+  class="fixed top-0 left-0 z-50 w-72 h-screen bg-slate-950 text-white border-r border-slate-800 flex flex-col transform transition-transform duration-300"
+>
+  <!-- LOGO -->
+  <div
+    class="h-20 px-6 border-b border-slate-800 flex items-center justify-center bg-white"
+  >
+    <a href="hotel-manager-dashboard.html" class="flex items-center">
+      <div class="">
+        <img
+          src="./assets/images/logo.png"
+          alt="BOMO"
+          class="h-20 object-contain"
+        />
+      </div>
+    </a>
+  </div>
+
+  <!-- PROPERTY INFO -->
+  <div class="p-5 border-b border-slate-800">
+    <div class="flex items-center gap-3">
+      <div
+        class="w-12 h-12 rounded-2xl bg-orange-500 flex items-center justify-center text-white text-lg"
+      >
+        <i class="fa-solid fa-hotel"></i>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-sm">BOMO Makati Suites</h3>
+
+        <p class="text-xs text-slate-400">Property Partner Account</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="flex-1 overflow-y-auto py-5">
+    <!-- OVERVIEW -->
+    <section class="px-4 mb-6">
+      <p class="sidebar-section-title">Overview</p>
+
+      <div class="space-y-1">
+        <button
+          type="button"
+          class="dashboard-link dashboard-nav"
+          data-page="dashboard"
+        >
+          <i class="fa-solid fa-chart-line w-5"></i>
+          <span>Dashboard</span>
+        </button>
+
+        <button
+          type="button"
+          class="dashboard-link dashboard-nav"
+          data-page="calendar"
+        >
+          <i class="fa-solid fa-calendar-days w-5"></i>
+          <span>Calendar</span>
+        </button>
+
+        <button
+          type="button"
+          class="dashboard-link dashboard-nav"
+          data-page="bookings"
+        >
+          <i class="fa-solid fa-calendar-check w-5"></i>
+          <span>Bookings</span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- PROPERTY -->
+    <section class="px-4 mb-6">
+      <p class="sidebar-section-title">Property</p>
+
+      <div class="space-y-1">
+        <button
+          type="button"
+          class="dashboard-link dashboard-nav"
+          data-page="property"
+        >
+          <i class="fa-solid fa-hotel w-5"></i>
+          <span>Properties</span>
+        </button>
+
+        <button
+          type="button"
+          class="dashboard-link dashboard-nav"
+          data-page="rooms"
+        >
+          <i class="fa-solid fa-bed w-5"></i>
+          <span>Rooms & Rates</span>
+        </button>
+
+        <!-- <button
+          type="button"
+          class="dashboard-link dashboard-nav"
+          data-page="housekeeping"
+        >
+          <i class="fa-solid fa-broom w-5"></i>
+          <span>Housekeeping</span>
+        </button> -->
+
+      </div>
+    </section>
+
+    <!-- FINANCE -->
+    <section class="px-4 mb-6">
+      <p class="sidebar-section-title">Finance</p>
+
+      <div class="space-y-1">
+        <button
+          type="button"
+          class="dashboard-link dashboard-nav"
+          data-page="revenue"
+        >
+          <i class="fa-solid fa-money-bill-wave w-5"></i>
+          <span>Revenue</span>
+        </button>
+
+        <button
+          type="button"
+          class="dashboard-link dashboard-nav"
+          data-page="payouts"
+        >
+          <i class="fa-solid fa-file-invoice-dollar w-5"></i>
+          <span>Payouts</span>
+        </button>
+
+        <button
+          type="button"
+          class="dashboard-link dashboard-nav"
+          data-page="reports"
+        >
+          <i class="fa-solid fa-chart-pie w-5"></i>
+          <span>Reports</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- MARKETING -->
+    <section class="px-4 mb-6">
+      <p class="sidebar-section-title">Marketing</p>
+
+      <div class="space-y-1">
+        <!-- <button
+          type="button"
+          class="dashboard-link dashboard-nav"
+          data-page="promotions"
+        >
+          <i class="fa-solid fa-tags w-5"></i>
+          <span>Promotions</span>
+        </button> -->
+
+        <button
+          type="button"
+          class="dashboard-link dashboard-nav"
+          data-page="reviews"
+        >
+          <i class="fa-solid fa-star w-5"></i>
+          <span>Reviews</span>
+        </button>
+
+        <button
+          type="button"
+          class="dashboard-link dashboard-nav"
+          data-page="messages"
+        >
+          <i class="fa-solid fa-envelope w-5"></i>
+          <span>Messages</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- SYSTEM -->
+    <section class="px-4">
+      <p class="sidebar-section-title">System</p>
+
+      <div class="space-y-1">
+        <button
+          type="button"
+          class="dashboard-link dashboard-nav"
+          data-page="profile"
+        >
+          <i class="fa-solid fa-user-gear w-5"></i>
+          <span>Users</span>
+        </button>
+
+        <button
+          type="button"
+          class="dashboard-link dashboard-nav"
+          data-page="settings"
+        >
+          <i class="fa-solid fa-gear w-5"></i>
+          <span>Settings</span>
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <!-- USER -->
+  <div class="border-t border-slate-800 p-5">
+    <div class="flex items-center gap-3">
+      <img
+        src="https://i.pravatar.cc/100"
+        alt="User"
+        class="w-11 h-11 rounded-full"
+      />
+
+      <button
+        class="w-10 h-10 rounded-xl border border-slate-700 flex items-center justify-center hover:bg-slate-800 transition"
+      >
+        <i class="fa-solid fa-right-from-bracket"></i>
+      </button>
+    </div>
+  </div>
+</aside>
+
+<style>
+  .sidebar-section-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #64748b;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .dashboard-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 16px;
+    border-radius: 14px;
+    color: #cbd5e1;
+    transition: 0.2s;
+  }
+
+  .dashboard-link:hover {
+    background: #172033;
+    color: #fff;
+  }
+
+  .dashboard-link.active {
+    background: #f58220;
+    color: #fff;
+  }
+
+  .dashboard-link.active:hover {
+    background: #d96f12;
+  }
+
+  .dashboard-link i {
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  #dashboardSidebar::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  #dashboardSidebar::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 999px;
+  }
+</style>

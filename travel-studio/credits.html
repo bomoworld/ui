@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Review Credits | BOMO Travel Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-bomo-deep: #0b2a6f;
+        --color-bomo-blue: #2563eb;
+        --color-bomo-orange: #f58220;
+        --color-bomo-soft: #f8fafc;
+        --color-bomo-dark: #0f172a;
+        --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+      }
+    </style>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/custom.css" />
+  </head>
+  <body
+    class="min-h-screen bg-slate-50 text-slate-950 antialiased dark:bg-slate-950 dark:text-white"
+    data-page="credits"
+  >
+    <div class="app min-h-screen">
+      <aside class="sidebar">
+        <div class="studio-title">Travel Studio</div>
+        <nav>
+          <a data-page="overview" href="index.html">Overview</a>
+          <a data-page="videos" href="videos.html"
+            >Video Reviews <span class="badge">24</span></a
+          >
+          <a data-page="upload" href="upload.html">Upload Video</a>
+          <a data-page="analytics" href="analytics.html">Analytics</a>
+          <a data-page="earnings" href="earnings.html">Earnings</a>
+          <a data-page="credits" href="credits.html"
+            >Review Credits <span class="badge orange">2</span></a
+          >
+          <a data-page="public-profile" href="public-profile.html"
+            >Public Profile</a
+          >
+        </nav>
+        <div class="sidebar-bottom">
+          <a data-page="help" href="help-center.html">Help Center</a>
+          <a data-page="contact" href="contact-support.html">Contact Support</a>
+          <a data-page="settings" href="settings.html">Settings</a>
+        </div>
+      </aside>
+      <main class="main min-w-0">
+        <header class="topbar backdrop-blur-xl">
+          <div>
+            <div class="eyebrow">BOMO Travel Studio</div>
+            <h1 id="pageTitle"></h1>
+          </div>
+          <div class="top-actions">
+            <button
+              class="theme-toggle"
+              id="themeToggle"
+              title="Toggle dark mode"
+            >
+              ◐
+            </button>
+            <button class="icon-btn" data-modal-open="notificationsModal">
+              🔔<span class="notify">3</span>
+            </button>
+            <div class="profile dropdown-wrap">
+              <button class="profile-btn" id="profileMenuBtn">
+                <div class="avatar">JD</div>
+                <div><b>Juan Dela Cruz</b><small>Creator</small></div>
+                <span>⌄</span>
+              </button>
+              <div class="dropdown" id="profileMenu">
+                <a href="profile-settings.html">Profile Settings</a>
+                <a href="public-profile.html">View Public Profile</a>
+                <a href="settings.html">Settings</a>
+                <button>Log Out</button>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="content mx-auto w-full">
+          <section class="stats">
+            <div class="stat transition-shadow hover:shadow-md">
+              <small>Available Credits</small><strong>2</strong
+              ><span>Ready to use</span>
+            </div>
+            <div class="stat transition-shadow hover:shadow-md">
+              <small>Used Credits</small><strong>12</strong
+              ><span>Lifetime</span>
+            </div>
+            <div class="stat transition-shadow hover:shadow-md">
+              <small>Expiring Soon</small><strong>1</strong
+              ><span>Aug 12, 2026</span>
+            </div>
+            <div class="stat transition-shadow hover:shadow-md">
+              <small>Pending Eligibility</small><strong>1</strong
+              ><span>After checkout</span>
+            </div>
+          </section>
+          <section class="panel transition-shadow hover:shadow-md">
+            <h2>Review Credit History</h2>
+            <table>
+              <tr>
+                <th>Booking</th>
+                <th>Property</th>
+                <th>Checkout</th>
+                <th>Expiry</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+              <tr>
+                <td>BOMO-260520-1048</td>
+                <td>El Nido Resorts, Lagen Island</td>
+                <td>May 24, 2026</td>
+                <td>Aug 22, 2026</td>
+                <td><span class="status published">Available</span></td>
+                <td><a href="upload.html">Use credit</a></td>
+              </tr>
+              <tr>
+                <td>BOMO-260510-0832</td>
+                <td>The Lind Boracay</td>
+                <td>May 13, 2026</td>
+                <td>Aug 12, 2026</td>
+                <td><span class="status review">Expiring soon</span></td>
+                <td><a href="upload.html">Use credit</a></td>
+              </tr>
+              <tr>
+                <td>BOMO-260401-0194</td>
+                <td>Quest Hotel Cebu</td>
+                <td>Apr 5, 2026</td>
+                <td>Jul 4, 2026</td>
+                <td><span class="status muted">Used</span></td>
+                <td>View video</td>
+              </tr>
+            </table>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="assets/app.js"></script>
+    <div class="modal-backdrop" id="videoModal">
+      <div class="modal modal-lg">
+        <div class="modal-head">
+          <div>
+            <span class="eyebrow">VIDEO DETAILS</span>
+            <h2>El Nido Resorts, Lagen Island</h2>
+          </div>
+          <button class="modal-close" data-modal-close="videoModal">×</button>
+        </div>
+        <div class="modal-body">
+          <div class="video-preview">▶</div>
+          <div class="detail-grid">
+            <div><small>Status</small><b>Published</b></div>
+            <div><small>Views</small><b>12,540</b></div>
+            <div><small>Earnings</small><b>₱1,254</b></div>
+            <div><small>Rating</small><b>5.0 ★</b></div>
+          </div>
+        </div>
+        <div class="modal-foot">
+          <button class="danger">Delete</button><span class="spacer"></span
+          ><button
+            class="secondary transition hover:bg-slate-50 dark:hover:bg-slate-800"
+          >
+            Edit Details</button
+          ><button
+            class="primary transition hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
+          >
+            View Public Video
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-backdrop" id="notificationsModal">
+      <div class="modal">
+        <div class="modal-head">
+          <h2>Notifications</h2>
+          <button class="modal-close" data-modal-close="notificationsModal">
+            ×
+          </button>
+        </div>
+        <div class="notification-list">
+          <div>
+            <b>Your video was published</b>
+            <p>El Nido Resorts is now visible publicly.</p>
+          </div>
+          <div>
+            <b>New earnings added</b>
+            <p>₱324 was added from video performance.</p>
+          </div>
+          <div>
+            <b>Review Credit expiring</b>
+            <p>One credit expires on August 12, 2026.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="successModal">
+      <div class="modal">
+        <div class="modal-head">
+          <h2>Message Sent</h2>
+          <button class="modal-close" data-modal-close="successModal">×</button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Your support request has been submitted. A confirmation will be sent
+            to your email.
+          </p>
+        </div>
+        <div class="modal-foot">
+          <button
+            class="primary transition hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
+            data-modal-close="successModal"
+          >
+            Done
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-backdrop" id="savedModal">
+      <div class="modal">
+        <div class="modal-head">
+          <h2>Profile Updated</h2>
+          <button class="modal-close" data-modal-close="savedModal">×</button>
+        </div>
+        <div class="modal-body">
+          <p>Your profile changes have been saved.</p>
+        </div>
+        <div class="modal-foot">
+          <button
+            class="primary transition hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
+            data-modal-close="savedModal"
+          >
+            Done
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

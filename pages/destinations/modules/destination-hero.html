@@ -1,0 +1,127 @@
+<section class="destinations-hero" aria-labelledby="destinationsHeroTitle">
+  <img
+    class="destinations-hero__background"
+    src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=2200&q=88"
+    alt="Turquoise water and tropical islands in the Philippines"
+  />
+  <div class="destinations-hero__overlay"></div>
+
+  <div class="destinations-hero__inner">
+    <div class="destinations-hero__copy">
+      <span class="destinations-hero__eyebrow">
+        <i class="fa-solid fa-compass"></i>
+        Explore the Philippines
+      </span>
+
+      <h1 id="destinationsHeroTitle">
+        Find a place that feels
+        <span>made for your next story.</span>
+      </h1>
+
+      <p>
+        Browse island escapes, food capitals, mountain retreats and cultural
+        celebrations—curated with real guest stays and practical travel details.
+      </p>
+
+      <form id="destinationSearchForm" class="destination-search" role="search">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <label class="sr-only" for="destinationSearch">
+          Search destinations and travel styles
+        </label>
+        <input
+          id="destinationSearch"
+          type="search"
+          autocomplete="off"
+          placeholder="Try Palawan, surfing, food trips…"
+        />
+        <button type="submit">
+          Explore
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+
+      <div class="destinations-hero__quick" aria-label="Popular searches">
+        <span>Popular:</span>
+        <button type="button" data-destination-query="Palawan">Palawan</button>
+        <button type="button" data-destination-query="Siargao">Siargao</button>
+        <button type="button" data-destination-query="Beach">Beaches</button>
+        <button type="button" data-destination-query="Food">Food trips</button>
+        <button type="button" data-destination-query="Mountain">Mountains</button>
+      </div>
+
+      <div class="destinations-hero__trust">
+        <div>
+          <strong>30+</strong>
+          <span>curated destinations</span>
+        </div>
+        <div>
+          <strong>120+</strong>
+          <span>verified stay stories</span>
+        </div>
+        <div>
+          <strong>7,641</strong>
+          <span>islands to discover</span>
+        </div>
+      </div>
+    </div>
+
+    <aside class="destination-spotlight" aria-label="Destination spotlight">
+      <div class="destination-spotlight__image">
+        <img
+          src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1100&q=86"
+          alt="Surfer at Siargao"
+        />
+        <span><i class="fa-solid fa-fire"></i> Trending now</span>
+      </div>
+
+      <div class="destination-spotlight__body">
+        <div class="destination-spotlight__heading">
+          <div>
+            <small>Destination spotlight</small>
+            <h2>Siargao</h2>
+          </div>
+          <span>★ 4.9</span>
+        </div>
+
+        <p>
+          Surf breaks, palm-lined roads, clear lagoons and a relaxed island
+          community.
+        </p>
+
+        <div class="destination-spotlight__facts">
+          <span><i class="fa-solid fa-sun"></i> Mar–Oct</span>
+          <span><i class="fa-solid fa-plane"></i> Direct flights</span>
+          <span><i class="fa-solid fa-video"></i> 28 guest reviews</span>
+        </div>
+
+        <div class="destination-spotlight__actions">
+          <button type="button" data-destination-query="Siargao">
+            Explore Siargao
+          </button>
+          <a href="hotel-listings.html?location=Siargao" aria-label="Find stays in Siargao">
+            <i class="fa-solid fa-bed"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="destination-spotlight__alternatives">
+        <button type="button" data-destination-query="El Nido">
+          <img
+            src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=180&q=80"
+            alt=""
+          />
+          <span><strong>El Nido</strong><small>Island escape</small></span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <button type="button" data-destination-query="Baguio">
+          <img
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=180&q=80"
+            alt=""
+          />
+          <span><strong>Baguio</strong><small>Mountain retreat</small></span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </aside>
+  </div>
+</section>

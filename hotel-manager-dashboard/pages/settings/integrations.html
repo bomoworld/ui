@@ -1,0 +1,261 @@
+<div class="space-y-6">
+  <!-- CHANNEL MANAGER -->
+  <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div
+      class="p-6 border-b border-slate-100 flex items-center justify-between"
+    >
+      <div>
+        <h3 class="text-xl font-bold">Channel Manager Connections</h3>
+
+        <p class="text-sm text-slate-500 mt-1">
+          Synchronize rates, availability, and bookings across online travel
+          agencies.
+        </p>
+      </div>
+
+      <button
+        class="h-11 px-5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold"
+      >
+        Connect Channel
+      </button>
+    </div>
+
+    <div class="p-6">
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+        <div class="rounded-2xl p-5">
+          <div class="flex items-center justify-between mb-4">
+            <i class="fa-solid fa-bed text-2xl text-slate-700"></i>
+
+            <span
+              class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-semibold"
+            >
+              Connected
+            </span>
+          </div>
+
+          <h4 class="font-bold">Booking.com</h4>
+
+          <p class="text-sm text-slate-500 mt-2">
+            Rates and inventory synchronized.
+          </p>
+        </div>
+
+        <div class="rounded-2xl p-5">
+          <div class="flex items-center justify-between mb-4">
+            <i class="fa-solid fa-hotel text-2xl text-slate-700"></i>
+
+            <span
+              class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-semibold"
+            >
+              Connected
+            </span>
+          </div>
+
+          <h4 class="font-bold">Agoda</h4>
+
+          <p class="text-sm text-slate-500 mt-2">Bookings synchronized.</p>
+        </div>
+
+        <div class="rounded-2xl p-5">
+          <div class="flex items-center justify-between mb-4">
+            <i class="fa-solid fa-house text-2xl text-slate-700"></i>
+
+            <span
+              class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold"
+            >
+              Not Connected
+            </span>
+          </div>
+
+          <h4 class="font-bold">Airbnb</h4>
+
+          <p class="text-sm text-slate-500 mt-2">
+            Connect your Airbnb listings.
+          </p>
+        </div>
+
+        <div class="rounded-2xl p-5">
+          <div class="flex items-center justify-between mb-4">
+            <i class="fa-solid fa-globe text-2xl text-slate-700"></i>
+
+            <span
+              class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold"
+            >
+              Not Connected
+            </span>
+          </div>
+
+          <h4 class="font-bold">Expedia</h4>
+
+          <p class="text-sm text-slate-500 mt-2">
+            Connect Expedia Group channels.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- API ACCESS -->
+  <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div class="p-6 border-b border-slate-100">
+      <h3 class="text-xl font-bold">API Access</h3>
+
+      <p class="text-sm text-slate-500 mt-1">
+        Connect third-party systems using BOMO APIs.
+      </p>
+    </div>
+
+    <div class="p-6 space-y-6">
+      <div>
+        <label class="block text-sm font-medium mb-2"> API Key </label>
+
+        <div class="flex gap-3">
+          <input
+            type="text"
+            readonly
+            value="••••••••••••••••••••••••••••••••"
+            class="flex-1 h-12 px-4 rounded-xl bg-slate-50"
+          />
+
+          <button class="px-5 h-12 rounded-xl hover:bg-slate-50">
+            Regenerate
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-2"> Webhook URL </label>
+
+        <input
+          type="text"
+          placeholder="https://yourdomain.com/webhook"
+          class="w-full h-12 px-4 rounded-xl border border-slate-200"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- EMAIL SERVICE -->
+  <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div class="p-6 border-b border-slate-100">
+      <h3 class="text-xl font-bold">Email Service</h3>
+
+      <p class="text-sm text-slate-500 mt-1">
+        Configure email delivery for guest communications.
+      </p>
+    </div>
+
+    <div class="p-6">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-medium mb-2"> SMTP Host </label>
+
+          <input
+            type="text"
+            placeholder="smtp.example.com"
+            class="w-full h-12 px-4 rounded-xl border border-slate-200"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-2"> SMTP Port </label>
+
+          <input
+            type="number"
+            placeholder="587"
+            class="w-full h-12 px-4 rounded-xl border border-slate-200"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-2"> SMTP Username </label>
+
+          <input
+            type="text"
+            class="w-full h-12 px-4 rounded-xl border border-slate-200"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-2"> SMTP Password </label>
+
+          <input
+            type="password"
+            class="w-full h-12 px-4 rounded-xl border border-slate-200"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAYMENT GATEWAYS -->
+  <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div
+      class="p-6 border-b border-slate-100 flex items-center justify-between"
+    >
+      <div>
+        <h3 class="text-xl font-bold">Payment Gateways</h3>
+
+        <p class="text-sm text-slate-500 mt-1">
+          Accept online payments from guests.
+        </p>
+      </div>
+
+      <button
+        class="h-11 px-5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold"
+      >
+        Add Gateway
+      </button>
+    </div>
+
+    <div class="p-6">
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+        <div class="rounded-2xl p-5">
+          <div class="flex items-center justify-between">
+            <h4 class="font-bold">PayMongo</h4>
+
+            <span
+              class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs"
+            >
+              Connected
+            </span>
+          </div>
+
+          <p class="text-sm text-slate-500 mt-3">Credit Cards, GCash, Maya.</p>
+        </div>
+
+        <div class="rounded-2xl p-5">
+          <div class="flex items-center justify-between">
+            <h4 class="font-bold">Xendit</h4>
+
+            <span
+              class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs"
+            >
+              Not Connected
+            </span>
+          </div>
+
+          <p class="text-sm text-slate-500 mt-3">
+            Alternative payment processing.
+          </p>
+        </div>
+
+        <div class="rounded-2xl p-5">
+          <div class="flex items-center justify-between">
+            <h4 class="font-bold">Stripe</h4>
+
+            <span
+              class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs"
+            >
+              Not Connected
+            </span>
+          </div>
+
+          <p class="text-sm text-slate-500 mt-3">
+            International card payments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,379 @@
+<section class="px-4 lg:px-8 pb-8">
+  <!-- =====================================================
+       SECTION HEADER
+  ====================================================== -->
+  <div
+    class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-6"
+  >
+    <div>
+      <h2 class="text-2xl font-black text-slate-900">
+        Housekeeping Operations
+      </h2>
+
+      <p class="text-slate-500">
+        Monitor room cleaning, maintenance requests and staff productivity
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-3">
+      <button
+        class="h-11 px-5 rounded-xl bg-white hover:bg-slate-50 font-medium transition"
+      >
+        Staff Schedule
+      </button>
+
+      <button
+        class="h-11 px-5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold transition"
+      >
+        Assign Tasks
+      </button>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       KPI CARDS
+  ====================================================== -->
+  <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
+    <div class="bg-white rounded-[30px] shadow-sm p-6">
+      <div class="flex justify-between">
+        <div>
+          <p class="text-sm text-slate-500">Clean Rooms</p>
+
+          <h3 class="text-4xl font-black mt-3">342</h3>
+        </div>
+
+        <div
+          class="w-14 h-14 rounded-2xl bg-green-50 text-green-600 flex items-center justify-center"
+        >
+          <i class="fa-solid fa-circle-check text-xl"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-[30px] shadow-sm p-6">
+      <div class="flex justify-between">
+        <div>
+          <p class="text-sm text-slate-500">Cleaning In Progress</p>
+
+          <h3 class="text-4xl font-black mt-3">24</h3>
+        </div>
+
+        <div
+          class="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center"
+        >
+          <i class="fa-solid fa-broom text-xl"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-[30px] shadow-sm p-6">
+      <div class="flex justify-between">
+        <div>
+          <p class="text-sm text-slate-500">Pending Cleaning</p>
+
+          <h3 class="text-4xl font-black mt-3">48</h3>
+        </div>
+
+        <div
+          class="w-14 h-14 rounded-2xl bg-yellow-50 text-yellow-600 flex items-center justify-center"
+        >
+          <i class="fa-solid fa-clock text-xl"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-[30px] shadow-sm p-6">
+      <div class="flex justify-between">
+        <div>
+          <p class="text-sm text-slate-500">Maintenance Issues</p>
+
+          <h3 class="text-4xl font-black mt-3">12</h3>
+        </div>
+
+        <div
+          class="w-14 h-14 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center"
+        >
+          <i class="fa-solid fa-screwdriver-wrench text-xl"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       OPERATIONS GRID
+  ====================================================== -->
+  <div class="grid xl:grid-cols-3 gap-6">
+    <!-- ROOM STATUS -->
+    <div
+      class="xl:col-span-2 bg-white rounded-[30px] shadow-sm overflow-hidden"
+    >
+      <div
+        class="p-6 border-b border-slate-100 flex items-center justify-between"
+      >
+        <div>
+          <h3 class="font-bold text-lg">Room Cleaning Queue</h3>
+
+          <p class="text-sm text-slate-500">
+            Priority housekeeping assignments
+          </p>
+        </div>
+
+        <select class="h-11 px-4 rounded-xl border border-slate-200">
+          <option>All Properties</option>
+          <option>Makati Suites</option>
+          <option>BGC Residences</option>
+          <option>Cebu Bay Hotel</option>
+        </select>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[900px]">
+          <thead>
+            <tr class="bg-slate-50">
+              <th class="text-left px-6 py-4 font-semibold">Room</th>
+
+              <th class="text-left px-6 py-4 font-semibold">Property</th>
+
+              <th class="text-left px-6 py-4 font-semibold">Type</th>
+
+              <th class="text-left px-6 py-4 font-semibold">Assigned Staff</th>
+
+              <th class="text-left px-6 py-4 font-semibold">Priority</th>
+
+              <th class="text-left px-6 py-4 font-semibold">Status</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="border-t border-slate-100 hover:bg-slate-50">
+              <td class="px-6 py-5 font-semibold">1205</td>
+
+              <td class="px-6 py-5">BOMO Makati Suites</td>
+
+              <td class="px-6 py-5">Deluxe Suite</td>
+
+              <td class="px-6 py-5">Maria Santos</td>
+
+              <td class="px-6 py-5">
+                <span
+                  class="inline-flex px-3 py-1 rounded-full bg-red-100 text-red-700 text-xs font-semibold"
+                >
+                  High
+                </span>
+              </td>
+
+              <td class="px-6 py-5">
+                <span
+                  class="inline-flex px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold"
+                >
+                  In Progress
+                </span>
+              </td>
+            </tr>
+
+            <tr class="border-t border-slate-100 hover:bg-slate-50">
+              <td class="px-6 py-5 font-semibold">803</td>
+
+              <td class="px-6 py-5">BOMO BGC Residences</td>
+
+              <td class="px-6 py-5">Executive Room</td>
+
+              <td class="px-6 py-5">Juan Reyes</td>
+
+              <td class="px-6 py-5">
+                <span
+                  class="inline-flex px-3 py-1 rounded-full bg-yellow-100 text-yellow-700 text-xs font-semibold"
+                >
+                  Medium
+                </span>
+              </td>
+
+              <td class="px-6 py-5">
+                <span
+                  class="inline-flex px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-xs font-semibold"
+                >
+                  Pending
+                </span>
+              </td>
+            </tr>
+
+            <tr class="border-t border-slate-100 hover:bg-slate-50">
+              <td class="px-6 py-5 font-semibold">612</td>
+
+              <td class="px-6 py-5">BOMO Cebu Bay Hotel</td>
+
+              <td class="px-6 py-5">Family Suite</td>
+
+              <td class="px-6 py-5">Ana Cruz</td>
+
+              <td class="px-6 py-5">
+                <span
+                  class="inline-flex px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-semibold"
+                >
+                  Normal
+                </span>
+              </td>
+
+              <td class="px-6 py-5">
+                <span
+                  class="inline-flex px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-semibold"
+                >
+                  Completed
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- STAFF PERFORMANCE -->
+    <div class="bg-white rounded-[30px] shadow-sm p-6">
+      <div class="mb-6">
+        <h3 class="font-bold text-lg">Housekeeping Team</h3>
+
+        <p class="text-sm text-slate-500">Staff productivity today</p>
+      </div>
+
+      <div class="space-y-5">
+        <div>
+          <div class="flex justify-between mb-2">
+            <span class="font-medium"> Maria Santos </span>
+
+            <span class="text-green-600 font-semibold"> 18 Rooms </span>
+          </div>
+
+          <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+            <div
+              class="h-full bg-green-500 rounded-full"
+              style="width: 90%"
+            ></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between mb-2">
+            <span class="font-medium"> Juan Reyes </span>
+
+            <span class="text-green-600 font-semibold"> 15 Rooms </span>
+          </div>
+
+          <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+            <div
+              class="h-full bg-blue-500 rounded-full"
+              style="width: 75%"
+            ></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between mb-2">
+            <span class="font-medium"> Ana Cruz </span>
+
+            <span class="text-green-600 font-semibold"> 12 Rooms </span>
+          </div>
+
+          <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+            <div
+              class="h-full bg-orange-500 rounded-full"
+              style="width: 60%"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-slate-100">
+        <div class="flex justify-between mb-4">
+          <span class="text-slate-500"> Active Staff </span>
+
+          <strong> 32 </strong>
+        </div>
+
+        <div class="flex justify-between mb-4">
+          <span class="text-slate-500"> Tasks Completed </span>
+
+          <strong> 154 </strong>
+        </div>
+
+        <div class="flex justify-between">
+          <span class="text-slate-500"> Avg Cleaning Time </span>
+
+          <strong> 24 mins </strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       MAINTENANCE
+  ====================================================== -->
+  <div class="mt-8 bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div class="p-6 border-b border-slate-100">
+      <h3 class="font-bold text-lg">Maintenance Requests</h3>
+
+      <p class="text-sm text-slate-500">Pending repairs and facility issues</p>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="w-full min-w-[1000px]">
+        <thead>
+          <tr class="bg-slate-50">
+            <th class="text-left px-6 py-4">Ticket #</th>
+
+            <th class="text-left px-6 py-4">Property</th>
+
+            <th class="text-left px-6 py-4">Room</th>
+
+            <th class="text-left px-6 py-4">Issue</th>
+
+            <th class="text-left px-6 py-4">Reported</th>
+
+            <th class="text-left px-6 py-4">Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="border-t border-slate-100">
+            <td class="px-6 py-5 font-semibold">MT-00152</td>
+
+            <td class="px-6 py-5">BOMO Makati Suites</td>
+
+            <td class="px-6 py-5">1108</td>
+
+            <td class="px-6 py-5">Air Conditioning Not Working</td>
+
+            <td class="px-6 py-5">2 Hours Ago</td>
+
+            <td class="px-6 py-5">
+              <span
+                class="inline-flex px-3 py-1 rounded-full bg-red-100 text-red-700 text-xs font-semibold"
+              >
+                Urgent
+              </span>
+            </td>
+          </tr>
+
+          <tr class="border-t border-slate-100">
+            <td class="px-6 py-5 font-semibold">MT-00153</td>
+
+            <td class="px-6 py-5">BOMO BGC Residences</td>
+
+            <td class="px-6 py-5">712</td>
+
+            <td class="px-6 py-5">Water Heater Repair</td>
+
+            <td class="px-6 py-5">Today</td>
+
+            <td class="px-6 py-5">
+              <span
+                class="inline-flex px-3 py-1 rounded-full bg-yellow-100 text-yellow-700 text-xs font-semibold"
+              >
+                Assigned
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOMO Admin Login</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta
+      name="description"
+      content="Discover resorts, villas, apartments, vacation homes, and unique stays through verified guest video reviews. Book with confidence, share your experience after checkout, and earn BOMO Rewards."
+    />
+
+    <meta
+      name="keywords"
+      content="BOMO, property booking, travel booking, resort booking, villa booking, apartment booking, vacation home, unique stays, verified guest reviews, video reviews, travel reviews, travel rewards, book review earn, stay reviews, travel platform, accommodation booking, Philippines travel"
+    />
+
+    <meta name="author" content="BOMO" />
+    <meta name="application-name" content="BOMO" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#0B2A6F" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://bomo.world/" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="./assets/favicon-Cl4fF5E7.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon-16x16-C0VmmhzU.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32-DvCft5Zs.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="/assets/favicon/favicon-48x48.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/apple-touch-icon-DB-zNtSp.png"
+    />
+    <link rel="manifest" href="./assets/site-BwHFeIBa.webmanifest" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="BOMO" />
+    <meta property="og:title" content="BOMO | Book, Review, Earn" />
+    <meta
+      property="og:description"
+      content="Discover trusted properties through verified guest video reviews. Book with confidence, review your stay after checkout, and earn BOMO Rewards."
+    />
+    <meta property="og:url" content="https://bomo.world/" />
+    <meta
+      property="og:image"
+      content="https://bomo.world/assets/images/og-image.jpg"
+    />
+    <meta property="og:image:alt" content="BOMO | Book, Review, Earn" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BOMO | Book, Review, Earn" />
+    <meta
+      name="twitter:description"
+      content="Book trusted properties through verified guest experiences. Share your stay, help future travellers, and earn BOMO Rewards."
+    />
+    <meta
+      name="twitter:image"
+      content="https://bomo.world/assets/images/og-image.jpg"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gveret+Levin&family=Vujahday+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+
+  <body class="min-h-screen bg-slate-100 antialiased">
+    <div class="flex min-h-screen items-center justify-center px-6 py-10">
+      <div class="w-full max-w-md">
+        <div class="mb-10 text-center">
+          <div
+            class="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl border border-red-200 bg-gradient-to-br from-red-50 to-red-100 shadow-sm"
+          >
+            <i class="fa-solid fa-shield-halved text-3xl text-red-600"></i>
+          </div>
+
+          <h1 class="mt-6 text-4xl font-black tracking-tight text-slate-900">
+            BOMO Admin
+          </h1>
+
+          <p class="mt-2 text-sm text-slate-500">
+            Secure administrative access only
+          </p>
+        </div>
+
+        <div
+          class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl"
+        >
+          <div class="border-b border-red-100 bg-red-50 px-6 py-5">
+            <div class="flex gap-3">
+              <i class="fa-solid fa-lock text-red-600 mt-0.5"></i>
+              <div>
+                <p class="text-sm font-semibold text-red-700">
+                  Restricted System
+                </p>
+                <p class="text-xs text-red-600 mt-1">
+                  All login attempts are monitored and logged
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-6 pt-6">
+            <button
+              class="flex w-full items-center justify-center gap-3 rounded-xl border border-slate-300 bg-white py-3 font-medium text-slate-700 transition hover:bg-slate-50 active:scale-[0.99]"
+            >
+              <i class="fa-brands fa-google text-red-500"></i>
+              Continue with Google Workspace
+            </button>
+
+            <div class="relative my-6">
+              <div class="border-t border-slate-200"></div>
+              <span
+                class="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-3 text-xs text-slate-400"
+              >
+                OR
+              </span>
+            </div>
+          </div>
+
+          <form id="adminLoginForm" class="space-y-5 px-6 pb-6">
+            <div>
+              <label class="text-sm font-semibold text-slate-700">
+                Email Address
+              </label>
+
+              <div class="relative mt-2">
+                <i
+                  class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
+                ></i>
+
+                <input
+                  type="email"
+                  required
+                  autocomplete="username"
+                  placeholder="admin@company.com"
+                  class="w-full rounded-xl border border-slate-300 bg-white py-3 pl-12 pr-4 text-sm outline-none transition focus:border-red-500 focus:ring-4 focus:ring-red-100"
+                />
+              </div>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between">
+                <label class="text-sm font-semibold text-slate-700">
+                  Password
+                </label>
+
+                <a
+                  href="#"
+                  class="text-xs font-medium text-red-600 hover:text-red-700"
+                >
+                  Forgot?
+                </a>
+              </div>
+
+              <div class="relative mt-2">
+                <i
+                  class="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
+                ></i>
+
+                <input
+                  id="password"
+                  type="password"
+                  required
+                  autocomplete="current-password"
+                  placeholder="Enter your password"
+                  class="w-full rounded-xl border border-slate-300 bg-white py-3 pl-12 pr-12 text-sm outline-none transition focus:border-red-500 focus:ring-4 focus:ring-red-100"
+                />
+
+                <button
+                  type="button"
+                  id="togglePassword"
+                  class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700"
+                >
+                  <i id="eyeIcon" class="fa-regular fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <label class="text-sm font-semibold text-slate-700">
+                Security Verification
+              </label>
+
+              <div
+                class="mt-2 flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-slate-50 py-4 text-sm text-slate-500"
+              >
+                <i class="fa-solid fa-shield-check"></i>
+                CAPTCHA Placeholder
+              </div>
+            </div>
+
+            <button
+              type="button"
+              id="continueBtn"
+              class="w-full rounded-xl bg-red-600 py-3 font-semibold text-white transition hover:bg-red-700 active:scale-[0.99]"
+            >
+              Continue
+            </button>
+
+            <div id="mfaSection" class="hidden pt-6 border-t border-slate-200">
+              <div
+                class="mb-4 rounded-xl border border-blue-200 bg-blue-50 p-4"
+              >
+                <div class="flex gap-3">
+                  <i class="fa-solid fa-mobile-screen text-blue-600"></i>
+                  <div>
+                    <p class="text-sm font-semibold text-blue-700">
+                      Multi-Factor Authentication
+                    </p>
+                    <p class="text-xs text-blue-600 mt-1">
+                      Enter your 6-digit authentication code
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <input
+                maxlength="6"
+                placeholder="000000"
+                class="w-full rounded-xl border border-slate-300 py-4 text-center text-xl font-semibold tracking-[0.4em] outline-none transition focus:border-red-500 focus:ring-4 focus:ring-red-100"
+              />
+
+              <a href="admin-panel.html">
+                <div
+                  type="submit"
+                  class="text-center mt-4 w-full rounded-xl bg-slate-900 py-3 font-semibold text-white transition hover:bg-slate-800"
+                >
+                  Verify & Sign In
+                </div>
+              </a>
+            </div>
+          </form>
+        </div>
+
+        <p class="mt-6 text-center text-xs text-slate-400">
+          BOMO Administration Console
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const toggle = document.getElementById("togglePassword");
+      const password = document.getElementById("password");
+      const icon = document.getElementById("eyeIcon");
+
+      toggle.addEventListener("click", () => {
+        const type =
+          password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+        icon.classList.toggle("fa-eye");
+        icon.classList.toggle("fa-eye-slash");
+      });
+
+      document.getElementById("continueBtn").addEventListener("click", () => {
+        document.getElementById("mfaSection").classList.remove("hidden");
+      });
+    </script>
+  </body>
+</html>

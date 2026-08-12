@@ -1,0 +1,324 @@
+<section id="analyticsPage" class="space-y-7 pb-5">
+  <section
+    class="relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 px-6 py-8 text-white shadow-2xl shadow-slate-950/10 sm:px-8 lg:px-10 lg:py-10">
+    <div
+      class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_88%_12%,rgba(99,102,241,.34),transparent_34%),radial-gradient(circle_at_10%_120%,rgba(14,165,233,.22),transparent_36%)]">
+    </div>
+    <div class="pointer-events-none absolute -right-16 -top-24 h-72 w-72 rounded-full border border-white/10"></div>
+    <div class="relative flex flex-col gap-8 xl:flex-row xl:items-end xl:justify-between">
+      <div class="max-w-3xl">
+        <div
+          class="inline-flex items-center gap-2 rounded-full border border-indigo-200/20 bg-white/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-indigo-100">
+          <i class="fa-solid fa-chart-pie"></i>
+          Platform administration · Business intelligence
+        </div>
+        <h1 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">Analytics & Reporting Center</h1>
+        <p class="mt-4 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
+          One governed reporting workspace for executive, sales, marketing, operations, finance, customer experience,
+          and partner performance teams.
+        </p>
+        <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-slate-300">
+          <span class="inline-flex items-center gap-2"><i class="fa-solid fa-circle text-[7px] text-emerald-400"></i>
+            Data refreshed <strong class="font-semibold text-white" data-analytics-freshness>Jul 27, 9:42 AM</strong></span>
+          <span class="inline-flex items-center gap-2"><i class="fa-solid fa-shield-halved text-indigo-300"></i> Governed
+            metrics</span>
+          <span class="inline-flex items-center gap-2"><i class="fa-solid fa-database text-sky-300"></i> 8 connected
+            sources</span>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <button type="button" class="property-button property-button-light" data-analytics-action="schedule">
+          <i class="fa-regular fa-calendar-check"></i> Schedule report
+        </button>
+        <button type="button" class="property-button property-button-dark" data-analytics-action="create-report">
+          <i class="fa-solid fa-plus"></i> Build custom report
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+    <div class="flex flex-col gap-5 xl:flex-row xl:items-end">
+      <div class="min-w-0 flex-1">
+        <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">Reporting controls</p>
+        <p class="mt-1 text-sm text-slate-500">Applied consistently to dashboard metrics, charts, and report exports.</p>
+      </div>
+      <div class="grid flex-[2] gap-3 sm:grid-cols-2 xl:grid-cols-[1.2fr_1fr_1fr_1fr_auto]">
+        <label>
+          <span class="mb-1.5 block text-xs font-semibold text-slate-600">Reporting period</span>
+          <select data-analytics-filter="period" class="bomo-input h-11 w-full">
+            <option value="30">Last 30 days</option>
+            <option value="7">Last 7 days</option>
+            <option value="month">Month to date</option>
+            <option value="quarter">Quarter to date</option>
+            <option value="year">Year to date</option>
+          </select>
+        </label>
+        <label>
+          <span class="mb-1.5 block text-xs font-semibold text-slate-600">Business scope</span>
+          <select data-analytics-filter="scope" class="bomo-input h-11 w-full">
+            <option>All markets</option>
+            <option>Philippines</option>
+            <option>Metro Manila</option>
+            <option>Visayas</option>
+            <option>Mindanao</option>
+          </select>
+        </label>
+        <label>
+          <span class="mb-1.5 block text-xs font-semibold text-slate-600">Property segment</span>
+          <select data-analytics-filter="segment" class="bomo-input h-11 w-full">
+            <option>All properties</option>
+            <option>Hotels</option>
+            <option>Resorts</option>
+            <option>Villas</option>
+            <option>Serviced residences</option>
+          </select>
+        </label>
+        <label>
+          <span class="mb-1.5 block text-xs font-semibold text-slate-600">Compare with</span>
+          <select data-analytics-filter="comparison" class="bomo-input h-11 w-full">
+            <option>Previous period</option>
+            <option>Previous year</option>
+            <option>No comparison</option>
+          </select>
+        </label>
+        <button type="button" data-analytics-action="apply-filters"
+          class="property-button property-button-primary h-11 xl:self-end">
+          Apply
+        </button>
+      </div>
+    </div>
+    <div data-analytics-notice class="mt-4 hidden rounded-xl border px-4 py-3 text-sm" role="status"
+      aria-live="polite"></div>
+  </section>
+
+  <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+    <div class="border-b border-slate-100 px-5 py-4 sm:px-6">
+      <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h2 class="text-base font-semibold text-slate-950">Business function</h2>
+          <p class="mt-1 text-sm text-slate-500">Choose a workspace to focus its measures, signals, and governed reports.</p>
+        </div>
+        <span class="text-xs font-medium text-slate-400">7 reporting workspaces</span>
+      </div>
+    </div>
+    <nav data-analytics-categories class="grid sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7" aria-label="Analytics functions">
+      <button type="button" data-analytics-category="executive"
+        class="group border-b border-slate-100 px-4 py-4 text-left transition hover:bg-slate-50 xl:border-b-0 xl:border-r">
+        <span class="flex items-center justify-between gap-2"><span
+            class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-700"><i
+              class="fa-solid fa-gauge-high"></i></span><span
+            class="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-500">4</span></span>
+        <strong class="mt-3 block text-sm text-slate-900">Executive</strong>
+        <small class="mt-1 block text-xs text-slate-400">Company overview</small>
+      </button>
+      <button type="button" data-analytics-category="sales"
+        class="group border-b border-slate-100 px-4 py-4 text-left transition hover:bg-blue-50/60 xl:border-b-0 xl:border-r">
+        <span class="flex items-center justify-between gap-2"><span
+            class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-blue-600"><i
+              class="fa-solid fa-chart-line"></i></span><span
+            class="rounded-full bg-blue-50 px-2 py-0.5 text-[11px] font-semibold text-blue-600">3</span></span>
+        <strong class="mt-3 block text-sm text-slate-900">Sales</strong>
+        <small class="mt-1 block text-xs text-slate-400">Bookings & revenue</small>
+      </button>
+      <button type="button" data-analytics-category="marketing"
+        class="group border-b border-slate-100 px-4 py-4 text-left transition hover:bg-violet-50/60 xl:border-b-0 xl:border-r">
+        <span class="flex items-center justify-between gap-2"><span
+            class="flex h-9 w-9 items-center justify-center rounded-xl bg-violet-50 text-violet-600"><i
+              class="fa-solid fa-bullhorn"></i></span><span
+            class="rounded-full bg-violet-50 px-2 py-0.5 text-[11px] font-semibold text-violet-600">3</span></span>
+        <strong class="mt-3 block text-sm text-slate-900">Marketing</strong>
+        <small class="mt-1 block text-xs text-slate-400">Acquisition & campaigns</small>
+      </button>
+      <button type="button" data-analytics-category="operations"
+        class="group border-b border-slate-100 px-4 py-4 text-left transition hover:bg-amber-50/60 xl:border-b-0 xl:border-r">
+        <span class="flex items-center justify-between gap-2"><span
+            class="flex h-9 w-9 items-center justify-center rounded-xl bg-amber-50 text-amber-600"><i
+              class="fa-solid fa-gears"></i></span><span
+            class="rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-semibold text-amber-600">3</span></span>
+        <strong class="mt-3 block text-sm text-slate-900">Operations</strong>
+        <small class="mt-1 block text-xs text-slate-400">Supply & service levels</small>
+      </button>
+      <button type="button" data-analytics-category="finance"
+        class="group border-b border-slate-100 px-4 py-4 text-left transition hover:bg-emerald-50/60 xl:border-b-0 xl:border-r">
+        <span class="flex items-center justify-between gap-2"><span
+            class="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600"><i
+              class="fa-solid fa-coins"></i></span><span
+            class="rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-600">3</span></span>
+        <strong class="mt-3 block text-sm text-slate-900">Finance</strong>
+        <small class="mt-1 block text-xs text-slate-400">Accounting & settlements</small>
+      </button>
+      <button type="button" data-analytics-category="experience"
+        class="group border-b border-slate-100 px-4 py-4 text-left transition hover:bg-rose-50/60 xl:border-b-0 xl:border-r">
+        <span class="flex items-center justify-between gap-2"><span
+            class="flex h-9 w-9 items-center justify-center rounded-xl bg-rose-50 text-rose-600"><i
+              class="fa-solid fa-heart"></i></span><span
+            class="rounded-full bg-rose-50 px-2 py-0.5 text-[11px] font-semibold text-rose-600">3</span></span>
+        <strong class="mt-3 block text-sm text-slate-900">Customer</strong>
+        <small class="mt-1 block text-xs text-slate-400">Support & satisfaction</small>
+      </button>
+      <button type="button" data-analytics-category="supply"
+        class="group px-4 py-4 text-left transition hover:bg-cyan-50/60 xl:border-r-0">
+        <span class="flex items-center justify-between gap-2"><span
+            class="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-50 text-cyan-600"><i
+              class="fa-solid fa-building-user"></i></span><span
+            class="rounded-full bg-cyan-50 px-2 py-0.5 text-[11px] font-semibold text-cyan-600">3</span></span>
+        <strong class="mt-3 block text-sm text-slate-900">Partner & property</strong>
+        <small class="mt-1 block text-xs text-slate-400">Supply performance</small>
+      </button>
+    </nav>
+  </section>
+
+  <section>
+    <div class="mb-4 flex items-center justify-between">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600" data-analytics-eyebrow>Executive
+          workspace</p>
+        <h2 class="mt-1 text-xl font-semibold text-slate-950" data-analytics-heading>Company performance</h2>
+      </div>
+      <span
+        class="hidden rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700 sm:inline-flex sm:items-center sm:gap-2"><i
+          class="fa-solid fa-circle text-[6px]"></i> Live dashboard</span>
+    </div>
+    <div data-analytics-kpis class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4"></div>
+  </section>
+
+  <section class="grid gap-6 xl:grid-cols-[minmax(0,1.55fr)_minmax(320px,.75fr)]">
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <h2 class="text-lg font-semibold text-slate-950" data-analytics-chart-title>Company performance trend</h2>
+          <p class="mt-1 text-sm text-slate-500" data-analytics-chart-subtitle>Indexed performance across the selected
+            period</p>
+        </div>
+        <button type="button" data-analytics-action="export-chart"
+          class="property-button property-button-secondary shrink-0"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+          Export view</button>
+      </div>
+      <div class="mt-7 rounded-2xl bg-slate-50 px-4 pb-4 pt-6 sm:px-6">
+        <div class="flex h-64 items-end gap-3 sm:gap-5" data-analytics-chart aria-label="Performance bar chart"></div>
+        <div class="mt-4 flex items-center justify-between border-t border-slate-200 pt-4 text-xs text-slate-400"
+          data-analytics-chart-labels></div>
+      </div>
+      <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs text-slate-500">
+        <span class="inline-flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-sm bg-indigo-600"></span><span
+            data-analytics-legend-primary>Current period</span></span>
+        <span class="inline-flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-sm bg-slate-300"></span>Previous
+          period</span>
+      </div>
+    </div>
+
+    <aside class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <div class="border-b border-slate-100 px-5 py-5">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-lg font-semibold text-slate-950">Decision signals</h2>
+            <p class="mt-1 text-sm text-slate-500">Items that need attention</p>
+          </div>
+          <span data-analytics-signal-count
+            class="rounded-full bg-rose-50 px-2.5 py-1 text-xs font-semibold text-rose-600">3 signals</span>
+        </div>
+      </div>
+      <div data-analytics-insights class="divide-y divide-slate-100"></div>
+      <div class="border-t border-slate-100 bg-slate-50 px-5 py-4">
+        <button type="button" data-analytics-action="view-digest"
+          class="w-full text-left text-sm font-semibold text-indigo-700 hover:text-indigo-900">Open decision digest <i
+            class="fa-solid fa-arrow-right ml-1 text-xs"></i></button>
+      </div>
+    </aside>
+  </section>
+
+  <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+    <div class="border-b border-slate-100 px-5 py-5 sm:px-6">
+      <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <div>
+          <div class="flex items-center gap-2">
+            <h2 class="text-lg font-semibold text-slate-950">Governed report library</h2>
+            <span data-analytics-report-count
+              class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600">4 reports</span>
+          </div>
+          <p class="mt-1 text-sm text-slate-500">Function-owned reports with clear definitions, cadence, and data status.</p>
+        </div>
+        <div class="grid gap-3 sm:grid-cols-[minmax(240px,1fr)_10rem]">
+          <label class="relative">
+            <span class="sr-only">Search reports</span>
+            <i
+              class="fa-solid fa-magnifying-glass pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm text-slate-400"></i>
+            <input type="search" data-analytics-search class="bomo-input h-11 w-full pl-10"
+              placeholder="Search report or owner…" autocomplete="off">
+          </label>
+          <select data-analytics-status class="bomo-input h-11 w-full" aria-label="Filter report status">
+            <option value="all">All statuses</option>
+            <option value="Certified">Certified</option>
+            <option value="Monitoring">Monitoring</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="min-w-[900px] w-full text-left text-sm">
+        <thead class="border-b border-slate-100 bg-slate-50 text-xs font-semibold uppercase tracking-wide text-slate-500">
+          <tr>
+            <th class="px-5 py-3.5 sm:px-6">Report</th>
+            <th class="px-5 py-3.5">Business owner</th>
+            <th class="px-5 py-3.5">Cadence</th>
+            <th class="px-5 py-3.5">Data status</th>
+            <th class="px-5 py-3.5">Last updated</th>
+            <th class="px-5 py-3.5 text-right">Action</th>
+          </tr>
+        </thead>
+        <tbody data-analytics-reports class="divide-y divide-slate-100"></tbody>
+      </table>
+    </div>
+    <div data-analytics-empty class="hidden px-6 py-12 text-center">
+      <span class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-slate-400"><i
+          class="fa-solid fa-file-circle-question"></i></span>
+      <h3 class="mt-4 font-semibold text-slate-900">No matching reports</h3>
+      <p class="mt-1 text-sm text-slate-500">Try a different search or status filter.</p>
+    </div>
+    <div class="flex flex-col gap-3 border-t border-slate-100 bg-slate-50 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <p class="text-sm text-slate-500"><i class="fa-solid fa-circle-info mr-1.5 text-indigo-500"></i> Certified reports
+        use approved metric definitions.</p>
+      <button type="button" data-analytics-action="metric-dictionary"
+        class="text-left text-sm font-semibold text-indigo-700 hover:text-indigo-900">View metric dictionary</button>
+    </div>
+  </section>
+
+  <section class="grid gap-6 xl:grid-cols-2">
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h2 class="text-lg font-semibold text-slate-950">Scheduled delivery</h2>
+          <p class="mt-1 text-sm text-slate-500">Automated reports configured for your teams.</p>
+        </div>
+        <button type="button" data-analytics-action="schedule"
+          class="text-sm font-semibold text-indigo-700 hover:text-indigo-900">Add schedule</button>
+      </div>
+      <div data-analytics-schedules class="mt-5 space-y-3"></div>
+    </div>
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h2 class="text-lg font-semibold text-slate-950">Data reliability</h2>
+          <p class="mt-1 text-sm text-slate-500">Health of connected reporting sources.</p>
+        </div>
+        <span
+          class="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700">99.8% healthy</span>
+      </div>
+      <div class="mt-5 space-y-4">
+        <div><div class="mb-2 flex justify-between text-sm"><span class="font-medium text-slate-700">Bookings & inventory</span><strong
+              class="text-emerald-700">Healthy</strong></div><div class="h-2 rounded-full bg-slate-100"><div
+              class="h-2 w-full rounded-full bg-emerald-500"></div></div></div>
+        <div><div class="mb-2 flex justify-between text-sm"><span class="font-medium text-slate-700">Payments & ledger</span><strong
+              class="text-emerald-700">Healthy</strong></div><div class="h-2 rounded-full bg-slate-100"><div
+              class="h-2 w-[99%] rounded-full bg-emerald-500"></div></div></div>
+        <div><div class="mb-2 flex justify-between text-sm"><span class="font-medium text-slate-700">Marketing attribution</span><strong
+              class="text-amber-700">12 min delay</strong></div><div class="h-2 rounded-full bg-slate-100"><div
+              class="h-2 w-[88%] rounded-full bg-amber-500"></div></div></div>
+      </div>
+      <button type="button" data-analytics-action="data-health"
+        class="mt-5 text-sm font-semibold text-indigo-700 hover:text-indigo-900">View source health & lineage <i
+          class="fa-solid fa-arrow-right ml-1 text-xs"></i></button>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,321 @@
+<section class="wishlist-page" data-guest-page="wishlist">
+  <header class="wishlist-hero">
+    <div>
+      <span class="wishlist-eyebrow">
+        <i class="fa-solid fa-heart" aria-hidden="true"></i>
+        My wishlist
+      </span>
+      <h1>Your saved stays</h1>
+      <p>Choose a stay, set your travel dates, and continue to booking without leaving your account.</p>
+    </div>
+
+    <div class="wishlist-stats" aria-label="Wishlist summary">
+      <span><strong data-wishlist-total>5</strong><small>Saved</small></span>
+      <span><strong>5</strong><small>Destinations</small></span>
+      <span class="wishlist-selected-stat"><strong data-wishlist-selected-total>0</strong><small>Selected</small></span>
+    </div>
+  </header>
+
+  <section data-booking-basket-host class="hidden wishlist-active-booking"></section>
+
+  <section class="wishlist-browser" aria-labelledby="savedStaysTitle">
+    <div class="wishlist-toolbar">
+      <label class="wishlist-search">
+        <span class="sr-only">Search saved stays</span>
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="search" placeholder="Search by property or destination" data-wishlist-search />
+        <button type="button" data-wishlist-clear-search aria-label="Clear search" hidden>
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </label>
+
+      <div class="wishlist-filters" role="group" aria-label="Filter saved stays">
+        <button type="button" class="active" data-wishlist-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-wishlist-filter="resort" aria-pressed="false">Resorts</button>
+        <button type="button" data-wishlist-filter="villa" aria-pressed="false">Villas</button>
+        <button type="button" data-wishlist-filter="hotel" aria-pressed="false">Hotels</button>
+        <button type="button" data-wishlist-filter="apartment" aria-pressed="false">Apartments</button>
+      </div>
+    </div>
+
+    <div class="wishlist-list-head">
+      <div>
+        <h2 id="savedStaysTitle">Saved stays</h2>
+        <p data-wishlist-results aria-live="polite">5 stays available</p>
+      </div>
+      <button type="button" class="wishlist-clear-selection" data-wishlist-clear-selection hidden>
+        Clear selection
+      </button>
+    </div>
+
+    <div class="wishlist-card-list" data-wishlist-list>
+      <article class="wishlist-stay-card" data-wishlist-card data-id="tropical-escape-villa"
+        data-name="Tropical Escape Villa" data-location="Siargao, Philippines" data-type="villa"
+        data-price="5650"
+        data-image="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&amp;w=1200">
+        <div class="wishlist-select-column">
+          <label class="wishlist-select-control">
+            <input type="checkbox" data-wishlist-select aria-label="Select Tropical Escape Villa" />
+            <span class="wishlist-checkbox" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+            <span>Select</span>
+          </label>
+        </div>
+        <div class="wishlist-card-image">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&amp;w=1200"
+            alt="Tropical Escape Villa" />
+          <span class="wishlist-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> 4.9</span>
+        </div>
+        <div class="wishlist-card-body">
+          <div class="wishlist-card-heading">
+            <div>
+              <span class="wishlist-property-type">Villa</span>
+              <h3>Tropical Escape Villa</h3>
+              <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Siargao, Philippines</p>
+            </div>
+            <span class="wishlist-review-count">312 reviews</span>
+          </div>
+          <ul class="wishlist-amenities" aria-label="Highlights">
+            <li>Breakfast included</li>
+            <li>Beachfront</li>
+            <li>Free cancellation</li>
+          </ul>
+          <p class="wishlist-description">A private beachfront villa with an ocean-view pool and direct access to
+            Siargao’s white-sand coast.</p>
+          <div class="wishlist-card-footer">
+            <div class="wishlist-price"><small>From</small><strong>₱5,650</strong><span>/ night</span></div>
+            <div class="wishlist-card-actions">
+              <button type="button" class="primary" data-wishlist-book-one>Book this stay</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="wishlist-stay-card" data-wishlist-card data-id="bomo-beach-resort"
+        data-name="BOMO Beach Resort" data-location="Boracay, Philippines" data-type="resort" data-price="4980"
+        data-image="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&amp;w=1200">
+        <div class="wishlist-select-column">
+          <label class="wishlist-select-control">
+            <input type="checkbox" data-wishlist-select aria-label="Select BOMO Beach Resort" />
+            <span class="wishlist-checkbox" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+            <span>Select</span>
+          </label>
+        </div>
+        <div class="wishlist-card-image">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&amp;w=1200"
+            alt="BOMO Beach Resort" />
+          <span class="wishlist-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> 4.8</span>
+        </div>
+        <div class="wishlist-card-body">
+          <div class="wishlist-card-heading">
+            <div>
+              <span class="wishlist-property-type">Resort</span>
+              <h3>BOMO Beach Resort</h3>
+              <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Boracay, Philippines</p>
+            </div>
+            <span class="wishlist-review-count">428 reviews</span>
+          </div>
+          <ul class="wishlist-amenities" aria-label="Highlights">
+            <li>White-sand beach</li>
+            <li>Infinity pool</li>
+            <li>Breakfast included</li>
+          </ul>
+          <p class="wishlist-description">A relaxed beachfront resort with ocean-view suites, two pools, and easy
+            access to Boracay’s quieter coast.</p>
+          <div class="wishlist-card-footer">
+            <div class="wishlist-price"><small>From</small><strong>₱4,980</strong><span>/ night</span></div>
+            <div class="wishlist-card-actions">
+              <button type="button" class="primary" data-wishlist-book-one>Book this stay</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="wishlist-stay-card" data-wishlist-card data-id="ocean-view-suites"
+        data-name="Ocean View Suites" data-location="Palawan, Philippines" data-type="hotel" data-price="4580"
+        data-image="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&amp;w=1200">
+        <div class="wishlist-select-column">
+          <label class="wishlist-select-control">
+            <input type="checkbox" data-wishlist-select aria-label="Select Ocean View Suites" />
+            <span class="wishlist-checkbox" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+            <span>Select</span>
+          </label>
+        </div>
+        <div class="wishlist-card-image">
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&amp;w=1200"
+            alt="Ocean View Suites" />
+          <span class="wishlist-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> 4.9</span>
+        </div>
+        <div class="wishlist-card-body">
+          <div class="wishlist-card-heading">
+            <div>
+              <span class="wishlist-property-type">Hotel</span>
+              <h3>Ocean View Suites</h3>
+              <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Palawan, Philippines</p>
+            </div>
+            <span class="wishlist-review-count">512 reviews</span>
+          </div>
+          <ul class="wishlist-amenities" aria-label="Highlights">
+            <li>Rooftop pool</li>
+            <li>Airport shuttle</li>
+            <li>Ocean view</li>
+          </ul>
+          <p class="wishlist-description">Modern island suites with panoramic sea views, rooftop dining, and
+            convenient transfers from the airport.</p>
+          <div class="wishlist-card-footer">
+            <div class="wishlist-price"><small>From</small><strong>₱4,580</strong><span>/ night</span></div>
+            <div class="wishlist-card-actions">
+              <button type="button" class="primary" data-wishlist-book-one>Book this stay</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="wishlist-stay-card" data-wishlist-card data-id="makati-skyline-apartment"
+        data-name="Makati Skyline Apartment" data-location="Makati, Philippines" data-type="apartment"
+        data-price="3900"
+        data-image="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&amp;w=1200">
+        <div class="wishlist-select-column">
+          <label class="wishlist-select-control">
+            <input type="checkbox" data-wishlist-select aria-label="Select Makati Skyline Apartment" />
+            <span class="wishlist-checkbox" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+            <span>Select</span>
+          </label>
+        </div>
+        <div class="wishlist-card-image">
+          <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&amp;w=1200"
+            alt="Makati Skyline Apartment" />
+          <span class="wishlist-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> 4.7</span>
+        </div>
+        <div class="wishlist-card-body">
+          <div class="wishlist-card-heading">
+            <div>
+              <span class="wishlist-property-type">Apartment</span>
+              <h3>Makati Skyline Apartment</h3>
+              <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Makati, Philippines</p>
+            </div>
+            <span class="wishlist-review-count">246 reviews</span>
+          </div>
+          <ul class="wishlist-amenities" aria-label="Highlights">
+            <li>Central location</li>
+            <li>Full kitchen</li>
+            <li>Fast Wi-Fi</li>
+          </ul>
+          <p class="wishlist-description">A bright city apartment with skyline views, a work-friendly layout, and
+            quick access to dining and shopping.</p>
+          <div class="wishlist-card-footer">
+            <div class="wishlist-price"><small>From</small><strong>₱3,900</strong><span>/ night</span></div>
+            <div class="wishlist-card-actions">
+              <button type="button" class="primary" data-wishlist-book-one>Book this stay</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="wishlist-stay-card" data-wishlist-card data-id="cebu-bay-hotel"
+        data-name="Cebu Bay Hotel" data-location="Cebu City, Philippines" data-type="hotel" data-price="4350"
+        data-image="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&amp;w=1200">
+        <div class="wishlist-select-column">
+          <label class="wishlist-select-control">
+            <input type="checkbox" data-wishlist-select aria-label="Select Cebu Bay Hotel" />
+            <span class="wishlist-checkbox" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+            <span>Select</span>
+          </label>
+        </div>
+        <div class="wishlist-card-image">
+          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&amp;w=1200"
+            alt="Cebu Bay Hotel" />
+          <span class="wishlist-rating"><i class="fa-solid fa-star" aria-hidden="true"></i> 4.8</span>
+        </div>
+        <div class="wishlist-card-body">
+          <div class="wishlist-card-heading">
+            <div>
+              <span class="wishlist-property-type">Hotel</span>
+              <h3>Cebu Bay Hotel</h3>
+              <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Cebu City, Philippines</p>
+            </div>
+            <span class="wishlist-review-count">640 reviews</span>
+          </div>
+          <ul class="wishlist-amenities" aria-label="Highlights">
+            <li>Infinity pool</li>
+            <li>Spa</li>
+            <li>Waterfront dining</li>
+          </ul>
+          <p class="wishlist-description">A contemporary waterfront hotel with spacious rooms, a rooftop pool, and
+            convenient access to Cebu City.</p>
+          <div class="wishlist-card-footer">
+            <div class="wishlist-price"><small>From</small><strong>₱4,350</strong><span>/ night</span></div>
+            <div class="wishlist-card-actions">
+              <button type="button" class="primary" data-wishlist-book-one>Book this stay</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="wishlist-empty" data-wishlist-empty hidden>
+      <span><i class="fa-regular fa-heart" aria-hidden="true"></i></span>
+      <h3>No saved stays found</h3>
+      <p>Try another search or clear the current filter.</p>
+      <button type="button" class="secondary" data-wishlist-reset>Show all stays</button>
+    </div>
+  </section>
+
+  <aside class="wishlist-selection-bar" data-wishlist-selection-bar aria-live="polite" hidden>
+    <div>
+      <strong><span data-wishlist-bar-count>0</span> selected</strong>
+      <small>Set dates before continuing</small>
+    </div>
+    <button type="button" class="secondary" data-wishlist-clear-selection>Clear</button>
+    <button type="button" class="primary" data-wishlist-book-selected disabled>
+      Book selected
+      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+    </button>
+  </aside>
+
+  <div class="modal-backdrop" id="wishlistBookingModal" role="dialog" aria-modal="true"
+    aria-labelledby="wishlistBookingTitle">
+    <div class="modal wishlist-booking-modal">
+      <div class="modal-head">
+        <div>
+          <span class="eyebrow">BOOK SAVED STAYS</span>
+          <h2 id="wishlistBookingTitle">Add trip details</h2>
+        </div>
+        <button type="button" class="modal-close" data-modal-close="wishlistBookingModal" aria-label="Close">×</button>
+      </div>
+      <form data-wishlist-booking-form>
+        <div class="modal-body">
+          <p class="wishlist-modal-summary" data-wishlist-modal-summary></p>
+          <div class="wishlist-booking-fields">
+            <label>
+              <span>Check-in</span>
+              <input type="date" data-wishlist-checkin required />
+            </label>
+            <label>
+              <span>Check-out</span>
+              <input type="date" data-wishlist-checkout required />
+            </label>
+            <label class="wishlist-guests-field">
+              <span>Guests</span>
+              <select data-wishlist-guests>
+                <option value="1">1 guest</option>
+                <option value="2" selected>2 guests</option>
+                <option value="3">3 guests</option>
+                <option value="4">4 guests</option>
+                <option value="5">5 guests</option>
+                <option value="6">6 guests</option>
+              </select>
+            </label>
+          </div>
+          <p class="wishlist-booking-error" data-wishlist-booking-error role="alert" hidden></p>
+        </div>
+        <div class="modal-foot">
+          <button type="button" class="secondary" data-modal-close="wishlistBookingModal">Cancel</button>
+          <button type="submit" class="primary">
+            Continue to booking
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,305 @@
+<section class="py-20">
+  <div class="max-w-[1300px] mx-auto px-4 lg:px-6">
+    <!-- HEADER -->
+    <div
+      class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-10"
+    >
+      <div>
+        <span
+          class="inline-flex items-center gap-2 text-xs font-semibold text-orange-600 mb-3"
+        >
+          <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+          Personalized Recommendations
+        </span>
+        <h2>Recommended For Your Next Stay</h2>
+        <p class="text-slate-500 mt-3 max-w-2xl">
+          Properties recommended based on your recently viewed stays,
+          destinations, travel style, and trending bookings.
+        </p>
+      </div>
+    </div>
+    <!-- 6 HOTELS -->
+    <div class="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-6 gap-4 md:gap-5">
+      <!-- HOTEL -->
+      <div class="hotel-card rounded-[8px] group">
+        <div class="relative overflow-hidden rounded-[8px]">
+          <img
+            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop"
+            class="w-full h-40 object-cover group-hover:scale-105 transition duration-100"
+          />
+          <div class="absolute top-3 left-3">
+            <div
+              class="px-3 h-8 rounded-full bg-black/60 backdrop-blur-lg text-white text-xs font-semibold inline-flex items-center gap-2"
+            >
+              <i class="fa-solid fa-star text-orange-400"></i>
+              Top Pick
+            </div>
+          </div>
+        </div>
+        <div class="pt-5">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h3 class="leading-tight">Azure Crown Suites</h3>
+              <p class="text-slate-500 text-xs mt-1">Bonifacio Global City</p>
+            </div>
+            <span class="text-xs font-semibold text-orange-500"> ★ 4.9 </span>
+          </div>
+          <!-- WHY RECOMMENDED -->
+          <div
+            class="mt-3 flex items-center gap-2 text-xs text-orange-700 bg-orange-50 border border-orange-100 rounded-xl px-3 py-2"
+          >
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            Similar to recent luxury stays
+          </div>
+          <div class="mt-5 flex items-center justify-between">
+            <div>
+              <span class="text-xl font-black">₱6,900</span>
+              <span class="text-xs text-slate-500"> / night </span>
+            </div>
+            <button
+              data-open-booking
+              class="bomo-btn-primary px-4 h-10 text-xs font-semibold"
+            >
+              Book
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- HOTEL -->
+      <div class="hotel-card rounded-[8px] group">
+        <div class="relative overflow-hidden rounded-[8px]">
+          <img
+            src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop"
+            class="w-full h-40 object-cover group-hover:scale-105 transition duration-100"
+          />
+          <div class="absolute top-3 left-3">
+            <div
+              class="px-3 h-8 rounded-full bg-black/60 backdrop-blur-lg text-white text-xs font-semibold inline-flex items-center gap-2"
+            >
+              <i class="fa-solid fa-fire text-orange-400"></i>
+              Trending
+            </div>
+          </div>
+        </div>
+        <div class="pt-5">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h3>Skyline Prime Hotel</h3>
+              <p class="text-slate-500 text-xs mt-1">Makati City</p>
+            </div>
+            <span class="text-xs font-semibold text-orange-500"> ★ 4.8 </span>
+          </div>
+          <div
+            class="mt-3 flex items-center gap-2 text-xs text-blue-700 bg-blue-50 border border-blue-100 rounded-xl px-3 py-2"
+          >
+            <i class="fa-solid fa-location-dot"></i>
+            Matches recent searches
+          </div>
+          <div class="mt-5 flex items-center justify-between">
+            <div>
+              <span class="text-xl font-black">₱5,800</span>
+              <span class="text-xs text-slate-500"> / night </span>
+            </div>
+            <button
+              data-open-booking
+              class="bomo-btn-primary px-4 h-10 text-xs font-semibold"
+            >
+              Book
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- HOTEL -->
+      <div class="hotel-card rounded-[8px] group">
+        <div class="relative overflow-hidden rounded-[8px]">
+          <img
+            src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=1200&auto=format&fit=crop"
+            class="w-full h-40 object-cover group-hover:scale-105 transition duration-100"
+          />
+          <div class="absolute top-3 left-3">
+            <div
+              class="px-3 h-8 rounded-full bg-black/60 backdrop-blur-lg text-white text-xs font-semibold inline-flex items-center gap-2"
+            >
+              <i class="fa-solid fa-umbrella-beach text-orange-400"></i>
+              Beachfront
+            </div>
+          </div>
+        </div>
+        <div class="pt-5">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h3>Paradise Cove Resort</h3>
+              <p class="text-slate-500 text-xs mt-1">Palawan</p>
+            </div>
+            <span class="text-xs font-semibold text-orange-500"> ★ 4.9 </span>
+          </div>
+          <div
+            class="mt-3 flex items-center gap-2 text-xs text-green-700 bg-green-50 border border-green-100 rounded-xl px-3 py-2"
+          >
+            <i class="fa-solid fa-mountain"></i>
+            Popular weekend escape
+          </div>
+          <div class="mt-5 flex items-center justify-between">
+            <div>
+              <span class="text-xl font-black">₱8,200</span>
+              <span class="text-xs text-slate-500"> / night </span>
+            </div>
+            <button
+              data-open-booking
+              class="bomo-btn-primary px-4 h-10 text-xs font-semibold"
+            >
+              Book
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- HOTEL -->
+      <div class="hotel-card rounded-[8px] group">
+        <div class="relative overflow-hidden rounded-[8px]">
+          <img
+            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop"
+            class="w-full h-40 object-cover group-hover:scale-105 transition duration-100"
+          />
+          <div class="absolute top-3 left-3">
+            <div
+              class="px-3 h-8 rounded-full bg-black/60 backdrop-blur-lg text-white text-xs font-semibold inline-flex items-center gap-2"
+            >
+              <i class="fa-solid fa-tree text-green-400"></i>
+              Nature
+            </div>
+          </div>
+        </div>
+        <div class="pt-5">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h3>Forest Peak Lodge</h3>
+              <p class="text-slate-500 text-xs mt-1">Baguio City</p>
+            </div>
+            <span class="text-xs font-semibold text-orange-500"> ★ 4.7 </span>
+          </div>
+          <div
+            class="mt-3 flex items-center gap-2 text-xs text-pink-700 bg-pink-50 border border-pink-100 rounded-xl px-3 py-2"
+          >
+            <i class="fa-solid fa-heart"></i>
+            Ideal for couples
+          </div>
+          <div class="mt-5 flex items-center justify-between">
+            <div>
+              <span class="text-xl font-black">₱4,900</span>
+              <span class="text-xs text-slate-500"> / night </span>
+            </div>
+            <button
+              data-open-booking
+              class="bomo-btn-primary px-4 h-10 text-xs font-semibold"
+            >
+              Book
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- HOTEL -->
+      <div class="hotel-card rounded-[8px] group">
+        <div class="relative overflow-hidden rounded-[8px]">
+          <img
+            src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1200&auto=format&fit=crop"
+            class="w-full h-40 object-cover group-hover:scale-105 transition duration-100"
+          />
+          <div class="absolute top-3 left-3">
+            <div
+              class="px-3 h-8 rounded-full bg-black/60 backdrop-blur-lg text-white text-xs font-semibold inline-flex items-center gap-2"
+            >
+              <i class="fa-solid fa-heart text-pink-400"></i>
+              Romantic
+            </div>
+          </div>
+        </div>
+        <div class="pt-5">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h3>Palm Serenity Resort</h3>
+              <p class="text-slate-500 text-xs mt-1">Batangas</p>
+            </div>
+            <span class="text-xs font-semibold text-orange-500"> ★ 4.8 </span>
+          </div>
+          <div
+            class="mt-3 flex items-center gap-2 text-xs text-blue-700 bg-blue-50 border border-blue-100 rounded-xl px-3 py-2"
+          >
+            <i class="fa-solid fa-briefcase"></i>
+            Popular with business travelers
+          </div>
+          <div class="mt-5 flex items-center justify-between">
+            <div>
+              <span class="text-xl font-black">₱7,500</span>
+              <span class="text-xs text-slate-500"> / night </span>
+            </div>
+            <button
+              data-open-booking
+              class="bomo-btn-primary px-4 h-10 text-xs font-semibold"
+            >
+              Book
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- HOTEL -->
+      <div class="hotel-card rounded-[8px] group">
+        <div class="relative overflow-hidden rounded-[8px]">
+          <img
+            src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=1200&auto=format&fit=crop"
+            class="w-full h-40 object-cover group-hover:scale-105 transition duration-100"
+          />
+          <div class="absolute top-3 left-3">
+            <div
+              class="px-3 h-8 rounded-full bg-black/60 backdrop-blur-lg text-white text-xs font-semibold inline-flex items-center gap-2"
+            >
+              <i class="fa-solid fa-building text-blue-400"></i>
+              Business
+            </div>
+          </div>
+        </div>
+        <div class="pt-5">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h3>Grand Meridian Hotel</h3>
+              <p class="text-slate-500 text-xs mt-1">Ortigas Center</p>
+            </div>
+            <span class="text-xs font-semibold text-orange-500"> ★ 4.9 </span>
+          </div>
+          <div
+            class="mt-3 flex items-center gap-2 text-xs text-blue-700 bg-blue-50 border border-blue-100 rounded-xl px-3 py-2"
+          >
+            <i class="fa-solid fa-briefcase"></i>
+            Popular with business travelers
+          </div>
+          <div class="mt-5 flex items-center justify-between">
+            <div>
+              <span class="text-xl font-black">₱6,300</span>
+              <span class="text-xs text-slate-500"> / night </span>
+            </div>
+            <button
+              data-open-booking
+              class="bomo-btn-primary px-4 h-10 text-xs font-semibold"
+            >
+              Book
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 flex justify-center">
+      <a
+        href="featured.html?list=recommended"
+        class="group inline-flex items-center gap-3 px-6 h-12 rounded-2xl border border-slate-200 bg-white hover:bg-slate-50 hover:border-slate-300 dark:bg-slate-900 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:border-slate-600 transition-all duration-300 font-semibold text-slate-700 dark:text-slate-200"
+      >
+        View More Recommendations
+
+        <span
+          class="w-7 h-7 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center group-hover:translate-x-1 transition-transform"
+        >
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>

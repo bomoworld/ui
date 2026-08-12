@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rate Plan Report | BOMO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/app.css" />
+  <style>
+    body {
+      background: #f6f8fb;
+    }
+
+    .report-shell {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px 24px 60px;
+    }
+
+    .report-top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 18px 0 24px;
+    }
+
+    .report-top h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .report-top p {
+      margin: 7px 0 0;
+      color: #64748b;
+      font-size: 12px;
+    }
+
+    .report-actions {
+      display: flex;
+      gap: 9px;
+    }
+
+    .report-status {
+      display: inline-flex;
+      margin-bottom: 10px;
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: #f1f5f9;
+      color: #475569;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .report-status[data-status="active"] {
+      background: #dcfce7;
+      color: #047857;
+    }
+
+    .report-status[data-status="scheduled"] {
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
+
+    .report-status[data-status="paused"] {
+      background: #ffedd5;
+      color: #c2410c;
+    }
+
+    .report-status[data-status="archived"] {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    .report-card {
+      margin-top: 18px;
+      border: 1px solid #dbe3ed;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+      overflow: hidden;
+    }
+
+    .report-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 18px 22px;
+      border-bottom: 1px solid #e8edf3;
+    }
+
+    .report-card-head h2 {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .report-card-head span {
+      color: #94a3b8;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .report-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .report-field {
+      min-height: 90px;
+      padding: 18px 20px;
+      border-right: 1px solid #edf1f5;
+    }
+
+    .report-field:last-child {
+      border-right: 0;
+    }
+
+    .report-field dt {
+      color: #64748b;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .report-field dd {
+      margin: 8px 0 0;
+      color: #172033;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .report-body {
+      padding: 20px 22px;
+    }
+
+    .report-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .report-panel {
+      padding: 18px;
+      border: 1px solid #e5eaf0;
+      border-radius: 12px;
+      background: #fbfcfe;
+    }
+
+    .report-panel h3 {
+      margin: 0 0 13px;
+      font-size: 12px;
+    }
+
+    .report-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+    }
+
+    .report-list div {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid #edf1f5;
+    }
+
+    .report-list div:last-child {
+      padding-bottom: 0;
+      border: 0;
+    }
+
+    .report-list dt {
+      color: #64748b;
+      font-size: 10px;
+    }
+
+    .report-list dd {
+      margin: 0;
+      text-align: right;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .room-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .room-chips span {
+      border: 1px solid #dbe3ed;
+      border-radius: 999px;
+      background: #fff;
+      padding: 8px 11px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .report-note {
+      margin: 0;
+      padding: 13px 15px;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      background: #eff6ff;
+      color: #334155;
+      font-size: 10px;
+      line-height: 1.65;
+    }
+
+    .report-table-wrap {
+      overflow: auto;
+    }
+
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+    }
+
+    .report-table th,
+    .report-table td {
+      padding: 13px 14px;
+      border-bottom: 1px solid #edf1f5;
+      text-align: left;
+      font-size: 10px;
+    }
+
+    .report-table th {
+      background: #f8fafc;
+      color: #64748b;
+      font-size: 9px;
+      text-transform: uppercase;
+    }
+
+    .report-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .report-table b,
+    .report-table small {
+      display: block;
+    }
+
+    .report-table small {
+      margin-top: 4px;
+      color: #64748b;
+    }
+
+    .empty-report {
+      padding: 26px !important;
+      text-align: center !important;
+      color: #94a3b8;
+    }
+
+    .report-print {
+      color: #64748b;
+    }
+
+    .report-footnote {
+      margin: 18px 2px 0;
+      color: #94a3b8;
+      font-size: 9px;
+    }
+
+    @media (max-width: 800px) {
+      .report-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .report-field:nth-child(2) {
+        border-right: 0;
+      }
+
+      .report-field:nth-child(-n + 2) {
+        border-bottom: 1px solid #edf1f5;
+      }
+
+      .report-columns {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .report-shell {
+        padding: 20px 14px 44px;
+      }
+
+      .report-top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .report-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .report-field {
+        border-right: 0 !important;
+        border-bottom: 1px solid #edf1f5;
+      }
+
+      .report-field:last-child {
+        border-bottom: 0;
+      }
+
+      .report-actions {
+        width: 100%;
+      }
+
+      .report-actions .btn {
+        flex: 1;
+      }
+
+      .report-print {
+        display: none;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .report-shell {
+        max-width: none;
+        padding: 0;
+      }
+
+      .back-link,
+      .report-actions {
+        display: none;
+      }
+
+      .report-card {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="report-shell">
+    <a href="index.html" class="back-link">← Rate plans</a>
+    <header class="report-top">
+      <div>
+        <span class="report-status" id="reportStatus">Draft</span>
+        <h1 id="reportName">Rate plan</h1>
+        <p><span id="reportCode">—</span> · Read-only setup report</p>
+      </div>
+      <div class="report-actions">
+        <button type="button" class="btn report-print" onclick="window.print()">
+          Print
+        </button>
+        <a class="btn primary" id="editPlanLink" href="form.html">Edit rate plan</a>
+      </div>
+    </header>
+
+    <section class="report-card">
+      <div class="report-card-head">
+        <h2>Plan overview</h2>
+        <span>Selection setup</span>
+      </div>
+      <dl class="report-grid">
+        <div class="report-field">
+          <dt>Plan type</dt>
+          <dd id="reportRole">—</dd>
+        </div>
+        <div class="report-field">
+          <dt>Selection priority</dt>
+          <dd id="reportPriority">—</dd>
+        </div>
+        <div class="report-field">
+          <dt>Valid stay dates</dt>
+          <dd id="reportValidity">—</dd>
+        </div>
+        <div class="report-field">
+          <dt>Stay days</dt>
+          <dd id="reportStayDays">—</dd>
+        </div>
+      </dl>
+      <div class="report-body">
+        <p class="report-note" id="reportDescription"></p>
+      </div>
+    </section>
+
+    <section class="report-card">
+      <div class="report-card-head">
+        <h2>Rooms & application rules</h2>
+        <span>Eligibility</span>
+      </div>
+      <div class="report-body report-columns">
+        <div class="report-panel">
+          <h3>Included rooms</h3>
+          <div class="room-chips" id="reportRooms"></div>
+        </div>
+        <div class="report-panel">
+          <h3>Booking requirements</h3>
+          <dl class="report-list">
+            <div>
+              <dt>Minimum advance booking</dt>
+              <dd id="reportAdvance">—</dd>
+            </div>
+            <div>
+              <dt>Minimum stay</dt>
+              <dd id="reportMinStay">—</dd>
+            </div>
+            <div>
+              <dt>Rate source</dt>
+              <dd>Room Settings</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="report-card">
+      <div class="report-card-head">
+        <h2>Guest policies</h2>
+        <span>Guest-facing terms</span>
+      </div>
+      <dl class="report-grid">
+        <div class="report-field">
+          <dt>Cancellation</dt>
+          <dd id="reportCancellation">—</dd>
+        </div>
+        <div class="report-field">
+          <dt>Payment</dt>
+          <dd id="reportPayment">—</dd>
+        </div>
+        <div class="report-field">
+          <dt>Meals</dt>
+          <dd id="reportMeals">—</dd>
+        </div>
+        <div class="report-field">
+          <dt>Add-ons</dt>
+          <dd id="reportAddons">—</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="report-card">
+      <div class="report-card-head">
+        <h2>Date overrides</h2>
+        <span>Maximum one applied</span>
+      </div>
+      <div class="report-table-wrap">
+        <table class="report-table">
+          <thead>
+            <tr>
+              <th>Override</th>
+              <th>Price change</th>
+              <th>Stay dates</th>
+              <th>Applies on</th>
+              <th>Priority</th>
+            </tr>
+          </thead>
+          <tbody id="reportOverrides"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="report-card">
+      <div class="report-card-head">
+        <h2>Promo rates</h2>
+        <span>Maximum one applied</span>
+      </div>
+      <div class="report-table-wrap">
+        <table class="report-table">
+          <thead>
+            <tr>
+              <th>Promo</th>
+              <th>Discount</th>
+              <th>Validity</th>
+              <th>Eligibility</th>
+              <th>Priority</th>
+            </tr>
+          </thead>
+          <tbody id="reportPromos"></tbody>
+        </table>
+      </div>
+    </section>
+    <p class="report-footnote">
+      Base prices are inherited from Room Settings. Service charge and local
+      tax are not part of this rate-plan setup.
+    </p>
+  </main>
+  <div id="modal"></div>
+  <div id="toast"></div>
+  <script src="assets/app.js"></script>
+  <script src="assets/view.js"></script>
+</body>
+
+</html>

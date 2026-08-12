@@ -1,0 +1,463 @@
+<section class="p-4 lg:p-8 space-y-8">
+  <!-- <div
+    class="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-slate-950 to-slate-800 p-8 lg:p-10 text-white"
+  >
+
+  if verification is not completed ->>>
+
+
+  if not complete:
+    <div class="relative z-10">
+      <span
+        class="inline-flex px-4 py-2 rounded-full bg-white/10 backdrop-blur-lg text-sm font-medium"
+      >
+        Property Operations Center
+      </span>
+
+      <h2 class="text-3xl lg:text-5xl font-black mt-5 leading-tight">
+        Welcome Back, Property Partner
+      </h2>
+
+      <p class="text-slate-200 max-w-2xl mt-4 text-base lg:text-lg">
+        Monitor bookings, occupancy, guest satisfaction, housekeeping
+        status, revenue performance and property operations from a centralized
+        management dashboard.
+      </p>
+
+      <div class="flex flex-wrap gap-3 mt-8">
+        <button
+          class="h-12 px-6 rounded-2xl bg-white text-slate-900 font-semibold hover:bg-slate-100 transition"
+        >
+          View Bookings
+        </button>
+
+        <button
+          class="h-12 px-6 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-lg font-semibold hover:bg-white/20 transition"
+        >
+          Generate Report
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="absolute right-0 top-0 w-[500px] h-full bg-gradient-to-l from-white/10 to-transparent"
+    ></div>
+  </div> -->
+
+  <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div class="p-6 border-b border-slate-100">
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="text-xl font-bold">Account Setup Progress</h3>
+
+          <p class="text-sm text-slate-500 mt-1">
+            Complete your account setup to start accepting bookings.
+          </p>
+        </div>
+
+        <span
+          class="px-4 py-2 rounded-full bg-orange-50 text-orange-600 text-sm font-semibold"
+        >
+          60% Complete
+        </span>
+      </div>
+    </div>
+
+    <div class="p-6">
+      <div class="mb-6">
+        <div class="flex justify-between text-sm mb-2">
+          <span class="font-medium text-slate-700"> Setup Progress </span>
+
+          <span class="font-semibold text-orange-600"> 3 of 5 Completed </span>
+        </div>
+
+        <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+          <div class="h-full w-[60%] bg-orange-500 rounded-full"></div>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-4">
+        <!-- COMPLETED -->
+        <a
+          href="?page=settings#profile"
+          class="rounded-2xl border border-green-200 bg-green-50 p-4"
+        >
+          <div
+            class="w-10 h-10 rounded-xl bg-green-100 text-green-600 flex items-center justify-center mb-3"
+          >
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+
+          <div class="font-semibold">Profile</div>
+
+          <div class="text-xs text-green-600 mt-1">Completed</div>
+        </a>
+
+        <!-- COMPLETED -->
+        <a
+          href="?page=property"
+          class="rounded-2xl border border-green-200 bg-green-50 p-4"
+        >
+          <div
+            class="w-10 h-10 rounded-xl bg-green-100 text-green-600 flex items-center justify-center mb-3"
+          >
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+
+          <div class="font-semibold">Property</div>
+
+          <div class="text-xs text-green-600 mt-1">Completed</div>
+        </a>
+
+        <!-- COMPLETED -->
+        <a
+          href="?page=rooms"
+          class="rounded-2xl border border-green-200 bg-green-50 p-4"
+        >
+          <div
+            class="w-10 h-10 rounded-xl bg-green-100 text-green-600 flex items-center justify-center mb-3"
+          >
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+
+          <div class="font-semibold">Rooms</div>
+
+          <div class="text-xs text-green-600 mt-1">Completed</div>
+        </a>
+
+        <!-- PENDING -->
+        <a
+          href="?page=settings#verification"
+          class="rounded-2xl border border-orange-200 bg-orange-50 p-4 hover:border-orange-300"
+        >
+          <div
+            class="w-10 h-10 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-3"
+          >
+            <i class="fa-solid fa-shield"></i>
+          </div>
+
+          <div class="font-semibold">Verification</div>
+
+          <div class="text-xs text-orange-600 mt-1">Action Required</div>
+        </a>
+
+        <!-- PENDING -->
+        <a
+          href="?page=payouts"
+          class="rounded-2xl border border-orange-200 bg-orange-50 p-4 hover:border-orange-300"
+        >
+          <div
+            class="w-10 h-10 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-3"
+          >
+            <i class="fa-solid fa-building-columns"></i>
+          </div>
+
+          <div class="font-semibold">Bank Accounts</div>
+
+          <div class="text-xs text-orange-600 mt-1">Action Required</div>
+        </a>
+      </div>
+
+      <div
+        class="mt-6 rounded-2xl bg-orange-50 border border-orange-200 p-4 flex items-center justify-between"
+      >
+        <div>
+          <div class="font-semibold text-orange-900">
+            Finish setup and start receiving bookings
+          </div>
+
+          <div class="text-sm text-orange-700">
+            Complete verification and payout setup to activate your property.
+          </div>
+        </div>
+
+        <a
+          href="?page=settings#verification"
+          class="h-11 px-5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-medium flex items-center"
+        >
+          Continue Setup
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+    <div
+      class="bg-white rounded-[30px] p-6 shadow-sm hover:shadow-md transition"
+    >
+      <div class="flex justify-between items-start">
+        <div>
+          <p class="text-slate-500 text-sm">Active Bookings</p>
+
+          <h3 class="text-4xl font-black mt-3">1,482</h3>
+        </div>
+
+        <div
+          class="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center"
+        >
+          <i class="fa-solid fa-calendar-check text-xl"></i>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <span class="text-green-600 font-semibold">+12.5%</span>
+
+        <span class="text-slate-500 text-sm ml-1"> from last month </span>
+      </div>
+    </div>
+
+    <div
+      class="bg-white rounded-[30px] p-6 shadow-sm hover:shadow-md transition"
+    >
+      <div class="flex justify-between items-start">
+        <div>
+          <p class="text-slate-500 text-sm">Occupancy Rate</p>
+
+          <h3 class="text-4xl font-black mt-3">87%</h3>
+        </div>
+
+        <div
+          class="w-14 h-14 rounded-2xl bg-green-50 text-green-600 flex items-center justify-center"
+        >
+          <i class="fa-solid fa-bed text-xl"></i>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <span class="text-green-600 font-semibold">Excellent</span>
+
+        <span class="text-slate-500 text-sm ml-1"> room utilization </span>
+      </div>
+    </div>
+
+    <div
+      class="bg-white rounded-[30px] p-6 shadow-sm hover:shadow-md transition"
+    >
+      <div class="flex justify-between items-start">
+        <div>
+          <p class="text-slate-500 text-sm">Monthly Revenue</p>
+
+          <h3 class="text-4xl font-black mt-3">₱4.8M</h3>
+        </div>
+
+        <div
+          class="w-14 h-14 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center"
+        >
+          <i class="fa-solid fa-money-bill-wave text-xl"></i>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <span class="text-green-600 font-semibold">+18.2%</span>
+
+        <span class="text-slate-500 text-sm ml-1"> vs previous month </span>
+      </div>
+    </div>
+
+    <div
+      class="bg-white rounded-[30px] p-6 shadow-sm hover:shadow-md transition"
+    >
+      <div class="flex justify-between items-start">
+        <div>
+          <p class="text-slate-500 text-sm">Guest Rating</p>
+
+          <h3 class="text-4xl font-black mt-3">4.8</h3>
+        </div>
+
+        <div
+          class="w-14 h-14 rounded-2xl bg-yellow-50 text-yellow-500 flex items-center justify-center"
+        >
+          <i class="fa-solid fa-star text-xl"></i>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <span class="text-green-600 font-semibold">96%</span>
+
+        <span class="text-slate-500 text-sm ml-1"> positive reviews </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid xl:grid-cols-3 gap-6">
+    <div
+      class="xl:col-span-2 bg-white rounded-[30px] shadow-sm overflow-hidden"
+    >
+      <div
+        class="p-6 border-b border-slate-100 flex items-center justify-between"
+      >
+        <div>
+          <h3 class="font-bold text-lg">Revenue & Booking Trends</h3>
+
+          <p class="text-sm text-slate-500">Performance overview</p>
+        </div>
+
+        <select class="h-11 px-4 rounded-xl bg-white">
+          <option>Last 30 Days</option>
+          <option>Last 90 Days</option>
+          <option>This Year</option>
+        </select>
+      </div>
+
+      <div class="h-[420px] flex items-center justify-center text-slate-400">
+        ApexCharts Revenue Analytics
+      </div>
+    </div>
+
+    <div class="bg-white rounded-[30px] shadow-sm p-6">
+      <div class="mb-6">
+        <h3 class="font-bold text-lg">Top Performing Properties</h3>
+
+        <p class="text-sm text-slate-500">Current month performance</p>
+      </div>
+
+      <div class="space-y-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <h4 class="font-semibold">BOMO Makati Suites</h4>
+
+            <p class="text-sm text-slate-500">Occupancy 96%</p>
+          </div>
+
+          <span class="font-bold text-green-600"> ₱1.2M </span>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <div>
+            <h4 class="font-semibold">BOMO BGC Residences</h4>
+
+            <p class="text-sm text-slate-500">Occupancy 94%</p>
+          </div>
+
+          <span class="font-bold text-green-600"> ₱980K </span>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <div>
+            <h4 class="font-semibold">BOMO Cebu Bay Hotel</h4>
+
+            <p class="text-sm text-slate-500">Occupancy 91%</p>
+          </div>
+
+          <span class="font-bold text-green-600"> ₱820K </span>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-slate-100">
+        <button
+          class="w-full h-11 rounded-xl bg-slate-100 hover:bg-slate-200 transition font-medium"
+        >
+          View All Properties
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+    <div class="bg-white rounded-[30px] p-6 shadow-sm">
+      <div class="flex items-center justify-between">
+        <span class="text-slate-600 font-medium"> Check Ins Today </span>
+
+        <i class="fa-solid fa-right-to-bracket text-blue-500"></i>
+      </div>
+
+      <p class="text-4xl font-black mt-4">86</p>
+    </div>
+
+    <div class="bg-white rounded-[30px] p-6 shadow-sm">
+      <div class="flex items-center justify-between">
+        <span class="text-slate-600 font-medium"> Check Outs Today </span>
+
+        <i class="fa-solid fa-right-from-bracket text-green-500"></i>
+      </div>
+
+      <p class="text-4xl font-black mt-4">72</p>
+    </div>
+
+    <div class="bg-white rounded-[30px] p-6 shadow-sm">
+      <div class="flex items-center justify-between">
+        <span class="text-slate-600 font-medium"> Rooms To Clean </span>
+
+        <i class="fa-solid fa-broom text-orange-500"></i>
+      </div>
+
+      <p class="text-4xl font-black mt-4">48</p>
+    </div>
+
+    <div class="bg-white rounded-[30px] p-6 shadow-sm">
+      <div class="flex items-center justify-between">
+        <span class="text-slate-600 font-medium"> Pending Reviews </span>
+
+        <i class="fa-solid fa-star text-yellow-500"></i>
+      </div>
+
+      <p class="text-4xl font-black mt-4">19</p>
+    </div>
+  </div>
+
+  <div class="grid xl:grid-cols-2 gap-6">
+    <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+      <div class="p-6 border-b border-slate-100">
+        <h3 class="font-bold text-lg">Recent Bookings</h3>
+      </div>
+
+      <div class="divide-y divide-slate-100">
+        <div class="p-5 flex items-center justify-between">
+          <div>
+            <h4 class="font-semibold">John Smith</h4>
+
+            <p class="text-sm text-slate-500">BOMO Makati Suites</p>
+          </div>
+
+          <span
+            class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-semibold"
+          >
+            Confirmed
+          </span>
+        </div>
+
+        <div class="p-5 flex items-center justify-between">
+          <div>
+            <h4 class="font-semibold">Maria Cruz</h4>
+
+            <p class="text-sm text-slate-500">BOMO BGC Residences</p>
+          </div>
+
+          <span
+            class="px-3 py-1 rounded-full bg-yellow-100 text-yellow-700 text-xs font-semibold"
+          >
+            Pending
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+      <div class="p-6 border-b border-slate-100">
+        <h3 class="font-bold text-lg">Housekeeping Status</h3>
+      </div>
+
+      <div class="p-6 space-y-5">
+        <div class="flex justify-between">
+          <span>Clean Rooms</span>
+          <strong>342</strong>
+        </div>
+
+        <div class="flex justify-between">
+          <span>Occupied Rooms</span>
+          <strong>811</strong>
+        </div>
+
+        <div class="flex justify-between">
+          <span>Needs Cleaning</span>
+          <strong>48</strong>
+        </div>
+
+        <div class="flex justify-between">
+          <span>Out Of Service</span>
+          <strong>12</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

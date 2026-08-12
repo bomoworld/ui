@@ -1,0 +1,374 @@
+<section id="adminUsersPage" class="space-y-8">
+  <section
+    class="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-slate-950 via-slate-900 to-orange-950 p-8 text-white"
+  >
+    <div class="absolute inset-0 opacity-10">
+      <div
+        class="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-white"
+      ></div>
+
+      <div
+        class="absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-white"
+      ></div>
+    </div>
+
+    <div
+      class="relative flex flex-col xl:flex-row xl:items-center xl:justify-between gap-8"
+    >
+      <div>
+        <p class="text-sm uppercase tracking-[0.25em] text-orange-300">
+          BOMO Administration
+        </p>
+
+        <h1 class="mt-3 text-4xl font-bold">Users, Roles & Permissions</h1>
+
+        <p class="mt-3 max-w-3xl text-slate-300">
+          Manage administrative users, departments, role-based access control,
+          permissions, account security, audit access and operational authority
+          across the BOMO platform.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-3">
+        <button
+          data-admin-action="add-user"
+          class="px-5 py-3 rounded-2xl bg-white text-slate-900 font-semibold"
+        >
+          Add Admin User
+        </button>
+
+        <button
+          data-admin-action="create-role"
+          class="px-5 py-3 rounded-2xl bg-slate-500 text-white font-semibold"
+        >
+          Create Role
+        </button>
+
+        <button
+          data-admin-action="audit-logs"
+          class="px-5 py-3 rounded-2xl bg-white/10 border border-white/10"
+        >
+          Audit Logs
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid gap-6 md:grid-cols-2 xl:grid-cols-6">
+    <div class="rounded-3xl bg-orange-600 p-6 text-white">
+      <div class="text-sm opacity-80">Admin Users</div>
+
+      <div class="mt-3 text-5xl font-bold">42</div>
+
+      <div class="mt-3 text-sm">Active accounts</div>
+    </div>
+
+    <div class="rounded-3xl bg-blue-600 p-6 text-white">
+      <div class="text-sm opacity-80">Roles</div>
+
+      <div class="mt-3 text-5xl font-bold">11</div>
+
+      <div class="mt-3 text-sm">Configured roles</div>
+    </div>
+
+    <div class="rounded-3xl bg-emerald-600 p-6 text-white">
+      <div class="text-sm opacity-80">Online Now</div>
+
+      <div class="mt-3 text-5xl font-bold">18</div>
+
+      <div class="mt-3 text-sm">Active sessions</div>
+    </div>
+
+    <div class="rounded-3xl bg-purple-600 p-6 text-white">
+      <div class="text-sm opacity-80">Permission Sets</div>
+
+      <div class="mt-3 text-5xl font-bold">57</div>
+
+      <div class="mt-3 text-sm">RBAC permissions</div>
+    </div>
+
+    <div class="rounded-3xl bg-red-500 p-6 text-white">
+      <div class="text-sm opacity-80">Locked Accounts</div>
+
+      <div class="mt-3 text-5xl font-bold">2</div>
+
+      <div class="mt-3 text-sm">Security review</div>
+    </div>
+
+    <div class="rounded-3xl bg-cyan-600 p-6 text-white">
+      <div class="text-sm opacity-80">Audit Events</div>
+
+      <div class="mt-3 text-5xl font-bold">1.2K</div>
+
+      <div class="mt-3 text-sm">This month</div>
+    </div>
+  </section>
+
+  <section class="grid gap-6 xl:grid-cols-4">
+    <div class="rounded-3xl bg-white p-6 shadow-sm">
+      <h3 class="font-semibold text-slate-900">Executive</h3>
+
+      <div class="mt-4 space-y-2 text-sm text-slate-600">
+        <div>System Owner</div>
+        <div>Super Administrator</div>
+        <div>Executive Access</div>
+      </div>
+    </div>
+
+    <div class="rounded-3xl bg-white p-6 shadow-sm">
+      <h3 class="font-semibold text-slate-900">Operations</h3>
+
+      <div class="mt-4 space-y-2 text-sm text-slate-600">
+        <div>Operations Manager</div>
+        <div>Partner Manager</div>
+        <div>Booking Manager</div>
+        <div>Content Manager</div>
+      </div>
+    </div>
+
+    <div class="rounded-3xl bg-white p-6 shadow-sm">
+      <h3 class="font-semibold text-slate-900">Finance</h3>
+
+      <div class="mt-4 space-y-2 text-sm text-slate-600">
+        <div>Finance Admin</div>
+        <div>Accounting</div>
+        <div>Payout Specialist</div>
+        <div>Compliance Officer</div>
+      </div>
+    </div>
+
+    <div class="rounded-3xl bg-white p-6 shadow-sm">
+      <h3 class="font-semibold text-slate-900">Support & Trust</h3>
+
+      <div class="mt-4 space-y-2 text-sm text-slate-600">
+        <div>Support Agent</div>
+        <div>Trust & Safety</div>
+        <div>Review Moderator</div>
+        <div>Technical Support</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rounded-3xl bg-white shadow-sm overflow-hidden">
+    <div class="px-6 py-5 border-b border-slate-100">
+      <div
+        class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4"
+      >
+        <div>
+          <h2 class="text-xl font-semibold">Administrative Users</h2>
+
+          <p class="text-sm text-slate-500 mt-1">
+            Manage administrative accounts, departments, access levels and
+            security controls.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <span
+            class="px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-semibold"
+          >
+            42 Active
+          </span>
+
+          <span
+            class="px-3 py-1.5 rounded-full bg-orange-100 text-orange-700 text-sm font-semibold"
+          >
+            11 Roles
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-6 py-4 border-b border-slate-100 bg-slate-50">
+      <div class="flex flex-wrap gap-3">
+        <button class="px-4 py-2 rounded-xl bg-slate-900 text-white">
+          All Users
+        </button>
+
+        <button class="px-4 py-2 rounded-xl border border-slate-200 bg-white">
+          Executive
+        </button>
+
+        <button class="px-4 py-2 rounded-xl border border-slate-200 bg-white">
+          Operations
+        </button>
+
+        <button class="px-4 py-2 rounded-xl border border-slate-200 bg-white">
+          Finance
+        </button>
+
+        <button class="px-4 py-2 rounded-xl border border-slate-200 bg-white">
+          Support
+        </button>
+
+        <button class="px-4 py-2 rounded-xl border border-slate-200 bg-white">
+          Suspended
+        </button>
+      </div>
+    </div>
+
+    <div class="divide-y divide-slate-100">
+      <div class="px-6 py-5 hover:bg-slate-50">
+        <div class="flex items-center gap-4">
+          <div
+            class="h-12 w-12 rounded-2xl bg-orange-100 flex items-center justify-center font-bold text-orange-700"
+          >
+            RG
+          </div>
+
+          <div class="flex-1">
+            <div class="flex flex-wrap gap-2 items-center">
+              <h3 class="font-semibold">Rick Grimes</h3>
+
+              <span
+                class="px-2 py-1 rounded-full bg-red-100 text-red-700 text-xs"
+              >
+                Super Administrator
+              </span>
+            </div>
+
+            <p class="text-sm text-slate-500 mt-1">
+              Full platform access • Last active 3 minutes ago
+            </p>
+          </div>
+
+          <button
+            data-admin-action="manage-user"
+            class="px-4 py-2 rounded-xl bg-slate-600 text-white"
+          >
+            Manage
+          </button>
+        </div>
+      </div>
+
+      <div class="px-6 py-5 hover:bg-slate-50">
+        <div class="flex items-center gap-4">
+          <div
+            class="h-12 w-12 rounded-2xl bg-blue-100 flex items-center justify-center font-bold text-blue-700"
+          >
+            OM
+          </div>
+
+          <div class="flex-1">
+            <div class="flex flex-wrap gap-2 items-center">
+              <h3 class="font-semibold">Operations Manager</h3>
+
+              <span
+                class="px-2 py-1 rounded-full bg-blue-100 text-blue-700 text-xs"
+              >
+                Operations
+              </span>
+            </div>
+
+            <p class="text-sm text-slate-500 mt-1">
+              Property, partner and booking management permissions
+            </p>
+          </div>
+
+          <button
+            data-admin-action="manage-user"
+            class="px-4 py-2 rounded-xl bg-slate-600 text-white"
+          >
+            Manage
+          </button>
+        </div>
+      </div>
+
+      <div class="px-6 py-5 hover:bg-slate-50">
+        <div class="flex items-center gap-4">
+          <div
+            class="h-12 w-12 rounded-2xl bg-emerald-100 flex items-center justify-center font-bold text-emerald-700"
+          >
+            FA
+          </div>
+
+          <div class="flex-1">
+            <div class="flex flex-wrap gap-2 items-center">
+              <h3 class="font-semibold">Finance Administrator</h3>
+
+              <span
+                class="px-2 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs"
+              >
+                Finance
+              </span>
+            </div>
+
+            <p class="text-sm text-slate-500 mt-1">
+              Payments, payouts, settlements and financial reports
+            </p>
+          </div>
+
+          <button
+            data-admin-action="manage-user"
+            class="px-4 py-2 rounded-xl bg-slate-600 text-white"
+          >
+            Manage
+          </button>
+        </div>
+      </div>
+
+      <div class="px-6 py-5 hover:bg-slate-50">
+        <div class="flex items-center gap-4">
+          <div
+            class="h-12 w-12 rounded-2xl bg-purple-100 flex items-center justify-center font-bold text-purple-700"
+          >
+            TS
+          </div>
+
+          <div class="flex-1">
+            <div class="flex flex-wrap gap-2 items-center">
+              <h3 class="font-semibold">Trust & Safety Lead</h3>
+
+              <span
+                class="px-2 py-1 rounded-full bg-purple-100 text-purple-700 text-xs"
+              >
+                Trust & Safety
+              </span>
+            </div>
+
+            <p class="text-sm text-slate-500 mt-1">
+              Reviews, moderation, fraud and compliance controls
+            </p>
+          </div>
+
+          <button
+            data-admin-action="manage-user"
+            class="px-4 py-2 rounded-xl bg-slate-600 text-white"
+          >
+            Manage
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-6 py-4 border-t border-slate-100 bg-slate-50">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="text-sm text-slate-500">
+          Showing
+          <span class="font-medium text-slate-900">1-4</span>
+          of
+          <span class="font-medium text-slate-900">42</span>
+          admin users
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button class="h-10 px-4 rounded-xl border border-slate-200 bg-white">
+            Previous
+          </button>
+
+          <button class="h-10 w-10 rounded-xl bg-slate-900 text-white">
+            1
+          </button>
+
+          <button class="h-10 w-10 rounded-xl border border-slate-200">
+            2
+          </button>
+
+          <button class="h-10 px-4 rounded-xl border border-slate-200 bg-white">
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

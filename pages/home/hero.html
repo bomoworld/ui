@@ -1,0 +1,752 @@
+<section class="home-hero relative min-h-[75vh] overflow-hidden bg-[#031526] pb-12 pt-20 lg:pb-16">
+  <div
+    class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_24%_22%,rgba(255,255,255,.16),transparent_38%)]"
+  ></div>
+  <!-- Background -->
+  <div class="absolute inset-0 -z-20">
+    <img
+      src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=2200&q=80"
+      class="h-full w-full scale-[1.02] object-cover"
+      alt="Tropical island and turquoise water"
+    />
+  </div>
+
+  <!-- Very Light Overlay -->
+  <div class="absolute inset-0 -z-10 bg-slate-950/25"></div>
+
+  <!-- Left Side for Text -->
+  <div
+    class="absolute inset-0 -z-10 bg-gradient-to-r from-[#031526]/95 via-[#031526]/80 to-[#031526]/20"
+  ></div>
+
+  <!-- Bottom Fade -->
+  <div
+    class="absolute inset-x-0 bottom-0 -z-10 h-56 bg-gradient-to-t from-[#031526] via-[#031526]/70 to-transparent"
+  ></div>
+
+  <div
+    class="absolute left-0 top-0 -z-10 w-[700px] h-[700px] rounded-full bg-orange-500/15 blur-[180px]"
+  ></div>
+
+  <div
+    class="absolute right-0 top-32 -z-10 w-[500px] h-[500px] rounded-full bg-cyan-400/10 blur-[160px]"
+  ></div>
+
+  <div
+    class="absolute left-1/3 bottom-0 -z-10 w-[500px] h-[250px] bg-orange-500/10 blur-[140px]"
+  ></div>
+
+  <div
+    class="home-hero__layout mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 py-8 sm:px-6 lg:px-8 lg:py-12 xl:grid-cols-[1.15fr_500px] xl:gap-14"
+  >
+    <div class="home-hero__content relative z-10">
+      <h1
+        class="max-w-3xl text-4xl font-black leading-[0.96] tracking-[-0.045em] text-white drop-shadow-[0_6px_26px_rgba(0,0,0,.35)] sm:text-5xl lg:text-7xl"
+      >
+        REAL STAYS <br />
+        REAL REVIEWS
+        <span
+          class="mt-1 block bg-gradient-to-r from-orange-400 via-orange-500 to-amber-300 bg-clip-text text-transparent"
+        >
+          REAL REWARDS
+        </span>
+      </h1>
+
+      <form class="mt-7" data-hero-search>
+        <div
+          class="rounded-[1.35rem] border border-white/20 bg-slate-950/55 p-2.5 shadow-[0_22px_60px_rgba(2,6,23,.34)] backdrop-blur-2xl ring-1 ring-black/10"
+        >
+          <div
+            class="grid grid-cols-1 gap-2.5 lg:grid-cols-[2.3fr_1fr_1fr_auto]"
+          >
+            <!-- Destination -->
+            <div
+              class="group flex min-h-14 items-center gap-3 rounded-2xl border border-white/10 bg-slate-900/75 px-4 py-3 transition focus-within:border-blue-400/70 focus-within:bg-slate-900"
+            >
+              <span
+                class="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-blue-500/15 text-blue-300"
+              >
+                <i class="fa-solid fa-location-dot text-sm"></i>
+              </span>
+
+              <input
+                type="text"
+                name="location"
+                id="heroDestination"
+                aria-label="Destination, property or city"
+                placeholder="Destination, property or city"
+                autocomplete="off"
+                list="heroDestinationSuggestions"
+                class="w-full border-0 bg-transparent text-sm font-medium text-white outline-none placeholder:text-slate-400 focus:ring-0"
+              />
+              <datalist id="heroDestinationSuggestions">
+                <option value="El Nido, Palawan"></option>
+                <option value="Boracay, Aklan"></option>
+                <option value="Cebu City"></option>
+                <option value="Siargao Island"></option>
+                <option value="Makati City"></option>
+              </datalist>
+            </div>
+
+            <!-- Check In -->
+            <div
+              class="group flex min-h-14 items-center gap-3 rounded-2xl border border-white/10 bg-slate-900/75 px-4 py-3 transition focus-within:border-blue-400/70 focus-within:bg-slate-900"
+            >
+              <span
+                class="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-blue-500/15 text-blue-300"
+              >
+                <i class="fa-solid fa-calendar text-sm"></i>
+              </span>
+
+              <input
+                type="date"
+                name="checkin"
+                data-checkin
+                aria-label="Check-in date"
+                class="w-full border-0 bg-transparent text-sm font-medium text-white outline-none [color-scheme:dark] focus:ring-0"
+              />
+            </div>
+
+            <!-- Check Out -->
+            <div
+              class="group flex min-h-14 items-center gap-3 rounded-2xl border border-white/10 bg-slate-900/75 px-4 py-3 transition focus-within:border-blue-400/70 focus-within:bg-slate-900"
+            >
+              <span
+                class="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-blue-500/15 text-blue-300"
+              >
+                <i class="fa-solid fa-calendar-check text-sm"></i>
+              </span>
+
+              <input
+                type="date"
+                name="checkout"
+                data-checkout
+                aria-label="Check-out date"
+                class="w-full border-0 bg-transparent text-sm font-medium text-white outline-none [color-scheme:dark] focus:ring-0"
+              />
+            </div>
+
+            <!-- Search -->
+            <button
+              type="submit"
+              class="bomo-btn-primary min-h-14 rounded-2xl bg-blue-700 px-6 py-3.5 shadow-lg shadow-blue-950/25"
+            >
+              <i class="fa-solid fa-magnifying-glass text-sm"></i>
+              <span class="font-semibold">Search</span>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div class="home-audience-grid mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Travellers -->
+        <a
+          href="hotel-listings.html"
+          class="home-audience-card group relative h-32 overflow-hidden rounded-3xl border border-white/15 bg-slate-900 shadow-[0_18px_44px_rgba(2,6,23,.24)] transition duration-300 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_24px_55px_rgba(2,6,23,.35)] lg:h-40"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=80"
+            alt="Travellers sharing a real experience"
+            class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+          />
+
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#03111F] via-[#03111F]/45 to-black/5 transition group-hover:via-[#03111F]/30"
+          ></div>
+
+          <div class="absolute left-5 top-4 -rotate-[5deg]">
+            <div class="italic font-light tracking-wide text-white/95">For</div>
+
+            <h2 class="card-hero-titlex">TRAVELLERS</h2>
+
+            <div
+              class="mt-2 h-1 w-16 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 shadow-[0_0_16px_rgba(249,115,22,.5)]"
+            ></div>
+          </div>
+
+          <div class="absolute left-5 bottom-5">
+            <div class="text-sm text-white/90 leading-relaxed">
+              Real experiences<br />
+              from real travellers.
+            </div>
+          </div>
+
+          <div
+            class="absolute bottom-5 right-5 flex h-11 w-11 items-center justify-center rounded-full border border-white/35 bg-black/30 text-white shadow-lg backdrop-blur-md transition duration-300 group-hover:translate-x-0.5 group-hover:border-orange-500 group-hover:bg-orange-500"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </div>
+        </a>
+
+        <!-- Creators -->
+        <a
+          href="partner-login.html"
+          class="home-audience-card group relative h-32 overflow-hidden rounded-3xl border border-white/15 bg-slate-900 shadow-[0_18px_44px_rgba(2,6,23,.24)] transition duration-300 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_24px_55px_rgba(2,6,23,.35)] lg:h-40"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=900&q=80"
+            alt="Creator filming a travel experience"
+            class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+          />
+
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#03111F] via-[#03111F]/45 to-black/5 transition group-hover:via-[#03111F]/30"
+          ></div>
+
+          <div class="absolute left-5 top-4 -rotate-[5deg]">
+            <div class="italic font-light text-white/95">For</div>
+
+            <h2 class="card-hero-titlex">CREATORS</h2>
+
+            <div
+              class="mt-2 h-1 w-16 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 shadow-[0_0_16px_rgba(249,115,22,.5)]"
+            ></div>
+          </div>
+
+          <div class="absolute left-5 bottom-5">
+            <div class="text-sm text-white/90 leading-relaxed">
+              Share honest stays<br />
+              and inspire more.
+            </div>
+          </div>
+
+          <div
+            class="absolute bottom-5 right-5 flex h-11 w-11 items-center justify-center rounded-full border border-white/35 bg-black/30 text-white shadow-lg backdrop-blur-md transition duration-300 group-hover:translate-x-0.5 group-hover:border-orange-500 group-hover:bg-orange-500"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </div>
+        </a>
+
+        <!-- Guests -->
+        <a
+          href="auth.html?page=login"
+          class="home-audience-card group relative h-32 overflow-hidden rounded-3xl border border-white/15 bg-slate-900 shadow-[0_18px_44px_rgba(2,6,23,.24)] transition duration-300 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_24px_55px_rgba(2,6,23,.35)] sm:col-span-2 lg:col-span-1 lg:h-40"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1473625247510-8ceb1760943f?auto=format&fit=crop&w=1400&q=80"
+            alt="Guests enjoying a coastal destination"
+            class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+          />
+
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#03111F] via-[#03111F]/45 to-black/5 transition group-hover:via-[#03111F]/30"
+          ></div>
+
+          <div class="absolute left-5 top-4 -rotate-[5deg]">
+            <div class="italic font-light text-white/95">For</div>
+
+            <h2 class="card-hero-titlex">GUESTS</h2>
+
+            <div
+              class="mt-2 h-1 w-16 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 shadow-[0_0_16px_rgba(249,115,22,.5)]"
+            ></div>
+          </div>
+
+          <div class="absolute left-5 bottom-5">
+            <div class="text-sm text-white/90 leading-relaxed">
+              Verified guests review<br />
+              their stays after checkout.
+            </div>
+          </div>
+
+          <div
+            class="absolute bottom-5 right-5 flex h-11 w-11 items-center justify-center rounded-full border border-white/35 bg-black/30 text-white shadow-lg backdrop-blur-md transition duration-300 group-hover:translate-x-0.5 group-hover:border-orange-500 group-hover:bg-orange-500"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div
+      class="home-hero__media glass order-first mx-0 overflow-hidden rounded-[1.75rem] border border-white/20 bg-slate-950/45 shadow-[0_28px_80px_rgba(2,6,23,.48)] ring-1 ring-white/10 sm:mx-6 md:order-last xl:mx-0"
+    >
+      <!-- Main Video -->
+      <div
+        class="relative h-[360px] overflow-hidden sm:h-[440px] lg:h-[520px] xl:h-[560px]"
+      >
+        <video
+          class="home-hero__video absolute inset-0 h-full w-full object-cover brightness-105 contrast-105 saturate-110"
+          data-home-hero-video
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=1400&q=80"
+          aria-label="Traveller video from an island stay"
+        >
+          <source
+            src="https://videos.pexels.com/video-files/3130284/3130284-hd_1920_1080_30fps.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-[#031526] via-black/15 to-black/5"
+        ></div>
+
+        <!-- Property Card -->
+        <div class="absolute left-4 top-4 sm:left-6 sm:top-6">
+          <a
+            href="hotel-details.html"
+            class="glass flex w-[min(17rem,calc(100vw-6.5rem))] items-center gap-3 rounded-2xl border border-white/20 bg-slate-950/80 p-2 shadow-xl backdrop-blur-xl transition hover:border-blue-400/60 hover:bg-slate-950/90"
+          >
+            <!-- Property Image -->
+            <img
+              src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=200&q=80"
+              alt="El Nido Resorts"
+              class="h-14 w-14 shrink-0 rounded-xl object-cover sm:h-16 sm:w-16"
+            />
+
+            <!-- Property Info -->
+            <div class="flex-1">
+              <h3 class="truncate text-base font-bold leading-tight text-white sm:text-lg">
+                El Nido Resorts
+              </h3>
+
+              <small class="mt-1 flex items-center text-slate-300">
+                <i class="fa-solid fa-location-dot text-sm mr-1"></i>
+                El Nido, Palawan
+              </small>
+
+              <small class="mt-1">
+                <span class="font-semibold text-blue-300"> View → </span>
+              </small>
+            </div>
+          </a>
+        </div>
+
+        <!-- Duration -->
+
+        <div class="absolute right-4 top-4 sm:right-6 sm:top-6">
+          <div
+            class="glass rounded-full border border-white/15 bg-slate-950/70 px-3 py-1.5 text-xs font-semibold text-white shadow-lg backdrop-blur-xl"
+          >
+            ▶ 0:42
+          </div>
+        </div>
+
+        <!-- Play -->
+
+        <button
+          type="button"
+          aria-label="Pause hero video"
+          aria-pressed="false"
+          data-home-hero-video-toggle
+          class="group/play absolute left-1/2 top-1/2 z-[2] flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full"
+        >
+          <span
+            class="flex h-16 w-16 items-center justify-center rounded-full border border-white/35 bg-white/15 text-white shadow-[0_15px_45px_rgba(2,6,23,.35)] backdrop-blur-md transition duration-300 group-hover/play:scale-110 group-hover/play:bg-white/25 sm:h-20 sm:w-20"
+          >
+            <svg class="ml-1 h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+              <path data-home-hero-control-icon d="M7 5h4v14H7zm6 0h4v14h-4z" />
+            </svg>
+          </span>
+        </button>
+
+        <!-- Compact Review Card -->
+        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
+          <div
+            class="glass max-w-md rounded-2xl border border-white/20 bg-slate-950/65 p-4 shadow-2xl backdrop-blur-2xl"
+          >
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80"
+                  alt="Sarah M."
+                  class="h-10 w-10 rounded-full border-2 border-white/25 object-cover"
+                />
+
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-semibold text-sm"> Sarah M. </span>
+
+                    <span
+                      class="rounded-full border border-emerald-300/20 bg-emerald-400/15 px-2 py-0.5 text-[10px] font-semibold tracking-wide text-emerald-200"
+                    >
+                      VERIFIED
+                    </span>
+                  </div>
+
+                  <div class="text-[11px] text-slate-300">
+                    El Nido Resorts • ★★★★★
+                  </div>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                aria-label="Open Sarah's review"
+                class="flex h-9 w-9 items-center justify-center rounded-full border border-blue-300/20 bg-blue-700 text-white transition hover:bg-blue-600"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div
+              class="mt-3 text-slate-200 leading-relaxed line-clamp-2 text-sm"
+            >
+              Crystal-clear water, friendly staff, and one of the best island
+              stays we've experienced.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Gallery -->
+
+      <div class="glass border-t border-white/15 bg-slate-950/55 p-4 backdrop-blur-2xl">
+        <div class="mb-3 flex items-center justify-between">
+          <h3 class="text-base font-semibold text-white sm:text-lg">
+            More Traveller Reviews
+          </h3>
+
+          <button
+            type="button"
+            class="rounded-lg px-2 py-1 text-xs font-semibold text-blue-300 transition hover:bg-white/10 hover:text-white"
+          >
+            View All →
+          </button>
+        </div>
+
+        <div class="custom-scroll flex gap-3 overflow-x-auto pb-2">
+          <!-- Thumbnail -->
+          <a
+            href="#"
+            class="group relative h-24 w-32 shrink-0 overflow-hidden rounded-2xl border-2 border-blue-400 shadow-lg shadow-blue-950/25 ring-2 ring-blue-400/10 lg:h-28 lg:w-36"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=80"
+              alt="Sarah's verified stay review"
+              class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-110"
+            />
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"
+            ></div>
+
+            <div
+              class="absolute top-2 right-2 rounded-full bg-black/70 backdrop-blur px-2 py-0.5 text-[10px] font-medium"
+            >
+              ▶ 0:42
+            </div>
+
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div
+                class="w-9 h-9 rounded-full bg-white/20 backdrop-blur flex items-center justify-center border border-white/30"
+              >
+                <i class="fa-solid fa-play text-white text-xs ml-0.5"></i>
+              </div>
+            </div>
+
+            <div class="absolute left-2 bottom-2 flex items-center gap-2">
+              <img
+                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80"
+                class="w-7 h-7 rounded-full border border-white object-cover"
+              />
+
+              <div>
+                <div class="text-[11px] font-semibold text-white leading-none">
+                  Sarah
+                </div>
+
+                <div class="text-[10px] text-blue-300">✓ Verified Stay</div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Repeat -->
+          <a
+            href="#"
+            class="group relative h-24 w-32 shrink-0 overflow-hidden rounded-2xl border border-white/20 bg-slate-900 transition hover:border-white/40 lg:h-28 lg:w-36"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=80"
+              alt="Bali traveller video review"
+              class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-110"
+            />
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"
+            ></div>
+
+            <div
+              class="absolute top-2 right-2 rounded-full bg-black/70 px-2 py-0.5 text-[10px]"
+            >
+              ▶ 1:08
+            </div>
+
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div
+                class="w-9 h-9 rounded-full bg-white/20 backdrop-blur flex items-center justify-center border border-white/30"
+              >
+                <i class="fa-solid fa-play text-white text-xs ml-0.5"></i>
+              </div>
+            </div>
+
+            <div
+              class="absolute left-2 bottom-2 text-white text-xs font-semibold"
+            >
+              Bali Vlog
+            </div>
+          </a>
+
+          <a
+            href="#"
+            class="group relative h-24 w-32 shrink-0 overflow-hidden rounded-2xl border border-white/20 bg-slate-900 transition hover:border-white/40 lg:h-28 lg:w-36"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=700&q=80"
+              alt="Couple's verified stay review"
+              class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"
+            ></div>
+            <div
+              class="absolute top-2 right-2 rounded-full bg-black/70 px-2 py-0.5 text-[10px]"
+            >
+              ▶ 0:31
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div
+                class="w-9 h-9 rounded-full bg-white/20 backdrop-blur flex items-center justify-center border border-white/30"
+              >
+                <i class="fa-solid fa-play text-white text-xs ml-0.5"></i>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="#"
+            class="group relative h-24 w-32 shrink-0 overflow-hidden rounded-2xl border border-white/20 bg-slate-900 transition hover:border-white/40 lg:h-28 lg:w-36"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=700&q=80"
+              alt="Beach stay video review"
+              class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"
+            ></div>
+            <div
+              class="absolute top-2 right-2 rounded-full bg-black/70 px-2 py-0.5 text-[10px]"
+            >
+              ▶ 0:55
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div
+                class="w-9 h-9 rounded-full bg-white/20 backdrop-blur flex items-center justify-center border border-white/30"
+              >
+                <i class="fa-solid fa-play text-white text-xs ml-0.5"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO EARN REWARDS -->
+<section class="home-rewards relative overflow-hidden bg-[#031526] py-12 lg:py-16">
+  <div
+    class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,.18),transparent_48%)]"
+  ></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      class="rounded-[2rem] border border-white/10 bg-slate-900/35 p-5 shadow-[0_28px_80px_rgba(2,6,23,.28)] backdrop-blur-xl sm:p-7 lg:p-8"
+    >
+      <!-- TITLE -->
+      <div class="mb-8 flex items-center gap-4">
+        <div
+          class="flex h-12 w-12 items-center justify-center rounded-2xl border border-orange-400/15 bg-orange-500/15 shadow-inner shadow-orange-300/10"
+        >
+          <i class="fa-solid fa-gift text-orange-500 text-xl"></i>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+            How to Earn
+            <span class="text-orange-500">Rewards</span>
+          </h2>
+
+          <p class="mt-1 text-sm text-slate-400">
+            Book a stay, share your experience, and earn BOMO Rewards.
+          </p>
+        </div>
+      </div>
+
+      <!-- STEPS -->
+      <div
+        class="home-reward-steps grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-5"
+      >
+        <!-- BOOK -->
+        <div
+          class="home-reward-card group relative rounded-2xl border border-white/10 bg-[#061B30]/80 p-5 transition duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-[#082038] hover:shadow-xl hover:shadow-black/15"
+        >
+          <div
+            class="absolute -top-3 -left-2 w-8 h-8 rounded-full bg-orange-500 text-white text-sm font-bold flex items-center justify-center ring-4 ring-[#031526]"
+          >
+            1
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div
+              class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-orange-400/10 bg-orange-500/15 transition group-hover:scale-105"
+            >
+              <i class="fa-solid fa-calendar-check text-orange-500 text-xl"></i>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-bold text-white">Book</h3>
+              <p class="mt-1 text-sm text-slate-400">
+                Reserve your stay at a BOMO property.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- REVIEW -->
+        <div
+          class="home-reward-card group relative rounded-2xl border border-white/10 bg-[#061B30]/80 p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:bg-[#082038] hover:shadow-xl hover:shadow-black/15"
+        >
+          <div
+            class="absolute -top-3 -left-2 w-8 h-8 rounded-full bg-blue-600 text-white text-sm font-bold flex items-center justify-center ring-4 ring-[#031526]"
+          >
+            2
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div
+              class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-blue-400/10 bg-blue-500/15 transition group-hover:scale-105"
+            >
+              <i class="fa-solid fa-video text-blue-400 text-xl"></i>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-bold text-white">Review</h3>
+              <p class="mt-1 text-sm text-slate-400">
+                Upload your video review after checkout.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SHARE -->
+        <div
+          class="home-reward-card group relative rounded-2xl border border-white/10 bg-[#061B30]/80 p-5 transition duration-300 hover:-translate-y-1 hover:border-cyan-500/40 hover:bg-[#082038] hover:shadow-xl hover:shadow-black/15"
+        >
+          <div
+            class="absolute -top-3 -left-2 w-8 h-8 rounded-full bg-cyan-600 text-white text-sm font-bold flex items-center justify-center ring-4 ring-[#031526]"
+          >
+            3
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div
+              class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-cyan-400/10 bg-cyan-500/15 transition group-hover:scale-105"
+            >
+              <i class="fa-solid fa-share-nodes text-cyan-400 text-xl"></i>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-bold text-white">Share</h3>
+              <p class="mt-1 text-sm text-slate-400">
+                Help future travellers make better choices.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- EARN -->
+        <div
+          class="home-reward-card group relative rounded-2xl border border-white/10 bg-[#061B30]/80 p-5 transition duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-[#082038] hover:shadow-xl hover:shadow-black/15"
+        >
+          <div
+            class="absolute -top-3 -left-2 w-8 h-8 rounded-full bg-orange-500 text-white text-sm font-bold flex items-center justify-center ring-4 ring-[#031526]"
+          >
+            4
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div
+              class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-orange-400/10 bg-orange-500/15 transition group-hover:scale-105"
+            >
+              <i class="fa-solid fa-gift text-orange-500 text-xl"></i>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-bold text-white">Earn</h3>
+              <p class="mt-1 text-sm text-slate-400">
+                Get BOMO Rewards from eligible reviews.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RULE -->
+      <div
+        class="mt-7 flex items-center justify-center gap-2 rounded-xl border border-white/5 bg-white/[.025] px-4 py-3 text-sm text-slate-400"
+      >
+        <i class="fa-solid fa-shield-check text-blue-400"></i>
+        <span> 1 Completed stay = Video Review Credit </span>
+      </div>
+    </div>
+  </div>
+</section>

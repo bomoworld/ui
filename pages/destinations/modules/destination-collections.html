@@ -1,0 +1,47 @@
+<section class="destinations-collections" aria-labelledby="destinationCollectionsTitle">
+  <div class="destinations-collections__inner">
+    <div class="destinations-collections__header">
+      <div>
+        <span class="destinations-section-label">
+          <i class="fa-solid fa-sparkles"></i>
+          Curated collections
+        </span>
+        <h2 id="destinationCollectionsTitle">Travel your way.</h2>
+        <p>
+          Start with a mood, an activity or a place. Every collection includes
+          practical tips and suggested stays.
+        </p>
+      </div>
+
+      <button id="pickDestination" class="destinations-surprise" type="button">
+        <i class="fa-solid fa-shuffle"></i>
+        Surprise me
+      </button>
+    </div>
+
+    <div class="destinations-toolbar">
+      <div class="destinations-toolbar__filters" aria-label="Destination filters">
+        <button type="button" class="is-active" data-destination-query="">All</button>
+        <button type="button" data-destination-query="Beach">Beaches</button>
+        <button type="button" data-destination-query="Island">Islands</button>
+        <button type="button" data-destination-query="Mountain">Mountains</button>
+        <button type="button" data-destination-query="Food">Food</button>
+        <button type="button" data-destination-query="Culture">Culture</button>
+        <button type="button" data-destination-query="Adventure">Adventure</button>
+      </div>
+
+      <p id="destinationResultsStatus" aria-live="polite">
+        Showing all travel collections
+      </p>
+    </div>
+
+    <div id="destinationBoard" class="destination-board"></div>
+
+    <div id="destinationEmptyState" class="destination-empty" hidden>
+      <span><i class="fa-solid fa-map-location-dot"></i></span>
+      <h3>No destinations found</h3>
+      <p>Try a broader place or travel style.</p>
+      <button type="button" data-destination-reset>View all destinations</button>
+    </div>
+  </div>
+</section>

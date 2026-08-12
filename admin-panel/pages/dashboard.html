@@ -1,0 +1,251 @@
+<section id="dashboardPage" class="space-y-7 pb-4">
+  <section class="relative isolate overflow-hidden rounded-[2rem] bg-slate-950 px-6 py-8 text-white shadow-2xl shadow-slate-950/15 sm:px-8 lg:px-10 lg:py-10">
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_85%_12%,rgba(59,130,246,.35),transparent_28%),radial-gradient(circle_at_15%_100%,rgba(99,102,241,.28),transparent_34%)]"></div>
+    <div class="pointer-events-none absolute -right-24 top-10 h-72 w-72 rounded-full border border-white/10"></div>
+    <div class="pointer-events-none absolute -bottom-40 left-1/3 h-72 w-72 rounded-full border border-white/10"></div>
+
+    <div class="relative flex flex-col gap-8 xl:flex-row xl:items-end xl:justify-between">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-400/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-emerald-200">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-300 opacity-75"></span>
+            <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-300"></span>
+          </span>
+          All systems operational
+        </div>
+
+        <p class="mt-6 text-sm font-medium text-blue-200">Sunday, July 26 · Operations overview</p>
+        <h1 class="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">Good morning, Administrator.</h1>
+        <p class="mt-4 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
+          Here is the current pulse of BOMO. Four approval queues need attention, while booking volume and revenue are tracking ahead of last week.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-3">
+        <a href="?page=properties" data-admin-link="properties" class="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-blue-50 focus:outline-none focus:ring-4 focus:ring-white/30">
+          <i class="fa-solid fa-building-circle-check"></i>
+          Review properties
+        </a>
+        <a href="?page=payments" data-admin-link="payments" class="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/15 focus:outline-none focus:ring-4 focus:ring-white/20">
+          <i class="fa-solid fa-credit-card"></i>
+          Payment center
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Platform metrics" class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    <a href="?page=bookings" data-admin-link="bookings" class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-900/5 focus:outline-none focus:ring-4 focus:ring-blue-100">
+      <div class="flex items-start justify-between">
+        <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-600"><i class="fa-solid fa-calendar-check"></i></div>
+        <span class="inline-flex items-center gap-1 text-xs font-semibold text-emerald-600"><i class="fa-solid fa-arrow-trend-up"></i> 14.8%</span>
+      </div>
+      <p class="mt-5 text-sm font-medium text-slate-500">Today’s bookings</p>
+      <p class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">348</p>
+      <p class="mt-2 text-xs text-slate-400">View reservations <i class="fa-solid fa-arrow-right ml-1 transition group-hover:translate-x-1"></i></p>
+    </a>
+
+    <a href="?page=payments" data-admin-link="payments" class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-emerald-200 hover:shadow-lg hover:shadow-emerald-900/5 focus:outline-none focus:ring-4 focus:ring-emerald-100">
+      <div class="flex items-start justify-between">
+        <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600"><i class="fa-solid fa-peso-sign"></i></div>
+        <span class="inline-flex items-center gap-1 text-xs font-semibold text-emerald-600"><i class="fa-solid fa-arrow-trend-up"></i> 22.6%</span>
+      </div>
+      <p class="mt-5 text-sm font-medium text-slate-500">Gross booking value</p>
+      <p class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">₱845K</p>
+      <p class="mt-2 text-xs text-slate-400">Gross today <i class="fa-solid fa-arrow-right ml-1 transition group-hover:translate-x-1"></i></p>
+    </a>
+
+    <a href="?page=properties" data-admin-link="properties" class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-violet-200 hover:shadow-lg hover:shadow-violet-900/5 focus:outline-none focus:ring-4 focus:ring-violet-100">
+      <div class="flex items-start justify-between">
+        <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-50 text-violet-600"><i class="fa-solid fa-hotel"></i></div>
+        <span class="rounded-full bg-violet-50 px-2.5 py-1 text-xs font-semibold text-violet-700">+18 this month</span>
+      </div>
+      <p class="mt-5 text-sm font-medium text-slate-500">Active properties</p>
+      <p class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">1,248</p>
+      <p class="mt-2 text-xs text-slate-400">Manage portfolio <i class="fa-solid fa-arrow-right ml-1 transition group-hover:translate-x-1"></i></p>
+    </a>
+
+    <a href="?page=support" data-admin-link="support" class="group rounded-2xl border border-amber-200 bg-amber-50/60 p-5 shadow-sm transition hover:-translate-y-1 hover:border-amber-300 hover:shadow-lg hover:shadow-amber-900/5 focus:outline-none focus:ring-4 focus:ring-amber-100">
+      <div class="flex items-start justify-between">
+        <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-100 text-amber-600"><i class="fa-solid fa-headset"></i></div>
+        <span class="rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-700">Needs review</span>
+      </div>
+      <p class="mt-5 text-sm font-medium text-slate-500">Open support tickets</p>
+      <p class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">14</p>
+      <p class="mt-2 text-xs text-slate-400">Open support center <i class="fa-solid fa-arrow-right ml-1 transition group-hover:translate-x-1"></i></p>
+    </a>
+  </section>
+
+  <section class="grid gap-6 xl:grid-cols-12">
+    <div class="xl:col-span-8 rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <div class="flex flex-col gap-4 border-b border-slate-100 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+        <div>
+          <div class="flex items-center gap-2">
+            <h2 class="text-lg font-semibold text-slate-950">Priority queue</h2>
+            <span class="rounded-full bg-rose-50 px-2.5 py-1 text-xs font-semibold text-rose-600">12 open</span>
+          </div>
+          <p class="mt-1 text-sm text-slate-500">Review the work currently waiting for an operator.</p>
+        </div>
+        <a href="?page=analytics" data-admin-link="analytics" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition hover:text-blue-800">
+          View analytics <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+
+      <div class="grid gap-3 p-4 sm:grid-cols-2 sm:p-6">
+        <button type="button" data-dashboard-queue="properties" class="group rounded-2xl border border-slate-200 p-4 text-left transition hover:border-blue-300 hover:bg-blue-50/40 focus:outline-none focus:ring-4 focus:ring-blue-100">
+          <div class="flex items-center justify-between gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-100 text-blue-600"><i class="fa-solid fa-building-circle-check"></i></span>
+            <span data-dashboard-count="properties" class="rounded-full bg-rose-50 px-2.5 py-1 text-xs font-semibold text-rose-600">3 pending</span>
+          </div>
+          <p class="mt-4 font-semibold text-slate-900">Property approvals</p>
+          <p class="mt-1 text-sm text-slate-500">New listings and compliance checks.</p>
+          <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-600">Review queue <i class="fa-solid fa-arrow-right text-xs transition group-hover:translate-x-1"></i></span>
+        </button>
+
+        <button type="button" data-dashboard-queue="partners" class="group rounded-2xl border border-slate-200 p-4 text-left transition hover:border-indigo-300 hover:bg-indigo-50/40 focus:outline-none focus:ring-4 focus:ring-indigo-100">
+          <div class="flex items-center justify-between gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-100 text-indigo-600"><i class="fa-solid fa-user-check"></i></span>
+            <span data-dashboard-count="partners" class="rounded-full bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-700">3 pending</span>
+          </div>
+          <p class="mt-4 font-semibold text-slate-900">Partner verification</p>
+          <p class="mt-1 text-sm text-slate-500">Identity, business and account checks.</p>
+          <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-indigo-600">Open verification <i class="fa-solid fa-arrow-right text-xs transition group-hover:translate-x-1"></i></span>
+        </button>
+
+        <button type="button" data-dashboard-queue="payouts" class="group rounded-2xl border border-slate-200 p-4 text-left transition hover:border-emerald-300 hover:bg-emerald-50/40 focus:outline-none focus:ring-4 focus:ring-emerald-100">
+          <div class="flex items-center justify-between gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600"><i class="fa-solid fa-wallet"></i></span>
+            <span data-dashboard-count="payouts" class="rounded-full bg-rose-50 px-2.5 py-1 text-xs font-semibold text-rose-600">3 pending</span>
+          </div>
+          <p class="mt-4 font-semibold text-slate-900">Payout requests</p>
+          <p class="mt-1 text-sm text-slate-500">Settlement requests awaiting release.</p>
+          <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-emerald-600">Process payouts <i class="fa-solid fa-arrow-right text-xs transition group-hover:translate-x-1"></i></span>
+        </button>
+
+        <button type="button" data-dashboard-queue="reviews" class="group rounded-2xl border border-slate-200 p-4 text-left transition hover:border-violet-300 hover:bg-violet-50/40 focus:outline-none focus:ring-4 focus:ring-violet-100">
+          <div class="flex items-center justify-between gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-100 text-violet-600"><i class="fa-solid fa-star"></i></span>
+            <span data-dashboard-count="reviews" class="rounded-full bg-rose-50 px-2.5 py-1 text-xs font-semibold text-rose-600">3 pending</span>
+          </div>
+          <p class="mt-4 font-semibold text-slate-900">Review moderation</p>
+          <p class="mt-1 text-sm text-slate-500">Video reviews reported or awaiting approval.</p>
+          <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-violet-600">Moderate reviews <i class="fa-solid fa-arrow-right text-xs transition group-hover:translate-x-1"></i></span>
+        </button>
+      </div>
+    </div>
+
+    <aside class="xl:col-span-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h2 class="text-lg font-semibold text-slate-950">System health</h2>
+          <p class="mt-1 text-sm text-slate-500">Live platform service checks.</p>
+        </div>
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span> Healthy</span>
+      </div>
+
+      <div class="mt-6 space-y-4">
+        <div>
+          <div class="flex items-center justify-between text-sm"><span class="text-slate-600">API response</span><span class="font-semibold text-emerald-600">184 ms</span></div>
+          <div class="mt-2 h-1.5 overflow-hidden rounded-full bg-slate-100"><div class="h-full w-[82%] rounded-full bg-emerald-500"></div></div>
+        </div>
+        <div>
+          <div class="flex items-center justify-between text-sm"><span class="text-slate-600">Database</span><span class="font-semibold text-emerald-600">31 ms</span></div>
+          <div class="mt-2 h-1.5 overflow-hidden rounded-full bg-slate-100"><div class="h-full w-[94%] rounded-full bg-emerald-500"></div></div>
+        </div>
+        <div>
+          <div class="flex items-center justify-between text-sm"><span class="text-slate-600">Background queue</span><span class="font-semibold text-amber-600">37 waiting</span></div>
+          <div class="mt-2 h-1.5 overflow-hidden rounded-full bg-slate-100"><div class="h-full w-[42%] rounded-full bg-amber-500"></div></div>
+        </div>
+        <div>
+          <div class="flex items-center justify-between text-sm"><span class="text-slate-600">Storage</span><span class="font-semibold text-slate-700">72%</span></div>
+          <div class="mt-2 h-1.5 overflow-hidden rounded-full bg-slate-100"><div class="h-full w-[72%] rounded-full bg-blue-500"></div></div>
+        </div>
+      </div>
+
+      <a href="?page=system-settings" data-admin-link="system-settings" class="mt-6 flex items-center justify-between rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100">
+        System settings <i class="fa-solid fa-arrow-right text-xs"></i>
+      </a>
+    </aside>
+  </section>
+
+  <section class="grid gap-6 xl:grid-cols-12">
+    <div class="xl:col-span-7 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+      <div class="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h2 class="text-lg font-semibold text-slate-950">Revenue trend</h2>
+          <p class="mt-1 text-sm text-slate-500">Gross booking value over the last six months.</p>
+        </div>
+        <a href="?page=analytics" data-admin-link="analytics" class="rounded-lg border border-slate-200 px-3 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700">Full report</a>
+      </div>
+
+      <div class="mt-8 grid h-48 grid-cols-6 items-end gap-3 border-b border-slate-100 px-1 sm:gap-5">
+        <div class="flex h-full flex-col justify-end gap-2"><div class="rounded-t-lg bg-blue-100" style="height: 42%"></div><span class="text-center text-xs text-slate-400">Feb</span></div>
+        <div class="flex h-full flex-col justify-end gap-2"><div class="rounded-t-lg bg-blue-200" style="height: 55%"></div><span class="text-center text-xs text-slate-400">Mar</span></div>
+        <div class="flex h-full flex-col justify-end gap-2"><div class="rounded-t-lg bg-blue-300" style="height: 62%"></div><span class="text-center text-xs text-slate-400">Apr</span></div>
+        <div class="flex h-full flex-col justify-end gap-2"><div class="rounded-t-lg bg-blue-400" style="height: 71%"></div><span class="text-center text-xs text-slate-400">May</span></div>
+        <div class="flex h-full flex-col justify-end gap-2"><div class="rounded-t-lg bg-blue-500" style="height: 79%"></div><span class="text-center text-xs text-slate-400">Jun</span></div>
+        <div class="flex h-full flex-col justify-end gap-2"><div class="relative rounded-t-lg bg-slate-950" style="height: 93%"><span class="absolute -top-7 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-slate-950 px-2 py-1 text-[10px] font-semibold text-white">₱2.48M</span></div><span class="text-center text-xs font-semibold text-slate-600">Jul</span></div>
+      </div>
+
+      <div class="mt-6 grid grid-cols-3 gap-4">
+        <div><p class="text-xs font-medium uppercase tracking-wide text-slate-400">This month</p><p class="mt-1 text-lg font-semibold text-slate-900">₱2.48M</p></div>
+        <div><p class="text-xs font-medium uppercase tracking-wide text-slate-400">Avg. daily</p><p class="mt-1 text-lg font-semibold text-slate-900">₱92.4K</p></div>
+        <div><p class="text-xs font-medium uppercase tracking-wide text-slate-400">Growth</p><p class="mt-1 text-lg font-semibold text-emerald-600">+22.6%</p></div>
+      </div>
+    </div>
+
+    <div class="xl:col-span-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h2 class="text-lg font-semibold text-slate-950">Recent activity</h2>
+          <p class="mt-1 text-sm text-slate-500">Latest platform operations.</p>
+        </div>
+        <a href="?page=bookings" data-admin-link="bookings" aria-label="Open booking management" class="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-500 transition hover:bg-slate-50 hover:text-blue-600"><i class="fa-solid fa-arrow-up-right-from-square text-sm"></i></a>
+      </div>
+
+      <div class="mt-6 space-y-5">
+        <a href="?page=properties" data-admin-link="properties" class="group flex gap-3">
+          <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600"><i class="fa-solid fa-check text-xs"></i></span>
+          <span class="min-w-0 flex-1"><span class="block text-sm font-semibold text-slate-800 group-hover:text-blue-700">Property submitted for review</span><span class="mt-0.5 block truncate text-sm text-slate-500">Coastal Haven Villa · 6 minutes ago</span></span>
+        </a>
+        <a href="?page=payments" data-admin-link="payments" class="group flex gap-3">
+          <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600"><i class="fa-solid fa-wallet text-xs"></i></span>
+          <span class="min-w-0 flex-1"><span class="block text-sm font-semibold text-slate-800 group-hover:text-emerald-700">Payout request received</span><span class="mt-0.5 block truncate text-sm text-slate-500">ABC Resort · ₱124,500 · 22 minutes ago</span></span>
+        </a>
+        <a href="?page=reviews" data-admin-link="reviews" class="group flex gap-3">
+          <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-violet-50 text-violet-600"><i class="fa-solid fa-star text-xs"></i></span>
+          <span class="min-w-0 flex-1"><span class="block text-sm font-semibold text-slate-800 group-hover:text-violet-700">Video review flagged for moderation</span><span class="mt-0.5 block truncate text-sm text-slate-500">Manila Grand Hotel · 39 minutes ago</span></span>
+        </a>
+        <a href="?page=support" data-admin-link="support" class="group flex gap-3">
+          <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-amber-50 text-amber-600"><i class="fa-solid fa-headset text-xs"></i></span>
+          <span class="min-w-0 flex-1"><span class="block text-sm font-semibold text-slate-800 group-hover:text-amber-700">Guest support case escalated</span><span class="mt-0.5 block truncate text-sm text-slate-500">Booking BM240003 · 1 hour ago</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+    <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <h2 class="text-lg font-semibold text-slate-950">Admin workspace</h2>
+        <p class="mt-1 text-sm text-slate-500">Jump directly to any management area.</p>
+      </div>
+      <span class="text-xs font-medium text-slate-400">12 areas available</span>
+    </div>
+
+    <nav aria-label="Admin workspace pages" class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <a href="?page=properties" data-admin-link="properties" class="dashboard-workspace-link"><i class="fa-solid fa-hotel bg-blue-50 text-blue-600"></i><span><strong>Properties</strong><small>Listings & inventory</small></span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="?page=partners" data-admin-link="partners" class="dashboard-workspace-link"><i class="fa-solid fa-users bg-indigo-50 text-indigo-600"></i><span><strong>Partners</strong><small>Verification & accounts</small></span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="?page=bookings" data-admin-link="bookings" class="dashboard-workspace-link"><i class="fa-solid fa-calendar-check bg-sky-50 text-sky-600"></i><span><strong>Bookings</strong><small>Reservations & stays</small></span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="?page=payments" data-admin-link="payments" class="dashboard-workspace-link"><i class="fa-solid fa-credit-card bg-emerald-50 text-emerald-600"></i><span><strong>Payments</strong><small>Transactions & refunds</small></span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="?page=payouts" data-admin-link="payouts" class="dashboard-workspace-link"><i class="fa-solid fa-wallet bg-teal-50 text-teal-600"></i><span><strong>Payouts</strong><small>Partner settlements</small></span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="?page=reviews" data-admin-link="reviews" class="dashboard-workspace-link"><i class="fa-solid fa-star bg-violet-50 text-violet-600"></i><span><strong>Reviews</strong><small>Ratings & moderation</small></span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="?page=support" data-admin-link="support" class="dashboard-workspace-link"><i class="fa-solid fa-headset bg-amber-50 text-amber-600"></i><span><strong>Support</strong><small>Tickets & escalations</small></span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="?page=analytics" data-admin-link="analytics" class="dashboard-workspace-link"><i class="fa-solid fa-chart-line bg-cyan-50 text-cyan-600"></i><span><strong>Analytics</strong><small>Reports & insights</small></span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="?page=promotions" data-admin-link="promotions" class="dashboard-workspace-link"><i class="fa-solid fa-tags bg-rose-50 text-rose-600"></i><span><strong>Promotions</strong><small>Campaigns & offers</small></span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="?page=content-management" data-admin-link="content-management" class="dashboard-workspace-link"><i class="fa-solid fa-file-lines bg-orange-50 text-orange-600"></i><span><strong>Content</strong><small>Pages & media</small></span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="?page=admin-users" data-admin-link="admin-users" class="dashboard-workspace-link"><i class="fa-solid fa-user-shield bg-fuchsia-50 text-fuchsia-600"></i><span><strong>Admin users</strong><small>Roles & permissions</small></span><i class="fa-solid fa-chevron-right"></i></a>
+      <a href="?page=system-settings" data-admin-link="system-settings" class="dashboard-workspace-link"><i class="fa-solid fa-gear bg-slate-100 text-slate-600"></i><span><strong>Settings</strong><small>Platform configuration</small></span><i class="fa-solid fa-chevron-right"></i></a>
+    </nav>
+  </section>
+</section>

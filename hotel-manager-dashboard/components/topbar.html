@@ -1,0 +1,202 @@
+<header
+  class="fixed top-0 left-0 right-0 z-50 h-20 bg-white/95 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800"
+>
+  <div class="h-full px-4 lg:px-8 flex items-center justify-between gap-6">
+    <!-- =====================================
+         LEFT
+    ====================================== -->
+    <div class="flex items-center gap-4">
+      <button
+        id="sidebarToggle"
+        class="w-11 h-11 rounded-xl flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <img src="assets/images/logo.png" class="h-12" alt="BOMO" />
+      <div>
+        <h6 class="font-black text-slate-900 dark:text-white">
+          Partner Studio
+        </h6>
+      </div>
+    </div>
+
+    <!-- =====================================
+         RIGHT
+    ====================================== -->
+    <div class="flex items-center gap-3">
+      <!-- PROPERTY -->
+      <div class="hidden 2xl:block">
+        <select
+          class="h-11 px-4 rounded-xl bg-white text-sm font-medium outline-none min-w-[220px]"
+        >
+          <option>Makati Suites</option>
+          <option>BGC Residences</option>
+          <option>Cebu Bay Hotel</option>
+          <option>Boracay Resort</option>
+        </select>
+      </div>
+
+      <!-- SEARCH -->
+      <div class="hidden xl:flex">
+        <div
+          class="h-11 w-[320px] bg-slate-100 rounded-xl px-4 flex items-center gap-3"
+        >
+          <i class="fa-solid fa-magnifying-glass text-slate-400"></i>
+
+          <input
+            type="text"
+            placeholder="Search bookings, guests, rooms..."
+            class="w-full bg-transparent outline-none text-sm"
+          />
+        </div>
+      </div>
+
+      <!-- MESSAGE -->
+      <button
+        class="relative w-11 h-11 rounded-xl flex items-center justify-center hover:bg-slate-100 transition"
+      >
+        <i class="fa-regular fa-envelope"></i>
+
+        <span
+          class="absolute top-2 right-2 w-2 h-2 rounded-full bg-red-500"
+        ></span>
+      </button>
+
+      <!-- NOTIFICATION -->
+      <button
+        class="relative w-11 h-11 rounded-xl flex items-center justify-center hover:bg-slate-100 transition"
+      >
+        <i class="fa-regular fa-bell"></i>
+
+        <span
+          class="absolute -top-1 -right-1 min-w-[20px] h-5 px-1 rounded-full bg-red-500 text-white text-[10px] flex items-center justify-center font-semibold"
+        >
+          8
+        </span>
+      </button>
+
+      <!-- PROFILE -->
+      <div class="relative group">
+        <button
+          class="flex items-center gap-3 pl-2 pr-3 h-11 rounded-xl hover:bg-slate-50 transition"
+        >
+          <img
+            src="https://i.pravatar.cc/100"
+            class="w-8 h-8 rounded-full"
+            alt=""
+          />
+
+          <i
+            class="hidden lg:block fa-solid fa-chevron-down text-xs text-slate-400"
+          ></i>
+        </button>
+
+        <!-- PROFILE MENU -->
+        <div
+          class="absolute right-0 top-full mt-3 w-64 bg-white rounded-2xl shadow-xl opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200"
+        >
+          <div class="p-4 border-b border-slate-100">
+            <p class="font-semibold">Property Partner</p>
+
+            <p class="text-sm text-slate-500">manager@sscasc.com</p>
+          </div>
+
+          <div class="p-2">
+            <a
+              href="hotel-manager-dashboard.html?page=profile"
+              class="topbar-menu-link"
+            >
+              <i class="fa-solid fa-user w-5"></i>
+              My Profile
+            </a>
+
+            <a
+              href="hotel-manager-dashboard.html?page=settings&tab=profile"
+              class="topbar-menu-link"
+            >
+              <i class="fa-solid fa-building w-5"></i>
+              Company Profile
+            </a>
+
+            <a
+              href="hotel-manager-dashboard.html?page=settings&tab=verification"
+              class="topbar-menu-link"
+            >
+              <i class="fa-solid fa-check-circle w-5"></i>
+              Verification
+            </a>
+
+            <a
+              href="hotel-manager-dashboard.html?page=settings&tab=bank-accounts"
+              class="topbar-menu-link"
+            >
+              <i class="fa-solid fa-building-columns w-5"></i>
+              Bank Accounts
+            </a>
+
+            <a
+              href="hotel-manager-dashboard.html?page=settings&tab=staff-roles"
+              class="topbar-menu-link"
+            >
+              <i class="fa-solid fa-users-gear w-5"></i>
+              Staff & Access Control
+            </a>
+
+            <a
+              href="hotel-manager-dashboard.html?page=settings"
+              class="topbar-menu-link"
+            >
+              <i class="fa-solid fa-gear w-5"></i>
+              Settings
+            </a>
+          </div>
+
+          <div class="border-t border-slate-100 p-2">
+            <a href="partner-login.html" class="topbar-menu-link text-red-600">
+              <i class="fa-solid fa-right-from-bracket w-5"></i>
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .topbar-menu-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #334155;
+    transition: all 0.2s ease;
+  }
+
+  .topbar-menu-link:hover {
+    background: #f8fafc;
+  }
+
+  .dark .topbar-menu-link {
+    color: #e2e8f0;
+  }
+
+  .dark .topbar-menu-link:hover {
+    background: #1e293b;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sidebarToggle = document.getElementById("sidebarToggle");
+    const sidebar = document.getElementById("dashboardSidebar");
+
+    if (sidebarToggle && sidebar) {
+      sidebarToggle.addEventListener("click", () => {
+        sidebar.classList.add("active");
+      });
+    }
+  });
+</script>

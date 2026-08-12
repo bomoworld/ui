@@ -1,0 +1,91 @@
+<section id="location" class="bg-white rounded-[32px] p-6">
+  <div class="flex items-center justify-between mb-5">
+    <div>
+      <h2 class="text-2xl font-bold">Location</h2>
+
+      <p class="text-sm text-slate-500">Boracay Island, Philippines</p>
+    </div>
+
+    <button
+      class="px-4 py-2 rounded-xl bg-blue-900 text-white text-sm font-medium"
+    >
+      Directions
+    </button>
+  </div>
+
+  <!-- MAP -->
+
+  <div class="overflow-hidden rounded-[24px] h-[260px] bg-slate-100 mb-5">
+    <iframe
+      class="w-full h-full"
+      loading="lazy"
+      src="https://maps.google.com/maps?q=boracay&t=&z=13&ie=UTF8&iwloc=&output=embed"
+    ></iframe>
+  </div>
+
+  <!-- LOCATION HIGHLIGHTS -->
+
+  <div class="flex flex-wrap gap-2 mb-5">
+    <span class="px-3 py-2 rounded-xl bg-slate-50 text-sm">
+      🏖 White Beach · 120m
+    </span>
+
+    <span class="px-3 py-2 rounded-xl bg-slate-50 text-sm">
+      🛍 D'Mall · 650m
+    </span>
+
+    <span class="px-3 py-2 rounded-xl bg-slate-50 text-sm">
+      ⭐ Location Score 9.6
+    </span>
+
+    <span class="px-3 py-2 rounded-xl bg-slate-50 text-sm">
+      🚶 Highly Walkable
+    </span>
+  </div>
+
+  <!-- NEARBY -->
+
+  <div class="bg-slate-50 rounded-[24px] p-4">
+    <div class="flex items-center justify-between mb-3">
+      <h3 class="font-semibold">Nearby Places</h3>
+
+      <button id="toggleNearby" class="text-sm font-medium text-blue-900">
+        View All
+      </button>
+    </div>
+
+    <div class="grid gap-2 text-sm">
+      <div class="flex justify-between">
+        <span>White Beach</span>
+        <span class="font-medium text-blue-900"> 120m </span>
+      </div>
+
+      <div class="flex justify-between">
+        <span>D'Mall Boracay</span>
+        <span class="font-medium text-blue-900"> 650m </span>
+      </div>
+
+      <div id="moreLocations" class="hidden space-y-2">
+        <div class="flex justify-between">
+          <span>Willy's Rock</span>
+          <span class="font-medium text-blue-900"> 1.1 km </span>
+        </div>
+
+        <div class="flex justify-between">
+          <span>Seafood Market</span>
+          <span class="font-medium text-blue-900"> 900m </span>
+        </div>
+
+        <div class="flex justify-between">
+          <span>Sunset Point</span>
+          <span class="font-medium text-blue-900"> 700m </span>
+        </div>
+
+        <div class="flex justify-between">
+          <span>Airport Port</span>
+          <span class="font-medium text-blue-900"> 4.2 km </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

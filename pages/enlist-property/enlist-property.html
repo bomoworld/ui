@@ -1,0 +1,86 @@
+<section class="py-10 bg-slate-50 min-h-screen">
+  <div class="max-w-6xl mx-auto px-4">
+    <div
+      class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200"
+    >
+      <div class="p-8 border-b border-slate-200">
+        <div
+          class="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+        >
+          <div>
+            <h1 class="text-3xl font-bold text-slate-900">
+              Property Partner Registration
+            </h1>
+
+            <p class="text-slate-500 mt-2">
+              Complete the setup to start receiving bookings on BOMO.
+            </p>
+          </div>
+
+          <div
+            class="flex items-center gap-2 bg-slate-100 px-4 py-2 rounded-xl"
+          >
+            <i class="fa-solid fa-list-check text-indigo-600"></i>
+
+            <!-- <span id="wizardStepText" class="font-medium text-slate-700">
+              Step 1 of 3
+            </span> -->
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <div class="flex justify-between text-xs text-slate-500 mb-2">
+            <span>Progress</span>
+            <span id="wizardProgressLabel">20%</span>
+          </div>
+
+          <div class="w-full bg-slate-200 rounded-full h-3 overflow-hidden">
+            <div
+              id="wizardProgress"
+              class="bg-indigo-600 h-3 rounded-full transition-all duration-300"
+              style="width: 20%"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="wizardContent" class="p-8 min-h-[550px]">
+        <div class="flex items-center justify-center py-20">
+          <div class="text-center">
+            <div
+              class="inline-block h-14 w-14 animate-spin rounded-full border-4 border-slate-200 border-t-indigo-600"
+            ></div>
+
+            <h3 class="mt-6 text-lg font-semibold text-slate-800">
+              Loading Registration Form
+            </h3>
+
+            <p class="mt-2 text-slate-500">Please wait...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-200 bg-slate-50 p-6">
+        <div class="flex items-center justify-between">
+          <button
+            id="wizardPrev"
+            type="button"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 transition"
+          >
+            <i class="fa-solid fa-arrow-left"></i>
+            Previous
+          </button>
+
+          <button
+            id="wizardNext"
+            type="button"
+            class="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-indigo-600 text-white hover:bg-indigo-700 transition"
+          >
+            Next
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

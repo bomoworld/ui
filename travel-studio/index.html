@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <title>BOMO | Travel Studio</title>
+  <meta name="description"
+    content="Manage BOMO trips, saved stays, messages, video reviews, rewards, and creator earnings from one account." />
+  <meta name="author" content="BOMO" />
+  <meta name="application-name" content="BOMO" />
+  <meta name="theme-color" content="#0B2A6F" />
+  <meta name="color-scheme" content="light dark" />
+
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem("bomo-theme");
+        const theme =
+          saved === "dark" || saved === "light"
+            ? saved
+            : matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+        document.documentElement.classList.toggle("dark", theme === "dark");
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      } catch {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
+
+  <link rel="icon" type="image/x-icon" href="../assets/favicon-Cl4fF5E7.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+  <script type="module" crossorigin src="../assets/travelStudio-BVbfpRrF.js"></script>
+  <link rel="modulepreload" crossorigin href="../assets/modulepreload-polyfill-C2xYpwEn.js">
+  <link rel="modulepreload" crossorigin href="../assets/main-Bwwzfsjp.js">
+  <link rel="modulepreload" crossorigin href="../assets/video-reviews-DOlpHCGW.js">
+  <link rel="stylesheet" crossorigin href="../assets/main-CMwhG3m0.css">
+  <link rel="stylesheet" crossorigin href="../assets/video-reviews-ZAcgiHkd.css">
+</head>
+
+<body class="min-h-screen bg-slate-50 text-slate-950 antialiased dark:bg-slate-950 dark:text-white"
+  data-page="dashboard" data-unified-account>
+  <div class="app account-app min-h-screen">
+    <aside class="sidebar account-sidebar" aria-label="Account navigation">
+      <a class="account-brand" href="?pgid=dashboard" data-page="dashboard" aria-label="BOMO account home"
+        title="BOMO account home">
+        <img src="../assets/logo-Cqa3nQr5.png" alt="BOMO" class="account-logo account-logo-light" />
+        <img src="../assets/logo_dark_v-DoZq4PQQ.png" alt="BOMO" class="account-logo account-logo-dark" />
+
+      </a>
+
+      <div class="sidebar-scroll">
+        <div class="nav-group">
+          <div class="nav-label">Travel</div>
+          <nav aria-label="Travel">
+            <a data-page="dashboard" href="?pgid=dashboard" aria-label="Overview" title="Overview">
+              <span><i class="fa-solid fa-house"></i>Overview</span>
+            </a>
+            <a data-page="bookings" href="?pgid=bookings" aria-label="Trips" title="Trips">
+              <span><i class="fa-solid fa-suitcase-rolling"></i>Trips</span>
+              <span class="badge">2</span>
+            </a>
+            <a data-page="wishlist" href="?pgid=wishlist" aria-label="Saved stays" title="Saved stays">
+              <span><i class="fa-solid fa-heart"></i>Saved stays</span>
+            </a>
+            <a data-page="messages" href="?pgid=messages" aria-label="Messages" title="Messages">
+              <span><i class="fa-solid fa-comments"></i>Messages</span>
+              <span class="badge orange">3</span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-label">Create & earn</div>
+          <nav aria-label="Create and earn">
+            <a data-page="overview" href="?pgid=overview" aria-label="Studio overview" title="Studio overview">
+              <span><i class="fa-solid fa-wand-magic-sparkles"></i>Studio overview</span>
+            </a>
+            <a data-page="videos" href="?pgid=videos" aria-label="Video reviews" title="Video reviews">
+              <span><i class="fa-solid fa-circle-play"></i>Video reviews</span>
+              <span class="badge">24</span>
+            </a>
+            <a data-page="upload" href="?pgid=upload" aria-label="Upload video" title="Upload video">
+              <span><i class="fa-solid fa-cloud-arrow-up"></i>Upload video</span>
+            </a>
+          </nav>
+          <div class="creator-more creator-more-static">
+            <div class="creator-more-label">
+              <i class="fa-solid fa-chart-pie"></i>
+              Insights & rewards
+            </div>
+            <nav aria-label="Insights and rewards">
+              <a data-page="analytics" href="?pgid=analytics" aria-label="Analytics" title="Analytics">
+                <span><i class="fa-solid fa-chart-line"></i>Analytics</span>
+              </a>
+              <a data-page="earnings" href="?pgid=earnings" aria-label="Earnings" title="Earnings">
+                <span><i class="fa-solid fa-wallet"></i>Earnings</span>
+              </a>
+              <a data-page="credits" href="?pgid=credits" aria-label="Review credits" title="Review credits">
+                <span><i class="fa-solid fa-ticket"></i>Review credits</span>
+                <span class="badge orange">2</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-bottom" aria-label="Account and support">
+        <a data-page="profile" href="?pgid=profile" aria-label="Profile and payments" title="Profile and payments">
+          <span><i class="fa-solid fa-user"></i>Profile & payments</span>
+        </a>
+        <a data-page="settings" href="?pgid=settings" aria-label="Settings" title="Settings">
+          <span><i class="fa-solid fa-gear"></i>Settings</span>
+        </a>
+        <a data-page="help" href="?pgid=help" aria-label="Help center" title="Help center">
+          <span><i class="fa-solid fa-circle-question"></i>Help center</span>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="main min-w-0">
+      <header class="topbar account-topbar backdrop-blur-xl">
+        <div>
+          <div class="eyebrow" id="pageEyebrow">TRAVEL STUDIO</div>
+          <h1 id="pageTitle">Dashboard</h1>
+        </div>
+
+        <div class="top-actions">
+          <a class="book-stay-button" href="../hotel-listings.html">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Book a stay</span>
+          </a>
+          <button type="button" class="theme-toggle" id="themeToggle" data-theme-toggle aria-label="Switch to dark mode"
+            title="Switch to dark mode">
+            <i class="fa-solid fa-moon" data-theme-icon></i>
+          </button>
+          <button type="button" class="icon-btn" data-modal-open="notificationsModal" aria-label="Open notifications">
+            <i class="fa-regular fa-bell"></i><span class="notify">3</span>
+          </button>
+
+          <div class="profile dropdown-wrap">
+            <button type="button" class="profile-btn" id="profileMenuBtn" aria-expanded="false">
+              <img src="https://i.pravatar.cc/100?img=12" class="avatar account-avatar" alt="Rick Grimes" />
+              <span class="profile-copy"><b>Rick Grimes</b><small>Guest & creator</small></span>
+              <i class="fa-solid fa-chevron-down profile-chevron"></i>
+            </button>
+            <div class="dropdown" id="profileMenu">
+              <a href="?pgid=profile" data-page="profile">
+                <i class="fa-solid fa-user"></i>Profile & payments
+              </a>
+              <a href="./public-profile.html">
+                <i class="fa-solid fa-earth-asia"></i>Public creator profile
+              </a>
+              <a href="?pgid=settings" data-page="settings">
+                <i class="fa-solid fa-gear"></i>Settings
+              </a>
+              <button type="button" data-logout>
+                <i class="fa-solid fa-right-from-bracket"></i>Log out
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div id="guestDashboardContent" class="content account-content mx-auto w-full" aria-live="polite">
+        <div class="route-loading">
+          <i class="fa-solid fa-spinner fa-spin"></i>
+          <p>Loading your account…</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <nav class="mobile-bottom-nav" aria-label="Mobile account navigation">
+    <a data-page="dashboard" href="?pgid=dashboard">
+      <i class="fa-solid fa-house"></i><span>Home</span>
+    </a>
+    <a data-page="bookings" href="?pgid=bookings">
+      <i class="fa-solid fa-suitcase-rolling"></i><span>Trips</span>
+    </a>
+    <a data-page="overview" data-section="creator" href="?pgid=overview" class="mobile-studio-action">
+      <i class="fa-solid fa-wand-magic-sparkles"></i><span>Studio</span>
+    </a>
+    <button type="button" data-modal-open="mobileMenuModal" data-section="more" aria-label="Open more account pages"
+      aria-controls="mobileMenuModal" aria-haspopup="dialog">
+      <i class="fa-solid fa-ellipsis"></i><span>More</span>
+    </button>
+    <a data-page="profile" href="?pgid=profile">
+      <i class="fa-solid fa-user"></i><span>Profile</span>
+    </a>
+  </nav>
+
+  <div id="modalContainer">
+    <div class="modal-backdrop" id="notificationsModal" data-shell-modal role="dialog" aria-modal="true"
+      aria-labelledby="notificationsTitle">
+      <div class="modal">
+        <div class="modal-head">
+          <h2 id="notificationsTitle">Notifications</h2>
+          <button type="button" class="modal-close" data-modal-close="notificationsModal" aria-label="Close">×</button>
+        </div>
+        <div class="notification-list">
+          <div><b>Your next stay is coming up</b>
+            <p>BOMO Beach Resort starts July 15.</p>
+          </div>
+          <div><b>Your video was published</b>
+            <p>El Nido Resorts is now visible publicly.</p>
+          </div>
+          <div><b>New rewards added</b>
+            <p>₱324 was added from video performance.</p>
+          </div>
+        </div>
+        <div class="modal-foot">
+          <button type="button" class="secondary" data-mark-notifications-read>Mark all as read</button>
+          <button type="button" class="primary" data-modal-close="notificationsModal">Done</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="mobileMenuModal" data-shell-modal role="dialog" aria-modal="true"
+      aria-labelledby="mobileMenuTitle">
+      <div class="modal mobile-menu-modal">
+        <div class="modal-head">
+          <div>
+            <span class="eyebrow">MY TRAVEL</span>
+            <h2 id="mobileMenuTitle">More</h2>
+          </div>
+          <button type="button" class="modal-close" data-modal-close="mobileMenuModal" aria-label="Close">
+            ×
+          </button>
+        </div>
+        <div class="modal-body mobile-menu-grid">
+          <a href="?pgid=messages" data-page="messages" data-modal-close="mobileMenuModal">
+            <i class="fa-solid fa-comments"></i><span>Messages</span>
+          </a>
+          <a href="?pgid=wishlist" data-page="wishlist" data-modal-close="mobileMenuModal">
+            <i class="fa-solid fa-heart"></i><span>Saved stays</span>
+          </a>
+          <a href="?pgid=reviews" data-page="reviews" data-modal-close="mobileMenuModal">
+            <i class="fa-solid fa-star"></i><span>Reviews</span>
+          </a>
+          <a href="?pgid=videos" data-page="videos" data-modal-close="mobileMenuModal">
+            <i class="fa-solid fa-circle-play"></i><span>Video library</span>
+          </a>
+          <a href="?pgid=upload" data-page="upload" data-modal-close="mobileMenuModal">
+            <i class="fa-solid fa-cloud-arrow-up"></i><span>Upload video</span>
+          </a>
+          <a href="?pgid=analytics" data-page="analytics" data-modal-close="mobileMenuModal">
+            <i class="fa-solid fa-chart-line"></i><span>Analytics</span>
+          </a>
+          <a href="?pgid=earnings" data-page="earnings" data-modal-close="mobileMenuModal">
+            <i class="fa-solid fa-wallet"></i><span>Earnings</span>
+          </a>
+          <a href="?pgid=credits" data-page="credits" data-modal-close="mobileMenuModal">
+            <i class="fa-solid fa-ticket"></i><span>Review credits</span>
+          </a>
+          <a href="?pgid=settings" data-page="settings" data-modal-close="mobileMenuModal">
+            <i class="fa-solid fa-gear"></i><span>Settings</span>
+          </a>
+          <a href="?pgid=help" data-page="help" data-modal-close="mobileMenuModal">
+            <i class="fa-solid fa-circle-question"></i><span>Help</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

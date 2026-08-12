@@ -1,0 +1,144 @@
+<section id="partnersPage" class="space-y-7 pb-4">
+  <section
+    class="relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 px-6 py-8 text-white shadow-2xl shadow-slate-950/10 sm:px-8 lg:px-10 lg:py-10">
+    <div
+      class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_86%_15%,rgba(99,102,241,.32),transparent_32%),radial-gradient(circle_at_14%_105%,rgba(59,130,246,.26),transparent_34%)]">
+    </div>
+    <div class="pointer-events-none absolute -right-24 top-3 h-72 w-72 rounded-full border border-white/10"></div>
+    <div class="relative flex flex-col gap-7 xl:flex-row xl:items-end xl:justify-between">
+      <div class="max-w-3xl">
+        <div
+          class="inline-flex items-center gap-2 rounded-full border border-indigo-200/15 bg-white/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-indigo-100">
+          <i class="fa-solid fa-user-shield"></i> System administration
+        </div>
+        <h1 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">Partner operations</h1>
+        <p class="mt-4 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">Verify partner identity, business
+          eligibility, payout readiness and ongoing compliance before granting marketplace access.</p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <button type="button" class="partner-button partner-button-light" data-partner-action="assign-reviewer"><i
+            class="fa-solid fa-user-plus"></i> Assign reviewer</button>
+        <button type="button" class="partner-button partner-button-dark" data-partner-action="requirements">
+          <i class="fa-solid fa-shield-halved"></i>
+          Requirements
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Partner workload" class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="flex items-start justify-between"><span
+          class="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600"><i
+            class="fa-solid fa-user-clock"></i></span><span class="text-xs font-semibold text-slate-400">Open
+          queue</span></div>
+      <p class="mt-5 text-sm font-medium text-slate-500">Applications awaiting review</p>
+      <p data-partner-summary="open" class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">8</p>
+      <p class="mt-2 text-xs text-slate-400">Identity, business and account checks</p>
+    </div>
+    <div class="rounded-2xl border border-rose-200 bg-rose-50/50 p-5 shadow-sm">
+      <div class="flex items-start justify-between"><span
+          class="flex h-10 w-10 items-center justify-center rounded-xl bg-rose-100 text-rose-600"><i
+            class="fa-solid fa-triangle-exclamation"></i></span><span
+          class="rounded-full bg-rose-100 px-2 py-1 text-xs font-semibold text-rose-600">Due today</span></div>
+      <p class="mt-5 text-sm font-medium text-slate-500">High-risk reviews</p>
+      <p data-partner-summary="risk" class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">2</p>
+      <p class="mt-2 text-xs text-slate-400">Enhanced review or escalation required</p>
+    </div>
+    <div class="rounded-2xl border border-amber-200 bg-amber-50/50 p-5 shadow-sm">
+      <div class="flex items-start justify-between"><span
+          class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-100 text-amber-600"><i
+            class="fa-solid fa-file-circle-exclamation"></i></span><span
+          class="text-xs font-semibold text-amber-700">Follow up</span></div>
+      <p class="mt-5 text-sm font-medium text-slate-500">Missing documentation</p>
+      <p data-partner-summary="documents" class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">3</p>
+      <p class="mt-2 text-xs text-slate-400">Business, identity or payout evidence</p>
+    </div>
+    <div class="rounded-2xl border border-emerald-200 bg-emerald-50/50 p-5 shadow-sm">
+      <div class="flex items-start justify-between"><span
+          class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600"><i
+            class="fa-solid fa-user-check"></i></span><span class="text-xs font-semibold text-emerald-700">Ready</span>
+      </div>
+      <p class="mt-5 text-sm font-medium text-slate-500">Ready to verify</p>
+      <p data-partner-summary="ready" class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">1</p>
+      <p class="mt-2 text-xs text-slate-400">All onboarding checks complete</p>
+    </div>
+  </section>
+
+  <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+    <div class="border-b border-slate-100 px-5 py-5 sm:px-6">
+      <div class="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
+        <div>
+          <div class="flex flex-wrap items-center gap-2">
+            <h2 class="text-lg font-semibold text-slate-950">Verification queue</h2><span data-partner-visible-count
+              class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600">8 records</span>
+          </div>
+          <p class="mt-1 text-sm text-slate-500">Open a partner record to verify, request more evidence, restrict
+            access, or escalate the case.</p>
+        </div>
+        <div id="partnerNotice" class="hidden rounded-lg px-3 py-2 text-sm font-medium" role="status"
+          aria-live="polite"></div>
+      </div>
+      <div class="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_11rem_11rem_11rem]"><label
+          class="relative block"><span class="sr-only">Search partner records</span><i
+            class="fa-solid fa-magnifying-glass pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm text-slate-400"></i><input
+            type="search" data-partner-search class="bomo-input h-11 w-full pl-10"
+            placeholder="Search partner, company, email, or reference…" autocomplete="off" /></label><label><span
+            class="sr-only">Filter by review state</span><select data-partner-status class="bomo-input h-11 w-full">
+            <option value="all">All review states</option>
+            <option value="pending">Pending review</option>
+            <option value="documents">Documents requested</option>
+            <option value="ready">Ready to verify</option>
+            <option value="verified">Verified</option>
+            <option value="restricted">Restricted</option>
+            <option value="escalated">Escalated</option>
+          </select></label><label><span class="sr-only">Filter by partner type</span><select data-partner-type
+            class="bomo-input h-11 w-full">
+            <option value="all">All partner types</option>
+            <option value="Property partner">Property partner</option>
+            <option value="Hospitality group">Hospitality group</option>
+            <option value="Property manager">Property manager</option>
+          </select></label><label><span class="sr-only">Filter by country</span><select data-partner-country
+            class="bomo-input h-11 w-full">
+            <option value="all">All countries</option>
+            <option value="Philippines">Philippines</option>
+            <option value="Singapore">Singapore</option>
+            <option value="Australia">Australia</option>
+          </select></label></div>
+      <div class="mt-4 flex flex-wrap items-center gap-2" aria-label="Quick queue filters"><button type="button"
+          class="partner-filter-button is-active" data-partner-action="filter"
+          data-partner-filter="all">All</button><button type="button" class="partner-filter-button"
+          data-partner-action="filter" data-partner-filter="assigned">Assigned to me</button><button type="button"
+          class="partner-filter-button" data-partner-action="filter" data-partner-filter="verification">Identity
+          verification</button><button type="button" class="partner-filter-button" data-partner-action="filter"
+          data-partner-filter="business">Business compliance</button><button type="button" class="partner-filter-button"
+          data-partner-action="filter" data-partner-filter="payout">Payout setup</button><button type="button"
+          class="partner-filter-button" data-partner-action="filter" data-partner-filter="high-risk">High
+          risk</button><button type="button" class="ml-auto text-sm font-semibold text-slate-500 hover:text-slate-900"
+          data-partner-action="clear-filters">Clear filters</button></div>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="min-w-[920px] w-full text-left text-sm">
+        <thead
+          class="border-b border-slate-100 bg-slate-50 text-xs font-semibold uppercase tracking-wide text-slate-500">
+          <tr>
+            <th class="px-5 py-3.5 sm:px-6">Partner</th>
+            <th class="px-5 py-3.5">Review</th>
+            <th class="px-5 py-3.5">Evidence</th>
+            <th class="px-5 py-3.5">Reviewer</th>
+            <th class="px-5 py-3.5">Risk</th>
+            <th class="px-5 py-3.5 text-right">Action</th>
+          </tr>
+        </thead>
+        <tbody data-partner-list class="divide-y divide-slate-100"></tbody>
+      </table>
+    </div>
+    <div
+      class="flex flex-col gap-3 border-t border-slate-100 bg-slate-50 px-5 py-4 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <p class="text-slate-500"><span data-partner-footer-count class="font-semibold text-slate-700">8</span> records
+        shown in this session.</p><button type="button" class="partner-button partner-button-secondary"
+        data-partner-action="assign-reviewer"><i class="fa-solid fa-user-plus"></i> Assign reviewer</button>
+    </div>
+  </section>
+
+</section>

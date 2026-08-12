@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="refresh" content="0; url=./travel-studio/index.html" />
+    <title>Opening BOMO My Travel…</title>
+    <script>
+      (() => {
+        const params = new URLSearchParams(window.location.search);
+        if (!params.has("pgid") && params.has("page")) {
+          params.set("pgid", params.get("page"));
+          params.delete("page");
+        }
+        const query = params.toString();
+        window.location.replace(
+          `./travel-studio/index.html${query ? `?${query}` : ""}${window.location.hash}`,
+        );
+      })();
+    </script>
+  </head>
+  <body>
+    <p>
+      Opening <a href="./travel-studio/index.html">BOMO My Travel</a>…
+    </p>
+  </body>
+</html>

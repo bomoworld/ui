@@ -1,0 +1,176 @@
+<section id="propertiesPage" class="space-y-7 pb-4">
+  <section
+    class="relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 px-6 py-8 text-white shadow-2xl shadow-slate-950/10 sm:px-8 lg:px-10 lg:py-10">
+    <div
+      class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_88%_18%,rgba(59,130,246,.3),transparent_32%),radial-gradient(circle_at_12%_115%,rgba(99,102,241,.25),transparent_34%)]">
+    </div>
+    <div class="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full border border-white/10"></div>
+
+    <div class="relative flex flex-col gap-7 xl:flex-row xl:items-end xl:justify-between">
+      <div class="max-w-3xl">
+        <div
+          class="inline-flex items-center gap-2 rounded-full border border-blue-200/15 bg-white/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-blue-100">
+          <i class="fa-solid fa-building-shield"></i>
+          System administration
+        </div>
+        <h1 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">Property operations</h1>
+        <p class="mt-4 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
+          Review ownership, content, inventory, and compliance submissions before a property goes live or changes its
+          published listing.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-3">
+        <button type="button" class="property-button property-button-light" data-property-action="assign-reviewer">
+          <i class="fa-solid fa-user-plus"></i>
+          Assign reviewer
+        </button>
+        <button type="button" class="property-button property-button-dark" data-property-action="filter"
+          data-property-filter="high-risk">
+          <i class="fa-solid fa-shield-halved"></i>
+          High-risk cases
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Property workload" class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="flex items-start justify-between"><span
+          class="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600"><i
+            class="fa-solid fa-inbox"></i></span><span class="text-xs font-semibold text-slate-400">Open queue</span>
+      </div>
+      <p class="mt-5 text-sm font-medium text-slate-500">Awaiting review</p>
+      <p data-property-summary="open" class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">8</p>
+      <p class="mt-2 text-xs text-slate-400">New or updated property records</p>
+    </div>
+    <div class="rounded-2xl border border-rose-200 bg-rose-50/50 p-5 shadow-sm">
+      <div class="flex items-start justify-between"><span
+          class="flex h-10 w-10 items-center justify-center rounded-xl bg-rose-100 text-rose-600"><i
+            class="fa-solid fa-triangle-exclamation"></i></span><span
+          class="rounded-full bg-rose-100 px-2 py-1 text-xs font-semibold text-rose-600">24h SLA</span></div>
+      <p class="mt-5 text-sm font-medium text-slate-500">High-risk cases</p>
+      <p data-property-summary="risk" class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">2</p>
+      <p class="mt-2 text-xs text-slate-400">Require escalation or documents</p>
+    </div>
+    <div class="rounded-2xl border border-amber-200 bg-amber-50/50 p-5 shadow-sm">
+      <div class="flex items-start justify-between"><span
+          class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-100 text-amber-600"><i
+            class="fa-solid fa-file-circle-exclamation"></i></span><span
+          class="text-xs font-semibold text-amber-700">Follow up</span></div>
+      <p class="mt-5 text-sm font-medium text-slate-500">Missing documents</p>
+      <p data-property-summary="documents" class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">3</p>
+      <p class="mt-2 text-xs text-slate-400">Ownership or permit evidence</p>
+    </div>
+    <div class="rounded-2xl border border-emerald-200 bg-emerald-50/50 p-5 shadow-sm">
+      <div class="flex items-start justify-between"><span
+          class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600"><i
+            class="fa-solid fa-circle-check"></i></span><span
+          class="text-xs font-semibold text-emerald-700">Ready</span></div>
+      <p class="mt-5 text-sm font-medium text-slate-500">Ready to publish</p>
+      <p data-property-summary="ready" class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">1</p>
+      <p class="mt-2 text-xs text-slate-400">All checks have been completed</p>
+    </div>
+  </section>
+
+  <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+    <div class="border-b border-slate-100 px-5 py-5 sm:px-6">
+      <div class="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
+        <div>
+          <div class="flex flex-wrap items-center gap-2">
+            <h2 class="text-lg font-semibold text-slate-950">Review queue</h2>
+            <span data-property-visible-count
+              class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600">8 records</span>
+          </div>
+          <p class="mt-1 text-sm text-slate-500">Filter the operational queue, then open a record to complete its admin
+            review.</p>
+        </div>
+        <div id="propertyNotice" class="hidden rounded-lg px-3 py-2 text-sm font-medium" role="status"
+          aria-live="polite"></div>
+      </div>
+
+      <div class="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_11rem_11rem_11rem]">
+        <label class="relative block">
+          <span class="sr-only">Search property records</span>
+          <i
+            class="fa-solid fa-magnifying-glass pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm text-slate-400"></i>
+          <input type="search" data-property-search class="bomo-input h-11 w-full pl-10"
+            placeholder="Search property, partner, city, or reference…" autocomplete="off" />
+        </label>
+        <label>
+          <span class="sr-only">Filter by review state</span>
+          <select data-property-status class="bomo-input h-11 w-full">
+            <option value="all">All review states</option>
+            <option value="pending">Pending review</option>
+            <option value="changes">Changes requested</option>
+            <option value="ready">Ready to publish</option>
+            <option value="approved">Published</option>
+            <option value="escalated">Escalated</option>
+          </select>
+        </label>
+        <label>
+          <span class="sr-only">Filter by property type</span>
+          <select data-property-type class="bomo-input h-11 w-full">
+            <option value="all">All property types</option>
+            <option value="Resort">Resort</option>
+            <option value="Hotel">Hotel</option>
+            <option value="Villa">Villa</option>
+            <option value="Serviced residence">Serviced residence</option>
+          </select>
+        </label>
+        <label>
+          <span class="sr-only">Filter by reviewer</span>
+          <select data-property-reviewer class="bomo-input h-11 w-full">
+            <option value="all">All reviewers</option>
+            <option value="You">Assigned to me</option>
+            <option value="Unassigned">Unassigned</option>
+            <option value="Legal Team">Legal team</option>
+            <option value="Compliance Team">Compliance team</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="mt-4 flex flex-wrap items-center gap-2" aria-label="Quick queue filters">
+        <button type="button" class="property-filter-button is-active" data-property-action="filter"
+          data-property-filter="all">All</button>
+        <button type="button" class="property-filter-button" data-property-action="filter"
+          data-property-filter="assigned">Assigned to me</button>
+        <button type="button" class="property-filter-button" data-property-action="filter"
+          data-property-filter="ownership">Ownership</button>
+        <button type="button" class="property-filter-button" data-property-action="filter"
+          data-property-filter="listing">Listing updates</button>
+        <button type="button" class="property-filter-button" data-property-action="filter"
+          data-property-filter="compliance">Compliance</button>
+        <button type="button" class="property-filter-button" data-property-action="filter"
+          data-property-filter="high-risk">High risk</button>
+        <button type="button" class="ml-auto text-sm font-semibold text-slate-500 hover:text-slate-900"
+          data-property-action="clear-filters">Clear filters</button>
+      </div>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="min-w-[880px] w-full text-left text-sm">
+        <thead
+          class="border-b border-slate-100 bg-slate-50 text-xs font-semibold uppercase tracking-wide text-slate-500">
+          <tr>
+            <th class="px-5 py-3.5 sm:px-6">Property</th>
+            <th class="px-5 py-3.5">Review</th>
+            <th class="px-5 py-3.5">Documents</th>
+            <th class="px-5 py-3.5">Reviewer</th>
+            <th class="px-5 py-3.5">SLA</th>
+            <th class="px-5 py-3.5 text-right">Action</th>
+          </tr>
+        </thead>
+        <tbody data-property-list class="divide-y divide-slate-100"></tbody>
+      </table>
+    </div>
+
+    <div
+      class="flex flex-col gap-3 border-t border-slate-100 bg-slate-50 px-5 py-4 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <p class="text-slate-500"><span data-property-footer-count class="font-semibold text-slate-700">8</span> records
+        shown in this session.</p>
+      <button type="button" class="property-button property-button-secondary" data-property-action="assign-reviewer"><i
+          class="fa-solid fa-user-plus"></i> Assign reviewer</button>
+    </div>
+  </section>
+</section>

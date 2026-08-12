@@ -1,0 +1,177 @@
+<section
+  class="messages-page message-thread-page"
+  data-guest-page="message-thread"
+  data-message-thread-view
+>
+  <a
+    href="?pgid=messages"
+    data-page="messages"
+    class="message-back-link"
+  >
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+    Back to inbox
+  </a>
+
+  <article class="message-thread-shell" aria-labelledby="messageThreadTitle">
+    <header class="message-thread-header">
+      <div class="message-thread-identity">
+        <span class="conversation-avatar thread-avatar">
+          <img
+            data-thread-image
+            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400"
+            alt="BOMO Beach Resort"
+          />
+          <span class="online-dot" data-thread-online title="Property is online"></span>
+        </span>
+
+        <div>
+          <div class="message-thread-title-row">
+            <h1 id="messageThreadTitle" data-thread-name>BOMO Beach Resort</h1>
+            <i
+              class="fa-solid fa-circle-check"
+              aria-label="Verified property"
+              title="Verified property"
+            ></i>
+          </div>
+
+          <div class="message-thread-context">
+            <span data-thread-booking>Booking #BMO-2026-10001</span>
+            <span data-thread-period>Jul 15–18, 2026</span>
+            <span class="thread-status confirmed" data-thread-status>
+              Confirmed
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="message-thread-actions">
+        <a
+          href="?pgid=booking-details&booking_id=BMO-2026-10001"
+          data-page="booking-details"
+          data-thread-booking-link
+          class="secondary"
+        >
+          <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
+          <span>View trip</span>
+        </a>
+      </div>
+    </header>
+
+    <div class="message-safety-note">
+      <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+      <span>
+        For your protection, keep booking details and payments inside BOMO.
+      </span>
+    </div>
+
+    <div
+      class="message-feed"
+      data-message-list
+      role="log"
+      aria-live="polite"
+      aria-relevant="additions"
+      aria-label="Conversation messages"
+    >
+      <div class="message-day-divider"><span>July 15, 2026</span></div>
+
+      <div class="message-row message-row-incoming">
+        <div class="message-bubble">
+          <strong>BOMO Beach Resort</strong>
+          <p>
+            Welcome to BOMO Beach Resort. Please let us know if you have any
+            questions before your arrival.
+          </p>
+          <time datetime="2026-07-10T10:15:00+08:00">10:15 AM</time>
+        </div>
+      </div>
+
+      <div class="message-row message-row-outgoing">
+        <div class="message-bubble">
+          <p>Hi. Is early check-in available?</p>
+          <time datetime="2026-07-10T10:22:00+08:00">
+            10:22 AM · Sent
+          </time>
+        </div>
+      </div>
+
+      <div class="message-row message-row-incoming">
+        <div class="message-bubble">
+          <strong>BOMO Beach Resort</strong>
+          <p>
+            Early check-in is subject to room availability. We will confirm on
+            your arrival date.
+          </p>
+          <time datetime="2026-07-10T10:28:00+08:00">10:28 AM</time>
+        </div>
+      </div>
+
+      <div class="message-row message-row-incoming">
+        <div class="message-bubble">
+          <strong>BOMO Beach Resort</strong>
+          <p>
+            Your room is ready. Check-in starts at 2:00 PM. Present your booking
+            confirmation at reception.
+          </p>
+          <time datetime="2026-07-15T12:05:00+08:00">12:05 PM</time>
+        </div>
+      </div>
+    </div>
+
+    <form class="message-composer border-t" data-message-composer>
+      <div class="message-attachment-preview" data-message-attachment-preview hidden>
+        <i class="fa-solid fa-paperclip" aria-hidden="true"></i>
+        <span data-message-attachment-name></span>
+        <button
+          type="button"
+          data-remove-message-attachment
+          aria-label="Remove attachment"
+          title="Remove attachment"
+        >
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="message-composer-row">
+        <button
+          type="button"
+          data-attach-message
+          aria-label="Attach an image or PDF"
+          title="Attach an image or PDF"
+          class="message-composer-icon"
+        >
+          <i class="fa-solid fa-paperclip" aria-hidden="true"></i>
+        </button>
+
+        <label class="message-input-wrap">
+          <span class="sr-only">Message</span>
+          <textarea
+            rows="1"
+            maxlength="1000"
+            data-message-input
+            placeholder="Write a message..."
+          ></textarea>
+        </label>
+
+        <button
+          type="submit"
+          data-send-message
+          class="primary message-send-button"
+        >
+          <span>Send</span>
+          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <p class="message-composer-help">
+        Enter to send · Shift+Enter for a new line · Contact details and links
+        are blocked
+      </p>
+      <p
+        class="message-policy-error"
+        data-message-error
+        role="alert"
+        hidden
+      ></p>
+    </form>
+  </article>
+</section>

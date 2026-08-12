@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <title>BOMO</title>
+    <meta
+      name="description"
+      content="Discover resorts, villas, apartments, vacation homes, and unique stays through verified guest video reviews. Book with confidence, share your experience after checkout, and earn BOMO Rewards."
+    />
+
+    <meta
+      name="keywords"
+      content="BOMO, property booking, travel booking, resort booking, villa booking, apartment booking, vacation home, unique stays, verified guest reviews, video reviews, travel reviews, travel rewards, book review earn, stay reviews, travel platform, accommodation booking, Philippines travel"
+    />
+
+    <meta name="author" content="BOMO" />
+    <meta name="application-name" content="BOMO" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#0B2A6F" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://bomo.world/" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="./assets/favicon-Cl4fF5E7.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon-16x16-C0VmmhzU.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32-DvCft5Zs.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="/assets/favicon/favicon-48x48.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/apple-touch-icon-DB-zNtSp.png"
+    />
+    <link rel="manifest" href="./assets/site-BwHFeIBa.webmanifest" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="BOMO" />
+    <meta property="og:title" content="BOMO | Book, Review, Earn" />
+    <meta
+      property="og:description"
+      content="Discover trusted properties through verified guest video reviews. Book with confidence, review your stay after checkout, and earn BOMO Rewards."
+    />
+    <meta property="og:url" content="https://bomo.world/" />
+    <meta
+      property="og:image"
+      content="https://bomo.world/assets/images/og-image.jpg"
+    />
+    <meta property="og:image:alt" content="BOMO | Book, Review, Earn" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BOMO | Book, Review, Earn" />
+    <meta
+      name="twitter:description"
+      content="Book trusted properties through verified guest experiences. Share your stay, help future travellers, and earn BOMO Rewards."
+    />
+    <meta
+      name="twitter:image"
+      content="https://bomo.world/assets/images/og-image.jpg"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gveret+Levin&family=Vujahday+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+
+
+    <style>
+      * {
+        font-family: "Inter", sans-serif;
+      }
+
+      /* BODY */
+      body {
+        background:
+          radial-gradient(
+            circle at top right,
+            rgba(30, 136, 229, 0.08),
+            transparent 35%
+          ),
+          radial-gradient(
+            circle at bottom left,
+            rgba(255, 183, 77, 0.08),
+            transparent 35%
+          ),
+          linear-gradient(180deg, #f8fafc 0%, #f8fdfd 50%, #f8f4ec 100%);
+        color: #0f172a;
+      }
+
+      .dark body {
+        background:
+          radial-gradient(
+            circle at top right,
+            rgba(37, 99, 235, 0.16),
+            transparent 35%
+          ),
+          radial-gradient(
+            circle at bottom left,
+            rgba(245, 130, 32, 0.12),
+            transparent 35%
+          ),
+          linear-gradient(180deg, #020617 0%, #0f172a 45%, #111827 100%);
+        color: #f8fafc;
+      }
+
+      /* INPUTS */
+      .bomo-input {
+        width: 100%;
+        height: 56px;
+        border-radius: 18px;
+        border: 1px solid #dbe3ef;
+        background: #fff;
+        color: #0f172a;
+        padding-inline: 18px;
+        font-size: 14px;
+        outline: none;
+        transition: all 0.25s ease;
+      }
+
+      .bomo-input::placeholder {
+        color: #94a3b8;
+      }
+
+      .bomo-input:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+      }
+
+      .dark .bomo-input {
+        background: rgba(15, 23, 42, 0.95);
+        border-color: #334155;
+        color: #f8fafc;
+      }
+
+      .dark .bomo-input::placeholder {
+        color: #64748b;
+      }
+
+      .dark .bomo-input:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.18);
+      }
+
+      /* CARD */
+      .bomo-card {
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        box-shadow:
+          0 20px 60px rgba(15, 23, 42, 0.08),
+          0 4px 20px rgba(15, 23, 42, 0.05);
+      }
+
+      .dark .bomo-card {
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(24px);
+        border: 1px solid rgba(51, 65, 85, 0.7);
+        box-shadow:
+          0 24px 60px rgba(0, 0, 0, 0.45),
+          inset 0 1px 0 rgba(255, 255, 255, 0.03);
+      }
+
+      /* PRIMARY BUTTON */
+      .bomo-btn-primary {
+        height: 56px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, #0b2a6f, #123b91, #2563eb);
+        color: #fff;
+        transition: all 0.25s ease;
+      }
+
+      .bomo-btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 30px rgba(37, 99, 235, 0.28);
+      }
+
+      .dark .bomo-btn-primary:hover {
+        box-shadow: 0 18px 36px rgba(37, 99, 235, 0.4);
+      }
+
+      /* SOCIAL BUTTONS */
+      .social-btn {
+        height: 54px;
+        border-radius: 18px;
+        border: 1px solid #e2e8f0;
+        background: #fff;
+        transition: all 0.25s ease;
+        color: #0f172a !important;
+      }
+
+      .social-btn:hover {
+        background: #f8fafc;
+        border-color: #cbd5e1;
+      }
+
+      .dark .social-btn {
+        background: rgba(15, 23, 42, 0.95);
+        border-color: #334155;
+        color: #f8fafc;
+      }
+
+      .dark .social-btn:hover {
+        background: #1e293b;
+        border-color: #475569;
+      }
+
+      /* FLOATING GLOW */
+      .floating-glow {
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(90px);
+        z-index: 0;
+      }
+
+      .glow-1 {
+        width: 280px;
+        height: 280px;
+        top: -140px;
+        right: -140px;
+        background: rgba(79, 195, 247, 0.12);
+      }
+
+      .glow-2 {
+        width: 260px;
+        height: 260px;
+        bottom: -120px;
+        left: -120px;
+        background: rgba(255, 183, 77, 0.12);
+      }
+
+      .dark .glow-1 {
+        background: rgba(37, 99, 235, 0.22);
+      }
+
+      .dark .glow-2 {
+        background: rgba(245, 130, 32, 0.18);
+      }
+
+      /* LOADER */
+      .auth-loader {
+        width: 48px;
+        height: 48px;
+        border-radius: 999px;
+        border: 4px solid #dbeafe;
+        border-top-color: #2563eb;
+        animation: spin 0.7s linear infinite;
+      }
+
+      .dark .auth-loader {
+        border-color: #1e293b;
+        border-top-color: #3b82f6;
+      }
+
+      /* LAYOUT */
+      .auth-fade {
+        animation: fadeIn 0.3s ease;
+      }
+
+      .auth-full-layout {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 16px;
+      }
+
+      .auth-full-layout #auth-sidebar {
+        display: none !important;
+      }
+
+      .auth-full-layout #auth-wrapper {
+        width: 100%;
+        max-width: 1400px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .auth-full-layout #auth-container {
+        width: 100%;
+        max-width: 1200px;
+      }
+
+      /* STATS */
+      .auth-stat-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 40px;
+      }
+
+      .auth-stat-card {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(20px);
+        border-radius: 22px;
+        padding: 18px;
+        transition: 0.25s;
+      }
+
+      .auth-stat-card:hover {
+        background: rgba(255, 255, 255, 0.18);
+        transform: translateY(-2px);
+      }
+
+      .dark .auth-stat-card {
+        background: rgba(15, 23, 42, 0.55);
+        border-color: rgba(71, 85, 105, 0.45);
+      }
+
+      .dark .auth-stat-card:hover {
+        background: rgba(30, 41, 59, 0.82);
+      }
+
+      .auth-stat-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 14px;
+        background: rgba(255, 255, 255, 0.15);
+        font-size: 18px;
+      }
+
+      .dark .auth-stat-icon {
+        background: rgba(37, 99, 235, 0.2);
+      }
+
+      .auth-stat-number {
+        font-size: 24px;
+        font-weight: 800;
+        line-height: 1;
+        color: #fff;
+      }
+
+      .auth-stat-label {
+        font-size: 13px;
+        margin-top: 6px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      /* BADGE */
+      .auth-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding-inline: 16px;
+        height: 44px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(16px);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .dark .auth-badge {
+        background: rgba(15, 23, 42, 0.55);
+        border-color: rgba(71, 85, 105, 0.45);
+      }
+
+      /* HERO */
+      .auth-hero-title {
+        margin-top: 28px;
+        font-size: 64px;
+        font-weight: 900;
+        line-height: 1.05;
+        color: #fff;
+        text-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+      }
+
+      .auth-hero-text {
+        margin-top: 24px;
+        max-width: 560px;
+        color: rgba(255, 255, 255, 0.92);
+        font-size: 18px;
+        line-height: 1.8;
+      }
+
+      /* ANIMATIONS */
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/auth-BYGT9viA.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-C2xYpwEn.js">
+    <link rel="modulepreload" crossorigin href="./assets/main-Bwwzfsjp.js">
+    <link rel="stylesheet" crossorigin href="./assets/main-CMwhG3m0.css">
+  </head>
+
+  <body class="min-h-screen relative overflow-hidden">
+    <div class="floating-glow glow-1"></div>
+
+    <div class="floating-glow glow-2"></div>
+
+    <!-- PAGE -->
+    <section
+      id="auth-layout"
+      class="min-h-screen lg:grid lg:grid-cols-[1.08fr_0.92fr]"
+    >
+      <!-- LEFT -->
+      <div
+        id="auth-sidebar"
+        class="hidden lg:flex relative overflow-hidden bg-slate-400 text-white"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?q=80&w=2200&auto=format&fit=crop"
+          alt="Beach Resort"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-900/60 to-transparent"
+        ></div>
+
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent"
+        ></div>
+        <div
+          class="relative z-10 w-full flex flex-col justify-between p-10 xl:p-14"
+        >
+          <!-- LOGO -->
+          <div>
+            <a href="./index.html" class="inline-flex">
+              <img
+                src="../assets/images/logo.png"
+                alt="BOMO Logo"
+                class="w-36"
+              />
+            </a>
+          </div>
+
+          <!-- CONTENT -->
+          <div class="max-w-xl">
+            <span class="auth-badge">
+              <i class="fa-solid fa-umbrella-beach"></i>
+              Discover • Book • Stay
+            </span>
+
+            <h1 class="auth-hero-title">Find Your Perfect Stay</h1>
+            <p class="auth-hero-text">
+              Explore verified properties, beachfront resorts, city escapes, and
+              memorable stays. Book with confidence and manage your trips in one
+              place.
+            </p>
+
+            <!-- STATS -->
+            <div class="auth-stat-grid">
+              <div class="auth-stat-card">
+                <div class="auth-stat-icon">
+                  <i class="fa-solid fa-hotel"></i>
+                </div>
+
+                <div class="auth-stat-number">120+</div>
+
+                <div class="auth-stat-label">Partner Properties</div>
+              </div>
+
+              <div class="auth-stat-card">
+                <div class="auth-stat-icon">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div class="auth-stat-number">15+</div>
+
+                <div class="auth-stat-label">Travel Destinations</div>
+              </div>
+
+              <div class="auth-stat-card">
+                <div class="auth-stat-icon">
+                  <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <div class="auth-stat-number">Fast</div>
+
+                <div class="auth-stat-label">Guest Support</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FOOTER -->
+          <div class="flex items-center gap-5 text-sm text-white/50">
+            <span>Secure Access</span>
+
+            <span class="w-1 h-1 rounded-full bg-white/20"></span>
+
+            <span>Google & Apple Login</span>
+
+            <span class="w-1 h-1 rounded-full bg-white/20"></span>
+
+            <span>Partner Dashboard</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div
+        id="auth-wrapper"
+        class="flex items-center justify-center px-4 py-10 sm:px-6"
+      >
+        <div id="auth-container" class="w-full max-w-md">
+          <!-- MOBILE -->
+          <div class="lg:hidden text-center mb-8">
+            <a href="./index.html" class="inline-flex justify-center">
+              <img
+                src="./assets/logo-Cqa3nQr5.png"
+                alt="BOMO Logo"
+                class="w-32"
+              />
+            </a>
+
+            <h1 class="text-3xl font-black mt-6">Welcome Back</h1>
+
+            <p class="text-slate-500 mt-2 text-sm">
+              Continue your travel experience.
+            </p>
+          </div>
+
+          <!-- CONTENT -->
+          <div id="auth-content" class="auth-fade">
+            <div
+              class="bomo-card rounded-[30px] p-10 flex flex-col items-center justify-center"
+            >
+              <div class="auth-loader"></div>
+
+              <p class="text-sm text-slate-500 mt-5">
+                Loading authentication page...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAYOUT SWITCH -->
+    <script>
+      const params = new URLSearchParams(window.location.search);
+
+      const page = params.get("page") || "login";
+
+      const authLayout = document.getElementById("auth-layout");
+
+      const fullPages = ["hotel-partner-register"];
+
+      if (fullPages.includes(page)) {
+        authLayout.classList.remove("lg:grid", "lg:grid-cols-[1.08fr_0.92fr]");
+
+        authLayout.classList.add("auth-full-layout");
+      }
+    </script>
+  </body>
+</html>

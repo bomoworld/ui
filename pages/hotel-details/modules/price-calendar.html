@@ -1,0 +1,144 @@
+<section class="bg-white rounded-[32px] overflow-hidden">
+  <div class="p-6 border-b border-slate-100">
+    <div class="flex items-center justify-between">
+      <div>
+        <h3 class="font-semibold text-slate-900">Price Calendar</h3>
+
+        <p class="text-sm text-slate-500 mt-1">Find the best dates to book</p>
+      </div>
+
+      <button
+        data-open-calendar
+        class="text-sm font-semibold text-blue-900 hover:text-orange-600 transition"
+      >
+        Full Calendar
+      </button>
+    </div>
+  </div>
+
+  <div class="p-6" data-open-booking>
+    <!-- LEGEND -->
+
+    <div class="flex flex-wrap gap-3 mb-5 text-xs">
+      <div class="flex items-center gap-2">
+        <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+
+        Lowest
+      </div>
+
+      <div class="flex items-center gap-2">
+        <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+
+        Average
+      </div>
+
+      <div class="flex items-center gap-2">
+        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+
+        High Demand
+      </div>
+    </div>
+
+    <!-- MONTH -->
+
+    <div class="flex items-center justify-between mb-4">
+      <button class="w-9 h-9 rounded-xl">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div class="font-semibold">June 2026</div>
+
+      <button class="w-9 h-9 rounded-xl">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <!-- DAYS -->
+
+    <div class="grid grid-cols-7 gap-2 text-center text-xs text-slate-500 mb-2">
+      <div>Su</div>
+      <div>Mo</div>
+      <div>Tu</div>
+      <div>We</div>
+      <div>Th</div>
+      <div>Fr</div>
+      <div>Sa</div>
+    </div>
+
+    <!-- CALENDAR -->
+
+    <div class="grid grid-cols-7 gap-2">
+      <button
+        class="aspect-square rounded-xl bg-emerald-50 hover:bg-emerald-100 transition p-1"
+      >
+        <div class="text-xs">1</div>
+
+        <div class="text-[10px] font-medium text-emerald-700">₱4.8k</div>
+      </button>
+
+      <button
+        class="aspect-square rounded-xl bg-emerald-50 hover:bg-emerald-100 transition p-1"
+      >
+        <div class="text-xs">2</div>
+
+        <div class="text-[10px] font-medium text-emerald-700">₱4.8k</div>
+      </button>
+
+      <button
+        class="aspect-square rounded-xl bg-amber-50 hover:bg-amber-100 transition p-1"
+      >
+        <div class="text-xs">3</div>
+
+        <div class="text-[10px] font-medium text-amber-700">₱5.4k</div>
+      </button>
+
+      <button
+        class="aspect-square rounded-xl bg-red-50 hover:bg-red-100 transition p-1"
+      >
+        <div class="text-xs">4</div>
+
+        <div class="text-[10px] font-medium text-red-700">₱7.2k</div>
+      </button>
+
+      <button
+        class="aspect-square rounded-xl bg-red-50 hover:bg-red-100 transition p-1"
+      >
+        <div class="text-xs">5</div>
+
+        <div class="text-[10px] font-medium text-red-700">₱7.5k</div>
+      </button>
+
+      <button class="aspect-square rounded-xl bg-slate-100 p-1 opacity-50">
+        <div class="text-xs">6</div>
+
+        <div class="text-[10px]">Sold Out</div>
+      </button>
+
+      <button class="aspect-square rounded-xl bg-emerald-50 p-1">
+        <div class="text-xs">7</div>
+
+        <div class="text-[10px] font-medium text-emerald-700">₱4.7k</div>
+      </button>
+    </div>
+
+    <!-- BOMO INSIGHT -->
+
+    <div class="mt-6 rounded-2xl bg-blue-50 p-4">
+      <div class="flex items-start gap-3">
+        <div
+          class="w-10 h-10 rounded-xl bg-blue-900 text-white flex items-center justify-center shrink-0"
+        >
+          <i class="fa-solid fa-lightbulb"></i>
+        </div>
+
+        <div>
+          <div class="font-semibold text-blue-900">BOMO Insight</div>
+
+          <p class="text-sm text-blue-800 mt-1">
+            Book between June 7–12 to save up to 28% compared to weekend rates.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

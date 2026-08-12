@@ -1,0 +1,123 @@
+<section
+  id="partnerNavigation"
+  class="fixed top-[68px] z-40 w-full border-b border-slate-200 bg-white/90 backdrop-blur-xl transition-colors dark:border-slate-800 dark:bg-slate-950/85"
+>
+  <div class="mx-auto max-w-[1400px] px-6">
+    <div class="flex h-16 items-center justify-between">
+      <!-- Tabs -->
+      <nav class="no-scrollbar flex items-center gap-2 overflow-x-auto">
+        <button class="partner-tab active" data-tab="partner-profile">
+          <i class="fa-solid fa-circle-info text-xs"></i>
+          <span>Overview</span>
+        </button>
+
+        <button class="partner-tab" data-tab="partner-properties">
+          <i class="fa-solid fa-building text-xs"></i>
+          <span>Properties</span>
+        </button>
+
+        <button class="partner-tab" data-tab="partner-rooms">
+          <i class="fa-solid fa-bed text-xs"></i>
+          <span>Accommodations</span>
+        </button>
+
+        <button class="partner-tab" data-tab="partner-reviews">
+          <i class="fa-solid fa-star text-xs"></i>
+          <span>Reviews</span>
+        </button>
+
+        <button class="partner-tab" data-tab="partner-location">
+          <i class="fa-solid fa-location-dot text-xs"></i>
+          <span>Location</span>
+        </button>
+      </nav>
+
+      <!-- CTA -->
+
+      <div class="hidden lg:flex items-center gap-4">
+        <button class="bomo-btn-primary">Book Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* ==========================
+   Partner Navigation
+========================== */
+
+  .partner-tab {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    height: 44px;
+    padding: 0 18px;
+
+    border: 1px solid transparent;
+    border-radius: 9999px;
+
+    white-space: nowrap;
+
+    font-size: 0.875rem;
+    font-weight: 600;
+
+    color: #64748b;
+    background: transparent;
+
+    transition:
+      background-color 0.25s,
+      border-color 0.25s,
+      color 0.25s,
+      transform 0.2s;
+  }
+
+  .partner-tab:hover {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+    color: #0f172a;
+  }
+
+  .partner-tab:active {
+    transform: scale(0.97);
+  }
+
+  .partner-tab.active {
+    color: #fff;
+    background: var(--bomo-primary);
+    border-color: var(--bomo-primary);
+
+    box-shadow: 0 10px 25px rgba(8, 48, 142, 0.22);
+  }
+
+  /* ==========================
+   Dark Mode
+========================== */
+
+  .dark .partner-tab {
+    color: #94a3b8;
+  }
+
+  .dark .partner-tab:hover {
+    background: #1e293b;
+    border-color: #334155;
+    color: #fff;
+  }
+
+  .dark .partner-tab.active {
+    background: var(--bomo-primary);
+    border-color: var(--bomo-primary);
+    color: #fff;
+
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.28);
+  }
+</style>

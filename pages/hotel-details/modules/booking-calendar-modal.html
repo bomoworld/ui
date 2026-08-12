@@ -1,0 +1,1007 @@
+<!-- =========================================================
+BOMO BOOKING CALENDAR MODAL
+PART 1
+========================================================= -->
+
+<div
+  id="bookingCalendarModal"
+  class="fixed inset-0 z-[99999] hidden bg-slate-950/70 backdrop-blur-md"
+>
+  <div
+    class="absolute inset-x-10 top-8 bottom-8 max-w-[1700px] mx-auto bg-white rounded-[36px] shadow-2xl overflow-hidden flex flex-col"
+  >
+    <!-- =====================================================
+        HEADER
+        ====================================================== -->
+
+    <header class="border-b border-slate-200 bg-white px-8 py-6">
+      <div class="flex items-start justify-between">
+        <div>
+          <div
+            class="inline-flex items-center gap-2 rounded-full bg-blue-50 text-blue-900 px-4 py-2 text-sm font-medium"
+          >
+            <i class="fa-solid fa-calendar-days"></i>
+
+            Choose Your Stay
+          </div>
+
+          <h2 class="mt-5 text-4xl font-bold tracking-tight text-slate-900">
+            Select your travel dates
+          </h2>
+
+          <p class="mt-2 text-slate-500 max-w-2xl">
+            Compare daily prices, discover the best value, and select your
+            preferred check-in and check-out dates.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button
+            id="clearDates"
+            class="h-12 rounded-2xl border border-slate-200 bg-white px-5 text-sm font-medium hover:bg-slate-50 transition"
+          >
+            Clear Dates
+          </button>
+
+          <button
+            data-close-calendar
+            class="w-12 h-12 rounded-2xl border border-slate-200 bg-white hover:bg-slate-100 transition"
+          >
+            <i class="fa-solid fa-xmark text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- =====================================================
+        BODY
+        ====================================================== -->
+
+    <div class="flex-1 flex overflow-hidden">
+      <!-- LEFT CONTENT -->
+      <main class="flex-1 overflow-y-auto bg-slate-50">
+        <div class="max-w-6xl mx-auto p-8">
+          <!-- =====================================================
+                    DATE SUMMARY
+                    ====================================================== -->
+
+          <section
+            class="rounded-[32px] border border-slate-200 bg-white shadow-sm overflow-hidden"
+          >
+            <div
+              class="grid lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-slate-200"
+            >
+              <!-- CHECK IN -->
+
+              <button
+                class="group flex items-center gap-5 p-7 text-left hover:bg-slate-50 transition"
+              >
+                <div
+                  class="w-14 h-14 rounded-2xl bg-blue-50 text-blue-900 flex items-center justify-center group-hover:scale-105 transition"
+                >
+                  <i class="fa-regular fa-calendar text-xl"></i>
+                </div>
+
+                <div>
+                  <div
+                    class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400"
+                  >
+                    Check-in
+                  </div>
+
+                  <div
+                    id="selectedCheckIn"
+                    class="mt-2 text-3xl font-bold text-slate-900"
+                  >
+                    June 12
+                  </div>
+
+                  <div id="selectedCheckInDay" class="mt-1 text-slate-500">
+                    Arrival
+                  </div>
+                </div>
+              </button>
+
+              <!-- CHECK OUT -->
+
+              <button
+                class="group flex items-center gap-5 p-7 text-left hover:bg-slate-50 transition"
+              >
+                <div
+                  class="w-14 h-14 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center group-hover:scale-105 transition"
+                >
+                  <i class="fa-regular fa-calendar-check text-xl"></i>
+                </div>
+
+                <div>
+                  <div
+                    class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400"
+                  >
+                    Check-out
+                  </div>
+
+                  <div
+                    id="selectedCheckOut"
+                    class="mt-2 text-3xl font-bold text-slate-900"
+                  >
+                    June 16
+                  </div>
+
+                  <div id="selectedCheckOutDay" class="mt-1 text-slate-500">
+                    Departure
+                  </div>
+                </div>
+              </button>
+
+              <!-- NIGHTS -->
+
+              <div class="flex items-center gap-5 p-7">
+                <div
+                  class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-700 flex items-center justify-center"
+                >
+                  <i class="fa-regular fa-moon text-xl"></i>
+                </div>
+
+                <div>
+                  <div
+                    class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400"
+                  >
+                    Duration
+                  </div>
+
+                  <div
+                    id="selectedNights"
+                    class="mt-2 text-3xl font-bold text-slate-900"
+                  >
+                    4 Nights
+                  </div>
+
+                  <div id="selectedStay" class="mt-1 text-slate-500">
+                    Total stay
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Hidden inputs used by Litepicker / Flatpickr -->
+
+          <input id="checkIn" type="hidden" />
+
+          <input id="checkOut" type="hidden" />
+
+          <!-- =====================================================
+                    PRICE LEGEND
+                    ====================================================== -->
+
+          <section class="mt-8">
+            <div class="flex items-center justify-between mb-5">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900">
+                  Daily Price Guide
+                </h3>
+
+                <p class="text-sm text-slate-500 mt-1">
+                  Compare nightly rates before selecting your stay.
+                </p>
+              </div>
+
+              <button
+                class="rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-medium hover:bg-slate-50 transition"
+              >
+                Flexible Dates
+              </button>
+            </div>
+
+            <div class="grid sm:grid-cols-2 xl:grid-cols-5 gap-4">
+              <div
+                class="rounded-2xl border border-emerald-100 bg-emerald-50 p-5"
+              >
+                <div class="flex items-center gap-3">
+                  <div class="w-4 h-4 rounded-full bg-emerald-500"></div>
+
+                  <div>
+                    <div class="font-semibold">Lowest</div>
+
+                    <div class="text-sm text-slate-500">Under ₱4,500</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rounded-2xl border border-lime-100 bg-lime-50 p-5">
+                <div class="flex items-center gap-3">
+                  <div class="w-4 h-4 rounded-full bg-lime-500"></div>
+
+                  <div>
+                    <div class="font-semibold">Great Deal</div>
+
+                    <div class="text-sm text-slate-500">₱4,500–₱5,500</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rounded-2xl border border-amber-100 bg-amber-50 p-5">
+                <div class="flex items-center gap-3">
+                  <div class="w-4 h-4 rounded-full bg-amber-400"></div>
+
+                  <div>
+                    <div class="font-semibold">Average</div>
+
+                    <div class="text-sm text-slate-500">₱5,500–₱6,800</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rounded-2xl border border-red-100 bg-red-50 p-5">
+                <div class="flex items-center gap-3">
+                  <div class="w-4 h-4 rounded-full bg-red-500"></div>
+
+                  <div>
+                    <div class="font-semibold">Peak</div>
+
+                    <div class="text-sm text-slate-500">Above ₱6,800</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rounded-2xl border border-slate-200 bg-slate-100 p-5">
+                <div class="flex items-center gap-3">
+                  <div class="w-4 h-4 rounded-full bg-slate-400"></div>
+
+                  <div>
+                    <div class="font-semibold">Sold Out</div>
+
+                    <div class="text-sm text-slate-500">No Availability</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- =====================================================
+                    CALENDAR
+                    ====================================================== -->
+
+          <section class="mt-8">
+            <div
+              class="rounded-[32px] bg-white border border-slate-200 shadow-sm overflow-hidden"
+            >
+              <!-- Calendar -->
+
+              <div class="p-0">
+                <div id="calendarContainer">
+                  <div
+                    class="rounded-[32px] bg-white border border-slate-200 shadow-sm overflow-hidden"
+                  >
+                    <div
+                      class="flex items-center justify-between px-8 py-6 border-b border-slate-200"
+                    >
+                      <button
+                        class="w-11 h-11 rounded-2xl border border-slate-200 hover:bg-slate-50"
+                      >
+                        <i class="fa-solid fa-chevron-left"></i>
+                      </button>
+
+                      <div class="grid grid-cols-2 gap-20">
+                        <h3 class="text-3xl font-bold text-center">
+                          June 2026
+                        </h3>
+
+                        <h3 class="text-3xl font-bold text-center">
+                          July 2026
+                        </h3>
+                      </div>
+
+                      <button
+                        class="w-11 h-11 rounded-2xl border border-slate-200 hover:bg-slate-50"
+                      >
+                        <i class="fa-solid fa-chevron-right"></i>
+                      </button>
+                    </div>
+
+                    <div class="grid xl:grid-cols-2 gap-12 p-10">
+                      <!-- MONTH -->
+
+                      <div>
+                        <div
+                          class="grid grid-cols-7 text-center text-sm text-slate-400 mb-6"
+                        >
+                          <div>Su</div>
+                          <div>Mo</div>
+                          <div>Tu</div>
+                          <div>We</div>
+                          <div>Th</div>
+                          <div>Fr</div>
+                          <div>Sa</div>
+                        </div>
+
+                        <div class="grid grid-cols-7 gap-2">
+                          <!-- Empty -->
+
+                          <div></div>
+
+                          <!-- Day -->
+
+                          <button class="calendar-day available">
+                            <span class="day"> 1 </span>
+
+                            <span class="price green"> ₱3,900 </span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day"> 2 </span>
+
+                            <span class="price green"> ₱4,100 </span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day"> 3 </span>
+
+                            <span class="price green"> ₱4,000 </span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day"> 4 </span>
+
+                            <span class="price green"> ₱4,200 </span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day"> 5 </span>
+
+                            <span class="price green"> ₱5,000 </span>
+                          </button>
+
+                          <button class="calendar-day high">
+                            <span class="day"> 6 </span>
+
+                            <span class="price orange"> ₱6,200 </span>
+                          </button>
+
+                          <!-- Week -->
+
+                          <button class="calendar-day available">
+                            <span class="day"> 7 </span>
+
+                            <span class="price green"> ₱4,300 </span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day"> 8 </span>
+
+                            <span class="price green"> ₱4,100 </span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day"> 9 </span>
+
+                            <span class="price green"> ₱4,400 </span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day"> 10 </span>
+
+                            <span class="price green"> ₱4,700 </span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day"> 11 </span>
+
+                            <span class="price green"> ₱5,100 </span>
+                          </button>
+
+                          <!-- CHECK IN -->
+
+                          <button class="calendar-day checkin">
+                            <span class="day"> 12 </span>
+
+                            <span class="label"> CHECK-IN </span>
+                          </button>
+
+                          <!-- RANGE -->
+
+                          <button class="calendar-day range">
+                            <span class="day"> 13 </span>
+
+                            <span class="price green"> ₱5,200 </span>
+                          </button>
+
+                          <button class="calendar-day range">
+                            <span class="day"> 14 </span>
+
+                            <span class="price green"> ₱5,300 </span>
+                          </button>
+
+                          <button class="calendar-day range">
+                            <span class="day"> 15 </span>
+
+                            <span class="price green"> ₱5,400 </span>
+                          </button>
+
+                          <!-- CHECK OUT -->
+
+                          <button class="calendar-day checkout">
+                            <span class="day"> 16 </span>
+
+                            <span class="label"> CHECK-OUT </span>
+                          </button>
+
+                          <!-- June 17 -->
+
+                          <button class="calendar-day available">
+                            <span class="day">17</span>
+                            <span class="price low">₱4,900</span>
+                          </button>
+
+                          <!-- June 18 -->
+
+                          <button class="calendar-day available">
+                            <span class="day">18</span>
+                            <span class="price low">₱4,500</span>
+                          </button>
+
+                          <!-- June 19 -->
+
+                          <button class="calendar-day high">
+                            <span class="day">19</span>
+                            <span class="price high">₱6,100</span>
+                          </button>
+
+                          <!-- June 20 -->
+
+                          <button class="calendar-day high">
+                            <span class="day">20</span>
+                            <span class="price high">₱6,900</span>
+                          </button>
+
+                          <!-- June 21 -->
+
+                          <button class="calendar-day high">
+                            <span class="day">21</span>
+                            <span class="price high">₱5,800</span>
+                          </button>
+
+                          <!-- June 22 -->
+
+                          <button class="calendar-day available">
+                            <span class="day">22</span>
+                            <span class="price low">₱4,700</span>
+                          </button>
+
+                          <!-- June 23 -->
+
+                          <button class="calendar-day available">
+                            <span class="day">23</span>
+                            <span class="price low">₱4,200</span>
+                          </button>
+
+                          <!-- June 24 -->
+
+                          <button class="calendar-day available">
+                            <span class="day">24</span>
+                            <span class="price low">₱4,100</span>
+                          </button>
+
+                          <!-- June 25 -->
+
+                          <button class="calendar-day available">
+                            <span class="day">25</span>
+                            <span class="price low">₱4,300</span>
+                          </button>
+
+                          <!-- June 26 -->
+
+                          <button class="calendar-day peak hot">
+                            <span class="day">26</span>
+                            <span class="price peak">₱6,500</span>
+                          </button>
+
+                          <!-- June 27 -->
+
+                          <button class="calendar-day peak hot">
+                            <span class="day">27</span>
+                            <span class="price peak">₱7,800</span>
+                          </button>
+
+                          <!-- June 28 -->
+
+                          <button class="calendar-day high">
+                            <span class="day">28</span>
+                            <span class="price high">₱6,900</span>
+                          </button>
+
+                          <!-- June 29 -->
+
+                          <button class="calendar-day available">
+                            <span class="day">29</span>
+                            <span class="price good">₱5,300</span>
+                          </button>
+
+                          <!-- June 30 -->
+
+                          <button class="calendar-day available">
+                            <span class="day">30</span>
+                            <span class="price low">₱4,600</span>
+                          </button>
+
+                          <!-- July Overflow -->
+
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                        </div>
+                      </div>
+
+                      <!-- SECOND MONTH -->
+
+                      <div>
+                        <div
+                          class="grid grid-cols-7 text-center text-sm text-slate-400 mb-6"
+                        >
+                          <div>Su</div>
+                          <div>Mo</div>
+                          <div>Tu</div>
+                          <div>We</div>
+                          <div>Th</div>
+                          <div>Fr</div>
+                          <div>Sa</div>
+                        </div>
+
+                        <div class="grid grid-cols-7 gap-2">
+                          <!-- Empty -->
+                          <div></div>
+                          <div></div>
+                          <div></div>
+
+                          <!-- Week 1 -->
+
+                          <button class="calendar-day available">
+                            <span class="day">1</span>
+                            <span class="price low">₱4,300</span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day">2</span>
+                            <span class="price low">₱4,500</span>
+                          </button>
+
+                          <button class="calendar-day high">
+                            <span class="day">3</span>
+                            <span class="price high">₱5,600</span>
+                          </button>
+
+                          <button class="calendar-day high">
+                            <span class="day">4</span>
+                            <span class="price high">₱6,800</span>
+                          </button>
+
+                          <!-- Week 2 -->
+
+                          <button class="calendar-day peak hot">
+                            <span class="day">5</span>
+                            <span class="price peak">₱7,200</span>
+                          </button>
+
+                          <button class="calendar-day high">
+                            <span class="day">6</span>
+                            <span class="price high">₱6,200</span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day">7</span>
+                            <span class="price good">₱5,100</span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day">8</span>
+                            <span class="price low">₱4,400</span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day">9</span>
+                            <span class="price low">₱4,300</span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day">10</span>
+                            <span class="price good">₱5,000</span>
+                          </button>
+
+                          <button class="calendar-day high">
+                            <span class="day">11</span>
+                            <span class="price high">₱6,300</span>
+                          </button>
+
+                          <!-- Week 3 -->
+
+                          <button class="calendar-day high">
+                            <span class="day">12</span>
+                            <span class="price high">₱6,900</span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day">13</span>
+                            <span class="price good">₱5,400</span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day">14</span>
+                            <span class="price low">₱4,600</span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day">15</span>
+                            <span class="price low">₱4,200</span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day">16</span>
+                            <span class="price low">₱4,100</span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day">17</span>
+                            <span class="price good">₱5,300</span>
+                          </button>
+
+                          <button class="calendar-day high">
+                            <span class="day">18</span>
+                            <span class="price high">₱6,700</span>
+                          </button>
+
+                          <!-- Week 4 -->
+
+                          <button class="calendar-day peak hot">
+                            <span class="day">19</span>
+                            <span class="price peak">₱7,500</span>
+                          </button>
+
+                          <button class="calendar-day high">
+                            <span class="day">20</span>
+                            <span class="price high">₱6,300</span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day">21</span>
+                            <span class="price good">₱5,200</span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day">22</span>
+                            <span class="price low">₱4,700</span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day">23</span>
+                            <span class="price low">₱4,400</span>
+                          </button>
+
+                          <button class="calendar-day high">
+                            <span class="day">24</span>
+                            <span class="price high">₱5,600</span>
+                          </button>
+
+                          <button class="calendar-day peak hot">
+                            <span class="day">25</span>
+                            <span class="price peak">₱7,900</span>
+                          </button>
+
+                          <!-- Week 5 -->
+
+                          <button class="calendar-day high">
+                            <span class="day">26</span>
+                            <span class="price high">₱6,800</span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day">27</span>
+                            <span class="price good">₱5,400</span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day">28</span>
+                            <span class="price low">₱4,600</span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day">29</span>
+                            <span class="price low">₱4,300</span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day">30</span>
+                            <span class="price low">₱4,200</span>
+                          </button>
+
+                          <button class="calendar-day available">
+                            <span class="day">31</span>
+                            <span class="price good">₱5,100</span>
+                          </button>
+
+                          <!-- August Overflow -->
+
+                          <div></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- =====================================================
+                    QUICK FILTERS
+                    ====================================================== -->
+
+          <section class="mt-8 flex flex-wrap gap-3">
+            <button
+              class="rounded-full bg-white border border-slate-200 px-5 py-3 text-sm hover:bg-slate-50"
+            >
+              Lowest Price
+            </button>
+
+            <button
+              class="rounded-full bg-white border border-slate-200 px-5 py-3 text-sm hover:bg-slate-50"
+            >
+              Weekend
+            </button>
+
+            <button
+              class="rounded-full bg-white border border-slate-200 px-5 py-3 text-sm hover:bg-slate-50"
+            >
+              Weekday
+            </button>
+
+            <button
+              class="rounded-full bg-white border border-slate-200 px-5 py-3 text-sm hover:bg-slate-50"
+            >
+              Holiday Rates
+            </button>
+
+            <button
+              class="rounded-full bg-white border border-slate-200 px-5 py-3 text-sm hover:bg-slate-50"
+            >
+              Promo Dates
+            </button>
+
+            <button
+              class="rounded-full bg-white border border-slate-200 px-5 py-3 text-sm hover:bg-slate-50"
+            >
+              Free Cancellation
+            </button>
+          </section>
+        </div>
+      </main>
+
+      <!-- =====================================================
+          BOOKING SUMMARY
+          ====================================================== -->
+
+      <aside
+        class="hidden xl:flex w-[390px] shrink-0 border-l border-slate-200 bg-white flex-col"
+      >
+        <div class="flex-1 overflow-y-auto">
+          <div class="sticky top-0 bg-white p-8">
+            <h3 class="text-2xl font-bold text-slate-900">Booking Summary</h3>
+
+            <!-- PROPERTY -->
+
+            <div
+              class="mt-6 rounded-[28px] border border-slate-200 overflow-hidden bg-white"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900"
+                class="h-44 w-full object-cover"
+              />
+
+              <div class="p-5">
+                <div class="flex items-start justify-between gap-3">
+                  <div>
+                    <div class="text-lg font-semibold text-slate-900">
+                      Dusit Thani Makati
+                    </div>
+
+                    <div class="mt-1 text-sm text-slate-500">
+                      Makati City • Deluxe King Room
+                    </div>
+                  </div>
+
+                  <div
+                    class="rounded-xl bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-600"
+                  >
+                    ★ 4.8
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- STAY -->
+
+            <div
+              class="mt-6 rounded-[28px] border border-slate-200 overflow-hidden"
+            >
+              <div class="grid grid-cols-2 divide-x divide-slate-200">
+                <div class="p-5">
+                  <div
+                    class="text-[11px] uppercase tracking-[0.15em] text-slate-400"
+                  >
+                    Check-in
+                  </div>
+
+                  <div
+                    id="summaryCheckIn"
+                    class="mt-2 text-xl font-bold text-slate-900"
+                  >
+                    Jun 12
+                  </div>
+
+                  <div
+                    id="summaryCheckInDay"
+                    class="mt-1 text-sm text-slate-500"
+                  >
+                    Thursday
+                  </div>
+                </div>
+
+                <div class="p-5">
+                  <div
+                    class="text-[11px] uppercase tracking-[0.15em] text-slate-400"
+                  >
+                    Check-out
+                  </div>
+
+                  <div
+                    id="summaryCheckOut"
+                    class="mt-2 text-xl font-bold text-slate-900"
+                  >
+                    Jun 16
+                  </div>
+
+                  <div
+                    id="summaryCheckOutDay"
+                    class="mt-1 text-sm text-slate-500"
+                  >
+                    Monday
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="border-t border-slate-200 flex items-center justify-between p-5"
+              >
+                <div>
+                  <div
+                    class="text-[11px] uppercase tracking-[0.15em] text-slate-400"
+                  >
+                    Stay
+                  </div>
+
+                  <div
+                    id="summaryStay"
+                    class="mt-2 font-semibold text-slate-900"
+                  >
+                    Jun 12 – Jun 16
+                  </div>
+                </div>
+
+                <div
+                  id="summaryNights"
+                  class="rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-900"
+                >
+                  4 Nights
+                </div>
+              </div>
+            </div>
+
+            <!-- GUESTS -->
+
+            <div class="mt-6 rounded-[28px] border border-slate-200 p-5">
+              <div class="flex items-center justify-between">
+                <span class="text-slate-500">Guests</span>
+
+                <strong>2 Adults</strong>
+              </div>
+
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-slate-500">Rooms</span>
+
+                <strong>1 Room</strong>
+              </div>
+            </div>
+
+            <!-- PRICE -->
+
+            <div
+              class="mt-6 rounded-[28px] border border-slate-200 overflow-hidden"
+            >
+              <div class="p-6 space-y-4">
+                <div class="flex justify-between">
+                  <span class="text-slate-500">
+                    ₱2,240 ×
+                    <span id="summaryNightCount">4</span>
+                    nights
+                  </span>
+
+                  <span id="summaryRoomRate"> ₱8,960 </span>
+                </div>
+
+                <div class="flex justify-between">
+                  <span class="text-slate-500"> Taxes & Fees </span>
+
+                  <span id="summaryTaxes"> ₱1,080 </span>
+                </div>
+
+                <div class="flex justify-between text-emerald-600">
+                  <span> Discount </span>
+
+                  <span id="summaryDiscount"> −₱600 </span>
+                </div>
+              </div>
+
+              <div class="border-t border-slate-200 bg-slate-50 p-6">
+                <div class="flex items-center justify-between">
+                  <span class="text-lg font-bold"> Total </span>
+
+                  <span
+                    id="summaryTotal"
+                    class="text-3xl font-bold text-blue-900"
+                  >
+                    ₱9,790
+                  </span>
+                </div>
+
+                <div class="mt-2 text-xs text-slate-500">
+                  Includes all taxes and fees
+                </div>
+              </div>
+            </div>
+
+            <!-- FREE CANCELLATION -->
+
+            <div
+              class="mt-6 rounded-[28px] border border-emerald-200 bg-emerald-50 p-5"
+            >
+              <div class="flex gap-4">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700"
+                >
+                  <i class="fa-solid fa-shield"></i>
+                </div>
+
+                <div>
+                  <div class="font-semibold text-emerald-900">
+                    Free Cancellation
+                  </div>
+
+                  <div class="mt-1 text-sm text-emerald-700">
+                    Cancel before
+                    <strong>June 9</strong>
+                    for a full refund.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOOTER -->
+
+        <div class="border-t border-slate-200 bg-white p-6">
+          <a
+            href="hotel-booking.html?property=grand-central-hotel&room=Deluxe%20King&checkin=2026-06-12&checkout=2026-06-16&nights=4&adults=2&children=1&rooms=1&rate=2240&tax=1080&service=350&discount=600&total=9790"
+            class="h-14 w-full rounded-2xl bg-blue-900 hover:bg-blue-800 text-white font-semibold transition flex items-center justify-center"
+          >
+            Continue Booking
+            <i class="fa-solid fa-arrow-right ml-2"></i>
+          </a>
+
+          <p class="mt-4 text-center text-xs text-slate-500">
+            Final pricing will be confirmed before checkout.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>

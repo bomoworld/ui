@@ -1,0 +1,48 @@
+<section id="payoutsPage" class="space-y-7 pb-4">
+  <section class="relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-slate-950 via-slate-900 to-violet-950 px-6 py-8 text-white shadow-2xl shadow-slate-950/10 sm:px-8 lg:px-10 lg:py-10">
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_88%_18%,rgba(139,92,246,.3),transparent_32%),radial-gradient(circle_at_12%_115%,rgba(59,130,246,.2),transparent_34%)]"></div>
+    <div class="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full border border-white/10"></div>
+    <div class="relative flex flex-col gap-7 xl:flex-row xl:items-end xl:justify-between">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 rounded-full border border-violet-200/15 bg-white/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-violet-100"><i class="fa-solid fa-money-check-dollar"></i> Disbursement operations</div>
+        <h1 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">Payout & rewards operations center</h1>
+        <p class="mt-4 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">Validate partner settlements, creator rewards, withdrawals, and affiliate commissions before funds leave the platform.</p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <button type="button" class="property-button property-button-light" data-payout-action="process-batch"><i class="fa-solid fa-layer-group"></i> Process payout batch</button>
+        <button type="button" class="property-button property-button-dark" data-payout-action="export"><i class="fa-solid fa-arrow-up-from-bracket"></i> Export report</button>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Payout workload" class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><div class="flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-50 text-violet-600"><i class="fa-solid fa-inbox"></i></span><span class="text-xs font-semibold text-slate-400">Open queue</span></div><p class="mt-5 text-sm font-medium text-slate-500">Payout cases</p><p data-payout-summary="open" class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">0</p><p class="mt-2 text-xs text-slate-400">Settlements, rewards, and withdrawals</p></div>
+    <div class="rounded-2xl border border-amber-200 bg-amber-50/50 p-5 shadow-sm"><div class="flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-100 text-amber-600"><i class="fa-solid fa-hourglass-half"></i></span><span class="rounded-full bg-amber-100 px-2 py-1 text-xs font-semibold text-amber-700">Review</span></div><p class="mt-5 text-sm font-medium text-slate-500">Awaiting validation</p><p data-payout-summary="pending" class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">0</p><p class="mt-2 text-xs text-slate-400">Eligibility or documentation checks</p></div>
+    <div class="rounded-2xl border border-rose-200 bg-rose-50/50 p-5 shadow-sm"><div class="flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-rose-100 text-rose-600"><i class="fa-solid fa-triangle-exclamation"></i></span><span class="text-xs font-semibold text-rose-700">Hold</span></div><p class="mt-5 text-sm font-medium text-slate-500">Compliance & failures</p><p data-payout-summary="holds" class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">0</p><p class="mt-2 text-xs text-slate-400">Manual review or transfer retry</p></div>
+    <div class="rounded-2xl border border-emerald-200 bg-emerald-50/50 p-5 shadow-sm"><div class="flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600"><i class="fa-solid fa-circle-check"></i></span><span class="text-xs font-semibold text-emerald-700">Cleared</span></div><p class="mt-5 text-sm font-medium text-slate-500">Ready for release</p><p data-payout-summary="ready" class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">0</p><p class="mt-2 text-xs text-slate-400">Eligible for the next payout batch</p></div>
+  </section>
+
+  <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+    <div class="border-b border-slate-100 px-5 py-5 sm:px-6">
+      <div class="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between"><div><div class="flex flex-wrap items-center gap-2"><h2 class="text-lg font-semibold text-slate-950">Payout operations queue</h2><span data-payout-visible-count class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600">0 records</span></div><p class="mt-1 text-sm text-slate-500">Review eligibility, compliance, destination accounts, fees, and disbursement status.</p></div><div id="payoutNotice" class="hidden rounded-lg px-3 py-2 text-sm font-medium" role="status" aria-live="polite"></div></div>
+      <div class="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_11rem_11rem_11rem]">
+        <label class="relative block"><span class="sr-only">Search payout cases</span><i class="fa-solid fa-magnifying-glass pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm text-slate-400"></i><input type="search" data-payout-search class="bomo-input h-11 w-full pl-10" placeholder="Search payout, recipient, booking, or reference…" autocomplete="off"></label>
+        <label><span class="sr-only">Filter by payout status</span><select data-payout-status class="bomo-input h-11 w-full"><option value="all">All payout states</option><option value="Pending">Pending</option><option value="Ready">Ready</option><option value="Released">Released</option><option value="Failed">Failed</option><option value="Hold">Hold</option><option value="Rejected">Rejected</option></select></label>
+        <label><span class="sr-only">Filter by payout type</span><select data-payout-type class="bomo-input h-11 w-full"><option value="all">All payout types</option><option value="Settlement">Settlement</option><option value="Reward">Creator reward</option><option value="Withdrawal">Withdrawal</option><option value="Affiliate">Affiliate</option></select></label>
+        <label><span class="sr-only">Filter by payout owner</span><select data-payout-owner class="bomo-input h-11 w-full"><option value="all">All payout owners</option><option value="You">Assigned to me</option><option value="Unassigned">Unassigned</option><option value="Finance Team">Finance Team</option><option value="Rewards Team">Rewards Team</option><option value="Risk Team">Risk Team</option></select></label>
+      </div>
+      <div class="mt-4 flex flex-wrap items-center gap-2">
+        <button type="button" class="property-filter-button is-active" data-payout-action="filter" data-payout-filter="all">All</button>
+        <button type="button" class="property-filter-button" data-payout-action="filter" data-payout-filter="mine">Assigned to me</button>
+        <button type="button" class="property-filter-button" data-payout-action="filter" data-payout-filter="settlement">Settlements</button>
+        <button type="button" class="property-filter-button" data-payout-action="filter" data-payout-filter="reward">Creator rewards</button>
+        <button type="button" class="property-filter-button" data-payout-action="filter" data-payout-filter="withdrawal">Withdrawals</button>
+        <button type="button" class="property-filter-button" data-payout-action="filter" data-payout-filter="failed">Failed & held</button>
+        <button type="button" class="property-filter-button" data-payout-action="filter" data-payout-filter="ready">Ready to release</button>
+        <button type="button" class="ml-auto text-sm font-semibold text-slate-500 hover:text-slate-900" data-payout-action="clear-filters">Clear filters</button>
+      </div>
+    </div>
+    <div class="overflow-x-auto"><table class="min-w-[980px] w-full text-left text-sm"><thead class="border-b border-slate-100 bg-slate-50 text-xs font-semibold uppercase tracking-wide text-slate-500"><tr><th class="px-5 py-3.5 sm:px-6">Payout</th><th class="px-5 py-3.5">Type & state</th><th class="px-5 py-3.5">Recipient</th><th class="px-5 py-3.5">Amount & method</th><th class="px-5 py-3.5">Owner / SLA</th><th class="px-5 py-3.5 text-right">Action</th></tr></thead><tbody data-payout-list class="divide-y divide-slate-100"></tbody></table></div>
+    <div class="flex flex-col gap-3 border-t border-slate-100 bg-slate-50 px-5 py-4 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-6"><p class="text-slate-500"><span data-payout-footer-count class="font-semibold text-slate-700">0</span> payout cases shown in this session.</p><button type="button" class="property-button property-button-secondary" data-payout-action="assign-officer"><i class="fa-solid fa-user-plus"></i> Assign payout officer</button></div>
+  </section>
+</section>

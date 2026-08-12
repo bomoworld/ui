@@ -1,0 +1,301 @@
+<section class="p-4 lg:p-8 space-y-8">
+  <div
+    class="bg-gradient-to-br from-slate-950 to-slate-800 rounded-[32px] p-8 lg:p-10 text-white relative overflow-hidden"
+  >
+    <div class="relative z-10">
+      <span
+        class="inline-flex px-4 py-2 rounded-full bg-white/10 backdrop-blur-lg text-sm font-medium"
+      >
+        Finance Management
+      </span>
+
+      <h2 class="text-3xl lg:text-5xl font-black mt-5 leading-tight">
+        Payouts &
+        <br />
+        Settlement Center
+      </h2>
+
+      <p class="text-slate-300 mt-4 max-w-3xl">
+        Track owner payouts, property settlements, commissions, remittances,
+        payment schedules and financial reconciliation across all BOMO
+        properties.
+      </p>
+
+      <div class="flex flex-wrap gap-3 mt-8">
+        <button
+          class="h-12 px-6 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-semibold transition"
+        >
+          Create Payout
+        </button>
+
+        <button
+          class="h-12 px-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition"
+        >
+          Export Report
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-white/10 blur-3xl"
+    ></div>
+  </div>
+
+  <div class="grid grid-cols-2 xl:grid-cols-5 gap-6">
+    <div class="bg-white rounded-[30px] p-6 shadow-sm">
+      <p class="text-sm text-slate-500">Total Payouts</p>
+
+      <h3 class="text-4xl font-black mt-3">₱18.4M</h3>
+
+      <p class="text-green-600 font-semibold mt-4">This Month</p>
+    </div>
+
+    <div class="bg-white rounded-[30px] p-6 shadow-sm">
+      <p class="text-sm text-slate-500">Pending</p>
+
+      <h3 class="text-4xl font-black mt-3">₱2.6M</h3>
+
+      <p class="text-orange-600 font-semibold mt-4">Awaiting Approval</p>
+    </div>
+
+    <div class="bg-white rounded-[30px] p-6 shadow-sm">
+      <p class="text-sm text-slate-500">Processed</p>
+
+      <h3 class="text-4xl font-black mt-3">186</h3>
+
+      <p class="text-green-600 font-semibold mt-4">Completed Transfers</p>
+    </div>
+
+    <div class="bg-white rounded-[30px] p-6 shadow-sm">
+      <p class="text-sm text-slate-500">Properties Paid</p>
+
+      <h3 class="text-4xl font-black mt-3">18</h3>
+
+      <p class="text-green-600 font-semibold mt-4">Active Properties</p>
+    </div>
+
+    <div class="bg-white rounded-[30px] p-6 shadow-sm">
+      <p class="text-sm text-slate-500">Commission Earned</p>
+
+      <h3 class="text-4xl font-black mt-3">₱3.2M</h3>
+
+      <p class="text-green-600 font-semibold mt-4">Platform Revenue</p>
+    </div>
+  </div>
+
+  <div class="grid xl:grid-cols-4 gap-6">
+    <div
+      class="xl:col-span-3 bg-white rounded-[30px] shadow-sm overflow-hidden"
+    >
+      <div
+        class="p-6 border-b border-slate-100 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4"
+      >
+        <div>
+          <h3 class="font-bold text-lg">Payout Transactions</h3>
+
+          <p class="text-sm text-slate-500">
+            Property settlements and payment history
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <select class="h-11 px-4 rounded-xl border border-slate-200">
+            <option>All Status</option>
+            <option>Pending</option>
+            <option>Approved</option>
+            <option>Paid</option>
+            <option>Cancelled</option>
+          </select>
+
+          <button
+            class="h-11 px-5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold transition"
+          >
+            New Payout
+          </button>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[1200px]">
+          <thead>
+            <tr class="bg-slate-50">
+              <th class="text-left px-6 py-4">Reference No</th>
+
+              <th class="text-left px-6 py-4">Property</th>
+
+              <th class="text-left px-6 py-4">Coverage</th>
+
+              <th class="text-left px-6 py-4">Amount</th>
+
+              <th class="text-left px-6 py-4">Method</th>
+
+              <th class="text-left px-6 py-4">Status</th>
+
+              <th class="text-left px-6 py-4">Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="border-t border-slate-100">
+              <td class="px-6 py-5">PAY-2026-00182</td>
+
+              <td class="px-6 py-5">BOMO Makati Suites</td>
+
+              <td class="px-6 py-5">May 01 - May 15</td>
+
+              <td class="px-6 py-5 font-semibold">₱842,500</td>
+
+              <td class="px-6 py-5">Bank Transfer</td>
+
+              <td class="px-6 py-5">
+                <span
+                  class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-semibold"
+                >
+                  Paid
+                </span>
+              </td>
+
+              <td class="px-6 py-5">
+                <button class="h-9 px-4 rounded-xl bg-orange-500 text-white">
+                  View
+                </button>
+              </td>
+            </tr>
+
+            <tr class="border-t border-slate-100">
+              <td class="px-6 py-5">PAY-2026-00183</td>
+
+              <td class="px-6 py-5">BOMO Cebu Bay Hotel</td>
+
+              <td class="px-6 py-5">May 01 - May 15</td>
+
+              <td class="px-6 py-5 font-semibold">₱615,200</td>
+
+              <td class="px-6 py-5">Bank Transfer</td>
+
+              <td class="px-6 py-5">
+                <span
+                  class="px-3 py-1 rounded-full bg-yellow-100 text-yellow-700 text-xs font-semibold"
+                >
+                  Pending
+                </span>
+              </td>
+
+              <td class="px-6 py-5">
+                <button class="h-9 px-4 rounded-xl bg-orange-500 text-white">
+                  Approve
+                </button>
+              </td>
+            </tr>
+
+            <tr class="border-t border-slate-100">
+              <td class="px-6 py-5">PAY-2026-00184</td>
+
+              <td class="px-6 py-5">BOMO Boracay Resort</td>
+
+              <td class="px-6 py-5">May 01 - May 15</td>
+
+              <td class="px-6 py-5 font-semibold">₱928,000</td>
+
+              <td class="px-6 py-5">Bank Transfer</td>
+
+              <td class="px-6 py-5">
+                <span
+                  class="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold"
+                >
+                  Processing
+                </span>
+              </td>
+
+              <td class="px-6 py-5">
+                <button class="h-9 px-4 rounded-xl bg-orange-500 text-white">
+                  Track
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <div class="bg-white rounded-[30px] shadow-sm p-6">
+        <h3 class="font-bold text-lg mb-6">Payout Status</h3>
+
+        <div class="space-y-5">
+          <div class="flex justify-between">
+            <span>Paid</span>
+            <strong>186</strong>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Processing</span>
+            <strong>21</strong>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Pending</span>
+            <strong>14</strong>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Rejected</span>
+            <strong>2</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-[30px] shadow-sm p-6">
+        <h3 class="font-bold text-lg mb-6">Top Payout Recipients</h3>
+
+        <div class="space-y-5">
+          <div class="flex justify-between">
+            <span>Makati Suites</span>
+            <strong>₱4.2M</strong>
+          </div>
+
+          <div class="flex justify-between">
+            <span>BGC Residences</span>
+            <strong>₱3.8M</strong>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Boracay Resort</span>
+            <strong>₱3.1M</strong>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Cebu Bay Hotel</span>
+            <strong>₱2.9M</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-[30px] shadow-sm p-6">
+        <h3 class="font-bold text-lg mb-6">Financial Summary</h3>
+
+        <div class="space-y-5">
+          <div class="flex justify-between">
+            <span>Gross Revenue</span>
+            <strong>₱21.6M</strong>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Owner Share</span>
+            <strong>₱18.4M</strong>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Commission</span>
+            <strong>₱3.2M</strong>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Net Margin</span>
+            <strong class="text-green-600"> 14.8% </strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

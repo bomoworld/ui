@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>BOMO Booking Simulator v1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body class="bg-slate-100 text-slate-800">
+
+    <div class="max-w-[1600px] mx-auto p-3 md:p-4 lg:p-5 space-y-3">
+
+        <!-- Settlement Summary -->
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-3">
+
+            <!-- Guest -->
+            <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                            Guest Pays
+                        </p>
+                        <h2 id="guestPayable" class="mt-2 text-3xl font-bold text-slate-900">
+                            ₱0.00
+                        </h2>
+                        <p class="mt-1 text-xs text-slate-500">
+                            Net checkout after guest cashback
+                        </p>
+                    </div>
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 text-2xl">
+                        💳
+                    </div>
+                </div>
+
+                <div class="mt-4 h-1 rounded-full bg-blue-500"></div>
+            </div>
+
+            <!-- Partner -->
+            <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                            Partner Receivable
+                        </p>
+                        <h2 id="partnerReceivable" class="mt-2 text-3xl font-bold text-slate-900">
+                            ₱0.00
+                        </h2>
+                        <p class="mt-1 text-xs text-slate-500">
+                            Settlement to property partner
+                        </p>
+                    </div>
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600 text-2xl">
+                        🏨
+                    </div>
+                </div>
+
+                <div class="mt-4 h-1 rounded-full bg-indigo-500"></div>
+            </div>
+
+            <!-- BOMO -->
+            <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                            BOMO Revenue
+                        </p>
+                        <h2 id="bomoRevenue" class="mt-2 text-3xl font-bold text-slate-900">
+                            ₱0.00
+                        </h2>
+                        <p class="mt-1 text-xs text-slate-500">
+                            Net platform revenue 12%
+                        </p>
+                    </div>
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 text-2xl">
+                        🏦
+                    </div>
+                </div>
+
+                <div class="mt-4 h-1 rounded-full bg-emerald-500"></div>
+            </div>
+
+            <!-- Creator -->
+            <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                            Creator Reward
+                        </p>
+                        <h2 id="creatorReward" class="mt-2 text-3xl font-bold text-slate-900">
+                            ₱0.00
+                        </h2>
+                        <p class="mt-1 text-xs text-slate-500">
+                            Referral commission
+                        </p>
+                    </div>
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-pink-100 flex items-center justify-center text-pink-600 text-2xl">
+                        🎥
+                    </div>
+                </div>
+
+                <div class="mt-4 h-1 rounded-full bg-pink-500"></div>
+            </div>
+
+            <!-- Guest Cashback -->
+            <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                            Guest Cashback
+                        </p>
+                        <h2 id="guestCashback" class="mt-2 text-3xl font-bold text-slate-900">
+                            ₱0.00
+                        </h2>
+                        <p class="mt-1 text-xs text-slate-500">
+                            Wallet credit after approved review
+                        </p>
+                    </div>
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-cyan-100 flex items-center justify-center text-cyan-600 text-2xl">
+                        🎁
+                    </div>
+                </div>
+
+                <div class="mt-4 h-1 rounded-full bg-cyan-500"></div>
+            </div>
+
+            <!-- Gateway -->
+            <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                            Payment Gateway
+                        </p>
+                        <h2 id="gatewayReceivable" class="mt-2 text-3xl font-bold text-slate-900">
+                            ₱0.00
+                        </h2>
+                        <p class="mt-1 text-xs text-slate-500">
+                            Processing fee paid by guest
+                        </p>
+                    </div>
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 text-2xl">
+                        💰
+                    </div>
+                </div>
+
+                <div class="mt-4 h-1 rounded-full bg-amber-500"></div>
+            </div>
+
+        </div>
+
+        <!-- MAIN FORMS -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-[900px_400] gap-3 items-start">
+            <!-- LEFT -->
+            <div class="space-y-3">
+                <!-- Booking Settings -->
+                <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+
+                    <div class="px-4 py-3 border-b bg-slate-50">
+                        <h2 class="text-base font-semibold">Booking Configuration</h2>
+                        <p class="text-xs text-slate-500">
+                            Configure tax, platform settings and guest add-ons.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 xl:grid-cols-3 gap-4 p-4">
+
+                        <!-- COLUMN 1 -->
+                        <div class="rounded-lg border border-slate-200">
+
+                            <div class="px-3 py-2 border-b bg-slate-50">
+                                <h3 class="font-semibold text-sm">
+                                    Tax Configuration
+                                </h3>
+                            </div>
+
+                            <div class="p-3 space-y-2">
+
+                                <label
+                                    class="flex items-start gap-2 rounded-lg border p-2 cursor-pointer hover:bg-slate-50">
+                                    <input class="vatMode mt-1" type="radio" name="vatMode" value="inclusive" checked>
+                                    <div>
+                                        <div class="text-sm font-medium">VAT Inclusive</div>
+                                        <div class="text-[11px] text-slate-500">Included in room rate</div>
+                                    </div>
+                                </label>
+
+                                <label
+                                    class="flex items-start gap-2 rounded-lg border p-2 cursor-pointer hover:bg-slate-50">
+                                    <input class="vatMode mt-1" type="radio" name="vatMode" value="exclusive">
+                                    <div>
+                                        <div class="text-sm font-medium">VAT Exclusive</div>
+                                        <div class="text-[11px] text-slate-500">Added during checkout</div>
+                                    </div>
+                                </label>
+
+                                <label
+                                    class="flex items-start gap-2 rounded-lg border p-2 cursor-pointer hover:bg-slate-50">
+                                    <input class="vatMode mt-1" type="radio" name="vatMode" value="nonvat">
+                                    <div>
+                                        <div class="text-sm font-medium">Non-VAT</div>
+                                        <div class="text-[11px] text-slate-500">No VAT applied</div>
+                                    </div>
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                        <!-- COLUMN 2 -->
+                        <div class="rounded-lg border border-slate-200">
+
+                            <div class="px-3 py-2 border-b bg-slate-50">
+                                <h3 class="font-semibold text-sm">
+                                    Platform Configuration
+                                </h3>
+                            </div>
+
+                            <div class="p-3 space-y-3">
+
+                                <div>
+                                    <label class="block text-xs font-medium mb-1">
+                                        Platform Fee
+                                    </label>
+
+                                    <input readonly value="12%"
+                                        class="w-full rounded-lg border bg-slate-100 p-2 text-center font-semibold">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-medium mb-1">
+                                        Gateway Fee
+                                    </label>
+
+                                    <div class="relative">
+                                        <input id="paymentGatewayFee" type="number" value="0"
+                                            class="w-full rounded-lg border p-2 pr-8 text-right">
+
+                                        <span class="absolute right-3 top-2 text-slate-500">%</span>
+                                    </div>
+                                </div>
+
+                                <label class="flex items-center justify-between rounded-lg border p-3">
+
+                                    <div>
+                                        <div class="text-sm font-medium">
+                                            Creator Promo
+                                        </div>
+
+                                        <div class="text-[11px] text-slate-500">
+                                            BOMO 8% • Creator 2% • Cashback 2%
+                                        </div>
+                                    </div>
+
+                                    <input id="creatorPromo" type="checkbox" checked class="h-5 w-5">
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                        <!-- COLUMN 3 -->
+                        <div class="rounded-lg border border-slate-200">
+
+                            <div class="px-3 py-2 border-b bg-slate-50">
+                                <h3 class="font-semibold text-sm">
+                                    Guest Add-ons
+                                </h3>
+                            </div>
+
+                            <div class="p-3 grid grid-cols-2 gap-3">
+
+                                <div>
+                                    <label class="block text-xs font-medium mb-1">
+                                        Airport
+                                    </label>
+
+                                    <input id="addonAirport" type="number" value="0"
+                                        class="w-full rounded-lg border p-2 text-right">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-medium mb-1">
+                                        Breakfast
+                                    </label>
+
+                                    <input id="addonBreakfast" type="number" value="0"
+                                        class="w-full rounded-lg border p-2 text-right">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-medium mb-1">
+                                        Lunch
+                                    </label>
+
+                                    <input id="addonLunch" type="number" value="0"
+                                        class="w-full rounded-lg border p-2 text-right">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-medium mb-1">
+                                        Dinner
+                                    </label>
+
+                                    <input id="addonDinner" type="number" value="0"
+                                        class="w-full rounded-lg border p-2 text-right">
+                                </div>
+
+                                <div class="col-span-2">
+                                    <label class="block text-xs font-medium mb-1">
+                                        Total Add-ons
+                                    </label>
+
+                                    <input id="addonTotal" readonly value="0"
+                                        class="w-full rounded-lg border bg-slate-100 p-2 text-right font-semibold">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- Rooms -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200">
+
+                    <div class="px-4 py-3 border-b flex items-center justify-between">
+                        <div>
+                            <h2 class="text-base font-semibold">
+                                Booked Rooms
+                            </h2>
+                            <p class="text-xs text-slate-500">
+                                Select room types and quantities.
+                            </p>
+                        </div>
+
+                        <button id="addRoom" type="button"
+                            class="rounded-lg bg-blue-600 px-3 py-1.5 text-xs text-white hover:bg-blue-700">
+                            + Add Room
+                        </button>
+                    </div>
+
+                    <div class="overflow-x-auto">
+
+                        <table id="roomTable" class="w-full">
+
+                            <thead class="bg-slate-100">
+                                <tr>
+                                    <th class="p-3 text-left w-72 uppercase tracking-wide text-slate-500 text-xs">
+                                        Room Type
+                                    </th>
+
+                                    <th class="p-3 text-center w-28 uppercase tracking-wide text-slate-500 text-xs">
+                                        Rooms
+                                    </th>
+
+                                    <th class="p-3 text-center w-28 uppercase tracking-wide text-slate-500 text-xs">
+                                        Nights
+                                    </th>
+
+                                    <th class="p-3 text-right w-40 uppercase tracking-wide text-slate-500 text-xs">
+                                        Rate
+                                    </th>
+
+                                    <th class="p-3 text-right w-44 uppercase tracking-wide text-slate-500 text-xs">
+                                        Subtotal
+                                    </th>
+
+                                    <th class="p-3 w-14"></th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="roomBody">
+
+                                <tr>
+
+                                    <td class="p-2">
+                                        <select class="roomType w-full rounded-lg border p-2">
+                                            <option value="">Select Room</option>
+                                            <option selected>Standard</option>
+                                            <option>Deluxe</option>
+                                            <option>Premier</option>
+                                            <option>Family</option>
+                                            <option>Suite</option>
+                                        </select>
+                                    </td>
+
+                                    <td class="p-2">
+                                        <input class="qty w-20 mx-auto rounded-lg border p-2 text-center" type="number"
+                                            min="1" value="1">
+                                    </td>
+
+                                    <td class="p-2">
+                                        <input class="nights w-20 mx-auto rounded-lg border p-2 text-center"
+                                            type="number" min="1" value="1">
+                                    </td>
+
+                                    <td class="rateDisplay p-3 text-right font-medium text-slate-600">
+                                        ₱0.00
+                                    </td>
+
+                                    <td class="subtotal p-3 text-right font-semibold">
+                                        ₱0.00
+                                    </td>
+
+                                    <td class="text-center">
+                                        <button type="button"
+                                            class="removeRoom text-red-600 hover:text-red-700 text-lg">
+                                            ✕
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                    <template id="roomTemplate">
+
+                        <tr>
+
+                            <td class="p-2">
+                                <select class="roomType w-full rounded-lg border p-2">
+                                    <option value="">Select Room</option>
+                                    <option>Standard</option>
+                                    <option>Deluxe</option>
+                                    <option>Premier</option>
+                                    <option>Family</option>
+                                    <option>Suite</option>
+                                </select>
+                            </td>
+
+                            <td class="p-2">
+                                <input class="qty w-20 mx-auto rounded-lg border p-2 text-center" type="number" min="1"
+                                    value="1">
+                            </td>
+
+                            <td class="p-2">
+                                <input class="nights w-20 mx-auto rounded-lg border p-2 text-center" type="number"
+                                    min="1" value="1">
+                            </td>
+
+                            <td class="rateDisplay p-3 text-right font-medium text-slate-600">
+                                ₱0.00
+                            </td>
+
+                            <td class="subtotal p-3 text-right font-semibold">
+                                ₱0.00
+                            </td>
+
+                            <td class="text-center">
+                                <button type="button" class="removeRoom text-red-600 hover:text-red-700 text-lg">
+                                    ✕
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    </template>
+
+                </div>
+                <!-- overrride -->
+                <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                    <div class="px-6 py-4 border-b bg-slate-50 flex items-center justify-between">
+                        <h2 class="text-lg font-semibold">
+                            Room Rate Overrides
+                        </h2>
+                        <button id="addOverride" type="button"
+                            class="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">
+                            + Add Override
+                        </button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table id="overrideTable" class="w-full">
+                            <thead class="bg-slate-100">
+                                <tr class="text-sm">
+                                    <th class="p-3 text-center w-16">On</th>
+                                    <th class="p-3 text-left">
+                                        Room Type
+                                    </th>
+                                    <th class="p-3 text-left">
+                                        Override Name
+                                    </th>
+                                    <th class="p-3 text-center">
+                                        Type
+                                    </th>
+                                    <th class="p-3 text-center">
+                                        Value
+                                    </th>
+                                    <th class="p-3 text-center">
+                                        Priority
+                                    </th>
+                                    <th class="p-3 text-center">
+                                        Rule
+                                    </th>
+                                    <th class="p-3 text-center w-20">
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="overrideBody">
+                                <tr>
+                                    <td class="text-center">
+                                        <input type="checkbox" class="overrideEnabled">
+                                    </td>
+                                    <td>
+                                        <select class="affectedRoom w-full rounded-lg border p-2" multiple>
+                                            <option value="ALL">All Room Types</option>
+                                            <option>Standard</option>
+                                            <option>Deluxe</option>
+                                            <option>Premier</option>
+                                            <option>Family</option>
+                                            <option>Suite</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input class="overrideName w-full rounded-lg border p-2" value="Weekend Rate">
+                                    </td>
+                                    <td>
+                                        <select class="overrideType w-full rounded-lg border p-2">
+                                            <option value="+fixed">+ Fixed</option>
+                                            <option value="-fixed">- Fixed</option>
+                                            <option value="+percent">+ %</option>
+                                            <option value="-percent">- %</option>
+                                            <option value="replace">
+                                                Replace Rate
+                                            </option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input class="overrideValue w-full rounded-lg border p-2 text-right"
+                                            type="number" value="10">
+                                    </td>
+                                    <td class="text-center">
+                                        <button class="removeOverride rounded-lg bg-red-500 px-3 py-2 text-white">
+                                            ✕
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <template id="overrideTemplate">
+                        <tr>
+                            <td class="text-center">
+                                <input type="checkbox" class="overrideEnabled">
+                            </td>
+                            <td class="p-2">
+                                <select class="affectedRoom w-full rounded-lg border p-2" multiple>
+                                    <option value="ALL">All Room Types</option>
+                                    <option>Standard</option>
+                                    <option>Deluxe</option>
+                                    <option>Premier</option>
+                                    <option>Family</option>
+                                    <option>Suite</option>
+                                </select>
+                            </td>
+                            <td class="p-2">
+                                <input class="overrideName w-full rounded-lg border p-2" placeholder="Weekend Rate">
+                            </td>
+                            <td class="p-2">
+                                <select class="overrideType w-full rounded-lg border p-2">
+                                    <option value="+fixed">+ Fixed</option>
+                                    <option value="-fixed">- Fixed</option>
+                                    <option value="+percent">+ %</option>
+                                    <option value="-percent">- %</option>
+                                    <option value="replace">Replace Rate</option>
+                                </select>
+                            </td>
+                            <td class="p-2">
+                                <input class="overrideValue w-full rounded-lg border p-2 text-right" type="number"
+                                    value="0">
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="removeOverride rounded-lg bg-red-500 px-3 py-2 text-white">
+                                    ✕
+                                </button>
+                            </td>
+                        </tr>
+                    </template>
+                </div>
+                <!-- PROMO -->
+                <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                    <div class="px-6 py-4 border-b bg-slate-50 flex items-center justify-between">
+                        <h2 class="text-lg font-semibold">
+                            Promotions
+                        </h2>
+                        <button id="addPromotion" type="button"
+                            class="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">
+                            + Add Promotion
+                        </button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table id="promotionTable" class="w-full">
+                            <thead class="bg-slate-100">
+                                <tr class="text-sm">
+                                    <th class="p-3 text-center w-16">
+                                        On
+                                    </th>
+
+                                    <th class="p-3">
+                                        Applies To
+                                    </th>
+                                    <th class="p-3">
+                                        Promotion
+                                    </th>
+                                    <th class="p-3 text-center">
+                                        Type
+                                    </th>
+                                    <th class="p-3 text-center">
+                                        Value
+                                    </th>
+                                    <th class="p-3 text-center w-20">
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="promotionBody">
+                                <tr>
+                                    <td class="text-center">
+                                        <input type="checkbox" class="promoEnabled">
+                                    </td>
+                                    <td>
+                                        <select class="promoRoom w-full rounded-lg border p-2" multiple>
+                                            <option value="ALL">
+                                                All Room Types
+                                            </option>
+                                            <option>Standard</option>
+                                            <option>Deluxe</option>
+                                            <option>Premier</option>
+                                            <option>Family</option>
+                                            <option>Suite</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input class="promoName w-full rounded-lg border p-2" value="Early Bird">
+                                    </td>
+
+                                    <td>
+                                        <select class="promoType w-full rounded-lg border p-2">
+                                            <option value="-percent">
+                                                % Discount
+                                            </option>
+                                            <option value="-fixed">
+                                                Fixed Discount
+                                            </option>
+                                            <option value="free-night">
+                                                Free Night
+                                            </option>
+                                            <option value="cashback">
+                                                Cashback
+                                            </option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input class="promoValue w-full rounded-lg border p-2 text-right" type="number"
+                                            value="10">
+                                    </td>
+                                    <td class="text-center">
+                                        <button class="removePromotion rounded-lg bg-red-500 px-3 py-2 text-white">
+                                            ✕
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <template id="promotionTemplate">
+                        <tr>
+                            <td class="text-center">
+                                <input type="checkbox" class="promoEnabled">
+                            </td>
+
+                            <td class="p-2">
+                                <select class="promoRoom w-full rounded-lg border p-2" multiple>
+                                    <option value="ALL">All Room Types</option>
+                                    <option>Standard</option>
+                                    <option>Deluxe</option>
+                                    <option>Premier</option>
+                                    <option>Family</option>
+                                    <option>Suite</option>
+                                </select>
+                            </td>
+                            <td class="p-2">
+                                <input class="promoName w-full rounded-lg border p-2" placeholder="Promotion Name">
+                            </td>
+                            <td class="p-2">
+                                <select class="promoType w-full rounded-lg border p-2">
+                                    <option value="-percent">% Discount</option>
+                                    <option value="-fixed">Fixed Discount</option>
+                                    <option value="free-night">Free Night</option>
+                                    <option value="cashback">Cashback</option>
+                                </select>
+                            </td>
+                            <td class="p-2">
+                                <input class="promoValue w-full rounded-lg border p-2 text-right" type="number"
+                                    value="0">
+                            </td>
+                            <td class="text-center">
+                                <button type="button"
+                                    class="removePromotion rounded-lg bg-red-500 px-3 py-2 text-white">
+                                    ✕
+                                </button>
+                            </td>
+                        </tr>
+                    </template>
+                </div>
+            </div>
+
+
+            <!-- RIGHT -->
+            <div class="space-y-6 xl:sticky xl:top-4 self-start">
+
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+
+                    <div class="px-6 py-4 border-b bg-slate-50">
+                        <h2 class="text-lg font-semibold">
+                            Booking Summary
+                        </h2>
+                        <p class="text-xs text-slate-500">
+                            Pricing breakdown and settlement.
+                        </p>
+                    </div>
+
+                    <div class="p-6">
+
+                        <table class="w-full text-sm">
+
+                            <tbody>
+
+                                <!-- ROOM -->
+
+                                <tr>
+                                    <td colspan="2"
+                                        class="pb-2 text-xs font-bold uppercase tracking-wider text-slate-500">
+                                        Room Charges
+                                    </td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <td class="py-3">
+                                        Room Subtotal
+                                    </td>
+                                    <td id="subtotal" class="text-right font-medium">
+                                        ₱0.00
+                                    </td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <td class="py-3">
+                                        Rate Overrides
+                                    </td>
+                                    <td id="overrideAmount" class="text-right text-blue-600">
+                                        +₱0.00
+                                    </td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <td class="py-3">
+                                        Guest Add-ons
+                                    </td>
+                                    <td id="addonAmount" class="text-right text-green-600">
+                                        +₱0.00
+                                    </td>
+                                </tr>
+
+                                <!-- DISCOUNTS -->
+
+                                <tr>
+                                    <td colspan="2"
+                                        class="pt-5 pb-2 text-xs font-bold uppercase tracking-wider text-slate-500">
+                                        Discounts
+                                    </td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <td class="py-3">
+                                        Promotions
+                                    </td>
+                                    <td id="promotionAmount" class="text-right text-red-600">
+                                        -₱0.00
+                                    </td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <td class="py-3">
+                                        Wallet Credits
+                                    </td>
+                                    <td id="creditAmount" class="text-right text-red-600">
+                                        -₱0.00
+                                    </td>
+                                </tr>
+
+                                <tr class="border-b bg-emerald-50">
+                                    <td class="py-3 font-semibold">
+                                        Net Booking
+                                    </td>
+                                    <td id="netBooking" class="text-right text-lg font-bold text-emerald-700">
+                                        ₱0.00
+                                    </td>
+                                </tr>
+
+                                <!-- TAX -->
+
+                                <tr>
+                                    <td colspan="2"
+                                        class="pt-5 pb-2 text-xs font-bold uppercase tracking-wider text-slate-500">
+                                        Taxes & Fees
+                                    </td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <td class="py-3">
+                                        VAT
+                                    </td>
+                                    <td id="vatAmount" class="text-right">
+                                        ₱0.00
+                                    </td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <td class="py-3">
+                                        Platform Fee Base
+                                    </td>
+                                    <td id="platformFeeBase" class="text-right text-slate-700">
+                                        ₱0.00
+                                    </td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <td class="py-3">
+                                        BOMO 8%
+                                    </td>
+                                    <td id="bomoRevenue" class="text-right text-emerald-700 font-semibold">
+                                        ₱0.00
+                                    </td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <td class="py-3">
+                                        Creator 2%
+                                    </td>
+                                    <td id="creatorReward" class="text-right text-pink-700 font-semibold">
+                                        ₱0.00
+                                    </td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <td class="py-3">
+                                        Guest Cashback 2%
+                                    </td>
+                                    <td id="guestCashback" class="text-right text-cyan-700 font-semibold">
+                                        ₱0.00
+                                    </td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <td class="py-3">
+                                        Platform Fee (12%)
+                                    </td>
+                                    <td id="platformAmount" class="text-right text-blue-700 font-semibold">
+                                        ₱0.00
+                                    </td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <td class="py-3">
+                                        Payment Gateway
+                                    </td>
+                                    <td id="paymentGatewayAmount" class="text-right text-amber-600">
+                                        ₱0.00
+                                    </td>
+                                </tr>
+
+                                <!-- CHECKOUT -->
+
+                                <tr class="border-b bg-slate-100">
+                                    <td class="py-3 font-semibold">
+                                        Checkout Total
+                                    </td>
+                                    <td id="grossCheckout" class="text-right font-bold">
+                                        ₱0.00
+                                    </td>
+                                </tr>
+
+                                <tr class="bg-slate-900 text-white">
+
+                                    <td class="py-4 text-lg font-semibold">
+                                        Guest Pays
+                                    </td>
+
+                                    <td id="grandTotal" class="text-right text-2xl font-bold">
+                                        ₱0.00
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+    <script src="booking.js?v=1"></script>
+</body>
+
+</html>

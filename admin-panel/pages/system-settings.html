@@ -1,0 +1,635 @@
+<section id="systemSettingsPage" class="mx-auto max-w-[1480px] space-y-6">
+  <header
+    class="overflow-hidden rounded-[2rem] bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 text-white shadow-2xl shadow-slate-950/10">
+    <div class="relative px-6 py-8 sm:px-8 lg:px-10 lg:py-10">
+      <div class="absolute -right-16 -top-28 h-72 w-72 rounded-full bg-blue-500/25 blur-3xl"></div>
+      <div class="relative flex flex-col gap-6 xl:flex-row xl:items-end xl:justify-between">
+        <div class="max-w-3xl">
+          <div class="mb-4 flex flex-wrap items-center gap-2 text-xs font-semibold">
+            <span
+              class="rounded-full border border-blue-200/15 bg-white/10 px-3 py-1.5 uppercase tracking-[0.14em] text-blue-100"><i
+                class="fa-solid fa-gears mr-1.5"></i> System administration</span>
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-400/15 px-3 py-1.5 text-emerald-300">
+              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> Production
+            </span>
+          </div>
+          <h1 class="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">Platform administration</h1>
+          <p class="mt-3 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
+            Manage the customer-facing identity, booking rules, payments, and platform safeguards from one workspace.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <button type="button" data-settings-action="view-history" class="property-button property-button-dark">
+            <i class="fa-solid fa-clock-rotate-left"></i> Change history
+          </button>
+          <button type="submit" form="platformSettingsForm" data-settings-save
+            class="property-button property-button-light disabled:cursor-not-allowed disabled:opacity-50">
+            <i class="fa-solid fa-floppy-disk"></i> Save changes
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section aria-label="Platform configuration overview" class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="flex items-start justify-between"><span
+          class="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600"><i
+            class="fa-solid fa-sliders"></i></span><span class="text-xs font-semibold text-slate-400">Production</span>
+      </div>
+      <p class="mt-5 text-sm font-medium text-slate-500">Configuration groups</p>
+      <p class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">4</p>
+      <p class="mt-2 text-xs text-slate-400">Identity, booking, payments, access</p>
+    </div>
+    <div class="rounded-2xl border border-emerald-200 bg-emerald-50/50 p-5 shadow-sm">
+      <div class="flex items-start justify-between"><span
+          class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600"><i
+            class="fa-solid fa-plug-circle-check"></i></span><span
+          class="text-xs font-semibold text-emerald-700">Healthy</span></div>
+      <p class="mt-5 text-sm font-medium text-slate-500">Connected services</p>
+      <p class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">6</p>
+      <p class="mt-2 text-xs text-slate-400">Payments, messaging, storage and APIs</p>
+    </div>
+    <div class="rounded-2xl border border-amber-200 bg-amber-50/50 p-5 shadow-sm">
+      <div class="flex items-start justify-between"><span
+          class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-100 text-amber-600"><i
+            class="fa-solid fa-envelope-circle-check"></i></span><span
+          class="text-xs font-semibold text-amber-700">Monitoring</span></div>
+      <p class="mt-5 text-sm font-medium text-slate-500">Service advisories</p>
+      <p class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">1</p>
+      <p class="mt-2 text-xs text-slate-400">Email delivery under observation</p>
+    </div>
+    <div class="rounded-2xl border border-violet-200 bg-violet-50/50 p-5 shadow-sm">
+      <div class="flex items-start justify-between"><span
+          class="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-100 text-violet-600"><i
+            class="fa-solid fa-clock-rotate-left"></i></span><span
+          class="text-xs font-semibold text-violet-700">Audit</span></div>
+      <p class="mt-5 text-sm font-medium text-slate-500">Changes this week</p>
+      <p class="mt-1 text-3xl font-semibold tracking-tight text-slate-950">7</p>
+      <p class="mt-2 text-xs text-slate-400">All configuration updates recorded</p>
+    </div>
+  </section>
+
+  <div data-settings-notice class="hidden items-start gap-3 rounded-2xl border px-4 py-3 text-sm" role="status"
+    aria-live="polite"></div>
+
+  <div class="grid gap-6 xl:grid-cols-[240px_minmax(0,1fr)_300px]">
+    <nav class="h-fit rounded-2xl border border-slate-200 bg-white p-2 shadow-sm xl:sticky xl:top-24"
+      aria-label="Settings sections">
+      <p class="px-3 pb-2 pt-3 text-[11px] font-bold uppercase tracking-[0.16em] text-slate-400">Configuration</p>
+      <div class="space-y-1" data-settings-tabs>
+        <button type="button" data-settings-tab="general" class="settings-nav-item is-active">
+          <i class="fa-solid fa-sliders"></i><span><strong>General</strong><small>Brand & localization</small></span>
+        </button>
+        <button type="button" data-settings-tab="bookings" class="settings-nav-item">
+          <i class="fa-regular fa-calendar-check"></i><span><strong>Bookings</strong><small>Rules & guest
+              policies</small></span>
+        </button>
+        <button type="button" data-settings-tab="payments" class="settings-nav-item">
+          <i class="fa-regular fa-credit-card"></i><span><strong>Payments</strong><small>Fees &
+              settlement</small></span>
+        </button>
+        <button type="button" data-settings-tab="access" class="settings-nav-item">
+          <i class="fa-solid fa-shield-halved"></i><span><strong>Trust & access</strong><small>Controls &
+              safeguards</small></span>
+        </button>
+      </div>
+    </nav>
+
+    <form id="platformSettingsForm" data-platform-settings-form class="min-w-0">
+      <section data-settings-panel="general" class="space-y-6">
+        <div class="settings-section-card">
+          <div class="settings-section-header">
+            <div>
+              <h2>Platform identity</h2>
+              <p>Details visible across guest, partner, and transactional experiences.</p>
+            </div>
+            <button type="button" data-settings-action="brand-preview" class="settings-text-button">
+              <i class="fa-regular fa-eye"></i> Preview brand
+            </button>
+          </div>
+          <div class="grid gap-5 p-5 sm:p-6 lg:grid-cols-2">
+            <label class="settings-field">
+              <span>Platform name <b>*</b></span>
+              <input required name="platformName" value="BOMO" autocomplete="organization" class="bomo-input w-full" />
+              <small>Used in browser titles, emails, and receipts.</small>
+            </label>
+            <label class="settings-field">
+              <span>Legal company name <b>*</b></span>
+              <input required name="companyName" value="CNV Inc." autocomplete="organization"
+                class="bomo-input w-full" />
+            </label>
+            <label class="settings-field lg:col-span-2">
+              <span>Public platform URL <b>*</b></span>
+              <div class="relative">
+                <i class="fa-solid fa-link absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                <input required type="url" name="platformUrl" value="https://bomo.world"
+                  class="bomo-input w-full !pl-11" />
+              </div>
+            </label>
+            <label class="settings-field">
+              <span>Support email <b>*</b></span>
+              <input required type="email" name="supportEmail" value="support@bomo.world" class="bomo-input w-full" />
+            </label>
+            <label class="settings-field">
+              <span>Support phone</span>
+              <input type="tel" name="supportPhone" value="+63 2 8123 4567" class="bomo-input w-full" />
+            </label>
+          </div>
+        </div>
+
+        <div class="settings-section-card">
+          <div class="settings-section-header">
+            <div>
+              <h2>Localization</h2>
+              <p>Defaults applied when a user has no saved regional preference.</p>
+            </div>
+          </div>
+          <div class="grid gap-5 p-5 sm:p-6 lg:grid-cols-2">
+            <label class="settings-field">
+              <span>Default language</span>
+              <select name="language" class="bomo-input w-full">
+                <option value="en">English</option>
+                <option value="fil">Filipino</option>
+              </select>
+            </label>
+            <label class="settings-field">
+              <span>Default currency</span>
+              <select name="currency" class="bomo-input w-full">
+                <option value="PHP">PHP — Philippine peso</option>
+                <option value="USD">USD — US dollar</option>
+                <option value="SGD">SGD — Singapore dollar</option>
+              </select>
+            </label>
+            <label class="settings-field">
+              <span>Time zone</span>
+              <select name="timezone" class="bomo-input w-full">
+                <option value="Asia/Manila">Asia/Manila (GMT+8)</option>
+                <option value="Asia/Singapore">Asia/Singapore (GMT+8)</option>
+                <option value="UTC">UTC</option>
+              </select>
+            </label>
+            <label class="settings-field">
+              <span>Date format</span>
+              <select name="dateFormat" class="bomo-input w-full">
+                <option value="MMM D, YYYY">Jul 27, 2026</option>
+                <option value="DD/MM/YYYY">27/07/2026</option>
+                <option value="YYYY-MM-DD">2026-07-27</option>
+              </select>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section data-settings-panel="bookings" class="hidden space-y-6">
+        <div class="settings-section-card">
+          <div class="settings-section-header">
+            <div>
+              <h2>Booking rules</h2>
+              <p>Platform defaults that partners can inherit for new properties.</p>
+            </div>
+            <span class="settings-status-badge"><i class="fa-solid fa-circle-check"></i> Active</span>
+          </div>
+          <div class="grid gap-5 p-5 sm:p-6 lg:grid-cols-2">
+            <label class="settings-field">
+              <span>Minimum booking notice</span>
+              <div class="settings-input-suffix"><input type="number" min="0" max="168" name="minNotice" value="2"
+                  class="bomo-input w-full" /><em>hours</em></div>
+            </label>
+            <label class="settings-field">
+              <span>Maximum stay</span>
+              <div class="settings-input-suffix"><input type="number" min="1" max="365" name="maxStay" value="30"
+                  class="bomo-input w-full" /><em>nights</em></div>
+            </label>
+            <label class="settings-field">
+              <span>Standard check-in</span>
+              <input type="time" name="checkIn" value="14:00" class="bomo-input w-full" />
+            </label>
+            <label class="settings-field">
+              <span>Standard check-out</span>
+              <input type="time" name="checkOut" value="12:00" class="bomo-input w-full" />
+            </label>
+            <label class="settings-field">
+              <span>Free-cancellation cutoff</span>
+              <div class="settings-input-suffix"><input type="number" min="0" max="720" name="cancelWindow" value="24"
+                  class="bomo-input w-full" /><em>hours</em></div>
+            </label>
+            <label class="settings-field">
+              <span>Review submission window</span>
+              <div class="settings-input-suffix"><input type="number" min="1" max="180" name="reviewWindow" value="30"
+                  class="bomo-input w-full" /><em>days</em></div>
+            </label>
+          </div>
+        </div>
+        <div class="settings-section-card">
+          <div class="settings-section-header">
+            <div>
+              <h2>Booking experience</h2>
+              <p>Control guest-facing behavior across the booking flow.</p>
+            </div>
+          </div>
+          <div class="divide-y divide-slate-100 px-5 sm:px-6">
+            <label class="settings-toggle-row"><span><strong>Instant booking</strong><small>Allow eligible inventory to
+                  be booked without partner approval.</small></span><input type="checkbox" name="instantBooking"
+                checked /></label>
+            <label class="settings-toggle-row"><span><strong>Guest checkout</strong><small>Allow bookings without
+                  creating a BOMO account.</small></span><input type="checkbox" name="guestCheckout" checked /></label>
+            <label class="settings-toggle-row"><span><strong>Waitlist</strong><small>Collect interest when selected
+                  dates are unavailable.</small></span><input type="checkbox" name="waitlist" /></label>
+          </div>
+        </div>
+      </section>
+
+      <section data-settings-panel="payments" class="hidden space-y-6">
+        <!-- COUNTRY FEES & TAXES -->
+        <div class="settings-section-card">
+          <div class="settings-section-header">
+            <div>
+              <h2>Fees & Taxes</h2>
+              <p>
+                Configure country-specific taxes, platform fees, validity, and status.
+              </p>
+            </div>
+
+            <button type="button" data-settings-action="fee-preview" id="previewFeeButton" class="settings-text-button">
+              <i class="fa-solid fa-calculator"></i>
+              Preview Calculation
+            </button>
+          </div>
+
+          <div class="grid gap-5 p-5 sm:p-6 lg:grid-cols-2">
+            <!-- COUNTRY -->
+            <label class="settings-field">
+              <span>Country</span>
+
+              <select id="feeCountry" name="country" class="bomo-input w-full">
+                <option value="PH" selected>Philippines</option>
+                <option value="SG">Singapore</option>
+                <option value="MY">Malaysia</option>
+                <option value="TH">Thailand</option>
+                <option value="ID">Indonesia</option>
+                <option value="VN">Vietnam</option>
+                <option value="US">United States</option>
+              </select>
+            </label>
+
+            <!-- CURRENCY -->
+            <label class="settings-field">
+              <span>Currency</span>
+
+              <select id="feeCurrency" name="currency" class="bomo-input w-full">
+                <option value="PHP" selected>PHP — Philippine Peso</option>
+              </select>
+            </label>
+
+            <!-- RULE NAME -->
+            <label class="settings-field">
+              <span>Rule Name</span>
+
+              <input type="text" id="feeRuleName" name="ruleName" value="Philippines Standard Fees"
+                class="bomo-input w-full" />
+            </label>
+
+            <!-- STATUS -->
+            <label class="settings-field">
+              <span>Status</span>
+
+              <select id="feeStatus" name="status" class="bomo-input w-full">
+                <option value="draft">Draft</option>
+                <option value="scheduled">Scheduled</option>
+                <option value="active" selected>Active</option>
+                <option value="expired">Expired</option>
+                <option value="inactive">Inactive</option>
+              </select>
+            </label>
+
+            <!-- VALID FROM -->
+            <label class="settings-field">
+              <span>Valid From</span>
+
+              <input type="date" id="validFrom" name="validFrom" value="2026-01-01" class="bomo-input w-full" />
+            </label>
+
+            <!-- VALID UNTIL -->
+            <label class="settings-field">
+              <span>Valid Until</span>
+
+              <input type="date" id="validUntil" name="validUntil" value="2026-12-31" class="bomo-input w-full" />
+
+              <small class="text-xs text-slate-500">
+                Leave blank for no expiration date.
+              </small>
+            </label>
+
+            <!-- VAT -->
+            <label class="settings-field">
+              <span>VAT / Tax Rate</span>
+
+              <div class="settings-input-suffix">
+                <input type="number" id="vatRate" name="vat" min="0" max="100" step="0.01" value="12"
+                  class="bomo-input w-full" />
+                <em>%</em>
+              </div>
+            </label>
+
+            <!-- PLATFORM SERVICE FEE -->
+            <label class="settings-field">
+              <span>Platform Service Fee</span>
+
+              <div class="settings-input-suffix">
+                <input type="number" id="platformServiceFee" name="serviceFee" min="0" max="100" step="0.01" value="12"
+                  class="bomo-input w-full" />
+                <em>%</em>
+              </div>
+            </label>
+
+            <!-- PARTNER COMMISSION -->
+            <label class="settings-field">
+              <span>Default Partner Commission</span>
+
+              <div class="settings-input-suffix">
+                <input type="number" id="partnerCommission" name="commission" min="0" max="100" step="0.01" value="0"
+                  class="bomo-input w-full" />
+                <em>%</em>
+              </div>
+            </label>
+
+            <!-- PAYOUT HOLD -->
+            <label class="settings-field">
+              <span>Payout Hold Period</span>
+
+              <div class="settings-input-suffix">
+                <input type="number" id="payoutHold" name="payoutHold" min="0" max="90" value="2"
+                  class="bomo-input w-full" />
+                <em>days</em>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- PLATFORM FEE BREAKDOWN -->
+        <div class="settings-section-card">
+          <div class="settings-section-header">
+            <div>
+              <h2>Platform Service Fee Breakdown</h2>
+              <p>
+                Allocation must equal the configured platform service fee.
+              </p>
+            </div>
+
+            <span id="allocationStatus"
+              class="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+              <i class="fa-solid fa-circle-check mr-1.5"></i>
+              Allocation Valid
+            </span>
+          </div>
+
+          <div class="grid gap-5 p-5 sm:p-6 lg:grid-cols-3">
+            <!-- GUEST DISCOUNT -->
+            <label class="settings-field">
+              <span>Guest Discount Allocation</span>
+
+              <div class="settings-input-suffix">
+                <input type="number" id="guestDiscount" name="guestDiscount" min="0" max="100" step="0.01" value="2"
+                  class="bomo-input w-full fee-allocation" />
+                <em>%</em>
+              </div>
+
+              <small class="text-xs text-slate-500">
+                Allocated for guest discounts and incentives.
+              </small>
+            </label>
+
+            <!-- CREATOR REWARDS -->
+            <label class="settings-field">
+              <span>Creator Rewards Allocation</span>
+
+              <div class="settings-input-suffix">
+                <input type="number" id="creatorRewards" name="creatorRewards" min="0" max="100" step="0.01" value="2"
+                  class="bomo-input w-full fee-allocation" />
+                <em>%</em>
+              </div>
+
+              <small class="text-xs text-slate-500">
+                Allocated for qualified creator rewards.
+              </small>
+            </label>
+
+            <!-- BOMO FEE -->
+            <label class="settings-field">
+              <span>BOMO Platform Allocation</span>
+
+              <div class="settings-input-suffix">
+                <input type="number" id="bomoPlatformFee" name="bomoPlatformFee" min="0" max="100" step="0.01" value="8"
+                  class="bomo-input w-full fee-allocation" />
+                <em>%</em>
+              </div>
+
+              <small class="text-xs text-slate-500">
+                Net platform operating fee.
+              </small>
+            </label>
+          </div>
+
+          <div class="border-t border-slate-200 px-5 py-4 sm:px-6">
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  Total Allocation
+                </span>
+
+                <div class="mt-1 text-xl font-bold text-slate-900">
+                  <span id="allocationTotal">12.00</span>%
+                </div>
+              </div>
+
+              <div class="text-sm text-slate-500">
+                Required:
+                <strong id="requiredAllocation" class="text-slate-900">12.00%</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RULE SUMMARY -->
+        <div class="settings-section-card">
+          <div class="settings-section-header">
+            <div>
+              <h2>Rule Summary</h2>
+              <p>Current effective configuration for the selected country.</p>
+            </div>
+          </div>
+
+          <div class="grid gap-4 p-5 sm:grid-cols-2 sm:p-6 lg:grid-cols-4">
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+              <small class="text-xs text-slate-500">Country</small>
+              <strong id="summaryCountry" class="mt-1 block text-sm text-slate-900">
+                Philippines
+              </strong>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+              <small class="text-xs text-slate-500">VAT</small>
+              <strong id="summaryVat" class="mt-1 block text-sm text-slate-900">
+                12.00%
+              </strong>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+              <small class="text-xs text-slate-500">Service Fee</small>
+              <strong id="summaryServiceFee" class="mt-1 block text-sm text-slate-900">
+                12.00%
+              </strong>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+              <small class="text-xs text-slate-500">Status</small>
+              <strong id="summaryStatus" class="mt-1 block text-sm text-emerald-600">
+                Active
+              </strong>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:col-span-2">
+              <small class="text-xs text-slate-500">Period Covered</small>
+              <strong id="summaryValidity" class="mt-1 block text-sm text-slate-900">
+                January 1, 2026 – December 31, 2026
+              </strong>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:col-span-2">
+              <small class="text-xs text-slate-500">Fee Allocation</small>
+              <strong id="summaryAllocation" class="mt-1 block text-sm text-slate-900">
+                Guest 2% · Creators 2% · BOMO 8%
+              </strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAYMENT PROVIDER -->
+        <div class="settings-section-card">
+          <div class="settings-section-header">
+            <div>
+              <h2>Payment Provider</h2>
+              <p>Primary processor used for guest payments and refunds.</p>
+            </div>
+          </div>
+
+          <div class="p-5 sm:p-6">
+            <div class="flex flex-col gap-4 rounded-2xl border border-slate-200 p-4 sm:flex-row sm:items-center">
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                <i class="fa-solid fa-credit-card"></i>
+              </div>
+
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-2">
+                  <strong class="text-sm text-slate-900">Stripe</strong>
+                  <span class="settings-status-badge">Connected</span>
+                </div>
+
+                <p class="mt-1 text-xs text-slate-500">
+                  Production account •••• 4821
+                </p>
+              </div>
+
+              <button type="button" data-settings-action="manage-provider" class="settings-secondary-button">
+                Manage Provider
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+          <button type="button" class="settings-secondary-button" id="resetFeeSettings">
+            Reset
+          </button>
+
+          <button type="button" class="settings-primary-button" id="saveFeeSettings">
+            <i class="fa-solid fa-floppy-disk"></i>
+            Save Fee Rule
+          </button>
+        </div>
+      </section>
+
+      <section data-settings-panel="access" class="hidden space-y-6">
+        <div class="settings-section-card">
+          <div class="settings-section-header">
+            <div>
+              <h2>Platform safeguards</h2>
+              <p>Security and availability controls for the live platform.</p>
+            </div>
+          </div>
+          <div class="divide-y divide-slate-100 px-5 sm:px-6">
+            <label class="settings-toggle-row"><span><strong>Require two-factor authentication</strong><small>Enforce
+                  2FA for all platform administrators.</small></span><input type="checkbox" name="require2fa"
+                checked /></label>
+            <label class="settings-toggle-row"><span><strong>Partner identity verification</strong><small>Require
+                  verification before a property can accept bookings.</small></span><input type="checkbox"
+                name="partnerVerification" checked /></label>
+            <label class="settings-toggle-row"><span><strong>Automated fraud screening</strong><small>Review high-risk
+                  transactions before capture.</small></span><input type="checkbox" name="fraudScreening"
+                checked /></label>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-amber-200 bg-amber-50 p-5 sm:p-6">
+          <div class="flex flex-col gap-5 sm:flex-row sm:items-center">
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-700"><i
+                class="fa-solid fa-screwdriver-wrench"></i></div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-amber-950">Maintenance mode</h3>
+              <p class="mt-1 text-sm text-amber-800">Temporarily pause new guest bookings while keeping admin and
+                partner access available.</p>
+            </div>
+            <button type="button" data-settings-action="maintenance"
+              class="rounded-xl border border-amber-300 bg-white px-4 py-2.5 text-sm font-semibold text-amber-900 hover:bg-amber-100">Configure</button>
+          </div>
+        </div>
+      </section>
+    </form>
+
+    <aside class="space-y-5">
+      <section class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <div class="flex items-center justify-between">
+          <h2 class="text-base font-semibold">Configuration status</h2>
+          <span class="h-2.5 w-2.5 rounded-full bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,.12)]"></span>
+        </div>
+        <dl class="mt-5 space-y-4 text-sm">
+          <div class="flex items-center justify-between gap-3">
+            <dt class="text-slate-500">Environment</dt>
+            <dd class="font-semibold text-slate-900">Production</dd>
+          </div>
+          <div class="flex items-center justify-between gap-3">
+            <dt class="text-slate-500">Version</dt>
+            <dd class="font-semibold text-slate-900">v2.14.0</dd>
+          </div>
+          <div class="flex items-center justify-between gap-3">
+            <dt class="text-slate-500">Last saved</dt>
+            <dd data-settings-last-saved class="text-right font-semibold text-slate-900">Jul 26, 8:42 PM</dd>
+          </div>
+          <div class="flex items-center justify-between gap-3">
+            <dt class="text-slate-500">Saved by</dt>
+            <dd class="font-semibold text-slate-900">Administrator</dd>
+          </div>
+        </dl>
+      </section>
+      <section class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <h2 class="text-base font-semibold">Platform health</h2>
+        <div class="mt-4 space-y-3">
+          <div class="settings-health-row"><span><i class="fa-solid fa-circle"></i> Booking
+              API</span><strong>Operational</strong></div>
+          <div class="settings-health-row"><span><i class="fa-solid fa-circle"></i>
+              Payments</span><strong>Operational</strong></div>
+          <div class="settings-health-row"><span><i class="fa-solid fa-circle text-amber-500"></i> Email
+              delivery</span><strong class="!text-amber-700">Monitoring</strong></div>
+        </div>
+      </section>
+      <div class="rounded-2xl bg-blue-50 p-5">
+        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-100 text-blue-700"><i
+            class="fa-regular fa-lightbulb"></i></div>
+        <h3 class="mt-4 font-semibold text-blue-950">Before publishing</h3>
+        <p class="mt-2 text-sm leading-6 text-blue-800">Review customer-facing fee and policy changes with Operations.
+          All saved changes are recorded in history.</p>
+      </div>
+    </aside>
+  </div>
+</section>

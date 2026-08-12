@@ -1,0 +1,1887 @@
+<section class="space-y-8">
+  <div
+    class="bg-gradient-to-br from-slate-950 to-slate-800 rounded-[32px] p-8 lg:p-10 text-white overflow-hidden relative"
+  >
+    <div class="relative z-10">
+      <button
+        onclick="loadPg('property')"
+        class="text-orange-300 text-sm font-medium mb-4 hover:text-orange-200"
+      >
+        ← Back to Properties
+      </button>
+
+      <div
+        class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-6"
+      >
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span
+              class="px-3 py-1 rounded-full bg-green-500 text-white text-xs font-semibold"
+            >
+              Active
+            </span>
+
+            <span class="text-slate-300 text-sm">
+              Property ID: PROP-000018
+            </span>
+          </div>
+
+          <h1 class="text-4xl lg:text-5xl font-black">BOMO Makati Suites</h1>
+
+          <p class="text-slate-300 mt-3">
+            Makati City, Metro Manila, Philippines
+          </p>
+        </div>
+
+       <div class="flex flex-wrap items-center gap-3">
+  <button
+    type="button"
+    onclick="openModal('add-property')"
+    class="inline-flex h-12 items-center justify-center gap-2 px-5 rounded-xl border border-white/15 bg-white/5 text-sm font-semibold text-white hover:bg-white/10 hover:border-white/25 transition"
+  >
+    <i class="fa-solid fa-pen-to-square text-xs text-white/70"></i>
+    Edit Property
+  </button>
+
+  <button
+    type="button"
+    onclick="openModal('add-room')"
+    class="inline-flex h-12 items-center justify-center gap-2 px-5 rounded-xl bg-orange-500 text-sm font-semibold text-white hover:bg-orange-600 transition"
+  >
+    <i class="fa-solid fa-plus text-xs"></i>
+    Add Room Type
+  </button>
+
+  <a
+    href="javascript:void(0)"
+    onclick="
+      openPageModal(
+        'pages/room-rate-plan/index.html',
+        'All Rate Plans'
+      )
+    "
+    title="View all active and inactive rate plans for your assigned property."
+    class="inline-flex h-12 items-center justify-center gap-2 px-5 rounded-xl border border-white/15 bg-white/5 text-sm font-semibold text-white hover:bg-white/10 hover:border-white/25 transition"
+  >
+    <i class="fa-solid fa-tags text-xs text-white/70"></i>
+    View All Rate Plans
+    <i class="fa-solid fa-arrow-right text-[10px] text-white/40"></i>
+  </a>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="absolute top-0 right-0 w-[420px] h-[420px] bg-orange-500/10 rounded-full blur-3xl"
+    ></div>
+  </div>
+
+  <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+    <div class="bg-white rounded-[30px] p-6 shadow-sm">
+      <p class="text-sm text-slate-500">Total Rooms</p>
+      <h3 class="text-4xl font-black mt-3">240</h3>
+      <p class="text-xs text-slate-400 mt-2">Across all room types</p>
+    </div>
+
+    <div class="bg-white rounded-[30px] p-6 shadow-sm">
+      <p class="text-sm text-slate-500">Occupancy</p>
+      <h3 class="text-4xl font-black text-green-600 mt-3">96%</h3>
+      <p class="text-xs text-slate-400 mt-2">Current occupancy</p>
+    </div>
+
+    <div class="bg-white rounded-[30px] p-6 shadow-sm">
+      <p class="text-sm text-slate-500">Monthly Revenue</p>
+      <h3 class="text-4xl font-black mt-3">₱1.2M</h3>
+      <p class="text-xs text-slate-400 mt-2">This month</p>
+    </div>
+
+    <div class="bg-white rounded-[30px] p-6 shadow-sm">
+      <p class="text-sm text-slate-500">Guest Rating</p>
+      <h3 class="text-4xl font-black mt-3">4.9</h3>
+      <p class="text-xs text-slate-400 mt-2">Excellent</p>
+    </div>
+  </div>
+
+  <div
+    class="bg-white rounded-[30px] shadow-sm border border-slate-200 overflow-hidden"
+  >
+    <div class="p-6 lg:p-8 border-b border-slate-200">
+      <div
+        class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-5"
+      >
+        <div>
+          <div class="flex items-center gap-3">
+            <h2 class="text-2xl font-black text-slate-900">Rooms & Rates</h2>
+
+            <span
+              class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold"
+            >
+              2 Room Types
+            </span>
+          </div>
+
+          <p class="text-sm text-slate-500 mt-2 max-w-2xl">
+            Manage room inventory, pricing rules and nightly selling rates from
+            one place.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-3 sm:p-4 border-b border-slate-200 bg-slate-50/70">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <button
+          type="button"
+          data-room-tab="room-types"
+          onclick="switchRoomTab('room-types')"
+          class="room-tab group text-left p-4 rounded-2xl border border-orange-200 bg-white shadow-sm ring-2 ring-orange-500/10 transition"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              data-tab-icon
+              class="w-11 h-11 rounded-xl bg-orange-500 text-white flex items-center justify-center font-black"
+            >
+              01
+            </div>
+
+            <div class="min-w-0 flex-1">
+              <div data-tab-title class="font-bold text-orange-600">
+                Room Types
+              </div>
+
+              <p class="text-xs text-slate-500 mt-1">Inventory & base rates</p>
+            </div>
+
+            <span data-tab-arrow class="text-orange-500 text-xl"> → </span>
+          </div>
+        </button>
+
+        <button
+          type="button"
+          data-room-tab="rate-plans"
+          onclick="switchRoomTab('rate-plans')"
+          class="room-tab group text-left p-4 rounded-2xl border border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm transition"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              data-tab-icon
+              class="w-11 h-11 rounded-xl bg-slate-100 text-slate-500 flex items-center justify-center font-black"
+            >
+              02
+            </div>
+
+            <div class="min-w-0 flex-1">
+              <div data-tab-title class="font-bold text-slate-700">
+                Rate Plans
+              </div>
+
+              <p class="text-xs text-slate-500 mt-1">
+                Pricing rules & conditions
+              </p>
+            </div>
+
+            <span data-tab-arrow class="text-slate-300 text-xl"> → </span>
+          </div>
+        </button>
+
+        <button
+          type="button"
+          data-room-tab="rate-calendar"
+          onclick="switchRoomTab('rate-calendar')"
+          class="room-tab group text-left p-4 rounded-2xl border border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm transition"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              data-tab-icon
+              class="w-11 h-11 rounded-xl bg-slate-100 text-slate-500 flex items-center justify-center font-black"
+            >
+              03
+            </div>
+
+            <div class="min-w-0 flex-1">
+              <div data-tab-title class="font-bold text-slate-700">
+                Rate Calendar
+              </div>
+
+              <p class="text-xs text-slate-500 mt-1">Nightly rates by date</p>
+            </div>
+
+            <span data-tab-arrow class="text-slate-300 text-xl"> → </span>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <div id="room-types" class="room-tab-content">
+      <div class="p-6 lg:p-8">
+        <div
+          class="flex flex-col xl:flex-row xl:items-end xl:justify-between gap-5 mb-6"
+        >
+          <div>
+            <p
+              class="text-xs font-bold uppercase tracking-wider text-orange-600"
+            >
+              Inventory
+            </p>
+
+            <h3 class="text-xl font-black text-slate-900 mt-1">Room Types</h3>
+
+            <p class="text-sm text-slate-500 mt-1">
+              Manage room inventory, capacity and base rates.
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <div class="relative">
+              <i
+                class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"
+              ></i>
+
+              <input
+                type="search"
+                placeholder="Search room types..."
+                class="h-11 w-full sm:w-64 pl-10 pr-4 rounded-xl border border-slate-200 bg-white text-sm outline-none focus:border-orange-400 focus:ring-4 focus:ring-orange-100"
+              />
+            </div>
+
+            <button
+              type="button"
+              onclick="openModal('add-room')"
+              class="inline-flex h-11 items-center justify-center gap-2 px-5 rounded-xl bg-orange-500 text-white text-sm font-semibold hover:bg-orange-600 transition"
+            >
+              <i class="fa-solid fa-plus text-xs"></i>
+              Add Room Type
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="mb-6 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4"
+        >
+          <div class="flex items-start gap-3">
+            <div
+              class="flex w-9 h-9 shrink-0 items-center justify-center rounded-xl bg-white border border-slate-200 text-slate-500"
+            >
+              <i class="fa-solid fa-circle-info text-sm"></i>
+            </div>
+
+            <div>
+              <p class="text-sm font-semibold text-slate-800">
+                Base Rate and Rate Plans
+              </p>
+
+              <p class="text-sm text-slate-500 mt-1">
+                The Base Rate is the room's starting nightly price. Rate Plans
+                can adjust this price based on weekends, holidays, seasons and
+                other pricing conditions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROOMS / RATES -->
+
+        <div class="space-y-4">
+  <!-- Keep your existing Deluxe Room and Family Suite cards -->
+
+  <div class="group rounded-2xl border border-slate-200 bg-white p-5 hover:border-slate-300 hover:shadow-sm transition">
+    <div class="flex flex-col xl:flex-row xl:items-center gap-6">
+      <div class="flex items-start gap-4 xl:w-[27%] xl:min-w-[260px]">
+        <div class="flex w-14 h-14 shrink-0 items-center justify-center rounded-2xl bg-slate-100 text-slate-500">
+          <i class="fa-solid fa-bed text-xl"></i>
+        </div>
+
+        <div class="min-w-0">
+          <div class="flex flex-wrap items-center gap-2">
+            <h4 class="font-black text-lg text-slate-900">Superior Room</h4>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-50 text-green-700 text-xs font-bold">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+              Active
+            </span>
+          </div>
+
+          <p class="text-sm text-slate-500 mt-1.5">Queen Bed · Garden View</p>
+
+          <button
+            type="button"
+            onclick="openModal('add-room')"
+            class="inline-flex items-center gap-1.5 mt-3 text-sm font-semibold text-slate-600 hover:text-orange-600 transition"
+          >
+            <i class="fa-solid fa-pen text-xs"></i>
+            Edit room details
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 flex-1">
+        <div class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+          <p class="text-xs font-medium text-slate-500">Total Units</p>
+          <p class="text-lg font-black text-slate-900 mt-1">50</p>
+        </div>
+
+        <div class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+          <p class="text-xs font-medium text-slate-500">Capacity</p>
+          <p class="text-lg font-black text-slate-900 mt-1">2 Guests</p>
+        </div>
+
+        <div class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+          <p class="text-xs font-medium text-slate-500">Base Rate</p>
+          <p class="text-lg font-black text-slate-900 mt-1">₱5,500</p>
+          <p class="text-[11px] text-slate-400 mt-0.5">per night</p>
+        </div>
+
+        <div class="rounded-xl border border-green-100 bg-green-50 p-4">
+          <p class="text-xs font-medium text-green-700">Available</p>
+          <p class="text-lg font-black text-green-700 mt-1">18</p>
+          <p class="text-[11px] text-green-600 mt-0.5">rooms</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 xl:grid-cols-1 gap-2 xl:w-44 shrink-0">
+        <a
+          href="javascript:void(0)"
+          onclick="openPageModal('pages/room-rate-plan/form.html', 'Room Rate Plan')"
+          class="inline-flex h-11 w-full items-center justify-center gap-2 px-4 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-700 hover:border-orange-200 hover:bg-orange-50 hover:text-orange-600 transition"
+        >
+          <i class="fa-solid fa-pen-to-square text-xs"></i>
+          Edit Rate Plan
+        </a>
+
+        <button
+          type="button"
+          onclick="switchRoomTab('rate-plans')"
+          class="inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-700 hover:border-orange-200 hover:bg-orange-50 hover:text-orange-600 transition"
+        >
+          <span class="inline-flex min-w-6 h-6 items-center justify-center rounded-lg bg-slate-100 px-1.5 text-xs font-bold">4</span>
+          Rate Plans
+          <i class="fa-solid fa-chevron-right text-[10px] opacity-50"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="group rounded-2xl border border-slate-200 bg-white p-5 hover:border-slate-300 hover:shadow-sm transition">
+    <div class="flex flex-col xl:flex-row xl:items-center gap-6">
+      <div class="flex items-start gap-4 xl:w-[27%] xl:min-w-[260px]">
+        <div class="flex w-14 h-14 shrink-0 items-center justify-center rounded-2xl bg-slate-100 text-slate-500">
+          <i class="fa-solid fa-couch text-xl"></i>
+        </div>
+
+        <div class="min-w-0">
+          <div class="flex flex-wrap items-center gap-2">
+            <h4 class="font-black text-lg text-slate-900">Executive Suite</h4>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-50 text-green-700 text-xs font-bold">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+              Active
+            </span>
+          </div>
+
+          <p class="text-sm text-slate-500 mt-1.5">King Bed · Separate Living Area</p>
+
+          <button
+            type="button"
+            onclick="openModal('add-room')"
+            class="inline-flex items-center gap-1.5 mt-3 text-sm font-semibold text-slate-600 hover:text-orange-600 transition"
+          >
+            <i class="fa-solid fa-pen text-xs"></i>
+            Edit room details
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 flex-1">
+        <div class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+          <p class="text-xs font-medium text-slate-500">Total Units</p>
+          <p class="text-lg font-black text-slate-900 mt-1">20</p>
+        </div>
+
+        <div class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+          <p class="text-xs font-medium text-slate-500">Capacity</p>
+          <p class="text-lg font-black text-slate-900 mt-1">3 Guests</p>
+        </div>
+
+        <div class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+          <p class="text-xs font-medium text-slate-500">Base Rate</p>
+          <p class="text-lg font-black text-slate-900 mt-1">₱10,500</p>
+          <p class="text-[11px] text-slate-400 mt-0.5">per night</p>
+        </div>
+
+        <div class="rounded-xl border border-amber-100 bg-amber-50 p-4">
+          <p class="text-xs font-medium text-amber-700">Available</p>
+          <p class="text-lg font-black text-amber-700 mt-1">3</p>
+          <p class="text-[11px] text-amber-600 mt-0.5">rooms</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 xl:grid-cols-1 gap-2 xl:w-44 shrink-0">
+        <a
+          href="javascript:void(0)"
+          onclick="openPageModal('pages/room-rate-plan/form.html', 'Room Rate Plan')"
+          class="inline-flex h-11 w-full items-center justify-center gap-2 px-4 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-700 hover:border-orange-200 hover:bg-orange-50 hover:text-orange-600 transition"
+        >
+          <i class="fa-solid fa-pen-to-square text-xs"></i>
+          Edit Rate Plan
+        </a>
+
+        <button
+          type="button"
+          onclick="switchRoomTab('rate-plans')"
+          class="inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-700 hover:border-orange-200 hover:bg-orange-50 hover:text-orange-600 transition"
+        >
+          <span class="inline-flex min-w-6 h-6 items-center justify-center rounded-lg bg-slate-100 px-1.5 text-xs font-bold">5</span>
+          Rate Plans
+          <i class="fa-solid fa-chevron-right text-[10px] opacity-50"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="group rounded-2xl border border-slate-200 bg-white p-5 hover:border-slate-300 hover:shadow-sm transition">
+    <div class="flex flex-col xl:flex-row xl:items-center gap-6">
+      <div class="flex items-start gap-4 xl:w-[27%] xl:min-w-[260px]">
+        <div class="flex w-14 h-14 shrink-0 items-center justify-center rounded-2xl bg-slate-100 text-slate-500">
+          <i class="fa-solid fa-door-closed text-xl"></i>
+        </div>
+
+        <div class="min-w-0">
+          <div class="flex flex-wrap items-center gap-2">
+            <h4 class="font-black text-lg text-slate-900">Standard Twin Room</h4>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold">
+              <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+              Inactive
+            </span>
+          </div>
+
+          <p class="text-sm text-slate-500 mt-1.5">2 Single Beds · Interior View</p>
+
+          <button
+            type="button"
+            onclick="openModal('add-room')"
+            class="inline-flex items-center gap-1.5 mt-3 text-sm font-semibold text-slate-600 hover:text-orange-600 transition"
+          >
+            <i class="fa-solid fa-pen text-xs"></i>
+            Edit room details
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 flex-1">
+        <div class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+          <p class="text-xs font-medium text-slate-500">Total Units</p>
+          <p class="text-lg font-black text-slate-900 mt-1">40</p>
+        </div>
+
+        <div class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+          <p class="text-xs font-medium text-slate-500">Capacity</p>
+          <p class="text-lg font-black text-slate-900 mt-1">2 Guests</p>
+        </div>
+
+        <div class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+          <p class="text-xs font-medium text-slate-500">Base Rate</p>
+          <p class="text-lg font-black text-slate-900 mt-1">₱3,800</p>
+          <p class="text-[11px] text-slate-400 mt-0.5">per night</p>
+        </div>
+
+        <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+          <p class="text-xs font-medium text-slate-500">Available</p>
+          <p class="text-lg font-black text-slate-600 mt-1">0</p>
+          <p class="text-[11px] text-slate-400 mt-0.5">inactive</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 xl:grid-cols-1 gap-2 xl:w-44 shrink-0">
+        <a
+          href="javascript:void(0)"
+          onclick="openPageModal('pages/room-rate-plan/form.html', 'Room Rate Plan')"
+          class="inline-flex h-11 w-full items-center justify-center gap-2 px-4 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-700 hover:border-orange-200 hover:bg-orange-50 hover:text-orange-600 transition"
+        >
+          <i class="fa-solid fa-pen-to-square text-xs"></i>
+          Edit Rate Plan
+        </a>
+
+        <button
+          type="button"
+          onclick="switchRoomTab('rate-plans')"
+          class="inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-700 hover:border-orange-200 hover:bg-orange-50 hover:text-orange-600 transition"
+        >
+          <span class="inline-flex min-w-6 h-6 items-center justify-center rounded-lg bg-slate-100 px-1.5 text-xs font-bold">1</span>
+          Rate Plan
+          <i class="fa-solid fa-chevron-right text-[10px] opacity-50"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pagination -->
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-6 pt-5 border-t border-slate-200">
+  <div class="flex items-center gap-3">
+    <p class="text-sm text-slate-500">
+      Showing
+      <span class="font-bold text-slate-900">1</span>
+      to
+      <span class="font-bold text-slate-900">5</span>
+      of
+      <span class="font-bold text-slate-900">18</span>
+      room types
+    </p>
+
+    <select
+      id="roomPageSize"
+      class="hidden md:block h-9 rounded-lg border border-slate-200 bg-white px-3 text-xs font-semibold text-slate-600 outline-none focus:border-orange-400"
+    >
+      <option value="5">5 per page</option>
+      <option value="10">10 per page</option>
+      <option value="20">20 per page</option>
+    </select>
+  </div>
+
+  <nav class="flex items-center gap-1" aria-label="Room pagination">
+    <button
+      type="button"
+      disabled
+      class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-slate-300 cursor-not-allowed"
+      aria-label="Previous page"
+    >
+      <i class="fa-solid fa-chevron-left text-xs"></i>
+    </button>
+
+    <button
+      type="button"
+      class="inline-flex h-10 min-w-10 items-center justify-center rounded-xl bg-orange-600 px-3 text-sm font-bold text-white"
+    >
+      1
+    </button>
+
+    <button
+      type="button"
+      class="inline-flex h-10 min-w-10 items-center justify-center rounded-xl border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-600 hover:border-orange-200 hover:bg-orange-50 hover:text-orange-600 transition"
+    >
+      2
+    </button>
+
+    <button
+      type="button"
+      class="inline-flex h-10 min-w-10 items-center justify-center rounded-xl border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-600 hover:border-orange-200 hover:bg-orange-50 hover:text-orange-600 transition"
+    >
+      3
+    </button>
+
+    <span class="inline-flex h-10 min-w-8 items-center justify-center text-sm text-slate-400">
+      ...
+    </span>
+
+    <button
+      type="button"
+      class="inline-flex h-10 min-w-10 items-center justify-center rounded-xl border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-600 hover:border-orange-200 hover:bg-orange-50 hover:text-orange-600 transition"
+    >
+      4
+    </button>
+
+    <button
+      type="button"
+      class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-600 hover:border-orange-200 hover:bg-orange-50 hover:text-orange-600 transition"
+      aria-label="Next page"
+    >
+      <i class="fa-solid fa-chevron-right text-xs"></i>
+    </button>
+  </nav>
+</div>
+
+        <section class="mt-8 rounded-2xl border border-slate-200 bg-white p-5">
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <div class="flex flex-wrap items-center gap-2">
+                <h3 class="text-base font-black text-slate-900">Available / active promo and override plans</h3>
+                <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-bold text-slate-600">6 plan setups</span>
+              </div>
+              <p class="mt-1 text-sm text-slate-500">Review rate plans and their available promo or override rules for this property’s rooms.</p>
+            </div>
+            <button type="button" onclick="openPageModal('pages/room-rate-plan/index.html', 'All Rate Plans')" class="inline-flex h-10 items-center justify-center gap-2 rounded-xl border border-slate-200 px-4 text-sm font-semibold text-slate-700 hover:border-orange-200 hover:bg-orange-50 hover:text-orange-600 transition">
+              Manage all plans
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </button>
+          </div>
+
+          <div class="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+            <article class="rounded-xl border border-slate-200 bg-slate-50/70 p-4">
+              <div class="flex items-start justify-between gap-3"><div><h4 class="text-sm font-black text-slate-900">Flexible Rate</h4><p class="mt-1 text-xs text-slate-500">All rooms · Default fallback</p></div><span class="rounded-full bg-green-100 px-2 py-1 text-[10px] font-bold text-green-700">Active</span></div>
+              <div class="mt-3 flex items-center justify-between border-t border-slate-200 pt-3"><span class="text-xs font-semibold text-slate-500">Every day</span><div class="flex gap-3"><button type="button" onclick="openPageModal('pages/room-rate-plan/view.html?plan=standard', 'Rate Plan Report')" class="text-xs font-bold text-blue-600 hover:text-blue-700">View</button><button type="button" onclick="openPageModal('pages/room-rate-plan/form.html?plan=standard', 'Room Rate Plan')" class="text-xs font-bold text-orange-600 hover:text-orange-700">Edit</button></div></div>
+            </article>
+
+            <article class="rounded-xl border border-orange-200 bg-orange-50/50 p-4">
+              <div class="flex items-start justify-between gap-3"><div><h4 class="text-sm font-black text-slate-900">Weekend Escape</h4><p class="mt-1 text-xs text-slate-500">2 room types · Priority 20</p></div><span class="rounded-full bg-green-100 px-2 py-1 text-[10px] font-bold text-green-700">Active</span></div>
+              <div class="mt-3 flex items-center justify-between border-t border-orange-100 pt-3"><span class="text-xs font-semibold text-slate-500">Fri–Sun · 2+ nights</span><div class="flex gap-3"><button type="button" onclick="openPageModal('pages/room-rate-plan/view.html?plan=weekend', 'Rate Plan Report')" class="text-xs font-bold text-blue-600 hover:text-blue-700">View</button><button type="button" onclick="openPageModal('pages/room-rate-plan/form.html?plan=weekend', 'Room Rate Plan')" class="text-xs font-bold text-orange-600 hover:text-orange-700">Edit</button></div></div>
+            </article>
+
+            <article class="rounded-xl border border-blue-200 bg-blue-50/50 p-4">
+              <div class="flex items-start justify-between gap-3"><div><h4 class="text-sm font-black text-slate-900">Christmas &amp; New Year</h4><p class="mt-1 text-xs text-slate-500">2 room types · Priority 10</p></div><span class="rounded-full bg-blue-100 px-2 py-1 text-[10px] font-bold text-blue-700">Scheduled</span></div>
+              <div class="mt-3 flex items-center justify-between border-t border-blue-100 pt-3"><span class="text-xs font-semibold text-slate-500">Dec 20–Jan 2 · 3+ nights</span><div class="flex gap-3"><button type="button" onclick="openPageModal('pages/room-rate-plan/view.html?plan=holiday', 'Rate Plan Report')" class="text-xs font-bold text-blue-600 hover:text-blue-700">View</button><button type="button" onclick="openPageModal('pages/room-rate-plan/form.html?plan=holiday', 'Room Rate Plan')" class="text-xs font-bold text-orange-600 hover:text-orange-700">Edit</button></div></div>
+            </article>
+
+            <article class="rounded-xl border border-slate-200 bg-slate-50/70 p-4">
+              <div class="flex items-start justify-between gap-3"><div><h4 class="text-sm font-black text-slate-900">Corporate Preferred</h4><p class="mt-1 text-xs text-slate-500">2 room types · Priority 30</p></div><span class="rounded-full bg-amber-100 px-2 py-1 text-[10px] font-bold text-amber-700">Paused</span></div>
+              <div class="mt-3 flex items-center justify-between border-t border-slate-200 pt-3"><span class="text-xs font-semibold text-slate-500">Monday–Friday</span><div class="flex gap-3"><button type="button" onclick="openPageModal('pages/room-rate-plan/view.html?plan=corporate', 'Rate Plan Report')" class="text-xs font-bold text-blue-600 hover:text-blue-700">View</button><button type="button" onclick="openPageModal('pages/room-rate-plan/form.html?plan=corporate', 'Room Rate Plan')" class="text-xs font-bold text-orange-600 hover:text-orange-700">Edit</button></div></div>
+            </article>
+
+            <article class="rounded-xl border border-emerald-200 bg-emerald-50/50 p-4">
+              <div class="flex items-start justify-between gap-3"><div><h4 class="text-sm font-black text-slate-900">Early Bird — 30 Days</h4><p class="mt-1 text-xs text-slate-500">Premier Twin · Priority 40</p></div><span class="rounded-full bg-green-100 px-2 py-1 text-[10px] font-bold text-green-700">Active</span></div>
+              <div class="mt-3 flex items-center justify-between border-t border-emerald-100 pt-3"><span class="text-xs font-semibold text-slate-500">Book 30+ days ahead</span><div class="flex gap-3"><button type="button" onclick="openPageModal('pages/room-rate-plan/view.html?plan=advance', 'Rate Plan Report')" class="text-xs font-bold text-blue-600 hover:text-blue-700">View</button><button type="button" onclick="openPageModal('pages/room-rate-plan/form.html?plan=advance', 'Room Rate Plan')" class="text-xs font-bold text-orange-600 hover:text-orange-700">Edit</button></div></div>
+            </article>
+
+            <article class="rounded-xl border border-slate-200 bg-white p-4">
+              <div class="flex items-start justify-between gap-3"><div><h4 class="text-sm font-black text-slate-900">Summer Escape</h4><p class="mt-1 text-xs text-slate-500">2 room types · Priority 50</p></div><span class="rounded-full bg-slate-200 px-2 py-1 text-[10px] font-bold text-slate-600">Draft</span></div>
+              <div class="mt-3 flex items-center justify-between border-t border-slate-200 pt-3"><span class="text-xs font-semibold text-slate-500">Mar–May · 2+ nights</span><div class="flex gap-3"><button type="button" onclick="openPageModal('pages/room-rate-plan/view.html?plan=summer', 'Rate Plan Report')" class="text-xs font-bold text-blue-600 hover:text-blue-700">View</button><button type="button" onclick="openPageModal('pages/room-rate-plan/form.html?plan=summer', 'Room Rate Plan')" class="text-xs font-bold text-orange-600 hover:text-orange-700">Edit</button></div></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- ROOMS / RATES -->
+        
+      </div>
+    </div>
+
+    <div id="rate-plans" class="room-tab-content hidden">
+      <div class="p-6 lg:p-8">
+        <div
+          class="flex flex-col xl:flex-row xl:items-end xl:justify-between gap-5 mb-6"
+        >
+          <div>
+            <p
+              class="text-xs font-bold uppercase tracking-wider text-orange-600"
+            >
+              Pricing Rules
+            </p>
+
+            <h3 class="text-xl font-black text-slate-900 mt-1">Rate Plans</h3>
+            <div class="ic">
+              View all rate plans, including active, scheduled, paused, and draft plans.
+            </div>
+
+            <p class="text-sm text-slate-500 mt-1 max-w-2xl">
+              Each booking uses one eligible rate plan. Conditional plans are
+              selected by priority, with the default plan used as fallback.
+            </p>
+          </div>
+
+          <div
+            class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3"
+          >
+            <a
+              href="javascript:void(0)"
+              onclick="
+                openPageModal(
+                  'pages/room-rate-plan/index.html',
+                  'All Rate Plans',
+                )
+              "
+              title="View all active and inactive rate plans based on the user's assigned property."
+              class="inline-flex h-11 items-center justify-center gap-2 px-5 rounded-xl border border-slate-200 bg-white text-slate-700 text-sm font-semibold hover:border-orange-200 hover:bg-orange-50 hover:text-orange-600 transition"
+            >
+              <i class="fa-solid fa-list text-xs"></i>
+              View All Rate Plans
+            </a>
+
+            <a
+              href="javascript:void(0)"
+              onclick="
+                openPageModal(
+                  'pages/room-rate-plan/form.html',
+                  'Add Rate Plan',
+                )
+              "
+              class="inline-flex h-11 items-center justify-center gap-2 px-5 rounded-xl bg-orange-500 text-white text-sm font-semibold hover:bg-orange-600 transition"
+            >
+              <i class="fa-solid fa-plus text-xs"></i>
+              Add Rate Plan
+            </a>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 mb-6">
+          <div class="rounded-2xl border border-slate-200 bg-white p-5">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm font-medium text-slate-500">
+                  Active Rate Plans
+                </p>
+
+                <p class="text-3xl font-black text-slate-900 mt-2">3</p>
+              </div>
+
+              <div
+                class="flex w-11 h-11 items-center justify-center rounded-xl bg-orange-50 text-orange-600"
+              >
+                <i class="fa-solid fa-tags"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-white p-5">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm font-medium text-slate-500">
+                  Room Types Covered
+                </p>
+
+                <p class="text-3xl font-black text-slate-900 mt-2">2</p>
+              </div>
+
+              <div
+                class="flex w-11 h-11 items-center justify-center rounded-xl bg-slate-100 text-slate-600"
+              >
+                <i class="fa-solid fa-bed"></i>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="rounded-2xl border border-slate-200 bg-white p-5 sm:col-span-2 xl:col-span-1"
+          >
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <p class="text-sm font-medium text-slate-500">
+                  Upcoming Special Rate
+                </p>
+
+                <p class="text-lg font-black text-slate-900 mt-2">
+                  Holiday Rate
+                </p>
+
+                <p class="text-xs text-slate-500 mt-1">
+                  Starts December 20, 2026
+                </p>
+              </div>
+
+              <div
+                class="flex w-11 h-11 items-center justify-center rounded-xl bg-blue-50 text-blue-600"
+              >
+                <i class="fa-solid fa-calendar-day"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-5 flex items-start gap-3 rounded-xl border border-blue-200 bg-blue-50 p-4 text-sm text-slate-600">
+          <i class="fa-solid fa-code-branch mt-0.5 text-blue-600"></i>
+          <p class="m-0"><strong class="text-slate-900">Multiple plans can target the same room.</strong> Status and application rules determine eligibility; the smallest priority number applies first, and only one plan is applied.</p>
+        </div>
+
+        <div
+          class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 mb-5"
+        >
+          <div class="flex flex-col sm:flex-row gap-3">
+            <div class="relative">
+              <i
+                class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"
+              ></i>
+
+              <input
+                type="search"
+                placeholder="Search rate plans..."
+                class="h-11 w-full sm:w-64 pl-10 pr-4 rounded-xl border border-slate-200 bg-white text-sm outline-none focus:border-orange-400 focus:ring-4 focus:ring-orange-100"
+              />
+            </div>
+
+            <select
+              class="h-11 px-4 pr-10 rounded-xl border border-slate-200 bg-white text-sm font-medium text-slate-700 outline-none focus:border-orange-400"
+            >
+              <option>All Room Types</option>
+              <option>Deluxe Room</option>
+              <option>Family Suite</option>
+            </select>
+
+            <select
+              class="h-11 px-4 pr-10 rounded-xl border border-slate-200 bg-white text-sm font-medium text-slate-700 outline-none focus:border-orange-400"
+            >
+              <option>All Statuses</option>
+              <option>Active</option>
+              <option>Scheduled</option>
+              <option>Paused</option>
+              <option>Draft</option>
+              <option>Archived</option>
+            </select>
+          </div>
+
+          <p class="text-sm text-slate-500">
+            Showing <span class="font-bold text-slate-900">3</span> rate plans
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <div
+            class="group rounded-2xl border border-slate-200 bg-white p-5 hover:border-slate-300 hover:shadow-sm transition"
+          >
+            <div class="flex flex-col xl:flex-row xl:items-center gap-6">
+              <div class="flex items-start gap-4 xl:w-[30%] xl:min-w-[300px]">
+                <div
+                  class="flex w-12 h-12 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-slate-600"
+                >
+                  <i class="fa-solid fa-tag"></i>
+                </div>
+
+                <div class="min-w-0">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h4 class="font-black text-slate-900">Flexible Rate</h4>
+
+                    <span
+                      class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-50 text-green-700 text-xs font-bold"
+                    >
+                      <span
+                        class="w-1.5 h-1.5 rounded-full bg-green-500"
+                      ></span>
+                      Active
+                    </span>
+
+                    <span
+                      class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold"
+                    >
+                      Default
+                    </span>
+                  </div>
+
+                  <p class="text-sm text-slate-500 mt-2">
+                    Everyday fallback rate with free cancellation and breakfast.
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-3 flex-1">
+                <div class="rounded-xl bg-slate-50 p-3.5">
+                  <p class="text-xs text-slate-500">Applies To</p>
+
+                  <p class="text-sm font-bold text-slate-900 mt-1.5">
+                    All Room Types
+                  </p>
+                </div>
+
+                <div class="rounded-xl bg-slate-50 p-3.5">
+                  <p class="text-xs text-slate-500">Rate Type</p>
+
+                  <p class="text-sm font-bold text-slate-900 mt-1.5">
+                    Base Rate
+                  </p>
+                </div>
+
+                <div class="rounded-xl bg-slate-50 p-3.5">
+                  <p class="text-xs text-slate-500">Adjustment</p>
+
+                  <p class="text-sm font-bold text-slate-900 mt-1.5">
+                    No Adjustment
+                  </p>
+                </div>
+
+                <div class="rounded-xl bg-slate-50 p-3.5">
+                  <p class="text-xs text-slate-500">Effective</p>
+
+                  <p class="text-sm font-bold text-slate-900 mt-1.5">Always</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 xl:grid-cols-1 gap-2 xl:w-44 shrink-0">
+                <a
+                  href="javascript:void(0)"
+                  onclick="openPageModal('pages/room-rate-plan/view.html?plan=standard', 'Rate Plan Report')"
+                  class="inline-flex h-11 w-full items-center justify-center gap-2 px-4 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-700 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600 transition"
+                >
+                  <i class="fa-regular fa-eye text-xs"></i>
+                  View
+                </a>
+                <a
+                  href="javascript:void(0)"
+                  onclick="
+                    openPageModal(
+                      'pages/room-rate-plan/form.html?plan=standard',
+                      'Room Rate Plan',
+                    )
+                  "
+                  class="inline-flex h-11 w-full items-center justify-center gap-2 px-4 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-700 hover:border-orange-200 hover:bg-orange-50 hover:text-orange-600 transition"
+                >
+                  <i class="fa-solid fa-pen-to-square text-xs"></i>
+                  Edit Rate Plan
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="group rounded-2xl border border-orange-200 bg-orange-50/30 p-5 hover:border-orange-300 hover:shadow-sm transition"
+          >
+            <div class="flex flex-col xl:flex-row xl:items-center gap-6">
+              <div class="flex items-start gap-4 xl:w-[30%] xl:min-w-[300px]">
+                <div
+                  class="flex w-12 h-12 shrink-0 items-center justify-center rounded-xl bg-orange-100 text-orange-600"
+                >
+                  <i class="fa-solid fa-calendar-week"></i>
+                </div>
+
+                <div class="min-w-0">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h4 class="font-black text-slate-900">Weekend Escape</h4>
+
+                    <span
+                      class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-50 text-green-700 text-xs font-bold"
+                    >
+                      <span
+                        class="w-1.5 h-1.5 rounded-full bg-green-500"
+                      ></span>
+                      Active
+                    </span>
+                  </div>
+
+                  <p class="text-sm text-slate-500 mt-2">
+                    Weekend offer for couples staying two nights or longer.
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-3 flex-1">
+                <div class="rounded-xl bg-white p-3.5">
+                  <p class="text-xs text-slate-500">Applies To</p>
+
+                  <p class="text-sm font-bold text-slate-900 mt-1.5">
+                    2 room types
+                  </p>
+                </div>
+
+                <div class="rounded-xl bg-white p-3.5">
+                  <p class="text-xs text-slate-500">Rate Type</p>
+
+                  <p class="text-sm font-bold text-slate-900 mt-1.5">Weekend</p>
+                </div>
+
+                <div class="rounded-xl bg-white p-3.5">
+                  <p class="text-xs text-slate-500">Adjustment</p>
+
+                  <p class="text-sm font-black text-orange-600 mt-1.5">
+                    + 8%
+                  </p>
+                </div>
+
+                <div class="rounded-xl bg-white p-3.5">
+                  <p class="text-xs text-slate-500">Effective</p>
+
+                  <p class="text-sm font-bold text-slate-900 mt-1.5">
+                    Friday to Sunday
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 xl:grid-cols-1 gap-2 xl:w-44 shrink-0">
+                <a
+                  href="javascript:void(0)"
+                  onclick="openPageModal('pages/room-rate-plan/view.html?plan=weekend', 'Rate Plan Report')"
+                  class="inline-flex h-11 w-full items-center justify-center gap-2 px-4 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-700 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600 transition"
+                >
+                  <i class="fa-regular fa-eye text-xs"></i>
+                  View
+                </a>
+                <a
+                  href="javascript:void(0)"
+                  onclick="
+                    openPageModal(
+                      'pages/room-rate-plan/form.html?plan=weekend',
+                      'Room Rate Plan',
+                    )
+                  "
+                  class="inline-flex h-11 w-full items-center justify-center gap-2 px-4 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-700 hover:border-orange-200 hover:bg-orange-50 hover:text-orange-600 transition"
+                >
+                  <i class="fa-solid fa-pen-to-square text-xs"></i>
+                  Edit Rate Plan
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="group rounded-2xl border border-slate-200 bg-white p-5 hover:border-slate-300 hover:shadow-sm transition"
+          >
+            <div class="flex flex-col xl:flex-row xl:items-center gap-6">
+              <div class="flex items-start gap-4 xl:w-[30%] xl:min-w-[300px]">
+                <div
+                  class="flex w-12 h-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600"
+                >
+                  <i class="fa-solid fa-calendar-days"></i>
+                </div>
+
+                <div class="min-w-0">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h4 class="font-black text-slate-900">Christmas &amp; New Year</h4>
+
+                    <span
+                      class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold"
+                    >
+                      <span
+                        class="w-1.5 h-1.5 rounded-full bg-blue-500"
+                      ></span>
+                      Scheduled
+                    </span>
+
+                  </div>
+
+                  <p class="text-sm text-slate-500 mt-2">
+                    Three-night peak-season package for December 20 to January 2.
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-3 flex-1">
+                <div class="rounded-xl bg-slate-50 p-3.5">
+                  <p class="text-xs text-slate-500">Applies To</p>
+
+                  <p class="text-sm font-bold text-slate-900 mt-1.5">
+                    2 room types
+                  </p>
+                </div>
+
+                <div class="rounded-xl bg-slate-50 p-3.5">
+                  <p class="text-xs text-slate-500">Rate Type</p>
+
+                  <p class="text-sm font-bold text-slate-900 mt-1.5">
+                    Date Range
+                  </p>
+                </div>
+
+                <div class="rounded-xl bg-slate-50 p-3.5">
+                  <p class="text-xs text-slate-500">Adjustment</p>
+
+                  <p class="text-sm font-black text-orange-600 mt-1.5">+ 25%</p>
+                </div>
+
+                <div class="rounded-xl bg-slate-50 p-3.5">
+                  <p class="text-xs text-slate-500">Effective</p>
+
+                  <p class="text-sm font-bold text-slate-900 mt-1.5">
+                    Dec 20, 2026 to Jan 2, 2027
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 xl:grid-cols-1 gap-2 xl:w-44 shrink-0">
+                <a
+                  href="javascript:void(0)"
+                  onclick="openPageModal('pages/room-rate-plan/view.html?plan=holiday', 'Rate Plan Report')"
+                  class="inline-flex h-11 w-full items-center justify-center gap-2 px-4 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-700 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600 transition"
+                >
+                  <i class="fa-regular fa-eye text-xs"></i>
+                  View
+                </a>
+                <a
+                  href="javascript:void(0)"
+                  onclick="
+                    openPageModal(
+                      'pages/room-rate-plan/form.html?plan=holiday',
+                      'Room Rate Plan',
+                    )
+                  "
+                  class="inline-flex h-11 w-full items-center justify-center gap-2 px-4 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-700 hover:border-orange-200 hover:bg-orange-50 hover:text-orange-600 transition"
+                >
+                  <i class="fa-solid fa-pen-to-square text-xs"></i>
+                  Edit Rate Plan
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <div class="flex items-start gap-3">
+            <div
+              class="flex w-9 h-9 shrink-0 items-center justify-center rounded-xl bg-white border border-slate-200 text-slate-500"
+            >
+              <i class="fa-solid fa-calculator text-sm"></i>
+            </div>
+
+            <div>
+              <p class="text-sm font-bold text-slate-900">
+                How rate plans affect pricing
+              </p>
+
+              <p class="text-sm text-slate-500 mt-1">
+                The applicable rate plan adjusts the room's Base Rate according
+                to its configured pricing rule and effective schedule. The
+                resulting amount becomes the nightly rate shown in the Rate
+                Calendar.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="rate-calendar" class="room-tab-content hidden">
+      <div class="p-6 lg:p-8">
+        <div
+          class="flex flex-col xl:flex-row xl:items-end xl:justify-between gap-5 mb-6"
+        >
+          <div>
+            <p
+              class="text-xs font-bold uppercase tracking-wider text-orange-600"
+            >
+              Daily Pricing
+            </p>
+
+            <h3 class="text-xl font-black text-slate-900 mt-1">
+              Rate Calendar
+            </h3>
+
+            <p class="text-sm text-slate-500 mt-1 max-w-2xl">
+              Review final nightly rates, applied pricing rules and room
+              availability by date.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <select
+              class="h-11 px-4 pr-10 rounded-xl border border-slate-200 bg-white text-sm font-medium text-slate-700 outline-none focus:border-orange-400 focus:ring-4 focus:ring-orange-100"
+            >
+              <option>All Room Types</option>
+              <option>Deluxe Room</option>
+              <option>Family Suite</option>
+            </select>
+
+            <button
+              type="button"
+              class="h-11 px-4 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-700 hover:bg-slate-50 transition"
+            >
+              Today
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-5"
+        >
+          <div
+            class="inline-flex items-center gap-1 p-1 rounded-xl bg-slate-100 w-fit"
+          >
+            <button
+              type="button"
+              class="h-9 px-4 rounded-lg bg-white shadow-sm text-sm font-bold text-slate-900"
+            >
+              Week
+            </button>
+
+            <button
+              type="button"
+              class="h-9 px-4 rounded-lg text-sm font-semibold text-slate-500 hover:text-slate-900"
+            >
+              Month
+            </button>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button
+              type="button"
+              aria-label="Previous week"
+              class="inline-flex w-11 h-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 transition"
+            >
+              <i class="fa-solid fa-chevron-left text-xs"></i>
+            </button>
+
+            <button
+              type="button"
+              class="inline-flex h-11 min-w-[220px] items-center justify-center gap-2 px-5 rounded-xl border border-slate-200 bg-white text-sm font-bold text-slate-900"
+            >
+              <i class="fa-regular fa-calendar text-slate-400"></i>
+              July 13 to 19, 2026
+            </button>
+
+            <button
+              type="button"
+              aria-label="Next week"
+              class="inline-flex w-11 h-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 transition"
+            >
+              <i class="fa-solid fa-chevron-right text-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-wrap items-center gap-x-6 gap-y-2 mb-4 text-xs text-slate-500"
+        >
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span>
+            Base Rate
+          </div>
+
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+            Adjusted Rate
+          </div>
+
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
+            Available
+          </div>
+
+          <p class="sm:ml-auto text-slate-400">
+            Select a rate cell to view pricing details.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full min-w-[1150px] border-collapse">
+              <thead>
+                <tr class="border-b border-slate-200">
+                  <th
+                    class="sticky left-0 z-20 min-w-[230px] bg-slate-50 px-5 py-4 text-left"
+                  >
+                    <p
+                      class="text-xs font-bold uppercase tracking-wide text-slate-500"
+                    >
+                      Room Type
+                    </p>
+                  </th>
+
+                  <th class="min-w-[130px] bg-slate-50 px-2 py-4 text-center">
+                    <p
+                      class="text-[11px] font-bold uppercase tracking-wide text-slate-400"
+                    >
+                      Mon
+                    </p>
+
+                    <p class="text-sm font-black text-slate-900 mt-1">Jul 13</p>
+                  </th>
+
+                  <th class="min-w-[130px] bg-slate-50 px-2 py-4 text-center">
+                    <p
+                      class="text-[11px] font-bold uppercase tracking-wide text-slate-400"
+                    >
+                      Tue
+                    </p>
+
+                    <p class="text-sm font-black text-slate-900 mt-1">Jul 14</p>
+                  </th>
+
+                  <th class="min-w-[130px] bg-slate-50 px-2 py-4 text-center">
+                    <p
+                      class="text-[11px] font-bold uppercase tracking-wide text-slate-400"
+                    >
+                      Wed
+                    </p>
+
+                    <p class="text-sm font-black text-slate-900 mt-1">Jul 15</p>
+                  </th>
+
+                  <th class="min-w-[130px] bg-slate-50 px-2 py-4 text-center">
+                    <p
+                      class="text-[11px] font-bold uppercase tracking-wide text-slate-400"
+                    >
+                      Thu
+                    </p>
+
+                    <p class="text-sm font-black text-slate-900 mt-1">Jul 16</p>
+                  </th>
+
+                  <th class="min-w-[130px] bg-slate-50 px-2 py-4 text-center">
+                    <p
+                      class="text-[11px] font-bold uppercase tracking-wide text-slate-400"
+                    >
+                      Fri
+                    </p>
+
+                    <p class="text-sm font-black text-slate-900 mt-1">Jul 17</p>
+                  </th>
+
+                  <th class="min-w-[130px] bg-orange-50 px-2 py-4 text-center">
+                    <p
+                      class="text-[11px] font-bold uppercase tracking-wide text-orange-500"
+                    >
+                      Sat
+                    </p>
+
+                    <p class="text-sm font-black text-slate-900 mt-1">Jul 18</p>
+                  </th>
+
+                  <th class="min-w-[130px] bg-orange-50 px-2 py-4 text-center">
+                    <p
+                      class="text-[11px] font-bold uppercase tracking-wide text-orange-500"
+                    >
+                      Sun
+                    </p>
+
+                    <p class="text-sm font-black text-slate-900 mt-1">Jul 19</p>
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr class="border-b border-slate-200">
+                  <td
+                    class="sticky left-0 z-10 bg-white px-5 py-5 border-r border-slate-200"
+                  >
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="flex w-10 h-10 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-slate-500"
+                      >
+                        <i class="fa-solid fa-bed text-sm"></i>
+                      </div>
+
+                      <div>
+                        <p class="font-black text-slate-900">Deluxe Room</p>
+
+                        <p class="text-xs text-slate-500 mt-1">
+                          Base Rate
+                          <span class="font-bold text-slate-700"> ₱4,500 </span>
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td class="p-2">
+                    <button
+                      type="button"
+                      class="w-full min-h-[105px] rounded-xl p-3 text-center hover:bg-slate-50 transition"
+                    >
+                      <p class="text-base font-black text-slate-900">₱4,500</p>
+
+                      <p class="text-[11px] text-slate-400 mt-1">Base Rate</p>
+
+                      <div
+                        class="flex items-center justify-center gap-1.5 mt-3"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-green-500"
+                        ></span>
+
+                        <span class="text-[11px] font-semibold text-green-700">
+                          12 available
+                        </span>
+                      </div>
+                    </button>
+                  </td>
+
+                  <td class="p-2">
+                    <button
+                      type="button"
+                      class="w-full min-h-[105px] rounded-xl p-3 text-center hover:bg-slate-50 transition"
+                    >
+                      <p class="text-base font-black text-slate-900">₱4,500</p>
+
+                      <p class="text-[11px] text-slate-400 mt-1">Base Rate</p>
+
+                      <div
+                        class="flex items-center justify-center gap-1.5 mt-3"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-green-500"
+                        ></span>
+
+                        <span class="text-[11px] font-semibold text-green-700">
+                          10 available
+                        </span>
+                      </div>
+                    </button>
+                  </td>
+
+                  <td class="p-2">
+                    <button
+                      type="button"
+                      class="w-full min-h-[105px] rounded-xl p-3 text-center hover:bg-slate-50 transition"
+                    >
+                      <p class="text-base font-black text-slate-900">₱4,500</p>
+
+                      <p class="text-[11px] text-slate-400 mt-1">Base Rate</p>
+
+                      <div
+                        class="flex items-center justify-center gap-1.5 mt-3"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-green-500"
+                        ></span>
+
+                        <span class="text-[11px] font-semibold text-green-700">
+                          8 available
+                        </span>
+                      </div>
+                    </button>
+                  </td>
+
+                  <td class="p-2">
+                    <button
+                      type="button"
+                      class="w-full min-h-[105px] rounded-xl p-3 text-center hover:bg-slate-50 transition"
+                    >
+                      <p class="text-base font-black text-slate-900">₱4,500</p>
+
+                      <p class="text-[11px] text-slate-400 mt-1">Base Rate</p>
+
+                      <div
+                        class="flex items-center justify-center gap-1.5 mt-3"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-green-500"
+                        ></span>
+
+                        <span class="text-[11px] font-semibold text-green-700">
+                          9 available
+                        </span>
+                      </div>
+                    </button>
+                  </td>
+
+                  <td class="p-2">
+                    <button
+                      type="button"
+                      class="w-full min-h-[105px] rounded-xl p-3 text-center hover:bg-slate-50 transition"
+                    >
+                      <p class="text-base font-black text-slate-900">₱4,500</p>
+
+                      <p class="text-[11px] text-slate-400 mt-1">Base Rate</p>
+
+                      <div
+                        class="flex items-center justify-center gap-1.5 mt-3"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-green-500"
+                        ></span>
+
+                        <span class="text-[11px] font-semibold text-green-700">
+                          7 available
+                        </span>
+                      </div>
+                    </button>
+                  </td>
+
+                  <td class="p-2 bg-orange-50/30">
+                    <button
+                      type="button"
+                      class="w-full min-h-[105px] rounded-xl border border-orange-200 bg-orange-50 p-3 text-center hover:border-orange-300 hover:bg-orange-100/60 transition"
+                    >
+                      <p class="text-base font-black text-orange-600">₱5,000</p>
+
+                      <span
+                        class="inline-flex mt-1.5 px-2 py-0.5 rounded-md bg-white text-[10px] font-bold text-orange-600"
+                      >
+                        Weekend Rate
+                      </span>
+
+                      <div
+                        class="flex items-center justify-center gap-1.5 mt-2.5"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-green-500"
+                        ></span>
+
+                        <span class="text-[11px] font-semibold text-green-700">
+                          6 available
+                        </span>
+                      </div>
+                    </button>
+                  </td>
+
+                  <td class="p-2 bg-orange-50/30">
+                    <button
+                      type="button"
+                      class="w-full min-h-[105px] rounded-xl border border-orange-200 bg-orange-50 p-3 text-center hover:border-orange-300 hover:bg-orange-100/60 transition"
+                    >
+                      <p class="text-base font-black text-orange-600">₱5,000</p>
+
+                      <span
+                        class="inline-flex mt-1.5 px-2 py-0.5 rounded-md bg-white text-[10px] font-bold text-orange-600"
+                      >
+                        Weekend Rate
+                      </span>
+
+                      <div
+                        class="flex items-center justify-center gap-1.5 mt-2.5"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-green-500"
+                        ></span>
+
+                        <span class="text-[11px] font-semibold text-green-700">
+                          5 available
+                        </span>
+                      </div>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td
+                    class="sticky left-0 z-10 bg-white px-5 py-5 border-r border-slate-200"
+                  >
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="flex w-10 h-10 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-slate-500"
+                      >
+                        <i class="fa-solid fa-bed text-sm"></i>
+                      </div>
+
+                      <div>
+                        <p class="font-black text-slate-900">Family Suite</p>
+
+                        <p class="text-xs text-slate-500 mt-1">
+                          Base Rate
+                          <span class="font-bold text-slate-700"> ₱8,500 </span>
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td class="p-2">
+                    <button
+                      type="button"
+                      class="w-full min-h-[105px] rounded-xl p-3 text-center hover:bg-slate-50 transition"
+                    >
+                      <p class="text-base font-black text-slate-900">₱8,500</p>
+                      <p class="text-[11px] text-slate-400 mt-1">Base Rate</p>
+
+                      <div
+                        class="flex items-center justify-center gap-1.5 mt-3"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-green-500"
+                        ></span>
+                        <span class="text-[11px] font-semibold text-green-700">
+                          6 available
+                        </span>
+                      </div>
+                    </button>
+                  </td>
+
+                  <td class="p-2">
+                    <button
+                      type="button"
+                      class="w-full min-h-[105px] rounded-xl p-3 text-center hover:bg-slate-50 transition"
+                    >
+                      <p class="text-base font-black text-slate-900">₱8,500</p>
+                      <p class="text-[11px] text-slate-400 mt-1">Base Rate</p>
+
+                      <div
+                        class="flex items-center justify-center gap-1.5 mt-3"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-green-500"
+                        ></span>
+                        <span class="text-[11px] font-semibold text-green-700">
+                          6 available
+                        </span>
+                      </div>
+                    </button>
+                  </td>
+
+                  <td class="p-2">
+                    <button
+                      type="button"
+                      class="w-full min-h-[105px] rounded-xl p-3 text-center hover:bg-slate-50 transition"
+                    >
+                      <p class="text-base font-black text-slate-900">₱8,500</p>
+                      <p class="text-[11px] text-slate-400 mt-1">Base Rate</p>
+
+                      <div
+                        class="flex items-center justify-center gap-1.5 mt-3"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-green-500"
+                        ></span>
+                        <span class="text-[11px] font-semibold text-green-700">
+                          5 available
+                        </span>
+                      </div>
+                    </button>
+                  </td>
+
+                  <td class="p-2">
+                    <button
+                      type="button"
+                      class="w-full min-h-[105px] rounded-xl p-3 text-center hover:bg-slate-50 transition"
+                    >
+                      <p class="text-base font-black text-slate-900">₱8,500</p>
+                      <p class="text-[11px] text-slate-400 mt-1">Base Rate</p>
+
+                      <div
+                        class="flex items-center justify-center gap-1.5 mt-3"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-green-500"
+                        ></span>
+                        <span class="text-[11px] font-semibold text-green-700">
+                          4 available
+                        </span>
+                      </div>
+                    </button>
+                  </td>
+
+                  <td class="p-2">
+                    <button
+                      type="button"
+                      class="w-full min-h-[105px] rounded-xl p-3 text-center hover:bg-slate-50 transition"
+                    >
+                      <p class="text-base font-black text-slate-900">₱8,500</p>
+                      <p class="text-[11px] text-slate-400 mt-1">Base Rate</p>
+
+                      <div
+                        class="flex items-center justify-center gap-1.5 mt-3"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-green-500"
+                        ></span>
+                        <span class="text-[11px] font-semibold text-green-700">
+                          4 available
+                        </span>
+                      </div>
+                    </button>
+                  </td>
+
+                  <td class="p-2 bg-orange-50/20">
+                    <button
+                      type="button"
+                      class="w-full min-h-[105px] rounded-xl p-3 text-center hover:bg-orange-50 transition"
+                    >
+                      <p class="text-base font-black text-slate-900">₱8,500</p>
+                      <p class="text-[11px] text-slate-400 mt-1">Base Rate</p>
+
+                      <div
+                        class="flex items-center justify-center gap-1.5 mt-3"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-green-500"
+                        ></span>
+                        <span class="text-[11px] font-semibold text-green-700">
+                          3 available
+                        </span>
+                      </div>
+                    </button>
+                  </td>
+
+                  <td class="p-2 bg-orange-50/20">
+                    <button
+                      type="button"
+                      class="w-full min-h-[105px] rounded-xl p-3 text-center hover:bg-orange-50 transition"
+                    >
+                      <p class="text-base font-black text-slate-900">₱8,500</p>
+                      <p class="text-[11px] text-slate-400 mt-1">Base Rate</p>
+
+                      <div
+                        class="flex items-center justify-center gap-1.5 mt-3"
+                      >
+                        <span
+                          class="w-1.5 h-1.5 rounded-full bg-green-500"
+                        ></span>
+                        <span class="text-[11px] font-semibold text-green-700">
+                          3 available
+                        </span>
+                      </div>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <div class="flex items-start gap-3">
+            <div
+              class="flex w-9 h-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500"
+            >
+              <i class="fa-solid fa-calculator text-sm"></i>
+            </div>
+
+            <div>
+              <p class="text-sm font-bold text-slate-900">
+                How the nightly rate is calculated
+              </p>
+
+              <p class="text-sm text-slate-500 mt-1">
+                The room's Base Rate is adjusted by the applicable Rate Plan for
+                that date. The resulting amount is displayed as the Final
+                Nightly Rate.
+              </p>
+
+              <div
+                class="flex flex-wrap items-center gap-2 mt-3 text-xs font-semibold"
+              >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-700"
+                >
+                  Base Rate
+                </span>
+
+                <span class="text-slate-400">+</span>
+
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-700"
+                >
+                  Rate Plan Adjustment
+                </span>
+
+                <span class="text-slate-400">=</span>
+
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-orange-50 border border-orange-200 text-orange-700"
+                >
+                  Final Nightly Rate
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="page-modal" class="fixed inset-0 z-[9999] hidden" aria-hidden="true">
+  <div
+    class="absolute inset-0 bg-slate-950/60 backdrop-blur-sm"
+    onclick="closePageModal()"
+  ></div>
+
+  <div
+    class="relative flex h-full w-full items-center justify-center p-3 sm:p-5 lg:p-8"
+  >
+    <div
+      class="relative flex h-[94vh] w-full max-w-[1500px] flex-col overflow-hidden rounded-[24px] bg-white shadow-2xl"
+      onclick="event.stopPropagation()"
+    >
+      <div
+        class="flex h-16 shrink-0 items-center justify-between border-b border-slate-200 px-5 lg:px-6"
+      >
+        <div class="min-w-0">
+          <h3
+            id="page-modal-title"
+            class="truncate text-lg font-bold text-slate-900"
+          >
+            Room Rate Plan
+          </h3>
+        </div>
+
+        <button
+          type="button"
+          onclick="closePageModal()"
+          class="flex h-10 w-10 items-center justify-center rounded-xl text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition"
+          aria-label="Close modal"
+        >
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <div class="relative flex-1 overflow-hidden">
+        <div
+          id="page-modal-loader"
+          class="absolute inset-0 z-10 flex items-center justify-center bg-white"
+        >
+          <div class="text-center">
+            <i class="fa-solid fa-spinner fa-spin text-2xl text-orange-500"></i>
+
+            <p class="mt-3 text-sm font-medium text-slate-500">Loading...</p>
+          </div>
+        </div>
+
+        <iframe
+          id="page-modal-frame"
+          src=""
+          class="h-full w-full border-0"
+          onload="pageModalLoaded()"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openPageModal(url, title = "Details") {
+    const modal = document.getElementById("page-modal");
+    const frame = document.getElementById("page-modal-frame");
+    const loader = document.getElementById("page-modal-loader");
+    const modalTitle = document.getElementById("page-modal-title");
+
+    modalTitle.textContent = title;
+    loader.classList.remove("hidden");
+    frame.src = url;
+
+    modal.classList.remove("hidden");
+    modal.setAttribute("aria-hidden", "false");
+
+    document.body.style.overflow = "hidden";
+  }
+
+  function pageModalLoaded() {
+    document.getElementById("page-modal-loader").classList.add("hidden");
+  }
+
+  function closePageModal() {
+    const modal = document.getElementById("page-modal");
+    const frame = document.getElementById("page-modal-frame");
+
+    modal.classList.add("hidden");
+    modal.setAttribute("aria-hidden", "true");
+
+    document.body.style.overflow = "";
+
+    setTimeout(function () {
+      frame.src = "";
+    }, 200);
+  }
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closePageModal();
+    }
+  });
+</script>
+<script>
+  function switchRoomTab(tabId) {
+    document.querySelectorAll(".room-tab-content").forEach(function (content) {
+      content.classList.add("hidden");
+    });
+
+    document.querySelectorAll(".room-tab").forEach(function (tab) {
+      tab.classList.remove(
+        "border-orange-200",
+        "shadow-sm",
+        "ring-2",
+        "ring-orange-500/10",
+      );
+
+      tab.classList.add("border-slate-200");
+
+      const icon = tab.querySelector("[data-tab-icon]");
+      const title = tab.querySelector("[data-tab-title]");
+      const arrow = tab.querySelector("[data-tab-arrow]");
+
+      icon.classList.remove("bg-orange-500", "text-white");
+      icon.classList.add("bg-slate-100", "text-slate-500");
+
+      title.classList.remove("text-orange-600");
+      title.classList.add("text-slate-700");
+
+      arrow.classList.remove("text-orange-500");
+      arrow.classList.add("text-slate-300");
+    });
+
+    const content = document.getElementById(tabId);
+    const activeTab = document.querySelector('[data-room-tab="' + tabId + '"]');
+
+    if (!content || !activeTab) return;
+
+    content.classList.remove("hidden");
+
+    activeTab.classList.remove("border-slate-200");
+    activeTab.classList.add(
+      "border-orange-200",
+      "shadow-sm",
+      "ring-2",
+      "ring-orange-500/10",
+    );
+
+    const icon = activeTab.querySelector("[data-tab-icon]");
+    const title = activeTab.querySelector("[data-tab-title]");
+    const arrow = activeTab.querySelector("[data-tab-arrow]");
+
+    icon.classList.remove("bg-slate-100", "text-slate-500");
+    icon.classList.add("bg-orange-500", "text-white");
+
+    title.classList.remove("text-slate-700");
+    title.classList.add("text-orange-600");
+
+    arrow.classList.remove("text-slate-300");
+    arrow.classList.add("text-orange-500");
+  }
+</script>

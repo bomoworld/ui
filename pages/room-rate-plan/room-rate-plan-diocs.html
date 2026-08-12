@@ -1,0 +1,1291 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BOMO Room Rate Plan Guide</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #64748b;
+      --line: #dce4ee;
+      --soft-line: #edf1f5;
+      --page: #f4f7fb;
+      --card: #ffffff;
+      --blue: #2563eb;
+      --blue-soft: #eff6ff;
+      --orange: #f97316;
+      --orange-soft: #fff7ed;
+      --green: #059669;
+      --green-soft: #ecfdf5;
+      --amber: #d97706;
+      --amber-soft: #fffbeb;
+      --red: #dc2626;
+      --red-soft: #fef2f2;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .page {
+      max-width: 1380px;
+      margin: auto;
+      padding: 28px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 26px;
+      padding: 44px;
+      background: linear-gradient(135deg, #172554 0%, #1d4ed8 58%, #2563eb 100%);
+      color: white;
+      box-shadow: 0 24px 60px rgba(30, 64, 175, .22);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -110px;
+      top: -170px;
+      width: 420px;
+      height: 420px;
+      border: 70px solid rgba(255, 255, 255, .07);
+      border-radius: 50%;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0;
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.08;
+      letter-spacing: -.04em;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 18px 0 0;
+      color: #dbeafe;
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .hero-actions a,
+    .print-button {
+      display: inline-flex;
+      min-height: 43px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, .28);
+      border-radius: 12px;
+      padding: 10px 16px;
+      background: rgba(255, 255, 255, .1);
+      color: white;
+      font-weight: 750;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .hero-actions .primary {
+      border-color: white;
+      background: white;
+      color: #1d4ed8;
+    }
+
+    .hero-meta {
+      position: absolute;
+      z-index: 1;
+      right: 38px;
+      bottom: 34px;
+      color: #bfdbfe;
+      font-size: 12px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 270px minmax(0, 1fr);
+      gap: 24px;
+      margin-top: 26px;
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      background: white;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, .04);
+    }
+
+    .toc strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 13px;
+    }
+
+    .toc a {
+      display: block;
+      border-radius: 9px;
+      padding: 8px 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      background: var(--blue-soft);
+      color: var(--blue);
+    }
+
+    .toc-note {
+      margin: 15px 0 0;
+      border-top: 1px solid var(--soft-line);
+      padding: 15px 10px 0;
+      color: #94a3b8;
+      font-size: 10px;
+    }
+
+    .content {
+      display: grid;
+      gap: 22px;
+    }
+
+    .section {
+      scroll-margin-top: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, .04);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 24px 26px;
+      border-bottom: 1px solid var(--soft-line);
+    }
+
+    .section-number {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      flex: 0 0 34px;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--blue);
+      color: white;
+      font-size: 12px;
+      font-weight: 850;
+      box-shadow: 0 7px 16px rgba(37, 99, 235, .22);
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: 21px;
+      letter-spacing: -.02em;
+    }
+
+    .section-head p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .section-body {
+      padding: 26px;
+    }
+
+    .section-body> :first-child {
+      margin-top: 0;
+    }
+
+    .section-body> :last-child {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      margin: 26px 0 10px;
+      font-size: 15px;
+    }
+
+    p {
+      color: #475569;
+    }
+
+    code {
+      border-radius: 6px;
+      padding: 2px 6px;
+      background: #f1f5f9;
+      color: #334155;
+      font-size: .88em;
+    }
+
+    .summary-grid,
+    .rule-grid,
+    .sample-grid,
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .summary-card,
+    .rule-card,
+    .sample-card,
+    .link-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      background: #fbfcfe;
+    }
+
+    .summary-card b,
+    .rule-card b,
+    .sample-card b,
+    .link-card b {
+      display: block;
+      font-size: 13px;
+    }
+
+    .summary-card p,
+    .rule-card p,
+    .sample-card p,
+    .link-card p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .summary-icon {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      margin-bottom: 14px;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-weight: 850;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(150px, 1fr));
+      gap: 0;
+      overflow-x: auto;
+      padding: 4px 0 12px;
+    }
+
+    .workflow-step {
+      position: relative;
+      min-width: 150px;
+      padding-right: 26px;
+    }
+
+    .workflow-step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: 8px;
+      top: 17px;
+      color: #93c5fd;
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .workflow-step span {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 11px;
+      place-items: center;
+      border: 2px solid #bfdbfe;
+      border-radius: 50%;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .workflow-step b {
+      display: block;
+      font-size: 12px;
+    }
+
+    .workflow-step small {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    .decision {
+      display: grid;
+      gap: 11px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .decision-row {
+      display: grid;
+      grid-template-columns: 42px 1fr auto;
+      gap: 14px;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      padding: 13px 16px;
+      background: #fbfcfe;
+    }
+
+    .decision-row>span {
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      border-radius: 9px;
+      background: var(--blue);
+      color: white;
+      font-size: 11px;
+      font-weight: 850;
+    }
+
+    .decision-row b {
+      display: block;
+      font-size: 12px;
+    }
+
+    .decision-row small {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .decision-row em {
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 9px;
+      font-style: normal;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .decision-arrow {
+      color: #93c5fd;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 850;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 700px;
+      border-collapse: collapse;
+      background: white;
+    }
+
+    th,
+    td {
+      padding: 13px 15px;
+      border-bottom: 1px solid var(--soft-line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f8fafc;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    td {
+      color: #475569;
+      font-size: 11px;
+    }
+
+    td b {
+      color: var(--ink);
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .badge {
+      display: inline-flex;
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 9px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .active {
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
+    .scheduled {
+      background: var(--blue-soft);
+      color: var(--blue);
+    }
+
+    .paused {
+      background: var(--orange-soft);
+      color: #c2410c;
+    }
+
+    .draft {
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    .archived {
+      background: var(--red-soft);
+      color: var(--red);
+    }
+
+    .callout {
+      display: flex;
+      gap: 13px;
+      margin: 18px 0;
+      border: 1px solid #bfdbfe;
+      border-radius: 13px;
+      padding: 15px;
+      background: var(--blue-soft);
+    }
+
+    .callout.warning {
+      border-color: #fde68a;
+      background: var(--amber-soft);
+    }
+
+    .callout strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 12px;
+    }
+
+    .callout p {
+      margin: 0;
+      font-size: 11px;
+    }
+
+    .callout-mark {
+      display: grid;
+      width: 27px;
+      height: 27px;
+      flex: 0 0 27px;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--blue);
+      color: white;
+      font-size: 11px;
+      font-weight: 850;
+    }
+
+    .warning .callout-mark {
+      background: var(--amber);
+    }
+
+    .rule-card {
+      position: relative;
+      padding-left: 50px;
+    }
+
+    .rule-card::before {
+      content: "✓";
+      position: absolute;
+      left: 17px;
+      top: 17px;
+      display: grid;
+      width: 23px;
+      height: 23px;
+      place-items: center;
+      border-radius: 7px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .rule-card.recommended::before {
+      content: "★";
+      background: var(--blue-soft);
+      color: var(--blue);
+    }
+
+    .sample-card {
+      border-top: 4px solid var(--blue);
+    }
+
+    .sample-card ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .sample-card li+li {
+      margin-top: 4px;
+    }
+
+    .link-card {
+      text-decoration: none;
+      transition: .15s ease;
+    }
+
+    .link-card:hover {
+      border-color: #93c5fd;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(37, 99, 235, .08);
+    }
+
+    .link-card span {
+      display: inline-block;
+      margin-top: 13px;
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .do-dont {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .do-dont>div {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 19px;
+    }
+
+    .do {
+      background: var(--green-soft);
+      border-color: #a7f3d0 !important;
+    }
+
+    .dont {
+      background: var(--red-soft);
+      border-color: #fecaca !important;
+    }
+
+    .do-dont h3 {
+      margin: 0 0 10px;
+    }
+
+    .do-dont ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #475569;
+      font-size: 11px;
+    }
+
+    .do-dont li+li {
+      margin-top: 7px;
+    }
+
+    footer {
+      padding: 28px 4px 8px;
+      color: #94a3b8;
+      text-align: center;
+      font-size: 10px;
+    }
+
+    @media (max-width: 1050px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .toc strong {
+        width: 100%;
+      }
+
+      .toc a {
+        display: inline-block;
+      }
+
+      .toc-note {
+        width: 100%;
+      }
+
+      .summary-grid,
+      .rule-grid,
+      .sample-grid,
+      .links-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-meta {
+        position: static;
+        margin-top: 20px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .page {
+        padding: 14px;
+      }
+
+      .hero {
+        padding: 30px 22px;
+        border-radius: 20px;
+      }
+
+      .hero-copy {
+        font-size: 14px;
+      }
+
+      .section-head,
+      .section-body {
+        padding: 20px;
+      }
+
+      .summary-grid,
+      .rule-grid,
+      .sample-grid,
+      .links-grid,
+      .do-dont {
+        grid-template-columns: 1fr;
+      }
+
+      .decision-row {
+        grid-template-columns: 36px 1fr;
+      }
+
+      .decision-row em {
+        grid-column: 2;
+        justify-self: start;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .page {
+        max-width: none;
+        padding: 0;
+      }
+
+      .hero {
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      .hero-actions,
+      .toc {
+        display: none;
+      }
+
+      .layout {
+        display: block;
+      }
+
+      .content {
+        gap: 14px;
+      }
+
+      .section {
+        break-inside: avoid;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header class="hero">
+      <p class="eyebrow">BOMO Partner Portal · Rooms &amp; Rates</p>
+      <h1>Room Rate Plan Guide</h1>
+      <p class="hero-copy">
+        A plain-language guide to creating rate plans, resolving overlapping
+        plans, managing overrides and promos, and testing the final guest price.
+      </p>
+      <div class="hero-actions">
+        <a class="primary" href="index.html">Open Rate Plans</a>
+        <a href="form.html">Create a Rate Plan</a>
+        <a href="hotel-manager-dashboard/pages/rooms.html">Open Rooms &amp; Rates</a>
+        <button class="print-button" type="button" onclick="window.print()">Print Guide</button>
+      </div>
+      <div class="hero-meta">UI/UX operating guide · Prototype V7</div>
+    </header>
+
+    <div class="layout">
+      <nav class="toc" aria-label="Documentation contents">
+        <strong>On this page</strong>
+        <a href="#overview">Overview</a>
+        <a href="#setup-workflow">Setup workflow</a>
+        <a href="#booking-workflow">Booking workflow</a>
+        <a href="#status-rules">Status rules</a>
+        <a href="#application-rules">Application rules</a>
+        <a href="#guest-policies">Guest policies</a>
+        <a href="#adjustment-rules">Overrides &amp; promos</a>
+        <a href="#governance">Rules &amp; controls</a>
+        <a href="#samples">Real-world samples</a>
+
+      </nav>
+
+      <main class="content">
+        <section class="section" id="overview">
+          <div class="section-head">
+            <span class="section-number">1</span>
+            <div>
+              <h2>What is a rate plan?</h2>
+              <p>The offer and rules applied to an eligible room booking.</p>
+            </div>
+          </div>
+          <div class="section-body">
+            <div class="summary-grid">
+              <div class="summary-card"><span class="summary-icon">R</span><b>Rate plan</b>
+                <p>Controls eligibility, guest terms, overrides, and promos. It does not duplicate the room’s Base Rate.
+                </p>
+              </div>
+              <div class="summary-card"><span class="summary-icon">O</span><b>Date override</b>
+                <p>Automatically increases, decreases, or fixes the price for matching stay dates.</p>
+              </div>
+              <div class="summary-card"><span class="summary-icon">%</span><b>Promo rate</b>
+                <p>Applies a guest discount when its code, stay dates, rooms, and minimum requirements match.</p>
+              </div>
+            </div>
+            <div class="callout">
+              <span class="callout-mark">1</span>
+              <div><strong>One booking uses exactly one rate plan.</strong>
+                <p>That plan may then apply a maximum of one override and one promo.</p>
+              </div>
+            </div>
+            <p>
+              Base prices come from <b>Room Settings</b>. The rate-plan workflow
+              determines when a plan is eligible and how its selected override
+              and promo affect that inherited price.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" id="setup-workflow">
+          <div class="section-head">
+            <span class="section-number">2</span>
+            <div>
+              <h2>Rate-plan setup workflow</h2>
+              <p>Complete one form from left to right, then verify it before activation.</p>
+            </div>
+          </div>
+          <div class="section-body">
+            <div class="workflow" aria-label="Rate plan setup workflow">
+              <div class="workflow-step"><span>1</span><b>Name &amp; status</b><small>Identify the plan and choose its
+                  lifecycle status.</small></div>
+              <div class="workflow-step"><span>2</span><b>Rooms &amp; dates</b><small>Select room types, validity dates,
+                  and eligible stay days.</small></div>
+              <div class="workflow-step"><span>3</span><b>Application rules</b><small>Choose fallback or conditional and
+                  set priority and minimums.</small></div>
+              <div class="workflow-step"><span>4</span><b>Guest policies</b><small>Set cancellation, payment, deposit,
+                  meals, and add-ons.</small></div>
+              <div class="workflow-step"><span>5</span><b>Price rules</b><small>Add separate override and promo rules
+                  where needed.</small></div>
+              <div class="workflow-step"><span>6</span><b>Test &amp; save</b><small>Run connected samples, review the
+                  report, then activate.</small></div>
+            </div>
+            <div class="callout warning">
+              <span class="callout-mark">!</span>
+              <div><strong>Recommended activation control</strong>
+                <p>Save new plans as Draft, run an eligible and an ineligible test, review the report, then change the
+                  plan to Active or Scheduled.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="booking-workflow">
+          <div class="section-head">
+            <span class="section-number">3</span>
+            <div>
+              <h2>How a booking selects a rate plan</h2>
+              <p>The system resolves overlapping plans in a predictable order.</p>
+            </div>
+          </div>
+          <div class="section-body">
+            <div class="decision">
+              <div class="decision-row"><span>1</span>
+                <div><b>Check plan status</b><small>Only Active and eligible Scheduled plans continue.</small></div>
+                <em>Inactive plans stop</em>
+              </div>
+              <div class="decision-arrow">↓</div>
+              <div class="decision-row"><span>2</span>
+                <div><b>Check booking eligibility</b><small>Room, validity, advance days, minimum stay, and stay days
+                    must match.</small></div><em>Non-matches stop</em>
+              </div>
+              <div class="decision-arrow">↓</div>
+              <div class="decision-row"><span>3</span>
+                <div><b>Compare conditional priorities</b><small>The eligible conditional plan with the smallest number
+                    applies first.</small></div><em>10 before 20</em>
+              </div>
+              <div class="decision-arrow">↓</div>
+              <div class="decision-row"><span>4</span>
+                <div><b>Use the fallback if necessary</b><small>The Default plan applies only when no conditional plan
+                    matches.</small></div><em>One plan selected</em>
+              </div>
+              <div class="decision-arrow">↓</div>
+              <div class="decision-row"><span>5</span>
+                <div><b>Resolve price rules</b><small>Apply no more than one eligible override and one eligible
+                    promo.</small></div><em>Final price</em>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="status-rules">
+          <div class="section-head">
+            <span class="section-number">4</span>
+            <div>
+              <h2>Status rules</h2>
+              <p>Status controls whether the plan may be selected for a live booking.</p>
+            </div>
+          </div>
+          <div class="section-body">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Status</th>
+                    <th>Bookable?</th>
+                    <th>Use</th>
+                    <th>Required action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="badge draft">Draft</span></td>
+                    <td>No</td>
+                    <td>Incomplete setup or internal testing.</td>
+                    <td>Test and review before activation.</td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge active">Active</span></td>
+                    <td>Yes, when eligible</td>
+                    <td>Currently available for matching bookings.</td>
+                    <td>Monitor conflicts and results.</td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge scheduled">Scheduled</span></td>
+                    <td>Yes, during validity</td>
+                    <td>Future or date-controlled offer.</td>
+                    <td>Start and end dates must be present and correct.</td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge paused">Paused</span></td>
+                    <td>No</td>
+                    <td>Temporary suspension without deleting setup.</td>
+                    <td>Reactivate only after reviewing rules.</td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge archived">Archived</span></td>
+                    <td>No</td>
+                    <td>Historical plan retained for reference.</td>
+                    <td>Create a new plan instead of reusing obsolete rules.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="application-rules">
+          <div class="section-head">
+            <span class="section-number">5</span>
+            <div>
+              <h2>Application and priority rules</h2>
+              <p>Keep plan selection simple enough to explain and audit.</p>
+            </div>
+          </div>
+          <div class="section-body">
+            <div class="rule-grid">
+              <div class="rule-card"><b>Default fallback</b>
+                <p>Use one fallback plan for each room inventory group. It applies only if no conditional plan matches.
+                </p>
+              </div>
+              <div class="rule-card"><b>Conditional plan</b>
+                <p>Use for weekends, seasons, holidays, long stays, or advance-booking offers.</p>
+              </div>
+              <div class="rule-card"><b>Smaller number applies first</b>
+                <p>Priority 10 is evaluated ahead of 20, 30, or 40.</p>
+              </div>
+              <div class="rule-card"><b>Room eligibility</b>
+                <p>Select all rooms or at least one specific room type. Never save an empty selected-room list.</p>
+              </div>
+              <div class="rule-card"><b>Date eligibility</b>
+                <p>End date cannot be earlier than start date. Scheduled plans require meaningful validity dates.</p>
+              </div>
+              <div class="rule-card"><b>Stay requirements</b>
+                <p>Minimum advance days and minimum nights must be zero-or-more and one-or-more respectively.</p>
+              </div>
+            </div>
+            <h3>Recommended priority bands</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Priority</th>
+                    <th>Recommended use</th>
+                    <th>Example</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><b>10–19</b></td>
+                    <td>Highest-specificity, limited-date plans.</td>
+                    <td>Christmas &amp; New Year</td>
+                  </tr>
+                  <tr>
+                    <td><b>20–29</b></td>
+                    <td>Recurring weekly or high-demand plans.</td>
+                    <td>Weekend Escape</td>
+                  </tr>
+                  <tr>
+                    <td><b>30–39</b></td>
+                    <td>Negotiated or member plans.</td>
+                    <td>Corporate Preferred</td>
+                  </tr>
+                  <tr>
+                    <td><b>40–89</b></td>
+                    <td>General conditional offers.</td>
+                    <td>Early Bird — 30 Days</td>
+                  </tr>
+                  <tr>
+                    <td><b>Fallback</b></td>
+                    <td>Default plan; not compared numerically.</td>
+                    <td>Flexible Rate</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="callout">
+              <span class="callout-mark">i</span>
+              <div><strong>Booking Channel is not an input.</strong>
+                <p>Current eligibility uses rooms, dates, booking lead time, stay length, and stay days only.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="guest-policies">
+          <div class="section-head">
+            <span class="section-number">6</span>
+            <div>
+              <h2>Guest-policy rules</h2>
+              <p>Payment and cancellation terms must match what the guest sees at checkout.</p>
+            </div>
+          </div>
+          <div class="section-body">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Policy</th>
+                    <th>System behavior</th>
+                    <th>Control</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><b>Free cancellation</b></td>
+                    <td>Guest receives a full refund within the permitted period.</td>
+                    <td>Property must communicate the actual cancellation deadline.</td>
+                  </tr>
+                  <tr>
+                    <td><b>Partial refund</b></td>
+                    <td>Refund varies according to cancellation timing.</td>
+                    <td>Refund wording must be clear before booking.</td>
+                  </tr>
+                  <tr>
+                    <td><b>Non-refundable</b></td>
+                    <td>No refund after confirmation.</td>
+                    <td>Use clear guest-facing disclosure and require acknowledgement where applicable.</td>
+                  </tr>
+                  <tr>
+                    <td><b>Full payment online</b></td>
+                    <td>Collect 100% when the guest books.</td>
+                    <td>No additional deposit input is needed.</td>
+                  </tr>
+                  <tr>
+                    <td><b>Partial payment</b></td>
+                    <td>Collect the configured percentage at booking.</td>
+                    <td>Specify where the balance will be collected.</td>
+                  </tr>
+                  <tr>
+                    <td><b>Pay at property</b></td>
+                    <td>Collect a required online deposit, then the balance at the property.</td>
+                    <td>Deposit must be between 1% and 99%.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="callout warning">
+              <span class="callout-mark">!</span>
+              <div><strong>Regulatory responsibility</strong>
+                <p>Cancellation wording, deposits, refunds, taxes, payment collection, and displayed totals must comply
+                  with the property’s applicable local laws and payment-provider requirements.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="adjustment-rules">
+          <div class="section-head">
+            <span class="section-number">7</span>
+            <div>
+              <h2>Override and promo rules</h2>
+              <p>Separate tables and actions make the two price-rule types easy to audit.</p>
+            </div>
+          </div>
+          <div class="section-body">
+            <div class="summary-grid">
+              <div class="summary-card"><span class="summary-icon">O</span><b>Date override</b>
+                <p>Automatic price change for matching stay dates. It does not require a guest promo code.</p>
+              </div>
+              <div class="summary-card"><span class="summary-icon">%</span><b>Promo rate</b>
+                <p>Guest discount with an optional code, minimum stay, and minimum booking value.</p>
+              </div>
+              <div class="summary-card"><span class="summary-icon">1</span><b>Maximum application</b>
+                <p>One override and one promo may be applied after the winning rate plan is selected.</p>
+              </div>
+            </div>
+            <h3>Multiple matching rules</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Rule type</th>
+                    <th>Resolution options</th>
+                    <th>Recommended default</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><b>Override</b></td>
+                    <td>Highest priority, highest resulting rate, or lowest resulting rate.</td>
+                    <td>Highest priority only.</td>
+                  </tr>
+                  <tr>
+                    <td><b>Promo</b></td>
+                    <td>Best discount or highest priority.</td>
+                    <td>Best eligible discount only.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="rule-grid" style="margin-top: 16px">
+              <div class="rule-card recommended"><b>Use clear names</b>
+                <p>Name the situation, such as “Weekend demand” or “Holiday package discount.” Keep the amount in its
+                  own field.</p>
+              </div>
+              <div class="rule-card recommended"><b>Use unique promo codes</b>
+                <p>Use uppercase codes that are easy to read and cannot be confused with another active promo.</p>
+              </div>
+              <div class="rule-card recommended"><b>Test boundary dates</b>
+                <p>Test the first eligible date, last eligible date, and one date outside the range.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="governance">
+          <div class="section-head">
+            <span class="section-number">8</span>
+            <div>
+              <h2>Rules, controls, and operating guidance</h2>
+              <p>Required product behavior and recommended management controls.</p>
+            </div>
+          </div>
+          <div class="section-body">
+            <h3>Platform rules</h3>
+            <div class="rule-grid">
+              <div class="rule-card"><b>Exactly one rate plan</b>
+                <p>A booking cannot combine two rate plans.</p>
+              </div>
+              <div class="rule-card"><b>One override maximum</b>
+                <p>Overlapping overrides must resolve to one applied rule.</p>
+              </div>
+              <div class="rule-card"><b>One promo maximum</b>
+                <p>Overlapping promos must resolve to one applied discount.</p>
+              </div>
+              <div class="rule-card"><b>Base Rate is inherited</b>
+                <p>Maintain the starting nightly price in Room Settings.</p>
+              </div>
+              <div class="rule-card"><b>Deposit is conditional</b>
+                <p>The percentage input appears for Partial Payment and Pay at Property.</p>
+              </div>
+              <div class="rule-card"><b>Inactive means unavailable</b>
+                <p>Draft, Paused, and Archived plans cannot be selected for live bookings.</p>
+              </div>
+            </div>
+            <h3>Recommended operating controls</h3>
+            <div class="do-dont">
+              <div class="do">
+                <h3>Do</h3>
+                <ul>
+                  <li>Keep one clearly identified Default fallback.</li>
+                  <li>Use consistent priority ranges.</li>
+                  <li>Use Draft while configuring or testing.</li>
+                  <li>Review the read-only report before activation.</li>
+                  <li>Test eligible, overlapping, and ineligible examples.</li>
+                  <li>Archive obsolete plans instead of deleting history.</li>
+                </ul>
+              </div>
+              <div class="dont">
+                <h3>Avoid</h3>
+                <ul>
+                  <li>Creating two plans with identical eligibility and priority.</li>
+                  <li>Using unclear names such as “Plan 1” or “Special.”</li>
+                  <li>Duplicating Base Rate inside a plan.</li>
+                  <li>Publishing a Pay at Property plan without a deposit value.</li>
+                  <li>Overlapping many rules without testing resolution.</li>
+                  <li>Including service charge or local tax in this setup.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="callout">
+              <span class="callout-mark">₱</span>
+              <div><strong>Charges intentionally excluded</strong>
+                <p>Service charge and local tax are not configured here. VAT and platform fee are inherited values
+                  displayed only in simulator results.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="samples">
+          <div class="section-head">
+            <span class="section-number">9</span>
+            <div>
+              <h2>Real-world sample plans</h2>
+              <p>Editable examples demonstrate common partner pricing scenarios.</p>
+            </div>
+          </div>
+          <div class="section-body">
+            <div class="sample-grid">
+              <div class="sample-card"><b>Flexible Rate</b><span class="badge active">Active · Fallback</span>
+                <ul>
+                  <li>All rooms and every day</li>
+                  <li>Free cancellation</li>
+                  <li>Full payment online</li>
+                </ul>
+              </div>
+              <div class="sample-card"><b>Weekend Escape</b><span class="badge active">Active · Priority 20</span>
+                <ul>
+                  <li>Friday through Sunday</li>
+                  <li>Two-night minimum</li>
+                  <li>20% Pay at Property deposit</li>
+                </ul>
+              </div>
+              <div class="sample-card"><b>Christmas &amp; New Year</b><span class="badge scheduled">Scheduled · Priority
+                  10</span>
+                <ul>
+                  <li>December 20 to January 2</li>
+                  <li>Three-night minimum</li>
+                  <li>Holiday override and FESTIVE10</li>
+                </ul>
+              </div>
+              <div class="sample-card"><b>Corporate Preferred</b><span class="badge paused">Paused · Priority 30</span>
+                <ul>
+                  <li>Weekday eligibility</li>
+                  <li>10% Pay at Property deposit</li>
+                  <li>CORP10 promo</li>
+                </ul>
+              </div>
+              <div class="sample-card"><b>Early Bird — 30 Days</b><span class="badge active">Active · Priority 40</span>
+                <ul>
+                  <li>Book at least 30 days ahead</li>
+                  <li>Non-refundable</li>
+                  <li>EARLY15 promo</li>
+                </ul>
+              </div>
+              <div class="sample-card"><b>Summer Escape</b><span class="badge draft">Draft · Priority 50</span>
+                <ul>
+                  <li>March through May</li>
+                  <li>Two-night minimum</li>
+                  <li>Summer override and SUMMER10</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+      </main>
+    </div>
+
+    <footer>
+      BOMO Room Rate Plan Guide for Internal only
+    </footer>
+  </div>
+</body>
+
+</html>

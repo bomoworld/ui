@@ -1,0 +1,270 @@
+<section class="p-4 lg:p-8 space-y-8">
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+  <div
+    class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4"
+  >
+    <div>
+      <h2 class="text-3xl font-black text-slate-900">Reports & Analytics</h2>
+
+      <p class="text-slate-500 mt-2">
+        Revenue, occupancy, bookings, guest insights and property performance
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-3">
+      <select class="h-11 px-4 rounded-xl bg-white">
+        <option>Last 30 Days</option>
+        <option>Last 90 Days</option>
+        <option>This Year</option>
+      </select>
+
+      <button
+        class="h-11 px-5 rounded-xl bg-orange-500 text-white font-semibold hover:bg-orange-600 transition"
+      >
+        Export Report
+      </button>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       KPI
+  ====================================================== -->
+  <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+    <div class="bg-white rounded-[30px] p-6 shadow-sm">
+      <p class="text-sm text-slate-500">Total Revenue</p>
+
+      <h3 class="text-4xl font-black mt-3">₱12.8M</h3>
+
+      <p class="text-green-600 font-semibold mt-3">+18.4%</p>
+    </div>
+
+    <div class="bg-white rounded-[30px] p-6 shadow-sm">
+      <p class="text-sm text-slate-500">Total Bookings</p>
+
+      <h3 class="text-4xl font-black mt-3">4,862</h3>
+
+      <p class="text-green-600 font-semibold mt-3">+12.2%</p>
+    </div>
+
+    <div class="bg-white rounded-[30px] p-6 shadow-sm">
+      <p class="text-sm text-slate-500">Occupancy Rate</p>
+
+      <h3 class="text-4xl font-black mt-3">87%</h3>
+
+      <p class="text-green-600 font-semibold mt-3">Excellent</p>
+    </div>
+
+    <div class="bg-white rounded-[30px] p-6 shadow-sm">
+      <p class="text-sm text-slate-500">Avg Daily Rate</p>
+
+      <h3 class="text-4xl font-black mt-3">₱4,250</h3>
+
+      <p class="text-green-600 font-semibold mt-3">+6.8%</p>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       CHARTS
+  ====================================================== -->
+  <div class="grid xl:grid-cols-3 gap-6">
+    <div
+      class="xl:col-span-2 bg-white rounded-[30px] shadow-sm overflow-hidden"
+    >
+      <div class="p-6 border-b border-slate-100">
+        <h3 class="font-bold text-lg">Revenue Trend</h3>
+
+        <p class="text-sm text-slate-500">Monthly property revenue performance</p>
+      </div>
+
+      <div class="h-[420px] flex items-center justify-center text-slate-400">
+        ApexCharts Revenue Chart
+      </div>
+    </div>
+
+    <div class="bg-white rounded-[30px] shadow-sm p-6">
+      <h3 class="font-bold text-lg mb-6">Property Ranking</h3>
+
+      <div class="space-y-5">
+        <div class="flex justify-between">
+          <div>
+            <p class="font-semibold">BOMO Makati Suites</p>
+
+            <p class="text-sm text-slate-500">Revenue Leader</p>
+          </div>
+
+          <strong class="text-green-600"> ₱4.2M </strong>
+        </div>
+
+        <div class="flex justify-between">
+          <div>
+            <p class="font-semibold">BOMO BGC Residences</p>
+
+            <p class="text-sm text-slate-500">High Occupancy</p>
+          </div>
+
+          <strong class="text-green-600"> ₱3.8M </strong>
+        </div>
+
+        <div class="flex justify-between">
+          <div>
+            <p class="font-semibold">BOMO Cebu Bay Hotel</p>
+
+            <p class="text-sm text-slate-500">Growth Property</p>
+          </div>
+
+          <strong class="text-green-600"> ₱2.6M </strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       REPORTS GRID
+  ====================================================== -->
+  <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+    <div class="bg-white rounded-[30px] shadow-sm p-6">
+      <div
+        class="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5"
+      >
+        <i class="fa-solid fa-money-bill-trend-up text-xl"></i>
+      </div>
+
+      <h4 class="font-bold text-lg">Revenue Report</h4>
+
+      <p class="text-sm text-slate-500 mt-2">
+        Revenue and profitability analysis
+      </p>
+
+      <button
+        class="mt-5 h-10 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 transition"
+      >
+        View Report
+      </button>
+    </div>
+
+    <div class="bg-white rounded-[30px] shadow-sm p-6">
+      <div
+        class="w-14 h-14 rounded-2xl bg-green-50 text-green-600 flex items-center justify-center mb-5"
+      >
+        <i class="fa-solid fa-bed text-xl"></i>
+      </div>
+
+      <h4 class="font-bold text-lg">Occupancy Report</h4>
+
+      <p class="text-sm text-slate-500 mt-2">Room utilization and occupancy</p>
+
+      <button
+        class="mt-5 h-10 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 transition"
+      >
+        View Report
+      </button>
+    </div>
+
+    <div class="bg-white rounded-[30px] shadow-sm p-6">
+      <div
+        class="w-14 h-14 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center mb-5"
+      >
+        <i class="fa-solid fa-users text-xl"></i>
+      </div>
+
+      <h4 class="font-bold text-lg">Guest Analytics</h4>
+
+      <p class="text-sm text-slate-500 mt-2">Customer and booking insights</p>
+
+      <button
+        class="mt-5 h-10 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 transition"
+      >
+        View Report
+      </button>
+    </div>
+
+    <div class="bg-white rounded-[30px] shadow-sm p-6">
+      <div
+        class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center mb-5"
+      >
+        <i class="fa-solid fa-star text-xl"></i>
+      </div>
+
+      <h4 class="font-bold text-lg">Review Analytics</h4>
+
+      <p class="text-sm text-slate-500 mt-2">Ratings and guest satisfaction</p>
+
+      <button
+        class="mt-5 h-10 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 transition"
+      >
+        View Report
+      </button>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       REPORT HISTORY
+  ====================================================== -->
+  <div class="bg-white rounded-[30px] shadow-sm overflow-hidden">
+    <div class="p-6 border-b border-slate-100">
+      <h3 class="font-bold text-lg">Generated Reports</h3>
+
+      <p class="text-sm text-slate-500">Recent exported analytics reports</p>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="w-full min-w-[900px]">
+        <thead>
+          <tr class="bg-slate-50">
+            <th class="text-left px-6 py-4">Report Name</th>
+
+            <th class="text-left px-6 py-4">Type</th>
+
+            <th class="text-left px-6 py-4">Generated By</th>
+
+            <th class="text-left px-6 py-4">Date</th>
+
+            <th class="text-left px-6 py-4">Format</th>
+
+            <th class="text-left px-6 py-4">Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="border-t">
+            <td class="px-6 py-5">Monthly Revenue Report</td>
+
+            <td class="px-6 py-5">Revenue</td>
+
+            <td class="px-6 py-5">Property Partner</td>
+
+            <td class="px-6 py-5">May 29, 2026</td>
+
+            <td class="px-6 py-5">PDF</td>
+
+            <td class="px-6 py-5">
+              <button class="h-9 px-4 rounded-xl bg-orange-500 text-white">
+                Download
+              </button>
+            </td>
+          </tr>
+
+          <tr class="border-t">
+            <td class="px-6 py-5">Occupancy Analysis</td>
+
+            <td class="px-6 py-5">Occupancy</td>
+
+            <td class="px-6 py-5">Property Partner</td>
+
+            <td class="px-6 py-5">May 28, 2026</td>
+
+            <td class="px-6 py-5">Excel</td>
+
+            <td class="px-6 py-5">
+              <button class="h-9 px-4 rounded-xl bg-orange-500 text-white">
+                Download
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
