@@ -1,0 +1,380 @@
+<style>
+  .support-pill {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .support-pill input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .support-pill span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.25rem;
+    border-radius: 9999px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    color: #475569;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.15s ease;
+  }
+  .support-pill:hover span {
+    border-color: #cbd5e1;
+    background: #f8fafc;
+  }
+  .support-pill:has(input:checked) span {
+    border-color: #0b2a6f;
+    background: #0b2a6f;
+    color: #fff;
+  }
+  .support-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 0.75rem;
+    border-radius: 0.75rem;
+    color: #475569;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.15s ease;
+  }
+  .support-link i {
+    width: 1.1rem;
+    color: #94a3b8;
+    text-align: center;
+  }
+  .support-link:hover {
+    background: #f8fafc;
+    color: #0b2a6f;
+  }
+</style>
+
+<!-- HERO -->
+<section class="relative overflow-hidden bg-gradient-to-br from-[#0b2a6f] via-[#123a8f] to-[#2563eb] text-white">
+  <div class="absolute top-0 right-0 w-[420px] h-[420px] bg-orange-400/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 w-[320px] h-[320px] bg-white/5 rounded-full blur-3xl"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 lg:px-6 pt-24 pb-20 text-center">
+    <div class="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-4 py-2 text-xs font-semibold tracking-wide uppercase">
+      <i class="fa-solid fa-headset"></i>
+      BOMO Support
+    </div>
+
+    <h1 class="mt-6 text-3xl md:text-5xl font-bold leading-tight">
+      How can we help you today?
+    </h1>
+
+    <p class="mt-4 max-w-2xl mx-auto text-white/70 text-base md:text-lg">
+      Tell us what's going on and our support team will get back to you.
+      Most requests are resolved within 24 hours.
+    </p>
+
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-3xl mx-auto">
+      <div class="rounded-2xl bg-white/10 border border-white/15 backdrop-blur px-4 py-5">
+        <div class="text-xl md:text-2xl font-bold">&lt; 24h</div>
+        <div class="mt-1 text-xs text-white/65">Average response</div>
+      </div>
+      <div class="rounded-2xl bg-white/10 border border-white/15 backdrop-blur px-4 py-5">
+        <div class="text-xl md:text-2xl font-bold">24/7</div>
+        <div class="mt-1 text-xs text-white/65">Ticket submission</div>
+      </div>
+      <div class="rounded-2xl bg-white/10 border border-white/15 backdrop-blur px-4 py-5">
+        <div class="text-xl md:text-2xl font-bold">98%</div>
+        <div class="mt-1 text-xs text-white/65">Satisfaction rate</div>
+      </div>
+      <div class="rounded-2xl bg-white/10 border border-white/15 backdrop-blur px-4 py-5">
+        <div class="text-xl md:text-2xl font-bold">Verified</div>
+        <div class="mt-1 text-xs text-white/65">Support team</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative z-10">
+    <svg viewBox="0 0 1440 60" class="w-full h-[40px] md:h-[60px] text-slate-50 fill-current">
+      <path d="M0,32 C240,64 480,0 720,16 C960,32 1200,64 1440,32 L1440,60 L0,60 Z"></path>
+    </svg>
+  </div>
+</section>
+
+<!-- MAIN -->
+<section class="bg-slate-50 pb-24">
+  <div class="max-w-7xl mx-auto px-4 lg:px-6 -mt-6 md:-mt-10">
+    <div class="grid lg:grid-cols-[1fr_360px] gap-8 items-start">
+      <!-- FORM CARD -->
+      <div class="bg-white rounded-[28px] shadow-xl border border-slate-200 overflow-hidden">
+        <div class="p-6 md:p-10">
+          <h2 class="text-2xl font-bold text-slate-900">Submit a support ticket</h2>
+          <p class="mt-2 text-slate-500 text-sm">
+            Fields marked <span class="text-rose-500">*</span> are required.
+          </p>
+
+          <form id="supportTicketForm" class="mt-8 space-y-6" novalidate>
+            <!-- Submitter type -->
+            <div>
+              <label class="mb-3 block text-sm font-semibold text-slate-800">
+                I am a<span class="text-rose-500">*</span>
+              </label>
+              <div class="flex flex-wrap gap-3" role="radiogroup" aria-label="Submitter type">
+                <label class="support-pill">
+                  <input type="radio" name="submitterType" value="guest" checked />
+                  <span><i class="fa-solid fa-suitcase-rolling"></i> Guest / Traveler</span>
+                </label>
+                <label class="support-pill">
+                  <input type="radio" name="submitterType" value="partner" />
+                  <span><i class="fa-solid fa-hotel"></i> Property Partner</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Name / Email -->
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <label for="supportName" class="mb-2 block text-sm font-medium text-slate-700">
+                  Full name<span class="text-rose-500">*</span>
+                </label>
+                <input
+                  id="supportName"
+                  name="submitterName"
+                  type="text"
+                  required
+                  minlength="2"
+                  maxlength="150"
+                  placeholder="Juan Dela Cruz"
+                  class="bomo-input w-full"
+                />
+              </div>
+              <div>
+                <label for="supportEmail" class="mb-2 block text-sm font-medium text-slate-700">
+                  Email address<span class="text-rose-500">*</span>
+                </label>
+                <input
+                  id="supportEmail"
+                  name="submitterEmail"
+                  type="email"
+                  required
+                  maxlength="255"
+                  placeholder="juan@email.com"
+                  class="bomo-input w-full"
+                />
+              </div>
+            </div>
+
+            <!-- Category / Priority -->
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <label for="supportCategory" class="mb-2 block text-sm font-medium text-slate-700">
+                  What's this about?<span class="text-rose-500">*</span>
+                </label>
+                <select id="supportCategory" name="category" required class="bomo-input w-full">
+                  <option value="" disabled selected>Select a topic</option>
+                  <option value="booking_issue">Booking issue</option>
+                  <option value="payment_billing">Payment &amp; billing</option>
+                  <option value="account_access">Account access</option>
+                  <option value="partner_dispute">Partner dispute</option>
+                  <option value="property_quality">Property quality</option>
+                  <option value="policy_violation">Policy violation</option>
+                  <option value="technical_issue">Technical issue</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="supportPriority" class="mb-2 block text-sm font-medium text-slate-700">
+                  Priority
+                </label>
+                <select id="supportPriority" name="priority" class="bomo-input w-full">
+                  <option value="low">Low</option>
+                  <option value="medium" selected>Medium</option>
+                  <option value="high">High</option>
+                  <option value="urgent">Urgent</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Subject -->
+            <div>
+              <label for="supportSubject" class="mb-2 block text-sm font-medium text-slate-700">
+                Subject<span class="text-rose-500">*</span>
+              </label>
+              <input
+                id="supportSubject"
+                name="subject"
+                type="text"
+                required
+                minlength="3"
+                maxlength="200"
+                placeholder="Briefly summarize your issue"
+                class="bomo-input w-full"
+              />
+            </div>
+
+            <!-- Related booking -->
+            <div>
+              <label for="supportBookingRef" class="mb-2 block text-sm font-medium text-slate-700">
+                Related booking reference
+                <span class="text-slate-400 font-normal">(optional)</span>
+              </label>
+              <input
+                id="supportBookingRef"
+                name="relatedBookingId"
+                type="text"
+                maxlength="64"
+                placeholder="e.g. BK-20260421-0091"
+                class="bomo-input w-full"
+              />
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="supportDescription" class="mb-2 block text-sm font-medium text-slate-700">
+                Message<span class="text-rose-500">*</span>
+              </label>
+              <textarea
+                id="supportDescription"
+                name="description"
+                required
+                minlength="10"
+                maxlength="4000"
+                rows="6"
+                placeholder="Tell us what happened, including any relevant dates or details..."
+                class="bomo-input w-full"
+              ></textarea>
+              <div class="mt-2 flex justify-end">
+                <span id="supportDescriptionCount" class="text-xs text-slate-400">0 / 4000</span>
+              </div>
+            </div>
+
+            <!-- Inline error -->
+            <div
+              id="supportTicketNotice"
+              class="hidden rounded-xl px-4 py-3 text-sm font-medium"
+              role="alert"
+            ></div>
+
+            <button
+              id="supportTicketSubmit"
+              type="submit"
+              class="bomo-btn-primary w-full md:w-auto px-8 py-4"
+            >
+              <i class="fa-regular fa-paper-plane"></i>
+              <span data-submit-label>Send Message</span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="space-y-6 lg:sticky lg:top-24">
+        <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6">
+          <h3 class="font-bold text-slate-900">Other ways to reach us</h3>
+          <div class="mt-5 space-y-4">
+            <div class="flex items-start gap-3">
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700">
+                <i class="fa-regular fa-envelope"></i>
+              </span>
+              <div>
+                <div class="text-sm font-semibold text-slate-800">Email</div>
+                <a href="mailto:support@bomo.world" class="text-sm text-blue-600 hover:underline">
+                  support@bomo.world
+                </a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
+                <i class="fa-solid fa-comments"></i>
+              </span>
+              <div>
+                <div class="text-sm font-semibold text-slate-800">Live chat</div>
+                <div class="text-sm text-slate-500">Mon&ndash;Sun, 8AM&ndash;10PM PHT</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-orange-50 text-orange-600">
+                <i class="fa-solid fa-clock"></i>
+              </span>
+              <div>
+                <div class="text-sm font-semibold text-slate-800">Response time</div>
+                <div class="text-sm text-slate-500">Usually within 24 hours</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6">
+          <h3 class="font-bold text-slate-900">Popular help topics</h3>
+          <div class="mt-4 space-y-1">
+            <a href="#" class="support-link">
+              <i class="fa-solid fa-calendar-check"></i>
+              Managing or canceling a booking
+            </a>
+            <a href="#" class="support-link">
+              <i class="fa-solid fa-credit-card"></i>
+              Payment &amp; refund questions
+            </a>
+            <a href="#" class="support-link">
+              <i class="fa-solid fa-user-lock"></i>
+              Account access issues
+            </a>
+            <a href="#" class="support-link">
+              <i class="fa-solid fa-hotel"></i>
+              Property partner support
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-3xl bg-blue-50 border border-blue-100 p-6">
+          <div class="flex items-center gap-2 text-blue-800 font-semibold text-sm">
+            <i class="fa-solid fa-shield-check"></i>
+            Your information is protected
+          </div>
+          <p class="mt-2 text-sm text-blue-900/70">
+            We only use your details to follow up on this request and never share
+            them with third parties.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- SUCCESS MODAL -->
+<div
+  id="supportTicketSuccessModal"
+  class="fixed inset-0 z-[9999] hidden items-center justify-center bg-slate-950/60 backdrop-blur-md p-4"
+>
+  <div class="relative w-full max-w-md overflow-hidden rounded-[28px] bg-white shadow-[0_30px_80px_rgba(15,23,42,.25)] text-center p-8 md:p-10">
+    <button
+      id="supportTicketSuccessClose"
+      class="absolute top-5 right-5 flex h-10 w-10 items-center justify-center rounded-xl hover:bg-slate-100 transition"
+      aria-label="Close"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-emerald-50">
+      <i class="fa-solid fa-circle-check text-4xl text-emerald-500"></i>
+    </div>
+
+    <h2 class="mt-6 text-2xl font-bold text-slate-900">Message sent!</h2>
+
+    <p class="mt-3 text-slate-500 leading-relaxed">
+      Your ticket reference is
+      <span id="supportTicketRef" class="font-semibold text-slate-800">ST-000000</span>.
+      We've sent a confirmation to
+      <span id="supportTicketEmailConfirm" class="font-semibold text-slate-800"></span>
+      and will follow up within 24 hours.
+    </p>
+
+    <div class="mt-8 flex flex-col gap-3">
+      <button id="supportTicketAnother" class="bomo-btn-primary w-full py-3.5">
+        Submit another request
+      </button>
+      <a href="index.html" class="bomo-btn-secondary w-full">
+        Back to home
+      </a>
+    </div>
+  </div>
+</div>

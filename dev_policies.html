@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BOMO Platform Policy & Development Cookbook v2.0</title>
+<style>
+:root{--bg:#eef2f7;--panel:#fff;--ink:#172033;--muted:#64748b;--line:#dfe5ee;--brand:#1748c7;--brand2:#0c2b70;--soft:#eef4ff;--ok:#0f766e;--code:#0d172a}
+*{box-sizing:border-box} html,body{height:100%;margin:0} body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);overflow:hidden}
+.app{height:100vh;display:grid;grid-template-columns:300px minmax(0,1fr)}
+aside{background:linear-gradient(180deg,#0b1d4a,#102e78);color:white;padding:24px 18px;overflow-y:auto}
+.brand{padding:6px 10px 22px;border-bottom:1px solid rgba(255,255,255,.13);margin-bottom:16px}
+.brand .logo{font-size:28px;font-weight:900;letter-spacing:.06em} .brand small{display:block;color:#b9c8ef;margin-top:4px;line-height:1.4}
+.nav-label{font-size:11px;color:#90a9e4;letter-spacing:.14em;font-weight:800;padding:6px 10px 8px}
+nav{display:flex;flex-direction:column;gap:3px} nav a{color:#dbe6ff;text-decoration:none;padding:9px 10px;border-radius:8px;font-size:13px;line-height:1.25;transition:.15s} nav a:hover,nav a.active{background:rgba(255,255,255,.12);color:#fff}
+main{height:100vh;overflow-y:auto;scroll-behavior:smooth;padding:30px 34px 70px}
+.hero{max-width:1120px;margin:0 auto 18px;background:linear-gradient(135deg,#fff,#f2f6ff);border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:0 10px 30px rgba(27,43,77,.06)}
+.hero .kicker{font-size:12px;letter-spacing:.16em;font-weight:800;color:var(--brand)} .hero h1{font-size:36px;line-height:1.05;margin:9px 0 10px;letter-spacing:-.035em} .hero p{color:var(--muted);margin:0;max-width:820px;line-height:1.6} .badges{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px} .badges span{font-size:12px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 10px;color:#3a4a65}
+section{max-width:1120px;margin:18px auto;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 6px 22px rgba(27,43,77,.04);scroll-margin-top:18px} section h2{margin:0 0 18px;font-size:23px;letter-spacing:-.02em;color:#132353} section h3{font-size:15px;margin:18px 0 10px;color:#22345c} p{line-height:1.6} .compact{color:#42516c;margin:12px 0 0}
+ul{margin:8px 0 0;padding-left:20px} li{margin:7px 0;line-height:1.45}
+.grid{display:grid;gap:14px} .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))} .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fbfcfe} .card h3{margin-top:0} .card p{margin-bottom:0;color:#4c5a73}
+.lead-card{background:var(--soft);border:1px solid #cfdcff;border-radius:14px;padding:18px 20px;margin-bottom:14px} .lead-card p{margin:5px 0 0;font-size:16px} .eyebrow{font-size:11px;color:var(--brand);font-weight:800;letter-spacing:.13em}
+.rule-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px} .rule{display:flex;gap:12px;border:1px solid var(--line);border-radius:12px;padding:14px;background:#fbfcfe} .rule>span{flex:0 0 32px;height:32px;border-radius:8px;background:#e8efff;color:var(--brand);display:grid;place-items:center;font-size:11px;font-weight:900} .rule b{font-size:14px} .rule p{font-size:13px;margin:3px 0 0;color:#647089;line-height:1.45}
+.flow{display:flex;align-items:center;flex-wrap:wrap;gap:7px;background:#f7f9fd;border:1px solid var(--line);border-radius:13px;padding:14px;margin:4px 0 18px} .flow span{font-size:12px;font-weight:750;background:white;border:1px solid #d8e0ec;border-radius:8px;padding:8px 10px} .flow i{font-style:normal;color:#91a0b8;font-weight:900}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:10px 0 18px} table{border-collapse:collapse;width:100%;font-size:13px;background:#fff} th,td{padding:11px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);line-height:1.45} th{background:#f3f6fb;color:#35435d;font-size:11px;text-transform:uppercase;letter-spacing:.06em} tr:last-child td{border-bottom:0}
+code{font-family:"SFMono-Regular",Consolas,monospace;background:#edf1f7;border-radius:5px;padding:2px 5px;font-size:.92em} pre{background:var(--code);color:#e8eef9;border-radius:12px;padding:16px;overflow:auto;line-height:1.55;font-size:12px} pre code{background:transparent;padding:0}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0 12px} .chips span{font-family:monospace;font-size:12px;border-radius:999px;padding:6px 9px;background:#eef3ff;color:#234dba;border:1px solid #d6e0ff}
+.note{background:#fff8e8;border:1px solid #f2dda5;border-radius:12px;padding:13px 15px;color:#644f1d;line-height:1.5;margin-top:14px} .checklist{list-style:none;padding-left:0} .checklist li{position:relative;padding-left:27px} .checklist li:before{content:'✓';position:absolute;left:0;top:0;color:var(--ok);font-weight:900}
+.mobile-top{display:none}
+@media(max-width:900px){body{overflow:auto} .app{display:block;height:auto} aside{position:sticky;top:0;z-index:20;padding:10px 14px;max-height:none;overflow:visible} .brand{padding:2px 0 8px;margin:0;border:0} .brand .logo{font-size:20px} .brand small,.nav-label{display:none} nav{display:none;max-height:55vh;overflow:auto;padding-top:8px} aside.open nav{display:flex} .mobile-top{display:block;position:absolute;right:14px;top:13px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:8px;padding:7px 10px;cursor:pointer} main{height:auto;overflow:visible;padding:18px 12px 50px} .hero{padding:22px} .hero h1{font-size:29px} section{padding:19px} .grid.two,.grid.three,.rule-grid{grid-template-columns:1fr}}
+@media print{body{overflow:visible;background:white} .app{display:block;height:auto} aside{display:none} main{height:auto;overflow:visible;padding:0} section,.hero{box-shadow:none;break-inside:avoid;margin:10px 0;border-color:#ddd}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside id="sidebar">
+    <button class="mobile-top" onclick="document.getElementById('sidebar').classList.toggle('open')">Menu</button>
+    <div class="brand"><div class="logo">BOMO</div><small>Platform Policy & Development Cookbook<br>v2.0</small></div>
+    <div class="nav-label">CONTENTS</div>
+    <nav><a href="#overview" data-target="overview">1. Overview</a>
+<a href="#scope" data-target="scope">2. Scope &amp; Limitations</a>
+<a href="#principles" data-target="principles">3. Development Rules</a>
+<a href="#models" data-target="models">4. Core Models &amp; Statuses</a>
+<a href="#booking" data-target="booking">5. Booking Workflow</a>
+<a href="#cancellation" data-target="cancellation">6. Cancellation Workflow</a>
+<a href="#refund" data-target="refund">7. Refund Workflow</a>
+<a href="#partner-payout" data-target="partner-payout">8. Partner Payout Workflow</a>
+<a href="#creator-payout" data-target="creator-payout">9. Creator Payout Workflow</a>
+<a href="#reviews" data-target="reviews">10. Video / Photo Review Workflow</a>
+<a href="#conditions" data-target="conditions">11. Conditional Rule Matrix</a>
+<a href="#api" data-target="api">12. Suggested API Actions</a>
+<a href="#data" data-target="data">13. Minimum Data to Persist</a>
+<a href="#jobs" data-target="jobs">14. Scheduled Jobs &amp; Events</a>
+<a href="#security" data-target="security">15. RBAC, Audit &amp; Security</a>
+<a href="#tests" data-target="tests">16. Acceptance Test Cookbook</a>
+<a href="#settings" data-target="settings">17. Admin Configuration</a>
+<a href="#done" data-target="done">18. Definition of Done</a></nav>
+  </aside>
+  <main id="content">
+    <header class="hero">
+      <div class="kicker">DEVELOPMENT COOKBOOK</div>
+      <h1>BOMO Platform Policy & Development Cookbook</h1>
+      <p>Short operational policy plus implementable development rules for booking, cancellation, refunds, payouts, and video/photo reviews. Designed as a source of truth for product, backend, frontend, QA, operations, finance, and support.</p>
+      <div class="badges"><span>No check-in/check-out dependency</span><span>No red-flag workflow</span><span>Backend state machine</span><span>BOMO Collect / Property Collect</span><span>Audit-ready</span></div>
+    </header>
+    <section id="overview"><h2>1. Overview</h2>
+<div class="lead-card">
+  <div class="eyebrow">PURPOSE</div>
+  <p>Use this cookbook as the implementation reference for BOMO booking, cancellation, refund, payout, and video/photo review workflows.</p>
+</div>
+<div class="grid two">
+  <div class="card"><h3>Primary Goal</h3><p>Keep platform behavior predictable, auditable, and easy to implement across Guest, Partner, Creator, Admin, API, and payment services.</p></div>
+  <div class="card"><h3>Core Approach</h3><p>Use backend-controlled state transitions, stored booking snapshots, explicit conditions, and automated scheduled jobs.</p></div>
+</div>
+</section>
+<section id="scope"><h2>2. Scope &amp; Limitations</h2>
+<div class="grid two">
+  <div class="card">
+    <h3>Scope</h3>
+    <ul>
+      <li>Accommodation bookings made through BOMO.</li>
+      <li>Guest booking and cancellation workflows.</li>
+      <li>BOMO Collect and Property Collect payment handling.</li>
+      <li>Refund, Partner payout, and Creator payout rules.</li>
+      <li>Video/photo review eligibility and moderation.</li>
+      <li>Backend status, conditional, validation, API, job, and audit rules.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Limitations</h3>
+    <ul>
+      <li>No property check-in or check-out workflow is required.</li>
+      <li>Property operations, housekeeping, PMS internals, and OTA sync are outside this cookbook.</li>
+      <li>Bank, wallet, card, and gateway posting time is controlled by external providers.</li>
+      <li>Tax, withholding, contract, and local-law requirements may override platform defaults.</li>
+      <li>Rates, fees, commissions, rewards, and clearance periods must be configurable.</li>
+    </ul>
+  </div>
+</div>
+</section>
+<section id="principles"><h2>3. Development Rules</h2>
+<div class="rule-grid">
+  <div class="rule"><span>01</span><div><b>Backend owns status.</b><p>Frontend requests actions. It must not directly set final booking, refund, payout, or review states.</p></div></div>
+  <div class="rule"><span>02</span><div><b>Use a state machine.</b><p>Allow only defined transitions. Reject invalid status jumps.</p></div></div>
+  <div class="rule"><span>03</span><div><b>Snapshot confirmed terms.</b><p>Store price, fees, cancellation rule, taxes, payment model, and key payout inputs at booking confirmation.</p></div></div>
+  <div class="rule"><span>04</span><div><b>Use idempotency.</b><p>Booking confirmation, payment capture, refund, webhook, reward creation, and payout must be safe to retry.</p></div></div>
+  <div class="rule"><span>05</span><div><b>Protect inventory atomically.</b><p>Availability validation and inventory reservation/decrement must be transactional or lock-safe.</p></div></div>
+  <div class="rule"><span>06</span><div><b>Money is exact.</b><p>Use DECIMAL or integer minor units. Never use floating-point values for money.</p></div></div>
+  <div class="rule"><span>07</span><div><b>Use property-local time.</b><p>Stay dates, cancellation cutoffs, and automatic completion use the property's timezone.</p></div></div>
+  <div class="rule"><span>08</span><div><b>Audit every financial action.</b><p>Record actor, action, previous state, new state, amount, reason, source, and timestamp.</p></div></div>
+  <div class="rule"><span>09</span><div><b>Provider webhooks are verified.</b><p>Verify signatures and never trust browser-return payment success as final proof.</p></div></div>
+  <div class="rule"><span>10</span><div><b>Jobs are retry-safe.</b><p>Automatic completion, refund sync, reward issuance, and payout batching must tolerate retries without duplicates.</p></div></div>
+</div>
+</section>
+<section id="models"><h2>4. Core Models &amp; Statuses</h2>
+<h3>Payment Models</h3>
+<div class="table-wrap"><table><thead><tr><th>Model</th><th>Who Collects</th><th>Refund Owner</th><th>Partner Payout</th></tr></thead><tbody>
+<tr><td><code>BOMO_COLLECT</code></td><td>BOMO / payment provider</td><td>BOMO</td><td>Yes</td></tr>
+<tr><td><code>PROPERTY_COLLECT</code></td><td>Property</td><td>Property</td><td>No accommodation payout from BOMO</td></tr>
+</tbody></table></div>
+
+<h3>Booking Status</h3>
+<div class="chips"><span>PENDING</span><span>CONFIRMED</span><span>CANCELLED</span><span>NO_SHOW</span><span>COMPLETED</span></div>
+<div class="table-wrap"><table><thead><tr><th>Status</th><th>Meaning</th><th>Allowed Next</th></tr></thead><tbody>
+<tr><td><code>PENDING</code></td><td>Booking is being created or payment/guarantee is not final.</td><td>CONFIRMED, CANCELLED</td></tr>
+<tr><td><code>CONFIRMED</code></td><td>Valid booking reference issued.</td><td>CANCELLED, NO_SHOW, COMPLETED</td></tr>
+<tr><td><code>CANCELLED</code></td><td>Booking ended under cancellation rules.</td><td>Final</td></tr>
+<tr><td><code>NO_SHOW</code></td><td>Authorized Property user records that the stay was not used.</td><td>Final</td></tr>
+<tr><td><code>COMPLETED</code></td><td>Stay end date passed and completion conditions were met.</td><td>Final for booking workflow</td></tr>
+</tbody></table></div>
+
+<h3>Supporting Statuses</h3>
+<div class="table-wrap"><table><thead><tr><th>Domain</th><th>Recommended Statuses</th></tr></thead><tbody>
+<tr><td>Payment</td><td>UNPAID, PAID, PARTIALLY_REFUNDED, REFUNDED, FAILED</td></tr>
+<tr><td>Refund</td><td>NOT_REQUIRED, PENDING, PROCESSING, PARTIAL, REFUNDED, FAILED</td></tr>
+<tr><td>Payout</td><td>PENDING, ON_HOLD, ELIGIBLE, PROCESSING, PAID, FAILED</td></tr>
+<tr><td>Review</td><td>DRAFT, SUBMITTED, UNDER_REVIEW, REVISION_REQUIRED, APPROVED, REJECTED, PUBLISHED</td></tr>
+</tbody></table></div>
+</section>
+<section id="booking"><h2>5. Booking Workflow</h2>
+<div class="flow"><span>Select Room & Dates</span><i>→</i><span>Validate</span><i>→</i><span>Price Snapshot</span><i>→</i><span>Payment / Guarantee</span><i>→</i><span>Issue Reference</span><i>→</i><span>CONFIRMED</span><i>→</i><span>Auto COMPLETED</span></div>
+
+<div class="grid two">
+  <div class="card"><h3>Required Validation</h3><ul>
+    <li>Property and room are active and bookable.</li>
+    <li>Arrival date is before stay end date.</li>
+    <li>Occupancy fits room/rate rules.</li>
+    <li>Requested quantity is available for every stay date.</li>
+    <li>Rate plan is active for the dates.</li>
+    <li>Final price is recalculated by backend.</li>
+    <li>Payment/guarantee requirement is satisfied.</li>
+  </ul></div>
+  <div class="card"><h3>Confirmation Rule</h3><ul>
+    <li>Create booking reference only after validations pass.</li>
+    <li>Store the final commercial snapshot.</li>
+    <li>Reserve/decrement inventory in the same protected transaction.</li>
+    <li>Send confirmation only after the booking is <code>CONFIRMED</code>.</li>
+    <li>Never require check-in or check-out status.</li>
+  </ul></div>
+</div>
+
+<h3>Booking Conditions</h3>
+<pre><code>IF inventory is unavailable       → reject booking
+IF backend price != client price  → return refreshed quote
+IF required payment fails         → keep PENDING or cancel pending attempt
+IF payment/guarantee succeeds     → issue reference and CONFIRMED
+IF stay_end_at has passed AND status = CONFIRMED
+                                  → COMPLETED by scheduled job</code></pre>
+
+<h3>Auto-Completion Job</h3>
+<p class="compact">Run on a schedule. Select <code>CONFIRMED</code> bookings where the property-local stay end time has passed. Update to <code>COMPLETED</code> using an idempotent batch. Financial disputes may hold payout without changing the booking completion result.</p>
+</section>
+<section id="cancellation"><h2>6. Cancellation Workflow</h2>
+<div class="flow"><span>Cancel Request</span><i>→</i><span>Load Stored Policy</span><i>→</i><span>Calculate Fee / Refund</span><i>→</i><span>Show Result</span><i>→</i><span>Guest Confirms</span><i>→</i><span>CANCELLED</span><i>→</i><span>Refund if Due</span></div>
+
+<div class="grid two">
+  <div class="card"><h3>Rules</h3><ul>
+    <li>Use the cancellation policy snapshot stored at confirmation.</li>
+    <li>Do not recalculate using a newly edited Property policy.</li>
+    <li>Show fee and refundable amount before final confirmation.</li>
+    <li>Cancellation and inventory release must be atomic.</li>
+    <li>A completed or already cancelled booking cannot be cancelled again.</li>
+  </ul></div>
+  <div class="card"><h3>Property Cancellation</h3><ul>
+    <li>Guest should not receive a cancellation penalty when the Property cannot honor the booking.</li>
+    <li>For BOMO Collect, create the eligible refund flow.</li>
+    <li>For Property Collect, record the Property refund responsibility.</li>
+    <li>Return inventory when appropriate.</li>
+  </ul></div>
+</div>
+
+<pre><code>IF status != CONFIRMED           → reject normal cancellation
+IF cancellation cutoff applies   → compute stored-policy fee
+IF refundable_amount > 0         → create refund instruction
+IF refundable_amount = 0         → cancel with no refund
+ALWAYS                            → save calculation snapshot + audit</code></pre>
+</section>
+<section id="refund"><h2>7. Refund Workflow</h2>
+<div class="flow"><span>Refund Trigger</span><i>→</i><span>Validate Owner & Amount</span><i>→</i><span>Approve</span><i>→</i><span>Provider / Property Action</span><i>→</i><span>Sync Result</span><i>→</i><span>REFUNDED / PARTIAL</span></div>
+
+<div class="table-wrap"><table><thead><tr><th>Condition</th><th>System Rule</th></tr></thead><tbody>
+<tr><td>BOMO Collect</td><td>BOMO initiates refund through the original payment route/provider.</td></tr>
+<tr><td>Property Collect</td><td>Property returns funds it collected; BOMO records status/evidence where required.</td></tr>
+<tr><td>Partial refund</td><td>Total successful refunds must never exceed the refundable/paid amount.</td></tr>
+<tr><td>Duplicate request</td><td>Use idempotency key or unique refund reference. Return the existing refund result.</td></tr>
+<tr><td>Provider timeout</td><td>Keep PROCESSING/PENDING and reconcile by verified webhook or provider query.</td></tr>
+<tr><td>Refund after payout</td><td>Create an adjustment/negative balance for future Partner settlement, subject to agreement.</td></tr>
+</tbody></table></div>
+
+<pre><code>refundable_max = amount_paid - successful_refunds
+requested_refund = MIN(approved_amount, refundable_max)
+
+IF requested_refund <= 0 → do not call provider
+IF provider confirms full remaining refund → payment = REFUNDED
+ELSE IF any amount refunded               → payment = PARTIALLY_REFUNDED</code></pre>
+</section>
+<section id="partner-payout"><h2>8. Partner Payout Workflow</h2>
+<div class="flow"><span>BOMO Collect</span><i>→</i><span>Booking COMPLETED</span><i>→</i><span>Clearance</span><i>→</i><span>Reconcile</span><i>→</i><span>ELIGIBLE</span><i>→</i><span>Payout Batch</span><i>→</i><span>PAID</span></div>
+
+<div class="grid two">
+  <div class="card"><h3>Eligibility</h3><ul>
+    <li>Payment model is <code>BOMO_COLLECT</code>.</li>
+    <li>Booking is <code>COMPLETED</code>.</li>
+    <li>Required clearance period has passed.</li>
+    <li>No unresolved refund/chargeback condition requires hold.</li>
+    <li>Partner payout account is verified.</li>
+  </ul></div>
+  <div class="card"><h3>Net Payout</h3><pre><code>Guest payment
+- BOMO commission
+- payment charges
+- refunds / chargebacks
+- taxes / withholding
+± approved adjustments
+= Net Partner payout</code></pre></div>
+</div>
+
+<p class="compact"><b>Property Collect:</b> do not create an accommodation payout from BOMO because the Property collected the booking payment directly.</p>
+</section>
+<section id="creator-payout"><h2>9. Creator Payout Workflow</h2>
+<div class="flow"><span>Eligible Earning</span><i>→</i><span>Validate Source</span><i>→</i><span>Clearance</span><i>→</i><span>Available Balance</span><i>→</i><span>Payout Batch</span><i>→</i><span>PAID</span></div>
+
+<div class="grid two">
+  <div class="card"><h3>Earning Sources</h3><ul>
+    <li>Approved video/photo review reward.</li>
+    <li>Eligible Creator promo-code reward.</li>
+    <li>Other Admin-approved Creator programs.</li>
+  </ul></div>
+  <div class="card"><h3>Eligibility Guard</h3><ul>
+    <li>Source booking exists and satisfies program conditions.</li>
+    <li>Booking is not cancelled or fully refunded.</li>
+    <li>Required review or promo event is approved/validated.</li>
+    <li>Creator identity and payout method are verified.</li>
+    <li>Earning has not already been paid or reversed.</li>
+  </ul></div>
+</div>
+
+<pre><code>IF earning source invalid         → reject earning
+IF booking cancelled/full refund  → reverse or block earning
+IF clearance not reached          → PENDING
+IF verification missing           → ON_HOLD
+IF all guards pass                → ELIGIBLE</code></pre>
+</section>
+<section id="reviews"><h2>10. Video / Photo Review Workflow</h2>
+<div class="flow"><span>Upload</span><i>→</i><span>Booking & File Validation</span><i>→</i><span>Moderation</span><i>→</i><span>Approve / Revise / Reject</span><i>→</i><span>Publish</span><i>→</i><span>Reward Check</span></div>
+
+<div class="grid two">
+  <div class="card"><h3>Content Rules</h3><ul>
+    <li>Review must relate to a genuine eligible BOMO stay.</li>
+    <li>Media must represent the actual experience and must not create a false impression.</li>
+    <li>Reject unlawful, abusive, sexually explicit, dangerous, or unrelated promotional content.</li>
+    <li>Do not expose private personal information.</li>
+    <li>Third-party identity/privacy concerns require moderation or revision.</li>
+  </ul></div>
+  <div class="card"><h3>Development Rules</h3><ul>
+    <li>Validate MIME type, extension, size, duration/dimensions, and upload completion server-side.</li>
+    <li>Store original/private media separately from published derivative media where practical.</li>
+    <li>Moderation status and reward eligibility are separate fields.</li>
+    <li>Publishing a review must not automatically create duplicate rewards.</li>
+    <li>All moderation actions require actor and reason logging.</li>
+  </ul></div>
+</div>
+
+<div class="note"><b>BOMO review-credit default:</b> one completed stay may issue one reward-eligible review credit for the same stay/property. Keep credit expiry configurable; a 90-day expiry is a practical default.</div>
+</section>
+<section id="conditions"><h2>11. Conditional Rule Matrix</h2>
+<div class="table-wrap"><table><thead><tr><th>Event</th><th>IF</th><th>THEN</th><th>Block When</th></tr></thead><tbody>
+<tr><td>Confirm booking</td><td>inventory + price + required payment/guarantee pass</td><td>reserve inventory, snapshot terms, issue reference, CONFIRMED</td><td>availability, validation, or payment requirement fails</td></tr>
+<tr><td>Auto-complete</td><td>CONFIRMED and stay end passed</td><td>COMPLETED</td><td>CANCELLED or NO_SHOW</td></tr>
+<tr><td>Cancel</td><td>booking is cancellable</td><td>calculate stored rule, cancel, release inventory</td><td>already final or rule forbids action</td></tr>
+<tr><td>Refund</td><td>approved refundable amount &gt; 0</td><td>create/refconcile refund</td><td>duplicate or amount exceeds paid balance</td></tr>
+<tr><td>Partner payout</td><td>BOMO Collect + completed + cleared</td><td>ELIGIBLE → payout</td><td>unresolved financial hold or unverified payout account</td></tr>
+<tr><td>Creator earning</td><td>eligible source + validated booking/program</td><td>create earning once</td><td>cancelled/refunded/ineligible/duplicate</td></tr>
+<tr><td>Publish review</td><td>moderation APPROVED</td><td>PUBLISHED</td><td>privacy, safety, authenticity, or file validation fails</td></tr>
+</tbody></table></div>
+</section>
+<section id="api"><h2>12. Suggested API Actions</h2>
+<div class="table-wrap"><table><thead><tr><th>Action</th><th>Method / Endpoint</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Create quote</td><td><code>POST /bookings/quote</code></td><td>Backend recalculates current price and availability.</td></tr>
+<tr><td>Create booking</td><td><code>POST /bookings</code></td><td>Creates PENDING attempt with idempotency key.</td></tr>
+<tr><td>Confirm booking</td><td><code>POST /bookings/{id}/confirm</code></td><td>Backend-only transition after payment/guarantee validation.</td></tr>
+<tr><td>Cancel preview</td><td><code>GET /bookings/{id}/cancellation-preview</code></td><td>Returns fee and refund based on stored snapshot.</td></tr>
+<tr><td>Cancel booking</td><td><code>POST /bookings/{id}/cancel</code></td><td>Requires preview token/version to avoid stale calculation.</td></tr>
+<tr><td>Create refund</td><td><code>POST /refunds</code></td><td>Idempotent; permission-controlled.</td></tr>
+<tr><td>Payment webhook</td><td><code>POST /webhooks/payments/{provider}</code></td><td>Verify provider signature and event uniqueness.</td></tr>
+<tr><td>Partner payout batch</td><td><code>POST /admin/payouts/partners/batches</code></td><td>Create from eligible ledger entries.</td></tr>
+<tr><td>Creator payout batch</td><td><code>POST /admin/payouts/creators/batches</code></td><td>Create from eligible Creator balances.</td></tr>
+<tr><td>Submit review</td><td><code>POST /reviews</code></td><td>Booking eligibility and file validation required.</td></tr>
+<tr><td>Moderate review</td><td><code>POST /admin/reviews/{id}/decision</code></td><td>Approve, revision-required, reject.</td></tr>
+</tbody></table></div>
+</section>
+<section id="data"><h2>13. Minimum Data to Persist</h2>
+<div class="grid three">
+  <div class="card"><h3>Booking</h3><p><code>id</code>, reference, property, room/rate plan, guest, stay dates, timezone, occupancy, qty, booking status, payment model, commercial snapshot, cancellation snapshot, created/confirmed/completed timestamps.</p></div>
+  <div class="card"><h3>Payment / Refund</h3><p>provider refs, amount/currency, payment status, refund status, refundable balance, gateway event IDs, refund refs, reason, actor, timestamps.</p></div>
+  <div class="card"><h3>Payout Ledger</h3><p>beneficiary type/id, source booking/earning, gross, deductions, net, hold reason, eligibility date, batch ID, provider reference, payout status.</p></div>
+  <div class="card"><h3>Review</h3><p>booking, creator/guest, review type, media object keys, moderation status, publish status, eligibility/reward refs, moderation reason, timestamps.</p></div>
+  <div class="card"><h3>Audit</h3><p>entity type/id, action, before/after state, actor type/id, request ID, source IP/device metadata where appropriate, timestamp.</p></div>
+  <div class="card"><h3>Settings</h3><p>cancellation templates, payout clearance, commissions/fees, creator reward rules, review credit expiry, upload limits, provider mappings.</p></div>
+</div>
+</section>
+<section id="jobs"><h2>14. Scheduled Jobs &amp; Events</h2>
+<div class="table-wrap"><table><thead><tr><th>Job</th><th>Purpose</th><th>Safety Rule</th></tr></thead><tbody>
+<tr><td>booking-auto-complete</td><td>Mark eligible CONFIRMED bookings COMPLETED after stay end.</td><td>Idempotent update with status guard.</td></tr>
+<tr><td>payment-reconcile</td><td>Resolve provider events that remain pending.</td><td>Verified provider query/webhook only.</td></tr>
+<tr><td>refund-reconcile</td><td>Sync PROCESSING refunds to final state.</td><td>Provider refund reference is unique.</td></tr>
+<tr><td>partner-payout-eligibility</td><td>Move cleared entries to ELIGIBLE.</td><td>Recheck hold/refund/chargeback conditions.</td></tr>
+<tr><td>creator-earning-eligibility</td><td>Release Creator earnings after program clearance.</td><td>Unique source earning constraint.</td></tr>
+<tr><td>review-credit-expiry</td><td>Expire unused review credits.</td><td>Do not expire already consumed credits.</td></tr>
+</tbody></table></div>
+</section>
+<section id="security"><h2>15. RBAC, Audit &amp; Security</h2>
+<ul class="checklist">
+  <li><b>Guest:</b> can quote, book, view own bookings, preview own cancellation, cancel eligible own booking, submit eligible reviews.</li>
+  <li><b>Partner:</b> can view/manage own inventory and bookings, record NO_SHOW when authorized, view own payout ledger, report Property Collect refund status.</li>
+  <li><b>Creator:</b> can submit eligible review media and view own earning/payout ledger.</li>
+  <li><b>BOMO Support:</b> can inspect workflows and perform explicitly granted support actions.</li>
+  <li><b>Finance:</b> can approve/refconcile refunds and payout batches according to RBAC.</li>
+  <li><b>Admin:</b> controls settings and exceptional adjustments with mandatory audit reason.</li>
+</ul>
+<div class="note"><b>Rule:</b> financial and final-state actions must be permission checked server-side. UI visibility is not authorization.</div>
+</section>
+<section id="tests"><h2>16. Acceptance Test Cookbook</h2>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Scenario</th><th>Expected Result</th></tr></thead><tbody>
+<tr><td>1</td><td>Two users book the last room at the same time.</td><td>Only one booking confirms; inventory never becomes negative.</td></tr>
+<tr><td>2</td><td>Client price is stale.</td><td>Backend rejects confirmation and returns refreshed quote.</td></tr>
+<tr><td>3</td><td>Payment webhook is delivered twice.</td><td>Only one payment transition/ledger entry is created.</td></tr>
+<tr><td>4</td><td>Guest cancels under a refundable rule.</td><td>Stored policy calculates fee/refund, booking cancels, refund starts once.</td></tr>
+<tr><td>5</td><td>Guest cancels under non-refundable rule.</td><td>Booking cancels and refund amount is zero.</td></tr>
+<tr><td>6</td><td>Property Collect cancellation has refund due.</td><td>BOMO records Property responsibility; no BOMO gateway refund is called.</td></tr>
+<tr><td>7</td><td>Confirmed stay end time passes.</td><td>Scheduled job marks booking COMPLETED without check-in/check-out.</td></tr>
+<tr><td>8</td><td>Cancelled booking reaches stay end time.</td><td>It is not auto-completed.</td></tr>
+<tr><td>9</td><td>BOMO Collect completed booking clears payout hold.</td><td>Partner ledger becomes ELIGIBLE once.</td></tr>
+<tr><td>10</td><td>Review reward event is retried.</td><td>Only one Creator earning is created.</td></tr>
+<tr><td>11</td><td>Review contains disallowed/private content.</td><td>Not published; reason is logged.</td></tr>
+<tr><td>12</td><td>Refund is attempted above remaining paid balance.</td><td>Request is blocked or capped according to approval logic.</td></tr>
+</tbody></table></div>
+</section>
+<section id="settings"><h2>17. Admin Configuration</h2>
+<div class="grid two">
+  <div class="card"><h3>Must Be Configurable</h3><ul>
+    <li>Cancellation templates and cutoffs.</li>
+    <li>Partner payout clearance and schedules.</li>
+    <li>Creator reward types, rates, minimum payout, and clearance.</li>
+    <li>Commission, payment charge, tax, and adjustment rules.</li>
+    <li>Review credit expiry and reward eligibility.</li>
+    <li>Upload size/type/duration limits.</li>
+  </ul></div>
+  <div class="card"><h3>Change Safety</h3><ul>
+    <li>New settings affect new transactions unless explicitly designed otherwise.</li>
+    <li>Existing confirmed bookings use stored snapshots.</li>
+    <li>High-impact finance settings require audit trail and preferably approval workflow.</li>
+    <li>Settings changes must carry effective timestamp and actor.</li>
+  </ul></div>
+</div>
+</section>
+<section id="done"><h2>18. Definition of Done</h2>
+<ul class="checklist">
+  <li>All statuses use guarded transitions.</li>
+  <li>Booking confirmation is transaction-safe and idempotent.</li>
+  <li>Cancellation uses stored confirmed policy terms.</li>
+  <li>Refunds cannot exceed the successful paid balance.</li>
+  <li>BOMO Collect and Property Collect responsibilities are separated.</li>
+  <li>Partner and Creator payout ledgers are independently auditable.</li>
+  <li>Review moderation is separate from reward eligibility.</li>
+  <li>Automatic completion requires no check-in/check-out workflow.</li>
+  <li>Webhooks, jobs, refunds, rewards, and payouts are retry-safe.</li>
+  <li>RBAC and audit logs are enforced on the backend.</li>
+  <li>Acceptance tests pass before production release.</li>
+</ul>
+</section>
+  </main>
+</div>
+<script>
+const links=[...document.querySelectorAll('nav a')];
+const sections=[...document.querySelectorAll('main section')];
+const main=document.getElementById('content');
+function activate(){
+  let active=sections[0]?.id;
+  const y=main.scrollTop+100;
+  for(const s of sections){if(s.offsetTop<=y)active=s.id;}
+  links.forEach(a=>a.classList.toggle('active',a.dataset.target===active));
+}
+main.addEventListener('scroll',activate,{passive:true}); activate();
+links.forEach(a=>a.addEventListener('click',()=>{document.getElementById('sidebar').classList.remove('open')}));
+</script>
+</body></html>
